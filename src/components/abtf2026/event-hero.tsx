@@ -9,8 +9,30 @@ export function EventHero() {
       id="about"
       className="relative isolate overflow-hidden border-b border-white/10 bg-[#03283f] text-white"
     >
+      <div className="absolute inset-x-0 top-0 -z-30 h-[46rem] sm:inset-0 sm:h-auto">
+        <Image
+          src={abtf2026.heroImage}
+          alt="مشهد ليلي لمدينة الأنبار ونهر الفرات"
+          fill
+          sizes="100vw"
+          className="object-cover object-[64%_center] sm:object-center"
+          preload
+        />
+      </div>
       <div
-        className="absolute inset-0 -z-10 opacity-35"
+        className="absolute inset-0 -z-20 bg-[#021d30]/22"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 -z-20 bg-[linear-gradient(270deg,rgba(2,29,48,0.94)_0%,rgba(2,29,48,0.74)_42%,rgba(2,29,48,0.18)_78%,rgba(2,29,48,0.28)_100%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 -z-20 h-2/5 bg-gradient-to-t from-[#021d30]/90 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 -z-10 opacity-18"
         aria-hidden="true"
         style={{
           backgroundImage:
@@ -19,12 +41,12 @@ export function EventHero() {
         }}
       />
       <div
-        className="absolute start-1/2 top-10 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#07814b]/15 blur-3xl"
+        className="absolute start-1/2 top-10 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#07814b]/10 blur-3xl"
         aria-hidden="true"
       />
 
       <div className="mx-auto grid min-h-[calc(100svh-5rem)] w-[min(100%-2rem,80rem)] items-center gap-14 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
-        <div>
+        <div className="drop-shadow-[0_2px_16px_rgba(0,0,0,0.34)]">
           <div className="flex items-center gap-4">
             <Image
               src={abtf2026.iraqEmblem}
@@ -67,7 +89,7 @@ export function EventHero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-lg lg:ms-auto">
-          <div className="rounded-[2rem] border border-white/12 bg-white p-8 shadow-2xl shadow-black/25 sm:p-10">
+          <div className="rounded-[2rem] border border-white/18 bg-white/96 p-8 shadow-2xl shadow-black/35 backdrop-blur-sm sm:p-10">
             <Image
               src={abtf2026.eventMark}
               width={2311}

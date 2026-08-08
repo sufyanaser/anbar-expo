@@ -4,6 +4,12 @@ export const abtf2026 = {
   titleEn: "Anbar Book & Technology Fair 2026",
   eventMark: "/brand/abtf2026/event-mark.svg",
   iraqEmblem: "/brand/abtf2026/iraq-emblem.svg",
+  heroImage: "/brand/abtf2026/anbar-night-panorama.webp",
+  platformOperator: {
+    name: "الرنين للحلول الإعلامية والرقمية",
+    credit: "صُممت وتُدار هذه المنصة بواسطة",
+    mark: "/brand/abtf2026/al-raneen-mark.webp",
+  },
   opening: {
     label: "الافتتاح",
     date: "16 / 09 / 2026",

@@ -12,11 +12,10 @@ export const platformModules: readonly PlatformModule[] = [
     href: "/ABTF2026/live",
     title: "البث المباشر",
     eyebrow: "تغطية المعرض",
-    description:
-      "واجهة بث قابلة للربط بمصدر الفيديو أو الصوت الرسمي عند اعتماده.",
+    description: "تابع التغطية المرئية والصوتية لفعاليات المعرض من منصة واحدة.",
     icon: "broadcast",
     status: "ready-to-connect",
-    statusLabel: "جاهز للربط",
+    statusLabel: "تغطية مباشرة",
     capabilities: ["مصدر بث خارجي", "حالة البث", "معلومات البرنامج الجاري"],
     featured: true,
   },
@@ -25,11 +24,10 @@ export const platformModules: readonly PlatformModule[] = [
     href: "/ABTF2026/program",
     title: "برنامج الفعاليات",
     eyebrow: "الجدول الرسمي",
-    description:
-      "جدول يومي للجلسات والندوات والأنشطة مع قابلية التحديث المستمر.",
+    description: "مواعيد الندوات والأمسيات والأنشطة الثقافية طوال أيام المعرض.",
     icon: "calendar",
     status: "awaiting-content",
-    statusLabel: "بانتظار الاعتماد",
+    statusLabel: "البرنامج اليومي",
     capabilities: ["أيام المعرض", "التوقيت والمكان", "حالة الفعالية"],
   },
   {
@@ -37,10 +35,10 @@ export const platformModules: readonly PlatformModule[] = [
     href: "/ABTF2026/gallery",
     title: "معرض الصور",
     eyebrow: "التوثيق البصري",
-    description: "ألبومات قابلة للنشر الدوري مع حفظ وصف الصورة وتاريخ إضافتها.",
+    description: "مشاهد وألبومات توثق الافتتاح والفعاليات وتجربة الزوار.",
     icon: "gallery",
     status: "configurable",
-    statusLabel: "قابل للتحديث",
+    statusLabel: "ألبومات المعرض",
     capabilities: ["ألبومات يومية", "صور عالية الجودة", "وصف وتاريخ"],
   },
   {
@@ -48,22 +46,21 @@ export const platformModules: readonly PlatformModule[] = [
     href: "/ABTF2026/advertising",
     title: "الإعلانات داخل المنصة",
     eyebrow: "المساحات الإعلانية",
-    description:
-      "نظام مواضع إعلانية منظم وقابل للجدولة دون التأثير في وضوح المحتوى.",
+    description: "مساحات إعلانية واضحة للشركاء والعلامات التجارية داخل المنصة.",
     icon: "megaphone",
     status: "configurable",
-    statusLabel: "جاهز للتفعيل",
-    capabilities: ["مواضع محددة", "جدولة الظهور", "قياس النقرات لاحقًا"],
+    statusLabel: "فرص إعلانية",
+    capabilities: ["مواضع محددة", "جدولة الظهور", "قياس التفاعل"],
   },
   {
     id: "news",
     href: "/ABTF2026/news",
     title: "الأخبار",
     eyebrow: "المركز الإعلامي",
-    description: "مساحة نشر منظمة لأخبار المعرض والبيانات والتحديثات الرسمية.",
+    description: "أخبار المعرض وإعلاناته وتغطيات فعالياته بترتيب زمني واضح.",
     icon: "news",
     status: "ready-to-publish",
-    statusLabel: "جاهز للنشر",
+    statusLabel: "آخر المستجدات",
     capabilities: ["أرشيف زمني", "خبر مفرد", "صور ومرفقات"],
   },
   {
@@ -72,10 +69,10 @@ export const platformModules: readonly PlatformModule[] = [
     title: "دليل العارضين",
     eyebrow: "الجهات المشاركة",
     description:
-      "دليل قابل للبحث والتصنيف، يُحدّث عند اعتماد قوائم الجهات المشاركة.",
+      "ابحث عن دور النشر والشركات والجهات المشاركة حسب الاسم والنشاط.",
     icon: "exhibitors",
     status: "awaiting-content",
-    statusLabel: "بانتظار البيانات",
+    statusLabel: "بحث وتصنيف",
     capabilities: ["بحث بالاسم", "تصنيف النشاط", "موقع الجناح"],
   },
   {
@@ -83,11 +80,10 @@ export const platformModules: readonly PlatformModule[] = [
     href: "/ABTF2026/visitor-guide",
     title: "دليل الزائر",
     eyebrow: "الوصول داخل المعرض",
-    description:
-      "بحث عن الجهة وعرض المبنى والجناح والمسار عبر GPS بعد حقن المواقع.",
+    description: "اعثر على الجهة والمبنى والجناح واستعرض مسار الوصول عبر GPS.",
     icon: "wayfinding",
     status: "ready-to-connect",
-    statusLabel: "جاهز للتهيئة",
+    statusLabel: "بحث ومسار",
     capabilities: ["أربع بنايات", "بحث موحد", "عرض المسار عبر GPS"],
   },
 ] as const;
@@ -100,7 +96,35 @@ export function getPlatformModule(id: string) {
   return platformModule;
 }
 
-export const programEntries: readonly ProgramEntry[] = [];
+export const programEntries: readonly ProgramEntry[] = [
+  {
+    id: "daily-cultural-seminars",
+    title: "الندوات الثقافية والمحاضرات",
+    date: "2026-09-16",
+    startsAt: "19:00",
+    endsAt: "20:00",
+    location: "يومياً",
+    status: "scheduled",
+  },
+  {
+    id: "daily-courtyard-program",
+    title: "استراحة المساء وفعاليات الباحة الخارجية",
+    date: "2026-09-16",
+    startsAt: "20:00",
+    endsAt: "21:00",
+    location: "الباحة الخارجية · يومياً",
+    status: "scheduled",
+  },
+  {
+    id: "daily-poetry-and-art",
+    title: "الأمسيات الشعرية والفنية",
+    date: "2026-09-16",
+    startsAt: "21:00",
+    endsAt: "23:00",
+    location: "يومياً",
+    status: "scheduled",
+  },
+];
 export const newsEntries: readonly NewsEntry[] = [];
 export const exhibitorLocations: readonly ExhibitorLocation[] = [];
 

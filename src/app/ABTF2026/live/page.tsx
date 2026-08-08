@@ -46,7 +46,7 @@ export default function LivePage() {
                   لم يبدأ البث المباشر بعد
                 </h2>
                 <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-white/52">
-                  ستظهر التغطية هنا فور اعتماد رابط المصدر وربطه بواجهة البث.
+                  يبدأ عرض التغطية من هنا مع انطلاق البث الرسمي للمعرض.
                 </p>
               </div>
             </div>
@@ -57,20 +57,19 @@ export default function LivePage() {
           <div className="rounded-3xl border border-[#073d5b]/10 bg-white p-6">
             <Signal className="size-6 text-[#087c49]" aria-hidden="true" />
             <h2 className="mt-6 text-xl font-black text-[#073d5b]">
-              بنية اتصال مرنة
+              مشاهدة من مختلف الأجهزة
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/55">
-              يدعم القسم إدخال رابط HLS أو مشغل مزود البث دون تغيير تصميم
-              الصفحة.
+              تابع التغطية من الهاتف أو الحاسوب بواجهة واضحة وسهلة الاستخدام.
             </p>
           </div>
           <div className="rounded-3xl border border-[#073d5b]/10 bg-white p-6">
             <RadioTower className="size-6 text-[#087c49]" aria-hidden="true" />
             <h2 className="mt-6 text-xl font-black text-[#073d5b]">
-              حالة بث واضحة
+              حالة البث
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/55">
-              حالات جاهزة لعرض غير متصل، قريبًا، مباشر الآن، وانتهاء البث.
+              توضح الصفحة ما إذا كان البث قريبًا أو مباشرًا أو قد انتهى.
             </p>
           </div>
         </aside>

@@ -9,7 +9,7 @@ export default function ExhibitorsPage() {
     <RouteIntro
       eyebrow="للعارضين"
       title="شارك في المعارض القادمة"
-      description="ستُنشر فرص المشاركة ومتطلبات العارضين ونوافذ التسجيل هنا فور اعتمادها رسمياً."
+      description="فرص المشاركة ومتطلبات العارضين ونوافذ التسجيل في المعارض."
     >
       <p className="text-muted-foreground border-copper/30 border border-dashed p-8 text-center">
         لا يوجد تسجيل مفتوح منشور حالياً.

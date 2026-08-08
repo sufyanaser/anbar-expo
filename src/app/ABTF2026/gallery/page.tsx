@@ -41,13 +41,12 @@ export default function GalleryPage() {
         ))}
 
         <aside className="rounded-3xl bg-[#e8f0eb] p-7">
-          <p className="text-xs font-black text-[#087c49]">نظام النشر</p>
+          <p className="text-xs font-black text-[#087c49]">ألبومات المعرض</p>
           <h2 className="mt-3 text-2xl font-black text-[#073d5b]">
-            ألبومات قابلة للإضافة دوريًا
+            توثيق متجدد لأيام المعرض
           </h2>
           <p className="mt-4 text-sm leading-7 text-[#073d5b]/55">
-            يمكن إضافة الصور إلى ألبومات حسب اليوم أو الفعالية مع الوصف
-            والتاريخ، دون تعديل مكونات العرض.
+            تُنظم الصور في ألبومات حسب اليوم أو الفعالية مع وصف وتاريخ واضحين.
           </p>
         </aside>
       </div>

@@ -21,6 +21,7 @@ export const abtf2026 = {
       label: "برعاية",
       name: "المهندس عمر مشعان دبوس",
       detail: "محافظ الأنبار",
+      href: null,
       mark: {
         src: "/brand/abtf2026/anbar-governorate.webp",
         width: 621,
@@ -32,6 +33,7 @@ export const abtf2026 = {
       label: "إشراف",
       name: "وزارة الثقافة والسياحة والآثار",
       detail: "جمهورية العراق",
+      href: null,
       mark: {
         src: "/brand/abtf2026/partner-07.svg",
         width: 2328,
@@ -43,6 +45,7 @@ export const abtf2026 = {
       label: "تنظيم",
       name: "شركة الواصف الملكية",
       detail: "لتنظيم المؤتمرات والمعارض الدولية",
+      href: "/ABTF2026/al-wasef",
       mark: {
         src: "/brand/abtf2026/organizer-mark.svg",
         width: 2328,
@@ -64,42 +67,49 @@ export const abtf2026 = {
       width: 2328,
       height: 2398,
       alt: "وزارة الثقافة والسياحة والآثار",
+      href: null,
     },
     {
       src: "/brand/abtf2026/anbar-governorate.webp",
       width: 621,
       height: 640,
       alt: "محافظة الأنبار",
+      href: null,
     },
     {
       src: "/brand/abtf2026/organizer-mark.svg",
       width: 2328,
       height: 2398,
       alt: "شركة الواصف الملكية",
+      href: "/ABTF2026/al-wasef",
     },
     {
       src: "/brand/abtf2026/partner-04.webp",
       width: 640,
       height: 640,
       alt: "شركة الرنين للحلول الإعلامية والرقمية",
+      href: null,
     },
     {
       src: "/brand/abtf2026/partner-03.svg",
       width: 2328,
       height: 2398,
       alt: "صُنع في سوريا",
+      href: null,
     },
     {
       src: "/brand/abtf2026/partner-02.svg",
       width: 2328,
       height: 2398,
       alt: "شركة بيت الحكمة للتدريب والاستشارات BHTC",
+      href: null,
     },
     {
       src: "/brand/abtf2026/partner-01.svg",
       width: 2328,
       height: 2398,
       alt: "ألفا للمعارض والمؤتمرات",
+      href: null,
     },
   ],
 } as const;

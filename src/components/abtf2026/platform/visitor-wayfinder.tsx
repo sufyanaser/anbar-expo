@@ -34,7 +34,7 @@ export function VisitorWayfinder({
   function openRoute() {
     const destinationCoordinates = selected?.coordinates;
     if (!destinationCoordinates) {
-      setRouteMessage("إحداثيات هذه الجهة لم تُعتمد بعد.");
+      setRouteMessage("لا تتوفر إحداثيات لهذه الجهة.");
       return;
     }
 
@@ -161,11 +161,10 @@ export function VisitorWayfinder({
                 aria-hidden="true"
               />
               <p className="mt-4 font-black text-[#073d5b]">
-                بيانات المواقع بانتظار الاعتماد
+                لا توجد نتائج مطابقة
               </p>
               <p className="mt-2 text-sm leading-7 text-[#073d5b]/52">
-                سيعمل البحث مباشرة بعد إدخال أسماء الجهات وأرقام البنايات
-                والأجنحة والإحداثيات.
+                استخدم اسم الجهة أو رقم البناية للوصول إلى النتيجة المطلوبة.
               </p>
             </div>
           )}
@@ -211,7 +210,7 @@ export function VisitorWayfinder({
           className="mt-3 min-h-6 text-xs leading-6 text-white/55"
           aria-live="polite"
         >
-          {routeMessage || "تُفعّل الخاصية عند اعتماد إحداثيات العارضين."}
+          {routeMessage || "اختر جهة تتوفر لها إحداثيات لعرض المسار."}
         </p>
       </aside>
     </div>

@@ -9,9 +9,9 @@ export const events: ExhibitionEvent[] = [
     category: "الكتب والنشر · التكنولوجيا",
     status: "upcoming",
     descriptionAr:
-      "فعالية متخصصة تجمع مجالي الكتاب والتكنولوجيا. ستُنشر التفاصيل الرسمية عند اعتمادها.",
+      "ملتقى ثقافي وتجاري يجمع الكتاب والتكنولوجيا والصناعات الإبداعية في مدينة الرمادي.",
     descriptionEn:
-      "A specialized event focused on books and technology. Official details will be published once confirmed.",
+      "A cultural and commercial gathering for books, technology, and creative industries in Ramadi.",
     featured: true,
   },
 ];

@@ -14,7 +14,8 @@ export function PartnersPreview() {
           className="border-copper/30 flex min-h-48 items-center justify-center border border-dashed p-8 text-center"
         >
           <p className="text-muted-foreground max-w-md leading-8">
-            تُضاف الجهات الشريكة والرعاة هنا بعد اعتماد الأسماء والأصول الرسمية.
+            شراكات تجمع الجهات الحكومية والمؤسسات المنظمة والرعاة لخدمة فعاليات
+            الأنبار الدولية.
           </p>
         </div>
       </Container>

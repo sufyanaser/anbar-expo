@@ -24,7 +24,7 @@ export default function AdvertisingPage() {
           </div>
           <p className="max-w-2xl text-sm leading-8 text-white/58 lg:ms-auto">
             تُفصل المساحات الإعلانية عن الأخبار والمعلومات الرسمية بصريًا، مع
-            قابلية تحديد مدة الحملة ووجهتها ومكان ظهورها لاحقًا.
+            تحديد مدة الحملة ووجهتها ومكان ظهورها بوضوح.
           </p>
         </div>
       </div>

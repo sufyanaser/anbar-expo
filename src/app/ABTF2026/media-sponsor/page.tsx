@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Clock3,
-  Megaphone,
-  MessagesSquare,
-  Radio,
-} from "lucide-react";
+import { ArrowRight, Megaphone, MessagesSquare, Radio } from "lucide-react";
 
 import { abtf2026 } from "@/data/abtf2026";
 
@@ -22,19 +16,19 @@ const informationSections = [
   {
     title: "تفاصيل الرعاية الإعلامية",
     description:
-      "سيتم إدراج نطاق التغطية الإعلامية والخدمات المعتمدة بعد استكمال المعلومات الرسمية.",
+      "تنسيق الحضور الإعلامي للمعرض وتوحيد رسائله وهويته عبر القنوات والمنصات الرقمية.",
     icon: Radio,
   },
   {
     title: "التواصل",
     description:
-      "ستُضاف قنوات التواصل الرسمية وبيانات فريق المتابعة عند اعتمادها للنشر.",
+      "إدارة التواصل الإعلامي والإعلاني مع الجهات المشاركة والشركاء ضمن مسار موحد.",
     icon: MessagesSquare,
   },
   {
     title: "آلية الإعلانات",
     description:
-      "ستُنشر لاحقاً أنواع المساحات الإعلانية، المتطلبات، المدد، وآلية الحجز والاعتماد.",
+      "تنظيم المساحات الإعلانية داخل المنصة وتنسيق مدد الحملات وموادها ومواقع ظهورها.",
     icon: Megaphone,
   },
 ] as const;
@@ -63,8 +57,8 @@ export default function MediaSponsorPage() {
               {abtf2026.mediaSponsor.name}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
-              صفحة مخصصة لتفاصيل الرعاية الإعلامية، قنوات التواصل، وآلية
-              الإعلانات الخاصة بالمعرض عند اعتمادها ونشرها.
+              تعرف على دور الراعي الإعلامي والوكيل الإعلاني في إدارة حضور المعرض
+              عبر الإعلام والمنصات الرقمية.
             </p>
           </div>
 
@@ -100,17 +94,6 @@ export default function MediaSponsorPage() {
                 </p>
               </article>
             ))}
-          </div>
-
-          <div className="mt-8 flex items-center gap-4 rounded-2xl border border-[#d5a52b]/18 bg-[#fff9e9] px-6 py-5 text-[#073d5b] sm:px-8">
-            <Clock3
-              className="size-6 shrink-0 text-[#c38f17]"
-              aria-hidden="true"
-            />
-            <p className="text-sm leading-7 font-bold">
-              هذه الصفحة مهيأة للتحديث، وتنتظر اعتماد تفاصيل التواصل والباقات
-              وآلية الإعلانات قبل نشرها.
-            </p>
           </div>
         </div>
       </section>

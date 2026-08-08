@@ -9,10 +9,10 @@ export default function VisitorsPage() {
     <RouteIntro
       eyebrow="للزوار"
       title="معلومات الزيارة من المصدر الرسمي"
-      description="ستتوفر هنا المواعيد والمواقع وإرشادات الوصول والخدمات المرتبطة بكل معرض بعد اعتمادها."
+      description="المواعيد والمواقع وإرشادات الوصول والخدمات المرتبطة بكل معرض."
     >
       <p className="text-muted-foreground border-copper/30 border border-dashed p-8 text-center">
-        ستُنشر معلومات الزيارة مع إعلانات المعارض الرسمية.
+        اختر المعرض المطلوب للاطلاع على معلومات الزيارة.
       </p>
     </RouteIntro>
   );

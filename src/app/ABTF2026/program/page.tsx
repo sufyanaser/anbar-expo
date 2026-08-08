@@ -25,7 +25,7 @@ export default function ProgramPage() {
           {
             icon: MapPin,
             title: "المكان والمنصة",
-            text: "ربط كل فعالية بقاعة أو بناية عند اعتماد المخطط.",
+            text: "عرض القاعة أو البناية المخصصة لكل فعالية ضمن جدولها.",
           },
           {
             icon: RefreshCw,
@@ -50,8 +50,8 @@ export default function ProgramPage() {
 
       {programEntries.length === 0 ? (
         <EmptyState
-          title="برنامج الفعاليات بانتظار الاعتماد"
-          description="سيظهر الجدول اليومي هنا فور تزويد المنصة بمواعيد الجلسات والندوات والأنشطة ومواقعها الرسمية."
+          title="برنامج الفعاليات"
+          description="يعرض هذا القسم مواعيد الجلسات والندوات والأنشطة ومواقعها خلال أيام المعرض."
         />
       ) : (
         <ol className="space-y-4">

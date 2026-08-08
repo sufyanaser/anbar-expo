@@ -9,10 +9,10 @@ export default function PartnersPage() {
     <RouteIntro
       eyebrow="الشركاء"
       title="الشراكات المؤسسية"
-      description="مساحة مخصصة للجهات المنظمة والشركاء والرعاة بعد اعتماد أسمائهم وأصولهم الرسمية."
+      description="شراكات تجمع الجهات المنظمة والمؤسسات والرعاة حول فعاليات الأنبار الدولية."
     >
       <p className="text-muted-foreground border-copper/30 border border-dashed p-8 text-center">
-        تُضاف قائمة الشركاء بعد الاعتماد الرسمي.
+        تعاون مؤسسي يدعم تنظيم المعارض وخدمة المشاركين والزوار.
       </p>
     </RouteIntro>
   );

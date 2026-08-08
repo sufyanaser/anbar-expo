@@ -13,7 +13,7 @@ export function FeaturedEvent() {
         <SectionHeading
           eyebrow="المعرض المميز"
           title="الفعالية القادمة ضمن المنصة"
-          description="تُنشر المواعيد والمواقع والتفاصيل التنفيذية بعد اعتمادها رسمياً."
+          description="تعرف على موعد المعرض وموقعه وبرنامجه والجهات المشاركة فيه."
           className="lg:sticky lg:top-32"
         />
         <div id="featured-title">

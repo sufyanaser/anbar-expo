@@ -18,8 +18,8 @@ export default function NewsPage() {
     <PlatformPageShell module={platformModule}>
       {newsEntries.length === 0 ? (
         <EmptyState
-          title="لا توجد أخبار منشورة حتى الآن"
-          description="ستظهر أخبار المعرض والبيانات والتحديثات الرسمية هنا بترتيب زمني بعد اعتمادها للنشر."
+          title="أخبار المعرض"
+          description="تجمع هذه الصفحة أخبار المعرض وبياناته وتغطيات فعالياته بترتيب زمني واضح."
         />
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

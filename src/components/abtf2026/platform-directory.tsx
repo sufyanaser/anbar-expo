@@ -14,12 +14,12 @@ export function PlatformDirectory() {
               المنصة الرقمية
             </p>
             <h2 className="mt-4 text-3xl leading-tight font-black text-[#073d5b] sm:text-5xl">
-              سبعة أقسام لخدمة المعرض والزائر
+              خدمات المعرض في مكان واحد
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[#073d5b]/60 lg:ms-auto">
-            بُني كل قسم كوحدة مستقلة قابلة لربط مصدر بياناته وتحديث محتواه دون
-            التأثير في بقية المنصة.
+            تابع التغطية والبرنامج والأخبار، واستكشف الصور والعارضين وخدمات
+            الوصول داخل المعرض من واجهة رقمية موحدة.
           </p>
         </div>
 

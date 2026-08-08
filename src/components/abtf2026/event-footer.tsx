@@ -14,7 +14,7 @@ export function EventFooter() {
               {abtf2026.shortName}
             </p>
             <p className="mt-3 max-w-sm text-xs leading-6 text-white/45">
-              المعلومات المنشورة مطابقة للمادة الرسمية المرفقة للمعرض.
+              16 - 25 سبتمبر 2026 · مدينة الرمادي، محافظة الأنبار
             </p>
           </div>
 

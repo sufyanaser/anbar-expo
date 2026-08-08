@@ -68,7 +68,7 @@ export function ExhibitorDirectory({
       <p className="text-sm font-bold text-[#073d5b]/55" aria-live="polite">
         {exhibitors.length > 0
           ? `${results.length} نتيجة مطابقة`
-          : "سيُفعّل البحث فور اعتماد قائمة العارضين."}
+          : "0 نتيجة مطابقة"}
       </p>
 
       {results.length > 0 ? (
@@ -96,11 +96,10 @@ export function ExhibitorDirectory({
         <div className="rounded-3xl border border-dashed border-[#073d5b]/20 bg-white px-6 py-14 text-center">
           <Store className="mx-auto size-8 text-[#087c49]" aria-hidden="true" />
           <h2 className="mt-5 text-xl font-black text-[#073d5b]">
-            لا توجد بيانات عارضين منشورة حاليًا
+            لا توجد نتائج مطابقة
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#073d5b]/55">
-            سيظهر الدليل هنا مباشرة بعد إدخال واعتماد أسماء الجهات وتصنيفاتها
-            ومواقع أجنحتها.
+            استخدم اسم العارض أو التصنيف للعثور على الجهة المطلوبة.
           </p>
         </div>
       )}

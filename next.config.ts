@@ -11,6 +11,21 @@ const nextConfig: NextConfig = {
         destination: "https://anbarexpo.com/:path*",
         permanent: true,
       },
+      {
+        source: "/events/:path*",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/events",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/:legacy(exhibitors|visitors|media|partners|about)",
+        destination: "/",
+        permanent: false,
+      },
     ];
   },
   turbopack: {

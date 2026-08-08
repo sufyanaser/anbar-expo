@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "ANBAR EXPO | معرض الأنبار الدولي",
+    name: "ANBAR EXPO",
     short_name: "ANBAR EXPO",
-    description: "المنصة الرسمية للمعارض والفعاليات الدولية في الأنبار.",
+    description: "الموقع قيد الإعداد.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f8f5ef",
-    theme_color: "#2f221d",
+    background_color: "#161412",
+    theme_color: "#161412",
     lang: "ar",
     dir: "rtl",
   };

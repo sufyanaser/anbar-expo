@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Noto_Sans_Arabic } from "next/font/google";
 
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -25,24 +23,22 @@ const notoSansArabic = Noto_Sans_Arabic({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
+  title: siteConfig.name,
+  description: "الموقع قيد الإعداد.",
   alternates: { canonical: "/" },
+  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
     locale: "ar_IQ",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: siteConfig.name,
+    description: "الموقع قيد الإعداد.",
   },
   twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
+    card: "summary",
+    title: siteConfig.name,
+    description: "الموقع قيد الإعداد.",
   },
 };
 
@@ -56,15 +52,11 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="min-h-full">
         <a className="skip-link" href="#main-content">
           انتقل إلى المحتوى الرئيسي
         </a>
-        <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <main id="main-content">{children}</main>
       </body>
     </html>
   );

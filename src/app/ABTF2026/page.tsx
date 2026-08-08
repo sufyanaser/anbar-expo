@@ -33,7 +33,7 @@ export default function Abtf2026Page() {
         </div>
       </header>
 
-      <main>
+      <div>
         <section className="relative isolate overflow-hidden border-b border-black/10 bg-[#1a1715] text-[#f5f0e8]">
           <div
             className="absolute inset-0 -z-10 opacity-40"
@@ -162,7 +162,7 @@ export default function Abtf2026Page() {
             </ol>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className="bg-[#1a1715] text-[#f5f0e8]">
         <div className="mx-auto flex w-[min(100%-2rem,80rem)] flex-col gap-4 py-8 text-xs text-white/42 sm:flex-row sm:items-center sm:justify-between">

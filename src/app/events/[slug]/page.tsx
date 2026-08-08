@@ -38,7 +38,7 @@ export default async function EventPage({ params }: EventPageProps) {
             <StatusBadge status={event.status} />
             <span className="text-sm text-white/55">{event.category}</span>
           </div>
-          <h1 className="mt-8 max-w-5xl text-4xl font-normal text-balance sm:text-6xl">
+          <h1 className="mt-8 max-w-5xl text-4xl font-black text-balance sm:text-6xl">
             {event.titleAr}
           </h1>
           <p

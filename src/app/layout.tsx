@@ -22,38 +22,33 @@ const notoSansArabic = Noto_Sans_Arabic({
   display: "swap",
 });
 
-const asalArabic = localFont({
-  variable: "--font-asal-arabic",
+const qomraArabic = localFont({
+  variable: "--font-qomra-arabic",
   display: "swap",
   fallback: ["Noto Sans Arabic", "Tahoma", "Arial"],
   src: [
     {
-      path: "./fonts/Asal Arabic ITF light.otf",
+      path: "./fonts/qomra/QomraArabicitf-Light.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/Asal Arabic ITF Regular.otf",
+      path: "./fonts/qomra/QomraArabicitf-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/Asal Arabic ITF Medium.otf",
+      path: "./fonts/qomra/QomraArabicitf-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/Asal Arabic ITF Bold.otf",
+      path: "./fonts/qomra/QomraArabicitf-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/Asal Arabic ITF Extra Bold.otf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Asal Arabic ITF Black.otf",
+      path: "./fonts/qomra/QomraArabicitf-Black.otf",
       weight: "900",
       style: "normal",
     },
@@ -89,7 +84,7 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} ${asalArabic.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} ${qomraArabic.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <a className="skip-link" href="#main-content">

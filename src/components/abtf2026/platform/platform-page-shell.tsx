@@ -47,7 +47,7 @@ export function PlatformPageShell({
                   </p>
                 </div>
               </div>
-              <h1 className="mt-8 text-4xl leading-tight font-normal sm:text-6xl">
+              <h1 className="mt-8 text-4xl leading-tight font-black sm:text-6xl">
                 {module.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/66 sm:text-lg sm:leading-9">

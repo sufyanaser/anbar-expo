@@ -53,7 +53,7 @@ export default function MediaSponsorPage() {
             <p className="mt-10 text-sm font-normal tracking-[0.14em] text-white/72">
               {abtf2026.mediaSponsor.label}
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl leading-[1.3] font-normal sm:text-6xl">
+            <h1 className="mt-4 max-w-3xl text-4xl leading-[1.3] font-black sm:text-6xl">
               {abtf2026.mediaSponsor.name}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">

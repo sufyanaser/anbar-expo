@@ -18,7 +18,7 @@ export default function HomePage() {
         className="w-full max-w-2xl text-center"
         aria-labelledby="site-title"
       >
-        <h1 id="site-title" className="text-3xl font-normal sm:text-5xl">
+        <h1 id="site-title" className="text-3xl font-black sm:text-5xl">
           الموقع قيد الإعداد
         </h1>
         <p className="mx-auto mt-6 max-w-md text-sm leading-8 text-white/55 sm:text-base">

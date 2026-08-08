@@ -58,7 +58,7 @@ export default function AlWasefPage() {
             <p className="mt-10 text-xs font-normal tracking-[0.15em] text-[#f0c64f]">
               الجهة المنظمة
             </p>
-            <h1 className="mt-4 max-w-4xl text-4xl leading-[1.3] font-normal sm:text-6xl">
+            <h1 className="mt-4 max-w-4xl text-4xl leading-[1.3] font-black sm:text-6xl">
               {alWasef.name}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-white/68 sm:text-lg sm:leading-9">

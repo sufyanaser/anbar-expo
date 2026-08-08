@@ -64,7 +64,7 @@ export function EventHero() {
             </p>
           </div>
 
-          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-normal sm:text-6xl lg:text-[4.6rem]">
+          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-black sm:text-6xl lg:text-[4.6rem]">
             معرض الأنبار الدولي
             <span className="mt-1 block whitespace-nowrap text-[clamp(1.45rem,6.4vw,4.25rem)] text-[#f0c64f]">
               للكتاب والتكنولوجيا الحديثة

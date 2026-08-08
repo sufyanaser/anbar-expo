@@ -62,7 +62,7 @@ export default function MediaSponsorPage() {
             </p>
           </div>
 
-          <div className="relative flex size-48 items-center justify-center overflow-hidden rounded-[2rem] border border-white/65 bg-[linear-gradient(145deg,rgba(255,255,255,0.72)_0%,rgba(226,232,240,0.42)_48%,rgba(255,255,255,0.2)_100%)] p-7 shadow-[0_24px_65px_rgba(0,31,38,0.3),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-xl before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent sm:size-56">
+          <div className="relative flex size-48 items-center justify-center overflow-hidden rounded-[2rem] border border-white/85 bg-[linear-gradient(145deg,rgba(255,255,255,0.94)_0%,rgba(248,250,252,0.82)_50%,rgba(226,232,240,0.68)_100%)] p-7 shadow-[0_24px_65px_rgba(0,31,38,0.26),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-xl before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent sm:size-56">
             <Image
               src={abtf2026.mediaSponsor.mark}
               width={490}

@@ -1,0 +1,61 @@
+export const abtf2026 = {
+  shortName: "ABTF 2026",
+  titleAr: "معرض الأنبار الدولي للكتاب والتكنولوجيا الحديثة",
+  titleEn: "Anbar Book & Technology Fair 2026",
+  eventMark: "/brand/abtf2026/event-mark.svg",
+  iraqEmblem: "/brand/abtf2026/iraq-emblem.svg",
+  opening: {
+    label: "الافتتاح",
+    date: "16 / 09 / 2026",
+    time: "6:00 مساءً",
+    dateTime: "2026-09-16T18:00:00+03:00",
+  },
+  officialEntities: [
+    {
+      label: "برعاية",
+      name: "المهندس عمر مشعان دبوس",
+      detail: "محافظ الأنبار",
+    },
+    {
+      label: "إشراف",
+      name: "وزارة الثقافة والسياحة والآثار",
+      detail: "جمهورية العراق",
+    },
+    {
+      label: "تنظيم",
+      name: "شركة الواصف الملكية",
+      detail: "لتنظيم المؤتمرات والمعارض الدولية",
+    },
+  ],
+  concurrentEvent: "معرض صُنع في سوريا",
+  partnerMarks: [
+    { src: "/brand/abtf2026/partner-01.svg", width: 2328, height: 2398 },
+    { src: "/brand/abtf2026/partner-02.svg", width: 2328, height: 2398 },
+    { src: "/brand/abtf2026/partner-03.svg", width: 2328, height: 2398 },
+    { src: "/brand/abtf2026/partner-04.webp", width: 640, height: 640 },
+    { src: "/brand/abtf2026/organizer-mark.svg", width: 2328, height: 2398 },
+    {
+      src: "/brand/abtf2026/anbar-governorate.webp",
+      width: 621,
+      height: 640,
+    },
+    { src: "/brand/abtf2026/partner-07.svg", width: 2328, height: 2398 },
+  ],
+  platformModules: [
+    {
+      number: "01",
+      title: "دليل العارضين",
+      description: "مساحة مخصصة لعرض الجهات المشاركة بعد اعتمادها.",
+    },
+    {
+      number: "02",
+      title: "برنامج الفعاليات",
+      description: "البرنامج اليومي والجلسات والأنشطة عند نشرها رسميًا.",
+    },
+    {
+      number: "03",
+      title: "دليل الزائر",
+      description: "معلومات الزيارة والخدمات المساندة بعد اكتمالها.",
+    },
+  ],
+} as const;

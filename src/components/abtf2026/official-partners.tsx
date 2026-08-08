@@ -35,22 +35,26 @@ export function OfficialPartners() {
               <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
                 {entity.label}
               </p>
-              <div className="mt-8 flex h-28 items-center justify-center rounded-xl border border-[#073d5b]/8 bg-[#f7f5ef] p-4">
-                <Image
-                  src={entity.mark.src}
-                  width={entity.mark.width}
-                  height={entity.mark.height}
-                  alt={entity.mark.alt}
-                  className="max-h-full w-auto object-contain"
-                  unoptimized={entity.mark.src.endsWith(".svg")}
-                />
+              <div className="mt-6 flex items-center justify-between gap-5">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xl leading-8 font-black text-[#073d5b]">
+                    {entity.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-black/48">
+                    {entity.detail}
+                  </p>
+                </div>
+                <div className="flex size-20 shrink-0 items-center justify-center rounded-xl border border-[#073d5b]/8 bg-[#f7f5ef] p-3 sm:size-24">
+                  <Image
+                    src={entity.mark.src}
+                    width={entity.mark.width}
+                    height={entity.mark.height}
+                    alt={entity.mark.alt}
+                    className="max-h-full w-auto object-contain"
+                    unoptimized={entity.mark.src.endsWith(".svg")}
+                  />
+                </div>
               </div>
-              <h3 className="mt-6 max-w-xs text-xl leading-8 font-black text-[#073d5b]">
-                {entity.name}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-black/48">
-                {entity.detail}
-              </p>
             </article>
           ))}
         </div>

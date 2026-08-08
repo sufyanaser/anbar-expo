@@ -12,7 +12,7 @@ const navigation = [
 export function EventHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#042f49]/95 text-white backdrop-blur">
-      <div className="mx-auto flex min-h-20 w-[min(100%-2rem,80rem)] items-center justify-between gap-6">
+      <div className="mx-auto flex min-h-18 w-[min(100%-2rem,80rem)] items-center justify-between gap-6 sm:min-h-20">
         <Link
           href="/ABTF2026"
           className="flex shrink-0 items-center gap-3 rounded-sm focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
@@ -59,6 +59,35 @@ export function EventHeader() {
         >
           16 / 09 / 2026
         </Link>
+      </div>
+
+      <div className="border-t border-white/10 bg-[#f7f5ef] text-[#073d5b]">
+        <div className="mx-auto flex h-16 w-[min(100%-1rem,80rem)] items-center gap-3 overflow-x-auto sm:w-[min(100%-2rem,80rem)] lg:h-[4.5rem] lg:overflow-visible">
+          <p className="hidden w-36 shrink-0 text-xs leading-5 font-black text-[#073d5b]/58 lg:block">
+            الشعارات الواردة في المادة الرسمية للمعرض
+          </p>
+          <div
+            dir="rtl"
+            className="grid min-w-[37rem] flex-1 grid-cols-7 items-center gap-2 lg:min-w-0"
+            aria-label="الشعارات الرسمية للمعرض"
+          >
+            {abtf2026.partnerMarks.map((mark) => (
+              <div
+                key={mark.src}
+                className="flex h-12 items-center justify-center rounded-lg border border-[#073d5b]/8 bg-white px-2 py-1.5 lg:h-14"
+              >
+                <Image
+                  src={mark.src}
+                  width={mark.width}
+                  height={mark.height}
+                  alt={mark.alt}
+                  className="max-h-full w-auto object-contain"
+                  unoptimized={mark.src.endsWith(".svg")}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </header>
   );

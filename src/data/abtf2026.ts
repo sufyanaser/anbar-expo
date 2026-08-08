@@ -21,19 +21,42 @@ export const abtf2026 = {
       label: "برعاية",
       name: "المهندس عمر مشعان دبوس",
       detail: "محافظ الأنبار",
+      mark: {
+        src: "/brand/abtf2026/anbar-governorate.webp",
+        width: 621,
+        height: 640,
+        alt: "شعار محافظة الأنبار",
+      },
     },
     {
       label: "إشراف",
       name: "وزارة الثقافة والسياحة والآثار",
       detail: "جمهورية العراق",
+      mark: {
+        src: "/brand/abtf2026/partner-07.svg",
+        width: 2328,
+        height: 2398,
+        alt: "شعار وزارة الثقافة والسياحة والآثار",
+      },
     },
     {
       label: "تنظيم",
       name: "شركة الواصف الملكية",
       detail: "لتنظيم المؤتمرات والمعارض الدولية",
+      mark: {
+        src: "/brand/abtf2026/organizer-mark.svg",
+        width: 2328,
+        height: 2398,
+        alt: "شعار شركة الواصف الملكية",
+      },
     },
   ],
   concurrentEvent: "معرض صُنع في سوريا",
+  mediaSponsor: {
+    label: "الراعي الإعلامي والوكيل الإعلاني",
+    name: "الرنين للحلول الإعلامية والرقمية",
+    mark: "/brand/abtf2026/al-raneen-mark.webp",
+  },
   partnerMarks: [
     {
       src: "/brand/abtf2026/partner-07.svg",

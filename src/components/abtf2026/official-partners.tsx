@@ -33,7 +33,17 @@ export function OfficialPartners() {
               <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
                 {entity.label}
               </p>
-              <h3 className="mt-8 max-w-xs text-xl leading-8 font-black text-[#073d5b]">
+              <div className="mt-8 flex h-28 items-center justify-center rounded-xl border border-[#073d5b]/8 bg-[#f7f5ef] p-4">
+                <Image
+                  src={entity.mark.src}
+                  width={entity.mark.width}
+                  height={entity.mark.height}
+                  alt={entity.mark.alt}
+                  className="max-h-full w-auto object-contain"
+                  unoptimized={entity.mark.src.endsWith(".svg")}
+                />
+              </div>
+              <h3 className="mt-6 max-w-xs text-xl leading-8 font-black text-[#073d5b]">
                 {entity.name}
               </h3>
               <p className="mt-2 text-sm leading-7 text-black/48">
@@ -64,30 +74,24 @@ export function OfficialPartners() {
           </span>
         </div>
 
-        <div className="mt-16 border-t border-[#073d5b]/12 pt-10">
-          <p className="text-center text-sm font-bold text-[#073d5b]/55">
-            الشعارات الواردة في المادة الرسمية للمعرض
-          </p>
-          <div
-            dir="rtl"
-            className="mt-8 grid grid-cols-3 items-center gap-4 sm:grid-cols-4 lg:grid-cols-7"
-          >
-            {abtf2026.partnerMarks.map((mark) => (
-              <div
-                key={mark.src}
-                className="flex aspect-square items-center justify-center rounded-2xl border border-[#073d5b]/10 bg-white p-4 shadow-sm"
-              >
-                <Image
-                  src={mark.src}
-                  width={mark.width}
-                  height={mark.height}
-                  alt={mark.alt}
-                  className="max-h-full w-auto object-contain"
-                  unoptimized={mark.src.endsWith(".svg")}
-                />
-              </div>
-            ))}
+        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#087c49]/15 bg-white px-6 py-7 sm:flex-row sm:px-9">
+          <div>
+            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+              {abtf2026.mediaSponsor.label}
+            </p>
+            <p className="mt-2 text-2xl font-black text-[#073d5b]">
+              {abtf2026.mediaSponsor.name}
+            </p>
           </div>
+          <span className="flex size-20 items-center justify-center rounded-2xl border border-[#073d5b]/10 bg-white p-2 shadow-sm">
+            <Image
+              src={abtf2026.mediaSponsor.mark}
+              width={640}
+              height={640}
+              alt={`شعار ${abtf2026.mediaSponsor.name}`}
+              className="max-h-full w-auto object-contain"
+            />
+          </span>
         </div>
       </div>
     </section>

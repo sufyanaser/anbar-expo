@@ -1,6 +1,7 @@
 import { ArrowDown, CalendarDays, Clock3 } from "lucide-react";
 import Image from "next/image";
 
+import { EventCountdown } from "@/components/abtf2026/event-countdown";
 import { abtf2026 } from "@/data/abtf2026";
 
 export function EventHero() {
@@ -45,7 +46,7 @@ export function EventHero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid min-h-[calc(100svh-5rem)] w-[min(100%-2rem,80rem)] items-center gap-14 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
+      <div className="mx-auto grid min-h-[calc(100svh-8.5rem)] w-[min(100%-2rem,80rem)] items-center gap-14 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
         <div className="drop-shadow-[0_2px_16px_rgba(0,0,0,0.34)]">
           <div className="flex items-center gap-4">
             <Image
@@ -63,9 +64,9 @@ export function EventHero() {
             </p>
           </div>
 
-          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-black text-balance sm:text-6xl lg:text-[4.6rem]">
+          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-black sm:text-6xl lg:text-[4.6rem]">
             معرض الأنبار الدولي
-            <span className="mt-1 block text-[#f0c64f]">
+            <span className="mt-1 block whitespace-nowrap text-[clamp(1.45rem,6.4vw,4.25rem)] text-[#f0c64f]">
               للكتاب والتكنولوجيا الحديثة
             </span>
           </h1>
@@ -130,6 +131,10 @@ export function EventHero() {
                 {abtf2026.opening.time}
               </time>
             </div>
+          </div>
+
+          <div className="mx-4 mt-3 sm:mx-8">
+            <EventCountdown targetDate={abtf2026.opening.dateTime} />
           </div>
         </div>
       </div>

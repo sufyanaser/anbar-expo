@@ -29,17 +29,48 @@ export const abtf2026 = {
   ],
   concurrentEvent: "معرض صُنع في سوريا",
   partnerMarks: [
-    { src: "/brand/abtf2026/partner-01.svg", width: 2328, height: 2398 },
-    { src: "/brand/abtf2026/partner-02.svg", width: 2328, height: 2398 },
-    { src: "/brand/abtf2026/partner-03.svg", width: 2328, height: 2398 },
-    { src: "/brand/abtf2026/partner-04.webp", width: 640, height: 640 },
-    { src: "/brand/abtf2026/organizer-mark.svg", width: 2328, height: 2398 },
+    {
+      src: "/brand/abtf2026/partner-07.svg",
+      width: 2328,
+      height: 2398,
+      alt: "وزارة الثقافة والسياحة والآثار",
+    },
     {
       src: "/brand/abtf2026/anbar-governorate.webp",
       width: 621,
       height: 640,
+      alt: "محافظة الأنبار",
     },
-    { src: "/brand/abtf2026/partner-07.svg", width: 2328, height: 2398 },
+    {
+      src: "/brand/abtf2026/organizer-mark.svg",
+      width: 2328,
+      height: 2398,
+      alt: "شركة الواصف الملكية",
+    },
+    {
+      src: "/brand/abtf2026/partner-04.webp",
+      width: 640,
+      height: 640,
+      alt: "شركة الرنين للحلول الإعلامية والرقمية",
+    },
+    {
+      src: "/brand/abtf2026/partner-03.svg",
+      width: 2328,
+      height: 2398,
+      alt: "صُنع في سوريا",
+    },
+    {
+      src: "/brand/abtf2026/partner-02.svg",
+      width: 2328,
+      height: 2398,
+      alt: "شركة بيت الحكمة للتدريب والاستشارات BHTC",
+    },
+    {
+      src: "/brand/abtf2026/partner-01.svg",
+      width: 2328,
+      height: 2398,
+      alt: "ألفا للمعارض والمؤتمرات",
+    },
   ],
   platformModules: [
     {

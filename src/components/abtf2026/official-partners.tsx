@@ -68,7 +68,10 @@ export function OfficialPartners() {
           <p className="text-center text-sm font-bold text-[#073d5b]/55">
             الشعارات الواردة في المادة الرسمية للمعرض
           </p>
-          <div className="mt-8 grid grid-cols-3 items-center gap-4 sm:grid-cols-4 lg:grid-cols-7">
+          <div
+            dir="rtl"
+            className="mt-8 grid grid-cols-3 items-center gap-4 sm:grid-cols-4 lg:grid-cols-7"
+          >
             {abtf2026.partnerMarks.map((mark) => (
               <div
                 key={mark.src}
@@ -78,7 +81,7 @@ export function OfficialPartners() {
                   src={mark.src}
                   width={mark.width}
                   height={mark.height}
-                  alt=""
+                  alt={mark.alt}
                   className="max-h-full w-auto object-contain"
                   unoptimized={mark.src.endsWith(".svg")}
                 />

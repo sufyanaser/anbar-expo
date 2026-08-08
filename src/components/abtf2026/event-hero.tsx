@@ -80,10 +80,10 @@ export function EventHero() {
             الفعاليات وخدمات الزوار عند اعتمادها ونشرها.
           </p>
           <a
-            href="#official"
+            href="#platform"
             className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#0a7b49] px-6 py-3 text-sm font-black text-white transition-colors hover:bg-[#0d9157] focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
           >
-            التفاصيل الرسمية
+            استكشف أقسام المنصة
             <ArrowDown className="size-4" aria-hidden="true" />
           </a>
         </div>

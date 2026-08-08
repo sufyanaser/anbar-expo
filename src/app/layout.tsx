@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Noto_Sans_Arabic } from "next/font/google";
+import localFont from "next/font/local";
 
 import { siteConfig } from "@/data/site";
 import "./globals.css";
@@ -19,6 +20,44 @@ const notoSansArabic = Noto_Sans_Arabic({
   variable: "--font-noto-arabic",
   subsets: ["arabic"],
   display: "swap",
+});
+
+const asalArabic = localFont({
+  variable: "--font-asal-arabic",
+  display: "swap",
+  fallback: ["Noto Sans Arabic", "Tahoma", "Arial"],
+  src: [
+    {
+      path: "./fonts/Asal Arabic ITF light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asal Arabic ITF Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asal Arabic ITF Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asal Arabic ITF Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asal Arabic ITF Extra Bold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asal Arabic ITF Black.otf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -50,7 +89,7 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} ${asalArabic.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <a className="skip-link" href="#main-content">

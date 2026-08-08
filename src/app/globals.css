@@ -27,7 +27,8 @@
   --color-paper: var(--paper);
   --color-sand: var(--sand);
   --color-copper: var(--copper);
-  --font-sans: "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  --font-sans:
+    var(--font-asal-arabic), var(--font-noto-arabic), Tahoma, Arial, sans-serif;
   --font-latin: "Geist", "Geist Fallback", Arial, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
   --radius-sm: calc(var(--radius) * 0.6);
@@ -74,7 +75,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-noto-arabic), Tahoma, Arial, sans-serif;
+    font-family:
+      var(--font-asal-arabic), var(--font-noto-arabic), Tahoma, Arial,
+      sans-serif;
     text-rendering: optimizeLegibility;
   }
 

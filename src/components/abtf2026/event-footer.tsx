@@ -1,16 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { abtf2026 } from "@/data/abtf2026";
+import { platformModules } from "@/data/abtf-platform";
 
 export function EventFooter() {
   return (
     <footer className="bg-[#021d30] text-white">
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
-        <div className="flex flex-col gap-4 py-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-latin font-black tracking-[0.18em]">
-            {abtf2026.shortName}
-          </p>
-          <p>المعلومات المنشورة مطابقة للمادة الرسمية المرفقة للمعرض.</p>
+        <div className="grid gap-8 py-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+          <div>
+            <p className="font-latin text-sm font-black tracking-[0.18em]">
+              {abtf2026.shortName}
+            </p>
+            <p className="mt-3 max-w-sm text-xs leading-6 text-white/45">
+              المعلومات المنشورة مطابقة للمادة الرسمية المرفقة للمعرض.
+            </p>
+          </div>
+
+          <nav aria-label="أقسام منصة المعرض">
+            <p className="text-xs font-black text-[#f0c64f]">أقسام المنصة</p>
+            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-xs sm:grid-cols-3 lg:grid-cols-4">
+              {platformModules.map((module) => (
+                <li key={module.id}>
+                  <Link
+                    href={module.href}
+                    className="rounded-sm text-white/52 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+                  >
+                    {module.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         <div className="border-t border-white/10 py-7">

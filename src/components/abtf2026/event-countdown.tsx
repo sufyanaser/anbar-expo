@@ -45,7 +45,7 @@ export function EventCountdown({ targetDate }: { targetDate: string }) {
   if (countdown?.started) {
     return (
       <div className="rounded-xl border border-white/14 bg-[#042f49]/94 px-6 py-5 text-center text-white shadow-xl">
-        <p className="text-sm font-black text-[#f0c64f]">انطلق المعرض</p>
+        <p className="text-sm font-normal text-[#f0c64f]">انطلق المعرض</p>
       </div>
     );
   }
@@ -55,7 +55,7 @@ export function EventCountdown({ targetDate }: { targetDate: string }) {
       className="rounded-xl border border-white/14 bg-[#042f49]/94 p-4 text-white shadow-xl sm:p-5"
       aria-label="الوقت المتبقي لانطلاق المعرض"
     >
-      <p className="text-center text-xs font-black tracking-[0.12em] text-[#f0c64f]">
+      <p className="text-center text-xs font-normal tracking-[0.12em] text-[#f0c64f]">
         متبقي على انطلاق المعرض
       </p>
       <div className="mt-4 grid grid-cols-4 gap-2" dir="ltr">
@@ -64,7 +64,7 @@ export function EventCountdown({ targetDate }: { targetDate: string }) {
             key={unit.key}
             className="rounded-lg border border-white/10 bg-white/7 px-2 py-3 text-center"
           >
-            <span className="font-latin block text-xl font-black tabular-nums sm:text-2xl">
+            <span className="font-latin block text-xl font-normal tabular-nums sm:text-2xl">
               {countdown ? String(countdown[unit.key]).padStart(2, "0") : "--"}
             </span>
             <span className="mt-1 block text-[0.68rem] font-bold text-white/58">

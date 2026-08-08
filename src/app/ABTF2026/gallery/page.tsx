@@ -30,10 +30,10 @@ export default function GalleryPage() {
               />
             </div>
             <figcaption className="p-6">
-              <p className="text-xs font-black text-[#087c49]">
+              <p className="text-xs font-normal text-[#087c49]">
                 صورة واجهة المنصة
               </p>
-              <h2 className="mt-2 text-2xl font-black text-[#073d5b]">
+              <h2 className="mt-2 text-2xl font-normal text-[#073d5b]">
                 {entry.title}
               </h2>
             </figcaption>
@@ -41,8 +41,8 @@ export default function GalleryPage() {
         ))}
 
         <aside className="rounded-3xl bg-[#e8f0eb] p-7">
-          <p className="text-xs font-black text-[#087c49]">ألبومات المعرض</p>
-          <h2 className="mt-3 text-2xl font-black text-[#073d5b]">
+          <p className="text-xs font-normal text-[#087c49]">ألبومات المعرض</p>
+          <h2 className="mt-3 text-2xl font-normal text-[#073d5b]">
             توثيق متجدد لأيام المعرض
           </h2>
           <p className="mt-4 text-sm leading-7 text-[#073d5b]/55">

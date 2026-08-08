@@ -10,7 +10,7 @@ export function EventFooter() {
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="grid gap-8 py-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
           <div>
-            <p className="font-latin text-sm font-black tracking-[0.18em]">
+            <p className="font-latin text-sm font-normal tracking-[0.18em]">
               {abtf2026.shortName}
             </p>
             <p className="mt-3 max-w-sm text-xs leading-6 text-white/45">
@@ -19,7 +19,7 @@ export function EventFooter() {
           </div>
 
           <nav aria-label="أقسام منصة المعرض">
-            <p className="text-xs font-black text-[#f0c64f]">أقسام المنصة</p>
+            <p className="text-xs font-normal text-[#f0c64f]">أقسام المنصة</p>
             <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-xs sm:grid-cols-3 lg:grid-cols-4">
               {platformModules.map((module) => (
                 <li key={module.id}>
@@ -52,7 +52,7 @@ export function EventFooter() {
                 <p className="text-xs leading-6 text-white/48">
                   {abtf2026.platformOperator.credit}
                 </p>
-                <p className="mt-1 text-sm font-black text-white sm:text-base">
+                <p className="mt-1 text-sm font-normal text-white sm:text-base">
                   {abtf2026.platformOperator.name}
                 </p>
               </div>

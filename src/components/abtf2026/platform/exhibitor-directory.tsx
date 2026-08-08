@@ -79,7 +79,7 @@ export function ExhibitorDirectory({
               className="rounded-2xl border border-[#073d5b]/10 bg-white p-6"
             >
               <Store className="size-6 text-[#087c49]" aria-hidden="true" />
-              <h2 className="mt-6 text-xl font-black text-[#073d5b]">
+              <h2 className="mt-6 text-xl font-normal text-[#073d5b]">
                 {exhibitor.name}
               </h2>
               <p className="mt-2 text-sm text-[#073d5b]/55">
@@ -95,7 +95,7 @@ export function ExhibitorDirectory({
       ) : (
         <div className="rounded-3xl border border-dashed border-[#073d5b]/20 bg-white px-6 py-14 text-center">
           <Store className="mx-auto size-8 text-[#087c49]" aria-hidden="true" />
-          <h2 className="mt-5 text-xl font-black text-[#073d5b]">
+          <h2 className="mt-5 text-xl font-normal text-[#073d5b]">
             لا توجد نتائج مطابقة
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#073d5b]/55">

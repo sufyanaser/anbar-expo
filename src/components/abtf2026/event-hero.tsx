@@ -64,7 +64,7 @@ export function EventHero() {
             </p>
           </div>
 
-          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-black sm:text-6xl lg:text-[4.6rem]">
+          <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-normal sm:text-6xl lg:text-[4.6rem]">
             معرض الأنبار الدولي
             <span className="mt-1 block whitespace-nowrap text-[clamp(1.45rem,6.4vw,4.25rem)] text-[#f0c64f]">
               للكتاب والتكنولوجيا الحديثة
@@ -82,7 +82,7 @@ export function EventHero() {
           </p>
           <a
             href="#platform"
-            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#0a7b49] px-6 py-3 text-sm font-black text-white transition-colors hover:bg-[#0d9157] focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#0a7b49] px-6 py-3 text-sm font-normal text-white transition-colors hover:bg-[#0d9157] focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
           >
             استكشف أقسام المنصة
             <ArrowDown className="size-4" aria-hidden="true" />
@@ -107,26 +107,26 @@ export function EventHero() {
             className="relative mx-4 -mt-3 grid gap-px overflow-hidden rounded-xl border border-[#e5b834]/35 bg-[#e5b834]/35 shadow-xl sm:mx-8 sm:grid-cols-2"
           >
             <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
-              <p className="flex items-center gap-2 text-xs font-black">
+              <p className="flex items-center gap-2 text-xs font-normal">
                 <CalendarDays className="size-4" aria-hidden="true" />
                 {abtf2026.opening.label}
               </p>
               <time
                 dateTime={abtf2026.opening.dateTime}
-                className="font-latin mt-2 block text-xl font-black tracking-wide"
+                className="font-latin mt-2 block text-xl font-normal tracking-wide"
                 dir="ltr"
               >
                 {abtf2026.opening.date}
               </time>
             </div>
             <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
-              <p className="flex items-center gap-2 text-xs font-black">
+              <p className="flex items-center gap-2 text-xs font-normal">
                 <Clock3 className="size-4" aria-hidden="true" />
                 الساعة
               </p>
               <time
                 dateTime={abtf2026.opening.dateTime}
-                className="mt-2 block text-xl font-black"
+                className="mt-2 block text-xl font-normal"
               >
                 {abtf2026.opening.time}
               </time>

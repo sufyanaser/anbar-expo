@@ -29,7 +29,7 @@ export function EventHeader() {
             />
           </span>
           <span>
-            <span className="font-latin block text-xs font-black tracking-[0.16em] sm:text-sm sm:tracking-[0.18em]">
+            <span className="font-latin block text-xs font-normal tracking-[0.16em] sm:text-sm sm:tracking-[0.18em]">
               {abtf2026.shortName}
             </span>
             <span className="mt-1 block max-w-36 text-[0.52rem] leading-4 font-bold text-white/55 sm:max-w-none sm:text-[0.66rem]">

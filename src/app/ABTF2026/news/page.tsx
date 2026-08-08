@@ -30,12 +30,12 @@ export default function NewsPage() {
             >
               <time
                 dateTime={entry.publishedAt}
-                className="font-latin text-xs font-black text-[#087c49]"
+                className="font-latin text-xs font-normal text-[#087c49]"
                 dir="ltr"
               >
                 {entry.publishedAt}
               </time>
-              <h2 className="mt-6 text-xl leading-8 font-black text-[#073d5b]">
+              <h2 className="mt-6 text-xl leading-8 font-normal text-[#073d5b]">
                 {entry.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-[#073d5b]/52">
@@ -43,7 +43,7 @@ export default function NewsPage() {
               </p>
               <Link
                 href={`/ABTF2026/news/${entry.slug}`}
-                className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-black text-[#087c49]"
+                className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-normal text-[#087c49]"
               >
                 قراءة الخبر
                 <ArrowLeft className="size-4" aria-hidden="true" />

@@ -9,10 +9,10 @@ export function OfficialPartners() {
     <section id="official" className="bg-[#f7f5ef] py-20 sm:py-28">
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="max-w-3xl">
-          <p className="text-xs font-black tracking-[0.16em] text-[#087c49]">
+          <p className="text-xs font-normal tracking-[0.16em] text-[#087c49]">
             الإطار الرسمي
           </p>
-          <h2 className="mt-4 text-3xl font-black text-[#073d5b] sm:text-5xl">
+          <h2 className="mt-4 text-3xl font-normal text-[#073d5b] sm:text-5xl">
             الرعاية والإشراف والتنظيم
           </h2>
         </div>
@@ -33,17 +33,17 @@ export function OfficialPartners() {
                 </Link>
               )}
               <span
-                className="font-latin absolute end-7 top-7 text-xs font-black text-[#79500b]/65"
+                className="font-latin absolute end-7 top-7 text-xs font-normal text-[#79500b]/65"
                 aria-hidden="true"
               >
                 0{index + 1}
               </span>
-              <p className="text-xs font-black tracking-[0.14em] text-[#3a2605]">
+              <p className="text-xs font-normal tracking-[0.14em] text-[#3a2605]">
                 {entity.label}
               </p>
               <div className="mt-6 flex items-center justify-between gap-5">
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl leading-8 font-black text-[#073d5b]">
+                  <h3 className="text-xl leading-8 font-normal text-[#073d5b]">
                     {entity.name}
                   </h3>
                   <div className="mt-2 flex items-center gap-2 text-sm leading-7 text-[#3a2605]">
@@ -73,10 +73,10 @@ export function OfficialPartners() {
 
         <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white px-6 py-7 text-[#073d5b] shadow-sm sm:flex-row sm:px-9">
           <div>
-            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+            <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               بالتزامن مع
             </p>
-            <p className="mt-2 text-2xl font-black">
+            <p className="mt-2 text-2xl font-normal">
               {abtf2026.concurrentEvent}
             </p>
           </div>
@@ -106,10 +106,10 @@ export function OfficialPartners() {
             aria-hidden="true"
           />
           <span className="relative">
-            <span className="text-xs font-black tracking-[0.14em] text-white/76">
+            <span className="text-xs font-normal tracking-[0.14em] text-white/76">
               {abtf2026.mediaSponsor.label}
             </span>
-            <span className="mt-2 block text-2xl font-black">
+            <span className="mt-2 block text-2xl font-normal">
               {abtf2026.mediaSponsor.name}
             </span>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white/82">

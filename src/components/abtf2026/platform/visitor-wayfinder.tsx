@@ -69,8 +69,8 @@ export function VisitorWayfinder({
         <div className="flex items-center gap-3">
           <Search className="size-6 text-[#087c49]" aria-hidden="true" />
           <div>
-            <p className="text-xs font-black text-[#087c49]">البحث الموحد</p>
-            <h2 className="mt-1 text-2xl font-black text-[#073d5b]">
+            <p className="text-xs font-normal text-[#087c49]">البحث الموحد</p>
+            <h2 className="mt-1 text-2xl font-normal text-[#073d5b]">
               ابحث عن جهة أو عارض
             </h2>
           </div>
@@ -92,14 +92,14 @@ export function VisitorWayfinder({
         </label>
 
         <fieldset className="mt-5">
-          <legend className="text-xs font-black text-[#073d5b]/55">
+          <legend className="text-xs font-normal text-[#073d5b]/55">
             تصفية حسب البناية
           </legend>
           <div className="mt-3 flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setBuilding("all")}
-              className={`min-h-11 rounded-full px-4 text-xs font-black transition-colors ${
+              className={`min-h-11 rounded-full px-4 text-xs font-normal transition-colors ${
                 building === "all"
                   ? "bg-[#073d5b] text-white"
                   : "bg-[#e8f0eb] text-[#073d5b] hover:bg-[#dce9e1]"
@@ -112,7 +112,7 @@ export function VisitorWayfinder({
                 key={number}
                 type="button"
                 onClick={() => setBuilding(number)}
-                className={`min-h-11 rounded-full px-4 text-xs font-black transition-colors ${
+                className={`min-h-11 rounded-full px-4 text-xs font-normal transition-colors ${
                   building === number
                     ? "bg-[#073d5b] text-white"
                     : "bg-[#e8f0eb] text-[#073d5b] hover:bg-[#dce9e1]"
@@ -138,7 +138,7 @@ export function VisitorWayfinder({
                     className="flex w-full items-center justify-between gap-4 rounded-2xl border border-[#073d5b]/10 p-4 text-start hover:border-[#087c49]/40 hover:bg-[#e8f0eb]/50"
                   >
                     <span>
-                      <span className="block font-black text-[#073d5b]">
+                      <span className="block font-normal text-[#073d5b]">
                         {exhibitor.name}
                       </span>
                       <span className="mt-1 block text-xs text-[#073d5b]/50">
@@ -160,7 +160,7 @@ export function VisitorWayfinder({
                 className="mx-auto size-8 text-[#087c49]"
                 aria-hidden="true"
               />
-              <p className="mt-4 font-black text-[#073d5b]">
+              <p className="mt-4 font-normal text-[#073d5b]">
                 لا توجد نتائج مطابقة
               </p>
               <p className="mt-2 text-sm leading-7 text-[#073d5b]/52">
@@ -175,8 +175,8 @@ export function VisitorWayfinder({
         <span className="flex size-12 items-center justify-center rounded-2xl bg-white/10 text-[#f0c64f]">
           <Navigation className="size-6" aria-hidden="true" />
         </span>
-        <p className="mt-8 text-xs font-black text-[#f0c64f]">عرض المسار</p>
-        <h2 className="mt-3 text-3xl leading-tight font-black">
+        <p className="mt-8 text-xs font-normal text-[#f0c64f]">عرض المسار</p>
+        <h2 className="mt-3 text-3xl leading-tight font-normal">
           من موقع الزائر إلى الجهة المطلوبة
         </h2>
         <p className="mt-4 text-sm leading-7 text-white/58">
@@ -186,7 +186,7 @@ export function VisitorWayfinder({
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-white/6 p-5">
           <p className="text-xs font-bold text-white/45">الوجهة المحددة</p>
-          <p className="mt-2 font-black">
+          <p className="mt-2 font-normal">
             {selected ? selected.name : "لم تُحدد جهة بعد"}
           </p>
           {selected && (
@@ -201,7 +201,7 @@ export function VisitorWayfinder({
           type="button"
           onClick={openRoute}
           disabled={!selected?.coordinates}
-          className="mt-5 inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-[#f0c64f] px-5 text-sm font-black text-[#073d5b] transition-colors hover:bg-[#f6d778] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/35"
+          className="mt-5 inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-[#f0c64f] px-5 text-sm font-normal text-[#073d5b] transition-colors hover:bg-[#f6d778] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/35"
         >
           <Navigation className="size-4" aria-hidden="true" />
           عرض المسار عبر GPS

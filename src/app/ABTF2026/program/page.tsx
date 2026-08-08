@@ -38,7 +38,7 @@ export default function ProgramPage() {
             className="rounded-2xl border border-[#073d5b]/10 bg-white p-6"
           >
             <item.icon className="size-6 text-[#087c49]" aria-hidden="true" />
-            <h2 className="mt-5 text-lg font-black text-[#073d5b]">
+            <h2 className="mt-5 text-lg font-normal text-[#073d5b]">
               {item.title}
             </h2>
             <p className="mt-2 text-sm leading-7 text-[#073d5b]/52">
@@ -62,21 +62,21 @@ export default function ProgramPage() {
             >
               <time
                 dateTime={`${entry.date}T${entry.startsAt}`}
-                className="font-latin text-sm font-black text-[#087c49]"
+                className="font-latin text-sm font-normal text-[#087c49]"
                 dir="ltr"
               >
                 {entry.startsAt}
                 {entry.endsAt ? ` — ${entry.endsAt}` : ""}
               </time>
               <div>
-                <h2 className="text-xl font-black text-[#073d5b]">
+                <h2 className="text-xl font-normal text-[#073d5b]">
                   {entry.title}
                 </h2>
                 <p className="mt-2 text-sm text-[#073d5b]/52">
                   {[entry.location, entry.speaker].filter(Boolean).join(" · ")}
                 </p>
               </div>
-              <span className="w-fit rounded-full bg-[#e8f0eb] px-3 py-1.5 text-xs font-black text-[#087c49]">
+              <span className="w-fit rounded-full bg-[#e8f0eb] px-3 py-1.5 text-xs font-normal text-[#087c49]">
                 مجدولة
               </span>
             </li>

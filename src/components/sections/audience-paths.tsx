@@ -25,7 +25,7 @@ export function AudiencePaths() {
         {paths.map((path) => (
           <article key={path.href} className="bg-card p-8 sm:p-12">
             <p className="eyebrow">{path.eyebrow}</p>
-            <h2 className="text-ink mt-5 max-w-md text-3xl font-black leading-tight">
+            <h2 className="text-ink mt-5 max-w-md text-3xl font-normal leading-tight">
               {path.title}
             </h2>
             <p className="text-muted-foreground mt-5 max-w-lg leading-8">

@@ -18,7 +18,7 @@ export function EventCard({ event }: { event: ExhibitionEvent }) {
             التفاصيل الرسمية: TBA
           </span>
         </div>
-        <h2 className="text-ink mt-8 text-2xl font-black sm:text-3xl">
+        <h2 className="text-ink mt-8 text-2xl font-normal sm:text-3xl">
           {event.titleAr}
         </h2>
         <p className="font-latin text-muted-foreground mt-2 text-sm" dir="ltr">

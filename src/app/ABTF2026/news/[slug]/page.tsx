@@ -36,12 +36,12 @@ export default async function NewsDetailPage({
       <article className="mx-auto max-w-3xl rounded-3xl border border-[#073d5b]/10 bg-white p-7 sm:p-10">
         <time
           dateTime={entry.publishedAt}
-          className="font-latin text-xs font-black text-[#087c49]"
+          className="font-latin text-xs font-normal text-[#087c49]"
           dir="ltr"
         >
           {entry.publishedAt}
         </time>
-        <h2 className="mt-6 text-3xl leading-tight font-black text-[#073d5b] sm:text-4xl">
+        <h2 className="mt-6 text-3xl leading-tight font-normal text-[#073d5b] sm:text-4xl">
           {entry.title}
         </h2>
         <p className="mt-6 text-base leading-9 text-[#073d5b]/62">

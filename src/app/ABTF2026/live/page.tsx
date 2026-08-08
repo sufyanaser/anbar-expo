@@ -19,9 +19,9 @@ export default function LivePage() {
           <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4 sm:px-7">
             <div className="flex items-center gap-3">
               <span className="size-2.5 rounded-full bg-white/25" />
-              <p className="text-sm font-black">{liveStreamConfig.title}</p>
+              <p className="text-sm font-normal">{liveStreamConfig.title}</p>
             </div>
-            <span className="rounded-full bg-white/8 px-3 py-1.5 text-[0.68rem] font-black text-white/50">
+            <span className="rounded-full bg-white/8 px-3 py-1.5 text-[0.68rem] font-normal text-white/50">
               غير متصل
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function LivePage() {
                 <span className="mx-auto flex size-20 items-center justify-center rounded-full border border-white/10 bg-white/6 text-[#f0c64f]">
                   <WifiOff className="size-9" aria-hidden="true" />
                 </span>
-                <h2 className="mt-6 text-2xl font-black">
+                <h2 className="mt-6 text-2xl font-normal">
                   لم يبدأ البث المباشر بعد
                 </h2>
                 <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-white/52">
@@ -56,7 +56,7 @@ export default function LivePage() {
         <aside className="space-y-4">
           <div className="rounded-3xl border border-[#073d5b]/10 bg-white p-6">
             <Signal className="size-6 text-[#087c49]" aria-hidden="true" />
-            <h2 className="mt-6 text-xl font-black text-[#073d5b]">
+            <h2 className="mt-6 text-xl font-normal text-[#073d5b]">
               مشاهدة من مختلف الأجهزة
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/55">
@@ -65,7 +65,7 @@ export default function LivePage() {
           </div>
           <div className="rounded-3xl border border-[#073d5b]/10 bg-white p-6">
             <RadioTower className="size-6 text-[#087c49]" aria-hidden="true" />
-            <h2 className="mt-6 text-xl font-black text-[#073d5b]">
+            <h2 className="mt-6 text-xl font-normal text-[#073d5b]">
               حالة البث
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/55">

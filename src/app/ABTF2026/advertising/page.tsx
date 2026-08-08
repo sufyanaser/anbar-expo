@@ -18,7 +18,7 @@ export default function AdvertisingPage() {
         <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
           <div>
             <ShieldCheck className="size-7 text-[#f0c64f]" aria-hidden="true" />
-            <h2 className="mt-6 text-3xl font-black">
+            <h2 className="mt-6 text-3xl font-normal">
               ظهور منظم دون إرباك الزائر
             </h2>
           </div>
@@ -39,10 +39,10 @@ export default function AdvertisingPage() {
               className="size-6 text-[#087c49]"
               aria-hidden="true"
             />
-            <p className="mt-6 text-xs font-black text-[#d3a528]">
+            <p className="mt-6 text-xs font-normal text-[#d3a528]">
               {placement.ratio}
             </p>
-            <h2 className="mt-2 text-xl font-black text-[#073d5b]">
+            <h2 className="mt-2 text-xl font-normal text-[#073d5b]">
               {placement.title}
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/52">

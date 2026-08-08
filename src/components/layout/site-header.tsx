@@ -21,7 +21,7 @@ export function SiteHeader() {
           className="group flex shrink-0 flex-col py-3"
           aria-label="الصفحة الرئيسية"
         >
-          <span className="latin-wordmark text-ink text-base font-black sm:text-lg">
+          <span className="latin-wordmark text-ink text-base font-normal sm:text-lg">
             {siteConfig.name}
           </span>
           <span className="text-muted-foreground text-[0.68rem] font-semibold">

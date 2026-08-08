@@ -50,10 +50,10 @@ export default function MediaSponsorPage() {
               <ArrowRight className="size-4" aria-hidden="true" />
               العودة إلى الجهات الرسمية
             </Link>
-            <p className="mt-10 text-sm font-black tracking-[0.14em] text-white/72">
+            <p className="mt-10 text-sm font-normal tracking-[0.14em] text-white/72">
               {abtf2026.mediaSponsor.label}
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl leading-[1.3] font-black sm:text-6xl">
+            <h1 className="mt-4 max-w-3xl text-4xl leading-[1.3] font-normal sm:text-6xl">
               {abtf2026.mediaSponsor.name}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
@@ -87,7 +87,7 @@ export default function MediaSponsorPage() {
                 <span className="flex size-12 items-center justify-center rounded-xl bg-[#eaf4f0] text-[#087c49]">
                   <section.icon className="size-6" aria-hidden="true" />
                 </span>
-                <h2 className="mt-6 text-2xl font-black text-[#073d5b]">
+                <h2 className="mt-6 text-2xl font-normal text-[#073d5b]">
                   {section.title}
                 </h2>
                 <p className="mt-4 text-sm leading-8 text-black/55">

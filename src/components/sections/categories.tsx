@@ -26,7 +26,7 @@ export function Categories() {
               <span className="font-latin text-copper text-xs">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-ink mt-8 text-xl font-black">
+              <h3 className="text-ink mt-8 text-xl font-normal">
                 {category.ar}
               </h3>
               <p

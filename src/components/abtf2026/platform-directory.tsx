@@ -10,10 +10,10 @@ export function PlatformDirectory() {
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <div>
-            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+            <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               المنصة الرقمية
             </p>
-            <h2 className="mt-4 text-3xl leading-tight font-black text-[#073d5b] sm:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight font-normal text-[#073d5b] sm:text-5xl">
               خدمات المعرض في مكان واحد
             </h2>
           </div>
@@ -45,7 +45,7 @@ export function PlatformDirectory() {
                   <ModuleIcon name={module.icon} className="size-6" />
                 </span>
                 <span
-                  className={`rounded-full px-3 py-1.5 text-[0.68rem] font-black ${
+                  className={`rounded-full px-3 py-1.5 text-[0.68rem] font-normal ${
                     module.featured
                       ? "bg-[#f0c64f]/12 text-[#f0c64f]"
                       : "bg-[#e8f0eb] text-[#087c49]"
@@ -57,13 +57,13 @@ export function PlatformDirectory() {
 
               <div className="mt-auto pt-12">
                 <p
-                  className={`text-xs font-black tracking-[0.12em] ${
+                  className={`text-xs font-normal tracking-[0.12em] ${
                     module.featured ? "text-[#f0c64f]" : "text-[#087c49]"
                   }`}
                 >
                   {module.eyebrow}
                 </p>
-                <h3 className="mt-3 text-2xl font-black">{module.title}</h3>
+                <h3 className="mt-3 text-2xl font-normal">{module.title}</h3>
                 <p
                   className={`mt-3 text-sm leading-7 ${
                     module.featured ? "text-white/58" : "text-[#073d5b]/55"
@@ -72,7 +72,7 @@ export function PlatformDirectory() {
                   {module.description}
                 </p>
                 <span
-                  className={`mt-6 inline-flex items-center gap-2 text-sm font-black ${
+                  className={`mt-6 inline-flex items-center gap-2 text-sm font-normal ${
                     module.featured ? "text-white" : "text-[#087c49]"
                   }`}
                 >

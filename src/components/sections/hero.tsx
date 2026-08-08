@@ -15,10 +15,10 @@ export function Hero() {
         <div className="max-w-5xl">
           <p className="eyebrow">المنصة الرسمية للمعارض في الأنبار</p>
           <h1 id="hero-title" className="mt-7">
-            <span className="latin-wordmark text-ink block text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.86] font-black tracking-[-0.055em]">
+            <span className="latin-wordmark text-ink block text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.86] font-normal tracking-[-0.055em]">
               {siteConfig.name}
             </span>
-            <span className="text-copper mt-7 block text-2xl font-black sm:text-4xl">
+            <span className="text-copper mt-7 block text-2xl font-normal sm:text-4xl">
               {siteConfig.nameAr}
             </span>
           </h1>

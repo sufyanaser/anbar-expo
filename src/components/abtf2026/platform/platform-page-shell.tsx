@@ -39,7 +39,7 @@ export function PlatformPageShell({
                   <ModuleIcon name={module.icon} className="size-7" />
                 </span>
                 <div>
-                  <p className="text-xs font-black tracking-[0.12em] text-[#f0c64f]">
+                  <p className="text-xs font-normal tracking-[0.12em] text-[#f0c64f]">
                     {module.eyebrow}
                   </p>
                   <p className="mt-1 text-xs font-bold text-white/48">
@@ -47,7 +47,7 @@ export function PlatformPageShell({
                   </p>
                 </div>
               </div>
-              <h1 className="mt-8 text-4xl leading-tight font-black sm:text-6xl">
+              <h1 className="mt-8 text-4xl leading-tight font-normal sm:text-6xl">
                 {module.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/66 sm:text-lg sm:leading-9">
@@ -55,7 +55,7 @@ export function PlatformPageShell({
               </p>
             </div>
 
-            <span className="w-fit rounded-full border border-[#f0c64f]/30 bg-[#f0c64f]/10 px-4 py-2 text-xs font-black text-[#f0c64f]">
+            <span className="w-fit rounded-full border border-[#f0c64f]/30 bg-[#f0c64f]/10 px-4 py-2 text-xs font-normal text-[#f0c64f]">
               {module.statusLabel}
             </span>
           </div>

@@ -38,7 +38,7 @@ export default async function EventPage({ params }: EventPageProps) {
             <StatusBadge status={event.status} />
             <span className="text-sm text-white/55">{event.category}</span>
           </div>
-          <h1 className="mt-8 max-w-5xl text-4xl font-black text-balance sm:text-6xl">
+          <h1 className="mt-8 max-w-5xl text-4xl font-normal text-balance sm:text-6xl">
             {event.titleAr}
           </h1>
           <p
@@ -64,7 +64,7 @@ export default async function EventPage({ params }: EventPageProps) {
           ) : null}
         </div>
         <aside className="bg-secondary border p-6" aria-label="معلومات المعرض">
-          <h2 className="text-ink text-lg font-black">معلومات الفعالية</h2>
+          <h2 className="text-ink text-lg font-normal">معلومات الفعالية</h2>
           <dl className="mt-6 space-y-6">
             <div className="flex gap-3">
               <CalendarDays

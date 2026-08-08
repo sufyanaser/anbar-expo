@@ -8,7 +8,9 @@ export function SiteFooter() {
     <footer className="bg-ink text-paper border-t border-white/10">
       <Container className="grid gap-12 py-14 md:grid-cols-[1fr_2fr] md:py-20">
         <div>
-          <p className="latin-wordmark text-xl font-black">{siteConfig.name}</p>
+          <p className="latin-wordmark text-xl font-normal">
+            {siteConfig.name}
+          </p>
           <p className="mt-2 text-sm text-white/65">{siteConfig.nameAr}</p>
           <p className="mt-6 max-w-sm text-sm leading-7 text-white/55">
             {siteConfig.description}

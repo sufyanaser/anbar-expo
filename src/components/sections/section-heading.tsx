@@ -16,7 +16,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", className)}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="text-ink mt-4 text-3xl font-black tracking-tight text-balance sm:text-4xl lg:text-5xl">
+      <h2 className="text-ink mt-4 text-3xl font-normal tracking-tight text-balance sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description ? (

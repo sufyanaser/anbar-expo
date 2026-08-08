@@ -55,10 +55,10 @@ export default function AlWasefPage() {
               <ArrowRight className="size-4" aria-hidden="true" />
               العودة إلى الجهات الرسمية
             </Link>
-            <p className="mt-10 text-xs font-black tracking-[0.15em] text-[#f0c64f]">
+            <p className="mt-10 text-xs font-normal tracking-[0.15em] text-[#f0c64f]">
               الجهة المنظمة
             </p>
-            <h1 className="mt-4 max-w-4xl text-4xl leading-[1.3] font-black sm:text-6xl">
+            <h1 className="mt-4 max-w-4xl text-4xl leading-[1.3] font-normal sm:text-6xl">
               {alWasef.name}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-white/68 sm:text-lg sm:leading-9">
@@ -67,14 +67,14 @@ export default function AlWasefPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={`mailto:${alWasef.email}`}
-                className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#e5b834] px-5 text-sm font-black text-[#03283f] transition-colors hover:bg-[#f0c64f] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+                className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#e5b834] px-5 text-sm font-normal text-[#03283f] transition-colors hover:bg-[#f0c64f] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               >
                 <Mail className="size-4" aria-hidden="true" />
                 التواصل مع الشركة
               </a>
               <a
                 href={alWasef.phones[0].href}
-                className="font-latin inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/18 bg-white/7 px-5 text-sm font-black text-white transition-colors hover:bg-white/12 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
+                className="font-latin inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/18 bg-white/7 px-5 text-sm font-normal text-white transition-colors hover:bg-white/12 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
                 dir="ltr"
               >
                 <Phone className="size-4" aria-hidden="true" />
@@ -101,10 +101,10 @@ export default function AlWasefPage() {
         <div className="mx-auto grid w-[min(100%,80rem)] gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <article className="rounded-3xl border border-[#073d5b]/10 bg-white p-7 shadow-sm sm:p-10">
             <Building2 className="size-7 text-[#b98621]" aria-hidden="true" />
-            <p className="mt-7 text-xs font-black tracking-[0.14em] text-[#087c49]">
+            <p className="mt-7 text-xs font-normal tracking-[0.14em] text-[#087c49]">
               عن الشركة
             </p>
-            <h2 className="mt-3 text-3xl leading-tight font-black text-[#073d5b] sm:text-4xl">
+            <h2 className="mt-3 text-3xl leading-tight font-normal text-[#073d5b] sm:text-4xl">
               خبرة تصنع منصات للفرص والمعرفة
             </h2>
             <div className="mt-6 space-y-5 text-base leading-9 text-[#073d5b]/65">
@@ -112,13 +112,13 @@ export default function AlWasefPage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <blockquote className="mt-8 rounded-2xl border-s-4 border-[#c89627] bg-[#fff8df] p-6 text-lg leading-9 font-black text-[#493407]">
+            <blockquote className="mt-8 rounded-2xl border-s-4 border-[#c89627] bg-[#fff8df] p-6 text-lg leading-9 font-normal text-[#493407]">
               {alWasef.vision}
             </blockquote>
           </article>
 
           <aside className="rounded-3xl bg-[#073d5b] p-7 text-white shadow-xl shadow-[#073d5b]/12 sm:p-9">
-            <p className="text-xs font-black tracking-[0.14em] text-[#f0c64f]">
+            <p className="text-xs font-normal tracking-[0.14em] text-[#f0c64f]">
               التواصل والاستفسار
             </p>
             <div className="mt-8 flex items-start gap-4 border-b border-white/10 pb-6">
@@ -128,7 +128,7 @@ export default function AlWasefPage() {
               />
               <div>
                 <p className="text-xs text-white/45">المدير العام</p>
-                <p className="mt-2 font-black">{alWasef.generalManager}</p>
+                <p className="mt-2 font-normal">{alWasef.generalManager}</p>
               </div>
             </div>
             <div className="mt-6 flex items-start gap-4 border-b border-white/10 pb-6">
@@ -174,13 +174,13 @@ export default function AlWasefPage() {
                 className="size-7 text-[#f0c64f]"
                 aria-hidden="true"
               />
-              <p className="mt-7 text-xs font-black text-[#f0c64f]">
+              <p className="mt-7 text-xs font-normal text-[#f0c64f]">
                 الحدث الذي تنظمه الشركة
               </p>
-              <h2 className="mt-3 text-3xl leading-tight font-black">
+              <h2 className="mt-3 text-3xl leading-tight font-normal">
                 {alWasef.event.title}
               </h2>
-              <p className="font-latin mt-7 text-lg font-black text-white/78">
+              <p className="font-latin mt-7 text-lg font-normal text-white/78">
                 {alWasef.event.dates}
               </p>
               <p className="mt-3 flex items-center gap-2 text-sm text-white/62">
@@ -191,10 +191,10 @@ export default function AlWasefPage() {
 
             <div className="rounded-3xl border border-[#073d5b]/10 bg-white p-7 sm:p-9">
               <Sparkles className="size-7 text-[#b98621]" aria-hidden="true" />
-              <p className="mt-7 text-xs font-black text-[#087c49]">
+              <p className="mt-7 text-xs font-normal text-[#087c49]">
                 رؤية التنظيم
               </p>
-              <h2 className="mt-3 text-3xl leading-tight font-black text-[#073d5b]">
+              <h2 className="mt-3 text-3xl leading-tight font-normal text-[#073d5b]">
                 ملتقى يجمع الثقافة والصناعة والاقتصاد
               </h2>
               <p className="mt-5 text-base leading-9 text-[#073d5b]/62">
@@ -214,7 +214,7 @@ export default function AlWasefPage() {
                   className="rounded-3xl border border-[#073d5b]/10 bg-white p-6"
                 >
                   <Icon className="size-6 text-[#b98621]" aria-hidden="true" />
-                  <h3 className="mt-6 text-xl font-black text-[#073d5b]">
+                  <h3 className="mt-6 text-xl font-normal text-[#073d5b]">
                     {experience.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-[#073d5b]/56">
@@ -230,10 +230,10 @@ export default function AlWasefPage() {
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto grid w-[min(100%,80rem)] gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div>
-            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+            <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               للمشاركين والعارضين
             </p>
-            <h2 className="mt-4 text-3xl leading-tight font-black text-[#073d5b] sm:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight font-normal text-[#073d5b] sm:text-5xl">
               ما تقدمه شركة الواصف للمشاركين
             </h2>
             <p className="mt-5 text-base leading-8 text-[#073d5b]/60">

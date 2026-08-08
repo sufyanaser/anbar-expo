@@ -10,7 +10,7 @@ export function FinalCta() {
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-sm font-bold text-white/75">منصة المعارض</p>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-normal sm:text-4xl">
             تابع المعارض القادمة من مصدرها الرسمي
           </h2>
         </div>

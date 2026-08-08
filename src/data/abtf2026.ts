@@ -56,6 +56,7 @@ export const abtf2026 = {
     label: "الراعي الإعلامي والوكيل الإعلاني",
     name: "الرنين للحلول الإعلامية والرقمية",
     mark: "/brand/abtf2026/al-raneen-mark.webp",
+    href: "/ABTF2026/media-sponsor",
   },
   partnerMarks: [
     {

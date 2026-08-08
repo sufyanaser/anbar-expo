@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 import { abtf2026 } from "@/data/abtf2026";
 
@@ -53,16 +55,16 @@ export function OfficialPartners() {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl bg-[#073d5b] px-6 py-7 text-white sm:flex-row sm:px-9">
+        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white px-6 py-7 text-[#073d5b] shadow-sm sm:flex-row sm:px-9">
           <div>
-            <p className="text-xs font-black tracking-[0.14em] text-[#f0c64f]">
+            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
               بالتزامن مع
             </p>
             <p className="mt-2 text-2xl font-black">
               {abtf2026.concurrentEvent}
             </p>
           </div>
-          <span className="flex size-20 items-center justify-center rounded-2xl bg-white p-2">
+          <span className="flex size-20 items-center justify-center rounded-2xl border border-[#073d5b]/10 bg-[#f7f5ef] p-2">
             <Image
               src="/brand/abtf2026/partner-03.svg"
               width={2328}
@@ -74,25 +76,50 @@ export function OfficialPartners() {
           </span>
         </div>
 
-        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#087c49]/15 bg-white px-6 py-7 sm:flex-row sm:px-9">
-          <div>
-            <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+        <Link
+          href={abtf2026.mediaSponsor.href}
+          className="group relative mt-6 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-white/20 bg-[linear-gradient(115deg,#56d8df_0%,#1479bd_46%,#7357cc_100%)] px-6 py-7 text-white shadow-lg shadow-[#176ea8]/15 transition-transform hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-[#d9e1e8] focus-visible:outline-none sm:flex-row sm:px-9"
+          aria-label={`عرض تفاصيل ${abtf2026.mediaSponsor.label}`}
+        >
+          <span
+            className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18),transparent_42%,rgba(255,255,255,0.08))]"
+            aria-hidden="true"
+          />
+          <span className="relative">
+            <span className="text-xs font-black tracking-[0.14em] text-white/76">
               {abtf2026.mediaSponsor.label}
-            </p>
-            <p className="mt-2 text-2xl font-black text-[#073d5b]">
+            </span>
+            <span className="mt-2 block text-2xl font-black">
               {abtf2026.mediaSponsor.name}
-            </p>
-          </div>
-          <span className="flex size-20 items-center justify-center rounded-2xl border border-[#073d5b]/10 bg-white p-2 shadow-sm">
-            <Image
-              src={abtf2026.mediaSponsor.mark}
-              width={640}
-              height={640}
-              alt={`شعار ${abtf2026.mediaSponsor.name}`}
-              className="max-h-full w-auto object-contain"
-            />
+            </span>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white/82">
+              التفاصيل والتواصل والإعلانات
+              <ArrowLeft
+                className="size-4 transition-transform group-hover:-translate-x-1"
+                aria-hidden="true"
+              />
+            </span>
           </span>
-        </div>
+          <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-white/28 bg-white/10 p-2 shadow-inner shadow-white/12 backdrop-blur-sm">
+            <span
+              className="block size-full"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(135deg, #b8c0ca 0%, #ffffff 42%, #d8dde4 68%, #ffffff 100%)",
+                WebkitMaskImage: `url(${abtf2026.mediaSponsor.mark})`,
+                WebkitMaskPosition: "center",
+                WebkitMaskRepeat: "no-repeat",
+                WebkitMaskSize: "contain",
+                maskImage: `url(${abtf2026.mediaSponsor.mark})`,
+                maskPosition: "center",
+                maskRepeat: "no-repeat",
+                maskSize: "contain",
+              }}
+            />
+            <span className="sr-only">شعار {abtf2026.mediaSponsor.name}</span>
+          </span>
+        </Link>
       </div>
     </section>
   );

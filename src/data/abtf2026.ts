@@ -8,7 +8,7 @@ export const abtf2026 = {
   platformOperator: {
     name: "الرنين للحلول الإعلامية والرقمية",
     credit: "صُممت وتُدار هذه المنصة بواسطة",
-    mark: "/brand/abtf2026/al-raneen-mark.webp",
+    mark: "/brand/abtf2026/al-raneen-mark.svg",
   },
   opening: {
     label: "الافتتاح",
@@ -58,7 +58,7 @@ export const abtf2026 = {
   mediaSponsor: {
     label: "الراعي الإعلامي والوكيل الإعلاني",
     name: "الرنين للحلول الإعلامية والرقمية",
-    mark: "/brand/abtf2026/al-raneen-mark.webp",
+    mark: "/brand/abtf2026/al-raneen-mark.svg",
     href: "/ABTF2026/media-sponsor",
   },
   partnerMarks: [
@@ -84,9 +84,9 @@ export const abtf2026 = {
       href: "/ABTF2026/al-wasef",
     },
     {
-      src: "/brand/abtf2026/partner-04.webp",
-      width: 640,
-      height: 640,
+      src: "/brand/abtf2026/al-raneen-mark.svg",
+      width: 490,
+      height: 490,
       alt: "شركة الرنين للحلول الإعلامية والرقمية",
       href: null,
     },

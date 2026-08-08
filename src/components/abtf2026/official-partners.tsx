@@ -94,7 +94,7 @@ export function OfficialPartners() {
 
         <Link
           href={abtf2026.mediaSponsor.href}
-          className="group relative mt-6 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-white/20 bg-[linear-gradient(115deg,#56d8df_0%,#1479bd_46%,#7357cc_100%)] px-6 py-7 text-white shadow-lg shadow-[#176ea8]/15 transition-transform hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-[#d9e1e8] focus-visible:outline-none sm:flex-row sm:px-9"
+          className="group relative mt-6 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-[#00e8bb]/28 bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-6 py-7 text-white shadow-lg shadow-[#006f7f]/18 transition-transform hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-[#00e8bb] focus-visible:outline-none sm:flex-row sm:px-9"
           aria-label={`عرض تفاصيل ${abtf2026.mediaSponsor.label}`}
         >
           <span
@@ -116,24 +116,15 @@ export function OfficialPartners() {
               />
             </span>
           </span>
-          <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-white/28 bg-white/10 p-2 shadow-inner shadow-white/12 backdrop-blur-sm">
-            <span
-              className="block size-full"
-              aria-hidden="true"
-              style={{
-                background:
-                  "linear-gradient(135deg, #b8c0ca 0%, #ffffff 42%, #d8dde4 68%, #ffffff 100%)",
-                WebkitMaskImage: `url(${abtf2026.mediaSponsor.mark})`,
-                WebkitMaskPosition: "center",
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "contain",
-                maskImage: `url(${abtf2026.mediaSponsor.mark})`,
-                maskPosition: "center",
-                maskRepeat: "no-repeat",
-                maskSize: "contain",
-              }}
+          <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-[#00f3ba]/30 bg-[#002f38]/35 p-2 shadow-inner shadow-black/10 backdrop-blur-sm">
+            <Image
+              src={abtf2026.mediaSponsor.mark}
+              width={490}
+              height={490}
+              alt={`شعار ${abtf2026.mediaSponsor.name}`}
+              className="size-full object-contain"
+              unoptimized
             />
-            <span className="sr-only">شعار {abtf2026.mediaSponsor.name}</span>
           </span>
         </Link>
       </div>

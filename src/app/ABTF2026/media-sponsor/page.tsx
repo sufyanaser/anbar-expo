@@ -36,7 +36,7 @@ const informationSections = [
 export default function MediaSponsorPage() {
   return (
     <div className="bg-[#f7f5ef]">
-      <section className="relative overflow-hidden bg-[linear-gradient(120deg,#54d8df_0%,#1477bc_46%,#7256cc_100%)] px-4 py-16 text-white sm:py-24">
+      <section className="relative overflow-hidden bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-4 py-16 text-white sm:py-24">
         <div
           className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_40%,rgba(255,255,255,0.06))]"
           aria-hidden="true"
@@ -62,14 +62,15 @@ export default function MediaSponsorPage() {
             </p>
           </div>
 
-          <div className="flex size-48 items-center justify-center rounded-[2rem] border border-white/28 bg-white p-7 shadow-2xl shadow-[#173b74]/20 sm:size-56">
+          <div className="relative flex size-48 items-center justify-center overflow-hidden rounded-[2rem] border border-white/65 bg-[linear-gradient(145deg,rgba(255,255,255,0.72)_0%,rgba(226,232,240,0.42)_48%,rgba(255,255,255,0.2)_100%)] p-7 shadow-[0_24px_65px_rgba(0,31,38,0.3),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-xl before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent sm:size-56">
             <Image
               src={abtf2026.mediaSponsor.mark}
-              width={640}
-              height={640}
+              width={490}
+              height={490}
               alt={`شعار ${abtf2026.mediaSponsor.name}`}
-              className="h-auto w-full"
+              className="relative h-auto w-full drop-shadow-[0_10px_18px_rgba(0,75,82,0.16)]"
               preload
+              unoptimized
             />
           </div>
         </div>

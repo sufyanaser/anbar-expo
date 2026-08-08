@@ -41,10 +41,11 @@ export function EventFooter() {
               <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/6 p-2.5">
                 <Image
                   src={abtf2026.platformOperator.mark}
-                  width={640}
-                  height={640}
+                  width={490}
+                  height={490}
                   alt={`شعار ${abtf2026.platformOperator.name}`}
-                  className="h-full w-auto object-contain brightness-0 invert"
+                  className="h-full w-auto object-contain"
+                  unoptimized
                 />
               </span>
               <div>

@@ -28,21 +28,12 @@ export const metadata: Metadata = {
     title: abtf2026.titleAr,
     description:
       "المنصة الرقمية لمعرض الأنبار الدولي للكتاب والتكنولوجيا وبرنامج فعالياته وخدمات زواره.",
-    images: [
-      {
-        url: "/ABTF2026/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: abtf2026.titleAr,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: abtf2026.titleAr,
     description:
       "المنصة الرقمية لمعرض الأنبار الدولي للكتاب والتكنولوجيا وبرنامج فعالياته وخدمات زواره.",
-    images: ["/ABTF2026/opengraph-image"],
   },
   robots: { index: false, follow: false, nocache: true },
 };

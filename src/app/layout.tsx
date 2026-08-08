@@ -53,6 +53,7 @@ export default function RootLayout({
     <html
       lang="ar"
       dir="rtl"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">

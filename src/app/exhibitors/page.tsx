@@ -8,7 +8,7 @@ export default function ExhibitorsPage() {
   return (
     <RouteIntro
       eyebrow="للعارضين"
-      title="شارك في معارض ANBAR EXPO"
+      title="شارك في المعارض القادمة"
       description="ستُنشر فرص المشاركة ومتطلبات العارضين ونوافذ التسجيل هنا فور اعتمادها رسمياً."
     >
       <p className="text-muted-foreground border-copper/30 border border-dashed p-8 text-center">

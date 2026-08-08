@@ -28,7 +28,7 @@ export function SiteFooter() {
       </Container>
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} ANBAR EXPO</p>
+          <p>© {new Date().getFullYear()} جميع الحقوق محفوظة</p>
           <p className="latin-wordmark tracking-normal">anbarexpo.com</p>
         </Container>
       </div>

@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "ANBAR EXPO",
-    short_name: "ANBAR EXPO",
+    name: "الموقع قيد الإعداد",
+    short_name: "قيد الإعداد",
     description: "الموقع قيد الإعداد.",
     start_url: "/",
     display: "standalone",

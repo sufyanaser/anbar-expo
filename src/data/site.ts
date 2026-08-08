@@ -1,10 +1,9 @@
 export const siteConfig = {
-  name: "ANBAR EXPO",
-  nameAr: "معرض الأنبار الدولي",
-  institutionalNameEn: "Anbar International Fair",
-  title: "ANBAR EXPO | معرض الأنبار الدولي",
-  description:
-    "المنصة الرسمية للمعارض والفعاليات الدولية في الأنبار، والمظلة الرقمية للمعارض المتخصصة ودوراتها المتعددة.",
+  name: "الموقع قيد الإعداد",
+  nameAr: "الموقع قيد الإعداد",
+  institutionalNameEn: "Coming Soon",
+  title: "الموقع قيد الإعداد",
+  description: "سيتم الإعلان عن التفاصيل الرسمية في الوقت المناسب.",
   url: "https://anbarexpo.com",
 } as const;
 

@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
 
-export const alt = "ANBAR EXPO";
+export const alt = "الموقع قيد الإعداد";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const asalBold = await readFile(
+    new URL("./fonts/Asal Arabic ITF Bold.otf", import.meta.url),
+  );
+
   return new ImageResponse(
     <div
       style={{
@@ -18,21 +23,25 @@ export default function OpenGraphImage() {
         color: "#f4efe7",
         padding: "72px",
         border: "1px solid #332d29",
+        fontFamily: "Asal Arabic",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 112,
-            fontWeight: 900,
-            letterSpacing: "8px",
-          }}
-        >
-          ANBAR EXPO
+        <div style={{ display: "flex", fontSize: 72, fontWeight: 900 }}>
+          الموقع قيد الإعداد
         </div>
       </div>
     </div>,
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Asal Arabic",
+          data: asalBold,
+          style: "normal",
+          weight: 700,
+        },
+      ],
+    },
   );
 }

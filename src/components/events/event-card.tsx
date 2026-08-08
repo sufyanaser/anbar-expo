@@ -8,7 +8,7 @@ export function EventCard({ event }: { event: ExhibitionEvent }) {
   return (
     <article className="bg-card group grid min-h-80 border transition-colors hover:border-copper sm:grid-cols-[0.7fr_1.3fr]">
       <div className="bg-ink text-paper flex min-h-48 flex-col justify-between p-6 sm:min-h-full">
-        <span className="latin-wordmark text-xs text-white/55">ANBAR EXPO</span>
+        <span className="text-xs font-bold text-white/55">فعالية متخصصة</span>
         <span className="text-sm text-white/70">{event.category}</span>
       </div>
       <div className="flex flex-col p-6 sm:p-8">

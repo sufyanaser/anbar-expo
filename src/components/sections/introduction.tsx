@@ -9,7 +9,7 @@ export function Introduction() {
     >
       <Container className="grid gap-12 lg:grid-cols-2 lg:gap-24">
         <SectionHeading
-          eyebrow="ANBAR EXPO"
+          eyebrow="المعارض الدولية في الأنبار"
           title="مظلة رقمية واحدة لمعارض الأنبار"
           className="[&_h2]:text-paper [&_.eyebrow]:text-accent"
         />

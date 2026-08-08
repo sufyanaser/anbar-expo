@@ -9,9 +9,9 @@ export const events: ExhibitionEvent[] = [
     category: "الكتب والنشر · التكنولوجيا",
     status: "upcoming",
     descriptionAr:
-      "فعالية متخصصة ضمن منصة ANBAR EXPO تجمع مجالي الكتاب والتكنولوجيا. ستُنشر التفاصيل الرسمية عند اعتمادها.",
+      "فعالية متخصصة تجمع مجالي الكتاب والتكنولوجيا. ستُنشر التفاصيل الرسمية عند اعتمادها.",
     descriptionEn:
-      "A specialized event within ANBAR EXPO focused on books and technology. Official details will be published once confirmed.",
+      "A specialized event focused on books and technology. Official details will be published once confirmed.",
     featured: true,
   },
 ];

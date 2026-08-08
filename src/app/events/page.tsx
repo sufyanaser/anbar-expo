@@ -6,7 +6,7 @@ import { events } from "@/data/events";
 
 export const metadata: Metadata = {
   title: "المعارض",
-  description: "استعرض المعارض والفعاليات المنشورة رسمياً ضمن منصة ANBAR EXPO.",
+  description: "استعرض المعارض والفعاليات المنشورة رسمياً.",
   alternates: { canonical: "/events" },
 };
 
@@ -15,7 +15,7 @@ export default function EventsPage() {
     <RouteIntro
       eyebrow="المعارض"
       title="المعارض والفعاليات"
-      description="سجل موحد للمعارض المنشورة ضمن منصة ANBAR EXPO، مع صفحات مستقلة لكل فعالية."
+      description="سجل موحد للمعارض المنشورة مع صفحات مستقلة لكل فعالية."
     >
       <div className="grid gap-6">
         {events.map((event) => (

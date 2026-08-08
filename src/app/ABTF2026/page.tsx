@@ -6,7 +6,7 @@ import { PlatformDirectory } from "@/components/abtf2026/platform-directory";
 import { abtf2026 } from "@/data/abtf2026";
 
 export const metadata: Metadata = {
-  title: { absolute: "ABTF 2026" },
+  title: { absolute: abtf2026.titleAr },
   description: abtf2026.titleAr,
   alternates: { canonical: "/ABTF2026" },
   robots: { index: false, follow: false, nocache: true },

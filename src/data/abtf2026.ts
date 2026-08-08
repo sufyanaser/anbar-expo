@@ -1,6 +1,6 @@
 export const abtf2026 = {
   shortName: "ABTF 2026",
-  titleAr: "معرض الأنبار الدولي للكتاب والتكنولوجيا الحديثة",
+  titleAr: "معرض الأنبار الدولي للكتاب والتكنولوجيا",
   titleEn: "Anbar Book & Technology Fair 2026",
   eventMark: "/brand/abtf2026/event-mark.svg",
   iraqEmblem: "/brand/abtf2026/iraq-emblem.svg",

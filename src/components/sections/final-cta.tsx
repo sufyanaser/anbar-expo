@@ -9,7 +9,7 @@ export function FinalCta() {
     <section className="bg-copper text-primary-foreground py-16 sm:py-20">
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-sm font-bold text-white/75">ANBAR EXPO</p>
+          <p className="text-sm font-bold text-white/75">منصة المعارض</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">
             تابع المعارض القادمة من مصدرها الرسمي
           </h2>

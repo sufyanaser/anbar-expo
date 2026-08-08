@@ -10,7 +10,7 @@ export default function AboutPage() {
     <RouteIntro
       eyebrow="عن المنصة"
       title="منصة الأنبار الرسمية للمعارض"
-      description="ANBAR EXPO هي المظلة الرقمية لعرض المعارض والفعاليات الدولية المقامة في الأنبار ضمن بنية مؤسسية موحدة وقابلة للتوسع."
+      description="منصة رقمية لعرض المعارض والفعاليات الدولية المقامة في الأنبار ضمن بنية مؤسسية موحدة وقابلة للتوسع."
     >
       <div className="grid gap-8 text-lg leading-9 md:grid-cols-2">
         <p>

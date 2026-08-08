@@ -20,19 +20,19 @@ export function OfficialPartners() {
           </p>
         </div>
 
-        <div className="mt-12 grid overflow-hidden rounded-2xl border border-[#073d5b]/12 bg-[#073d5b]/12 lg:grid-cols-3 lg:gap-px">
+        <div className="mt-12 grid overflow-hidden rounded-2xl border border-[#9a6b16]/30 bg-[#8a5f12]/25 shadow-[0_18px_55px_rgba(111,76,13,0.12)] lg:grid-cols-3 lg:gap-px">
           {abtf2026.officialEntities.map((entity, index) => (
             <article
               key={entity.label}
-              className="relative bg-white p-7 sm:p-9"
+              className="relative bg-[linear-gradient(145deg,#fff8dc_0%,#efd88f_52%,#c99a36_100%)] p-7 sm:p-9"
             >
               <span
-                className="font-latin absolute end-7 top-7 text-xs font-black text-[#d3a528]"
+                className="font-latin absolute end-7 top-7 text-xs font-black text-[#79500b]/65"
                 aria-hidden="true"
               >
                 0{index + 1}
               </span>
-              <p className="text-xs font-black tracking-[0.14em] text-[#087c49]">
+              <p className="text-xs font-black tracking-[0.14em] text-[#3a2605]">
                 {entity.label}
               </p>
               <div className="mt-6 flex items-center justify-between gap-5">
@@ -40,11 +40,11 @@ export function OfficialPartners() {
                   <h3 className="text-xl leading-8 font-black text-[#073d5b]">
                     {entity.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-7 text-black/48">
+                  <p className="mt-2 text-sm leading-7 text-[#3a2605]">
                     {entity.detail}
                   </p>
                 </div>
-                <div className="flex size-20 shrink-0 items-center justify-center rounded-xl border border-[#073d5b]/8 bg-[#f7f5ef] p-3 sm:size-24">
+                <div className="flex size-20 shrink-0 items-center justify-center rounded-xl border border-[#80580f]/15 bg-white/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_24px_rgba(101,68,10,0.1)] sm:size-24">
                   <Image
                     src={entity.mark.src}
                     width={entity.mark.width}

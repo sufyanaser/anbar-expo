@@ -98,6 +98,10 @@ export function OfficialPartners() {
           aria-label={`عرض تفاصيل ${abtf2026.mediaSponsor.label}`}
         >
           <span
+            className="pointer-events-none absolute top-1/2 -left-36 size-[30rem] -translate-y-1/2 rounded-full bg-[repeating-radial-gradient(circle,transparent_0,transparent_31px,rgba(255,255,255,0.14)_32px,rgba(255,255,255,0.14)_34px,transparent_35px,transparent_62px)] opacity-75 [mask-image:linear-gradient(to_right,black_20%,rgba(0,0,0,0.72)_58%,transparent_92%)]"
+            aria-hidden="true"
+          />
+          <span
             className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18),transparent_42%,rgba(255,255,255,0.08))]"
             aria-hidden="true"
           />
@@ -116,14 +120,11 @@ export function OfficialPartners() {
               />
             </span>
           </span>
-          <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-[#00f3ba]/30 bg-[#002f38]/35 p-2 shadow-inner shadow-black/10 backdrop-blur-sm">
-            <Image
-              src={abtf2026.mediaSponsor.mark}
-              width={490}
-              height={490}
-              alt={`شعار ${abtf2026.mediaSponsor.name}`}
-              className="size-full object-contain"
-              unoptimized
+          <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-white/38 bg-white/10 p-2 shadow-inner shadow-white/10 backdrop-blur-sm">
+            <span
+              role="img"
+              aria-label={`شعار ${abtf2026.mediaSponsor.name}`}
+              className="size-full bg-[linear-gradient(145deg,#ffffff_8%,#eef1f4_42%,#aeb6c0_72%,#ffffff_100%)] drop-shadow-[0_6px_10px_rgba(0,20,27,0.24)] [mask-image:url('/brand/abtf2026/al-raneen-mark.svg')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
             />
           </span>
         </Link>

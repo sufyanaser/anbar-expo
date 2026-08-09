@@ -1,5 +1,46 @@
 # ABTF 2026 — Design QA
 
+## Latest QA — final pre-launch polish
+
+### Evidence
+
+- Source visual truth (production before polish): `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-final-polish\01-before.png`
+- Desktop implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-final-polish\03-after-desktop.png`
+- Full-page implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-final-polish\04-after-full.png`
+- Mobile implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-final-polish\05-after-mobile.png`
+- Combined before/after review: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-final-polish\06-before-after.png`
+
+### Normalization and state
+
+- Desktop QA viewport: 1492 × 902 CSS pixels; mobile QA viewport: 390 × 843 CSS pixels.
+- States: page top, live countdown running, reduced-motion browser preference active, and scrolled operational state.
+- Primary interaction tested: `دخول المنصة` reached `#platform`, activated the compact scrolled header, and revealed the operational cards.
+- Browser checks: zero horizontal overflow at desktop and mobile widths, no failed application assets, and no application runtime errors. Chrome-extension message-channel notices were excluded as non-application errors.
+
+### Final polish findings
+
+- Hero and identity: retained the supplied book-and-digital-gateway artwork, strengthened the title hierarchy, tightened copy spacing, and consolidated the date, time, and countdown into the lower operations zone.
+- Vintage and modern blend: the ivory paper field, antique-gold English lockup, and textured official section carry the book heritage; crisp petrol-blue grids, live-state indicators, glass surfaces, and restrained motion carry the technology layer.
+- Official framework: reduced vertical padding, refined the gold cards, improved partner-logo spacing, and kept sponsor surfaces distinct without overpowering institutional content.
+- Operational platform: converted the lower page into a denser service console with clearer status contrast, consistent card heights, stronger secondary copy, and faster scanning across live, program, news, exhibitors, and visitor services.
+- Motion: added one-time viewport reveals, controlled card lift, a subtle hero breathing treatment, and a live-status pulse. All motion is disabled when `prefers-reduced-motion` is active.
+- Footer: raised text contrast, tightened vertical rhythm, and added a restrained antique-gold separator while preserving the Al Raneen operator credit.
+
+### QA iterations
+
+1. P1 — the earlier page rhythm repeated the same spacing cadence across long sections and made the platform read as a sequence of information blocks.
+2. Fix — reduced section padding, shortened operational cards, created clearer surface contrast, and aligned headings and supporting copy to a consistent editorial grid.
+3. P2 — secondary text and service descriptions were too faint for an official operational platform.
+4. Fix — raised contrast in status facts, operational descriptions, directory cards, and footer navigation without changing the established palette.
+5. Motion and accessibility pass — verified reduced-motion behavior, one-time reveal logic, passive scroll handling, focus treatments, working navigation, and zero page overflow.
+
+### Remaining findings
+
+- No actionable P0, P1, or P2 findings.
+- P3: animation is intentionally restrained to preserve the official character and avoid visual fatigue.
+
+final result: passed
+
 ## Latest QA — 2026 light identity redesign
 
 ### Evidence

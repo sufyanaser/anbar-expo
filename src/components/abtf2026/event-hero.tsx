@@ -14,7 +14,7 @@ export async function EventHero() {
       id="about"
       className="relative isolate overflow-hidden border-b border-[#0a3c5b]/10 bg-[#f4efe6] text-[#063b5a]"
     >
-      <div className="absolute inset-x-0 top-0 -z-30 h-[34rem] sm:inset-0 sm:h-auto">
+      <div className="hero-portal-motion absolute inset-x-0 top-0 -z-30 h-[34rem] sm:inset-0 sm:h-auto">
         <Image
           src="/brand/abtf2026/identity/abtf-portal-hero.webp"
           alt="كتاب مفتوح تتشكل منه بوابة معمارية رقمية تجمع المعرفة والتكنولوجيا"
@@ -62,10 +62,10 @@ export async function EventHero() {
         </div>
 
         <div
-          className="mt-auto grid items-end gap-10 pt-[23rem] sm:pt-36 lg:grid-cols-[0.92fr_1.08fr] lg:pt-24"
+          className="mt-auto grid items-end gap-8 pt-[23rem] sm:pt-32 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:pt-20"
           dir="ltr"
         >
-          <div className="order-2 lg:order-1" dir="rtl">
+          <div className="order-2 lg:order-1" dir="rtl" data-reveal>
             <div
               id="opening"
               className="overflow-hidden rounded-2xl border border-[#0a3c5b]/12 bg-[#063b5a]/94 text-white shadow-[0_22px_60px_rgba(6,59,90,0.2)] backdrop-blur-xl"
@@ -110,7 +110,7 @@ export async function EventHero() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 lg:pb-1" dir="rtl">
+          <div className="order-1 lg:order-2 lg:pb-1" dir="rtl" data-reveal>
             <p className="text-xs font-bold tracking-[0.18em] text-[#07804b]">
               المعرفة تصنع المستقبل
             </p>
@@ -126,10 +126,10 @@ export async function EventHero() {
             >
               ANBAR BOOK &amp; TECHNOLOGY FAIR
             </p>
-            <p className="mt-6 max-w-2xl text-sm leading-8 text-[#063b5a]/62 sm:text-base">
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#063b5a]/68 sm:text-base sm:leading-8">
               {eventSettings.description}
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
                 href="#platform"
                 className="inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#087c49] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#087c49]/16 transition-colors hover:bg-[#096c43] focus-visible:ring-2 focus-visible:ring-[#b88a40] focus-visible:outline-none"

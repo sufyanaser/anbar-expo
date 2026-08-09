@@ -20,10 +20,10 @@ export async function OfficialPartners() {
   return (
     <section
       id="official"
-      className="scroll-mt-32 bg-[#eee4d4] bg-[url('/brand/abtf2026/identity/abtf-paper-texture.webp')] bg-cover bg-center py-20 sm:scroll-mt-36 sm:py-24"
+      className="scroll-mt-32 bg-[#eee4d4] bg-[url('/brand/abtf2026/identity/abtf-paper-texture.webp')] bg-cover bg-center py-16 sm:scroll-mt-36 sm:py-20"
     >
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
-        <div className="max-w-3xl">
+        <div data-reveal className="max-w-3xl">
           <p className="text-xs font-normal tracking-[0.16em] text-[#087c49]">
             الإطار الرسمي
           </p>
@@ -32,11 +32,12 @@ export async function OfficialPartners() {
           </h2>
         </div>
 
-        <div className="mt-10 grid overflow-hidden rounded-3xl border border-[#9a6b16]/22 bg-[#8a5f12]/18 shadow-[0_24px_70px_rgba(111,76,13,0.1)] lg:grid-cols-3 lg:gap-px">
+        <div className="reveal-grid mt-9 grid overflow-hidden rounded-3xl border border-[#9a6b16]/22 bg-[#8a5f12]/18 shadow-[0_24px_70px_rgba(111,76,13,0.1)] lg:grid-cols-3 lg:gap-px">
           {officialEntities.map((entity, index) => (
             <article
               key={entity.label}
-              className={`group relative bg-[linear-gradient(145deg,rgba(255,252,244,0.98)_0%,rgba(245,231,191,0.98)_58%,rgba(211,170,91,0.94)_100%)] p-7 sm:p-9 ${entity.href ? "cursor-pointer" : ""}`}
+              data-reveal
+              className={`polish-card group relative bg-[linear-gradient(145deg,rgba(255,252,244,0.98)_0%,rgba(247,236,204,0.98)_62%,rgba(216,179,105,0.94)_100%)] p-7 sm:p-8 ${entity.href ? "cursor-pointer" : ""}`}
             >
               {entity.href && (
                 <Link
@@ -86,7 +87,10 @@ export async function OfficialPartners() {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white/78 px-6 py-7 text-[#073d5b] shadow-sm backdrop-blur-md sm:flex-row sm:px-9">
+        <div
+          data-reveal
+          className="polish-card mt-5 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white/82 px-6 py-6 text-[#073d5b] shadow-sm backdrop-blur-md sm:flex-row sm:px-9"
+        >
           <div>
             <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               بالتزامن مع
@@ -111,7 +115,8 @@ export async function OfficialPartners() {
 
         <Link
           href={mediaSponsorEntity?.href || abtf2026.mediaSponsor.href}
-          className="group relative mt-6 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-[#00e8bb]/28 bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-6 py-7 text-white shadow-lg shadow-[#006f7f]/18 transition-transform hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-[#00e8bb] focus-visible:outline-none sm:flex-row sm:px-9"
+          data-reveal
+          className="polish-card group relative mt-5 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-[#00e8bb]/28 bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-6 py-6 text-white shadow-lg shadow-[#006f7f]/18 focus-visible:ring-3 focus-visible:ring-[#00e8bb] focus-visible:outline-none sm:flex-row sm:px-9"
           aria-label={`عرض تفاصيل ${mediaSponsorEntity?.label || abtf2026.mediaSponsor.label}`}
         >
           <span

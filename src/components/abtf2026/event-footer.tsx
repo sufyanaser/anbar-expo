@@ -19,9 +19,9 @@ export async function EventFooter() {
   ]);
 
   return (
-    <footer className="bg-[#021d30] text-white">
+    <footer className="border-t border-[#c49a3a]/28 bg-[#021d30] text-white">
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
-        <div className="grid gap-10 py-12 lg:grid-cols-[0.8fr_1.35fr_0.65fr] lg:items-start">
+        <div className="grid gap-10 py-11 lg:grid-cols-[0.8fr_1.35fr_0.65fr] lg:items-start">
           <div className="flex items-start gap-3">
             <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
               <Image
@@ -37,7 +37,7 @@ export async function EventFooter() {
               <p className="font-latin text-sm tracking-[0.18em]">
                 {eventSettings.shortName}
               </p>
-              <p className="mt-2 max-w-sm text-xs leading-6 text-white/45">
+              <p className="mt-2 max-w-sm text-xs leading-6 text-white/56">
                 {eventSettings.opening.date}
                 <br />
                 {eventSettings.venue}
@@ -52,7 +52,7 @@ export async function EventFooter() {
                 <li key={module.id}>
                   <Link
                     href={module.href}
-                    className="rounded-sm text-white/52 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+                    className="rounded-sm text-white/60 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
                   >
                     {module.title}
                   </Link>
@@ -68,7 +68,7 @@ export async function EventFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="rounded-sm text-white/52 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+                    className="rounded-sm text-white/60 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
                   >
                     {item.label}
                   </Link>
@@ -92,7 +92,7 @@ export async function EventFooter() {
                 />
               </span>
               <div>
-                <p className="text-xs leading-6 text-white/48">
+                <p className="text-xs leading-6 text-white/58">
                   {abtf2026.platformOperator.credit}
                 </p>
                 <p className="mt-1 text-sm font-normal text-white sm:text-base">

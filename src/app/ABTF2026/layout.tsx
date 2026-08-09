@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { EventFooter } from "@/components/abtf2026/event-footer";
 import { EventHeader } from "@/components/abtf2026/event-header";
+import { FinalPolishMotion } from "@/components/abtf2026/final-polish-motion";
 import { abtf2026 } from "@/data/abtf2026";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function Abtf2026Layout({
       className="min-h-screen overflow-x-clip bg-[#f8f4ec] text-[#14242b]"
     >
       <EventHeader />
+      <FinalPolishMotion />
       {children}
       <EventFooter />
     </div>

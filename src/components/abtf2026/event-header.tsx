@@ -21,7 +21,10 @@ export async function EventHeader() {
   ]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#063b5a]/10 bg-[#f8f4ec]/94 text-[#063b5a] shadow-[0_8px_30px_rgba(6,59,90,0.08)] backdrop-blur-xl">
+    <header
+      data-polish-header
+      className="polish-header sticky top-0 z-50 border-b border-[#063b5a]/10 bg-[#f8f4ec]/94 text-[#063b5a] backdrop-blur-xl"
+    >
       <div className="mx-auto flex min-h-18 w-[min(100%-1rem,80rem)] flex-col items-stretch justify-between gap-2 py-2 sm:w-[min(100%-2rem,80rem)] sm:flex-row sm:items-center sm:gap-6">
         <Link
           href="/ABTF2026"

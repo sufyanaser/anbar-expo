@@ -147,7 +147,7 @@ const documents = [
       order: 5,
     },
   ].map((entity) => ({
-    _id: `officialEntity.${entity.id}`,
+    _id: `officialEntity-${entity.id}`,
     _type: "officialEntity",
     role: entity.role,
     label: entity.label,
@@ -177,7 +177,7 @@ const documents = [
     ["bhtc", "شركة بيت الحكمة للتدريب والاستشارات", assets.bhtc, null],
     ["alfa", "ألفا للمعارض والمؤتمرات", assets.alfa, null],
   ].map(([id, name, logo, link], order) => ({
-    _id: `partner.${id}`,
+    _id: `partner-${id}`,
     _type: "partner",
     name,
     logo,
@@ -270,7 +270,7 @@ const documents = [
       ],
       order,
     ) => ({
-      _id: `platformModule.${key}`,
+      _id: `platformModule-${key}`,
       _type: "platformModule",
       key,
       title,
@@ -307,7 +307,7 @@ const documents = [
       "يومياً",
     ],
   ].map(([id, title, startsAt, endsAt, location]) => ({
-    _id: `programEntry.${id}`,
+    _id: `programEntry-${id}`,
     _type: "programEntry",
     title,
     startsAt,
@@ -317,7 +317,7 @@ const documents = [
     enabled: true,
   })),
   {
-    _id: "galleryItem.anbar-night",
+    _id: "galleryItem-anbar-night",
     _type: "galleryItem",
     title: "الأنبار ليلاً",
     image: assets.hero,
@@ -327,7 +327,7 @@ const documents = [
     enabled: true,
   },
   {
-    _id: "managedPage.al-wasef",
+    _id: "managedPage-al-wasef",
     _type: "managedPage",
     title: "شركة الواصف الملكية",
     slug: { _type: "slug", current: "al-wasef" },
@@ -343,7 +343,7 @@ const documents = [
     enabled: true,
   },
   {
-    _id: "managedPage.media-sponsor",
+    _id: "managedPage-media-sponsor",
     _type: "managedPage",
     title: "الرنين للحلول الإعلامية والرقمية",
     slug: { _type: "slug", current: "media-sponsor" },

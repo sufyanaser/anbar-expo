@@ -4,8 +4,11 @@ import Link from "next/link";
 
 import { EventCountdown } from "@/components/abtf2026/event-countdown";
 import { abtf2026 } from "@/data/abtf2026";
+import { getEventSettings } from "@/sanity/content";
 
-export function EventHero() {
+export async function EventHero() {
+  const eventSettings = await getEventSettings();
+
   return (
     <section
       id="about"
@@ -13,7 +16,7 @@ export function EventHero() {
     >
       <div className="absolute inset-x-0 top-0 -z-30 h-[46rem] sm:inset-0 sm:h-auto">
         <Image
-          src={abtf2026.heroImage}
+          src={eventSettings.heroImage}
           alt="مشهد ليلي لمدينة الأنبار ونهر الفرات"
           fill
           sizes="100vw"
@@ -79,11 +82,10 @@ export function EventHero() {
             className="font-latin mt-6 text-base tracking-wide text-white/56 sm:text-xl"
             dir="ltr"
           >
-            {abtf2026.titleEn}
+            {eventSettings.titleEn}
           </p>
           <p className="mt-8 max-w-2xl text-base leading-8 text-white/68 sm:text-lg sm:leading-9">
-            بوابة المعرض الرقمية للأخبار والفعاليات والجهات المشاركة، مع خدمات
-            متكاملة تساعد الزائر على استكشاف تجربة المعرض في مدينة الرمادي.
+            {eventSettings.description}
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
@@ -106,7 +108,7 @@ export function EventHero() {
         <div className="relative mx-auto w-full max-w-md lg:ms-auto">
           <div className="rounded-[2rem] border border-white/18 bg-white/96 p-8 shadow-2xl shadow-black/35 backdrop-blur-sm sm:p-10">
             <Image
-              src={abtf2026.eventMark}
+              src={eventSettings.eventMark}
               width={2311}
               height={1587}
               alt="شعار معرض الأنبار الدولي للكتاب والتكنولوجيا الحديثة"
@@ -123,14 +125,14 @@ export function EventHero() {
             <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
               <p className="flex items-center gap-2 text-xs font-normal">
                 <CalendarDays className="size-4" aria-hidden="true" />
-                {abtf2026.opening.label}
+                {eventSettings.opening.label}
               </p>
               <time
-                dateTime={abtf2026.opening.dateTime}
+                dateTime={eventSettings.opening.dateTime}
                 className="font-latin mt-2 block text-xl font-normal tracking-wide"
                 dir="ltr"
               >
-                {abtf2026.opening.date}
+                {eventSettings.opening.date}
               </time>
             </div>
             <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
@@ -139,16 +141,16 @@ export function EventHero() {
                 الساعة
               </p>
               <time
-                dateTime={abtf2026.opening.dateTime}
+                dateTime={eventSettings.opening.dateTime}
                 className="mt-2 block text-xl font-normal"
               >
-                {abtf2026.opening.time}
+                {eventSettings.opening.time}
               </time>
             </div>
           </div>
 
           <div className="mx-4 mt-3 sm:mx-8">
-            <EventCountdown targetDate={abtf2026.opening.dateTime} />
+            <EventCountdown targetDate={eventSettings.opening.dateTime} />
           </div>
         </div>
       </div>

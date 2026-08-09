@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { EmptyState } from "@/components/abtf2026/platform/empty-state";
 import { PlatformPageShell } from "@/components/abtf2026/platform/platform-page-shell";
-import { getPlatformModule, newsEntries } from "@/data/abtf-platform";
+import { getPlatformModule } from "@/data/abtf-platform";
+import { getNewsEntries } from "@/sanity/content";
 
 const platformModule = getPlatformModule("news");
 
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
   description: platformModule.description,
 };
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const newsEntries = await getNewsEntries();
+
   return (
     <PlatformPageShell module={platformModule}>
       {newsEntries.length === 0 ? (
@@ -28,6 +32,17 @@ export default function NewsPage() {
               key={entry.slug}
               className="flex min-h-64 flex-col rounded-3xl border border-[#073d5b]/10 bg-white p-6"
             >
+              {entry.image ? (
+                <div className="relative -mx-6 -mt-6 mb-6 aspect-[16/9] overflow-hidden rounded-t-3xl bg-[#e8f0eb]">
+                  <Image
+                    src={entry.image}
+                    alt={entry.imageAlt || entry.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              ) : null}
               <time
                 dateTime={entry.publishedAt}
                 className="font-latin text-xs font-normal text-[#087c49]"

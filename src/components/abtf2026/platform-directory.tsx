@@ -2,9 +2,10 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 import { ModuleIcon } from "@/components/abtf2026/platform/module-icon";
-import { platformModules } from "@/data/abtf-platform";
+import { getPlatformModules } from "@/sanity/content";
 
-export function PlatformDirectory() {
+export async function PlatformDirectory() {
+  const platformModules = await getPlatformModules();
   return (
     <section
       id="services"

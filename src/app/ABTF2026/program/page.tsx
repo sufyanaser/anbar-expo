@@ -3,7 +3,8 @@ import { CalendarClock, MapPin, RefreshCw } from "lucide-react";
 
 import { EmptyState } from "@/components/abtf2026/platform/empty-state";
 import { PlatformPageShell } from "@/components/abtf2026/platform/platform-page-shell";
-import { getPlatformModule, programEntries } from "@/data/abtf-platform";
+import { getPlatformModule } from "@/data/abtf-platform";
+import { getProgramEntries } from "@/sanity/content";
 
 const platformModule = getPlatformModule("program");
 
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
   description: platformModule.description,
 };
 
-export default function ProgramPage() {
+export default async function ProgramPage() {
+  const programEntries = await getProgramEntries();
+
   return (
     <PlatformPageShell module={platformModule}>
       <div className="mb-8 grid gap-4 md:grid-cols-3">

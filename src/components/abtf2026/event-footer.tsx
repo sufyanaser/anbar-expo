@@ -2,16 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { abtf2026 } from "@/data/abtf2026";
-import { platformModules } from "@/data/abtf-platform";
+import { getEventSettings, getPlatformModules } from "@/sanity/content";
 
 const mainLinks = [
   { href: "/ABTF2026", label: "الصفحة الرئيسية" },
   { href: "/ABTF2026#official", label: "الجهات الرسمية" },
   { href: "/ABTF2026/al-wasef", label: "الجهة المنظمة" },
   { href: "/ABTF2026/media-sponsor", label: "الراعي الإعلامي" },
+  { href: "/admin", label: "إدارة المنصة" },
 ] as const;
 
-export function EventFooter() {
+export async function EventFooter() {
+  const [eventSettings, platformModules] = await Promise.all([
+    getEventSettings(),
+    getPlatformModules(),
+  ]);
+
   return (
     <footer className="bg-[#021d30] text-white">
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
@@ -19,7 +25,7 @@ export function EventFooter() {
           <div className="flex items-start gap-3">
             <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
               <Image
-                src={abtf2026.eventMark}
+                src={eventSettings.eventMark}
                 width={231}
                 height={159}
                 alt=""
@@ -29,12 +35,12 @@ export function EventFooter() {
             </span>
             <div>
               <p className="font-latin text-sm tracking-[0.18em]">
-                {abtf2026.shortName}
+                {eventSettings.shortName}
               </p>
               <p className="mt-2 max-w-sm text-xs leading-6 text-white/45">
-                16 - 25 سبتمبر 2026
+                {eventSettings.opening.date}
                 <br />
-                مدينة الرمادي، محافظة الأنبار
+                {eventSettings.venue}
               </p>
             </div>
           </div>

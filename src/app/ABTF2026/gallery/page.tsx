@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { PlatformPageShell } from "@/components/abtf2026/platform/platform-page-shell";
-import { galleryEntries, getPlatformModule } from "@/data/abtf-platform";
+import { getPlatformModule } from "@/data/abtf-platform";
+import { getGalleryEntries } from "@/sanity/content";
 
 const platformModule = getPlatformModule("gallery");
 
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
   description: platformModule.description,
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const galleryEntries = await getGalleryEntries();
+
   return (
     <PlatformPageShell module={platformModule}>
       <div className="grid gap-5 lg:grid-cols-[1.45fr_0.55fr]">

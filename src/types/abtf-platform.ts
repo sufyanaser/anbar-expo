@@ -53,6 +53,8 @@ export interface NewsEntry {
   summary: string;
   publishedAt: string;
   image?: string;
+  imageAlt?: string;
+  body?: readonly PortableTextBlock[];
 }
 
 export interface GalleryEntry {
@@ -62,3 +64,24 @@ export interface GalleryEntry {
   alt: string;
   capturedAt?: string;
 }
+
+export interface AdvertisingPlacement {
+  id: string;
+  title: string;
+  ratio: string;
+  location: string;
+  advertiser?: string;
+  image?: string;
+  alt?: string;
+  targetUrl?: string;
+}
+
+export interface LiveStreamConfig {
+  title: string;
+  status: "offline" | "upcoming" | "live" | "ended";
+  sourceUrl: string | null;
+  sourceType: "hls" | "video" | "youtube";
+  poster: string;
+  currentProgram?: string;
+}
+import type { PortableTextBlock } from "@portabletext/types";

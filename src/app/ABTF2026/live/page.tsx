@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { RadioTower, Signal, WifiOff } from "lucide-react";
 
 import { PlatformPageShell } from "@/components/abtf2026/platform/platform-page-shell";
-import { getPlatformModule, liveStreamConfig } from "@/data/abtf-platform";
+import { getPlatformModule } from "@/data/abtf-platform";
+import { getLiveStream } from "@/sanity/content";
 
 const platformModule = getPlatformModule("live");
 
@@ -11,7 +12,30 @@ export const metadata: Metadata = {
   description: platformModule.description,
 };
 
-export default function LivePage() {
+function getYouTubeEmbedUrl(sourceUrl: string | null) {
+  if (!sourceUrl) return null;
+  try {
+    const url = new URL(sourceUrl);
+    const videoId = url.hostname.includes("youtu.be")
+      ? url.pathname.slice(1)
+      : url.searchParams.get("v") ||
+        url.pathname.split("/").filter(Boolean).pop();
+    return videoId
+      ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+export default async function LivePage() {
+  const liveStreamConfig = await getLiveStream();
+  const isLive = liveStreamConfig.status === "live";
+  const youtubeEmbedUrl =
+    liveStreamConfig.sourceType === "youtube"
+      ? getYouTubeEmbedUrl(liveStreamConfig.sourceUrl)
+      : null;
+
   return (
     <PlatformPageShell module={platformModule}>
       <div className="grid gap-6 lg:grid-cols-[1.45fr_0.55fr]">
@@ -21,12 +45,23 @@ export default function LivePage() {
               <span className="size-2.5 rounded-full bg-white/25" />
               <p className="text-sm font-normal">{liveStreamConfig.title}</p>
             </div>
-            <span className="rounded-full bg-white/8 px-3 py-1.5 text-[0.68rem] font-normal text-white/50">
-              غير متصل
+            <span
+              className={`rounded-full px-3 py-1.5 text-[0.68rem] font-normal ${isLive ? "bg-[#23b26d]/18 text-[#86e8b4]" : "bg-white/8 text-white/50"}`}
+            >
+              {isLive ? "مباشر الآن" : "غير متصل"}
             </span>
           </div>
 
-          {liveStreamConfig.sourceUrl ? (
+          {youtubeEmbedUrl ? (
+            <iframe
+              className="aspect-video w-full bg-black"
+              src={youtubeEmbedUrl}
+              title={liveStreamConfig.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          ) : liveStreamConfig.sourceUrl &&
+            liveStreamConfig.sourceType !== "youtube" ? (
             <video
               className="aspect-video w-full bg-black"
               controls

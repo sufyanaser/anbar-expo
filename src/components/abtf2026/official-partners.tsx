@@ -3,8 +3,20 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { abtf2026 } from "@/data/abtf2026";
+import { getOfficialEntities } from "@/sanity/content";
 
-export function OfficialPartners() {
+export async function OfficialPartners() {
+  const entities = await getOfficialEntities();
+  const officialEntities = entities.filter(
+    (entity) => !["concurrent", "mediaSponsor"].includes(entity.role),
+  );
+  const concurrentEntity = entities.find(
+    (entity) => entity.role === "concurrent",
+  );
+  const mediaSponsorEntity = entities.find(
+    (entity) => entity.role === "mediaSponsor",
+  );
+
   return (
     <section
       id="official"
@@ -21,7 +33,7 @@ export function OfficialPartners() {
         </div>
 
         <div className="mt-10 grid overflow-hidden rounded-2xl border border-[#9a6b16]/30 bg-[#8a5f12]/25 shadow-[0_18px_55px_rgba(111,76,13,0.12)] lg:grid-cols-3 lg:gap-px">
-          {abtf2026.officialEntities.map((entity, index) => (
+          {officialEntities.map((entity, index) => (
             <article
               key={entity.label}
               className={`group relative bg-[linear-gradient(145deg,#fff8dc_0%,#efd88f_52%,#c99a36_100%)] p-7 sm:p-9 ${entity.href ? "cursor-pointer" : ""}`}
@@ -80,12 +92,14 @@ export function OfficialPartners() {
               بالتزامن مع
             </p>
             <p className="mt-2 text-2xl font-bold">
-              {abtf2026.concurrentEvent}
+              {concurrentEntity?.name || abtf2026.concurrentEvent}
             </p>
           </div>
           <span className="flex size-20 items-center justify-center rounded-2xl border border-[#073d5b]/10 bg-[#f7f5ef] p-2">
             <Image
-              src="/brand/abtf2026/partner-03.svg"
+              src={
+                concurrentEntity?.mark.src || "/brand/abtf2026/partner-03.svg"
+              }
               width={2328}
               height={2398}
               alt="شعار معرض صُنع في سوريا"
@@ -96,9 +110,9 @@ export function OfficialPartners() {
         </div>
 
         <Link
-          href={abtf2026.mediaSponsor.href}
+          href={mediaSponsorEntity?.href || abtf2026.mediaSponsor.href}
           className="group relative mt-6 flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl border border-[#00e8bb]/28 bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-6 py-7 text-white shadow-lg shadow-[#006f7f]/18 transition-transform hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-[#00e8bb] focus-visible:outline-none sm:flex-row sm:px-9"
-          aria-label={`عرض تفاصيل ${abtf2026.mediaSponsor.label}`}
+          aria-label={`عرض تفاصيل ${mediaSponsorEntity?.label || abtf2026.mediaSponsor.label}`}
         >
           <span
             className="pointer-events-none absolute top-1/2 -left-36 size-[30rem] -translate-y-1/2 rounded-full bg-[repeating-radial-gradient(circle,transparent_0,transparent_31px,rgba(255,255,255,0.14)_32px,rgba(255,255,255,0.14)_34px,transparent_35px,transparent_62px)] opacity-75 [mask-image:linear-gradient(to_right,black_20%,rgba(0,0,0,0.72)_58%,transparent_92%)]"
@@ -110,10 +124,10 @@ export function OfficialPartners() {
           />
           <span className="relative">
             <span className="text-xs font-normal tracking-[0.14em] text-white/76">
-              {abtf2026.mediaSponsor.label}
+              {mediaSponsorEntity?.label || abtf2026.mediaSponsor.label}
             </span>
             <span className="mt-2 block text-2xl font-bold">
-              {abtf2026.mediaSponsor.name}
+              {mediaSponsorEntity?.name || abtf2026.mediaSponsor.name}
             </span>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white/82">
               التفاصيل والتواصل والإعلانات
@@ -126,8 +140,18 @@ export function OfficialPartners() {
           <span className="relative flex size-20 shrink-0 items-center justify-center rounded-2xl border border-white/38 bg-white/10 p-2 shadow-inner shadow-white/10 backdrop-blur-sm">
             <span
               role="img"
-              aria-label={`شعار ${abtf2026.mediaSponsor.name}`}
-              className="size-full bg-[linear-gradient(145deg,#ffffff_8%,#eef1f4_42%,#aeb6c0_72%,#ffffff_100%)] drop-shadow-[0_6px_10px_rgba(0,20,27,0.24)] [mask-image:url('/brand/abtf2026/al-raneen-mark.svg')] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
+              aria-label={`شعار ${mediaSponsorEntity?.name || abtf2026.mediaSponsor.name}`}
+              className="size-full bg-[linear-gradient(145deg,#ffffff_8%,#eef1f4_42%,#aeb6c0_72%,#ffffff_100%)] drop-shadow-[0_6px_10px_rgba(0,20,27,0.24)]"
+              style={{
+                maskImage: `url('${mediaSponsorEntity?.mark.src || abtf2026.mediaSponsor.mark}')`,
+                WebkitMaskImage: `url('${mediaSponsorEntity?.mark.src || abtf2026.mediaSponsor.mark}')`,
+                maskPosition: "center",
+                WebkitMaskPosition: "center",
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+                maskSize: "contain",
+                WebkitMaskSize: "contain",
+              }}
             />
           </span>
         </Link>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RadioTower } from "lucide-react";
 
-import { abtf2026 } from "@/data/abtf2026";
+import { getEventSettings, getPartnerMarks } from "@/sanity/content";
 
 const navigation = [
   { href: "/ABTF2026#platform", label: "لوحة المتابعة" },
@@ -14,7 +14,12 @@ const navigation = [
   { href: "/ABTF2026#official", label: "الجهات الرسمية" },
 ] as const;
 
-export function EventHeader() {
+export async function EventHeader() {
+  const [eventSettings, partnerMarks] = await Promise.all([
+    getEventSettings(),
+    getPartnerMarks(),
+  ]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#042f49]/96 text-white shadow-[0_8px_30px_rgba(2,29,48,0.12)] backdrop-blur-xl">
       <div className="mx-auto flex min-h-18 w-[min(100%-1rem,80rem)] items-center justify-between gap-3 py-2 sm:w-[min(100%-2rem,80rem)] sm:gap-6">
@@ -25,7 +30,7 @@ export function EventHeader() {
         >
           <span className="flex size-11 items-center justify-center rounded-full bg-white p-1.5 sm:size-12">
             <Image
-              src={abtf2026.eventMark}
+              src={eventSettings.eventMark}
               width={231}
               height={159}
               alt=""
@@ -35,7 +40,7 @@ export function EventHeader() {
           </span>
           <span>
             <span className="font-latin block text-xs font-normal tracking-[0.16em] sm:text-sm sm:tracking-[0.18em]">
-              {abtf2026.shortName}
+              {eventSettings.shortName}
             </span>
             <span className="mt-1 block max-w-36 text-[0.52rem] leading-4 font-bold text-white/55 sm:max-w-none sm:text-[0.66rem]">
               معرض الأنبار الدولي للكتاب والتكنولوجيا
@@ -48,7 +53,7 @@ export function EventHeader() {
           className="grid shrink-0 grid-cols-4 items-center gap-1 sm:flex sm:min-w-0 sm:max-w-md sm:gap-2 sm:overflow-x-auto sm:py-1 sm:[scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="شعارات المؤسسات والشركات المشاركة"
         >
-          {abtf2026.partnerMarks.map((mark) =>
+          {partnerMarks.map((mark) =>
             mark.href ? (
               <Link
                 key={mark.src}

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { LayoutPanelTop, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { PlatformPageShell } from "@/components/abtf2026/platform/platform-page-shell";
-import { advertisingPlacements, getPlatformModule } from "@/data/abtf-platform";
+import { getPlatformModule } from "@/data/abtf-platform";
+import { getAdvertisingPlacements } from "@/sanity/content";
 
 const platformModule = getPlatformModule("advertising");
 
@@ -11,7 +14,9 @@ export const metadata: Metadata = {
   description: platformModule.description,
 };
 
-export default function AdvertisingPage() {
+export default async function AdvertisingPage() {
+  const advertisingPlacements = await getAdvertisingPlacements();
+
   return (
     <PlatformPageShell module={platformModule}>
       <div className="rounded-3xl bg-[#073d5b] p-7 text-white sm:p-10">
@@ -35,6 +40,17 @@ export default function AdvertisingPage() {
             key={placement.id}
             className="rounded-3xl border border-[#073d5b]/10 bg-white p-6"
           >
+            {placement.image ? (
+              <div className="relative -mx-6 -mt-6 mb-6 aspect-[16/9] overflow-hidden rounded-t-3xl bg-[#e8f0eb]">
+                <Image
+                  src={placement.image}
+                  alt={placement.alt || placement.title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
             <LayoutPanelTop
               className="size-6 text-[#087c49]"
               aria-hidden="true"
@@ -48,6 +64,16 @@ export default function AdvertisingPage() {
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/52">
               {placement.location}
             </p>
+            {placement.targetUrl ? (
+              <Link
+                href={placement.targetUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="mt-5 inline-flex text-sm font-bold text-[#087c49]"
+              >
+                زيارة المعلن
+              </Link>
+            ) : null}
           </article>
         ))}
       </div>

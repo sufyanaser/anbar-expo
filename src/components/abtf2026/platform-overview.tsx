@@ -10,84 +10,103 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { exhibitionBuildings } from "@/data/abtf-platform";
 import {
-  exhibitionBuildings,
-  exhibitorLocations,
-  liveStreamConfig,
-  newsEntries,
-  platformModules,
-  programEntries,
-} from "@/data/abtf-platform";
+  getExhibitors,
+  getEventSettings,
+  getLiveStream,
+  getNewsEntries,
+  getPlatformModules,
+  getProgramEntries,
+} from "@/sanity/content";
 
-const overviewFacts = [
-  {
-    icon: CalendarDays,
-    label: "موعد المعرض",
-    value: "16 — 25 سبتمبر 2026",
-  },
-  {
-    icon: MapPin,
-    label: "الموقع",
-    value: "مدينة الرمادي · محافظة الأنبار",
-  },
-  {
-    icon: Building2,
-    label: "مرافق المعرض",
-    value: `${exhibitionBuildings.length} بنايات`,
-  },
-  {
-    icon: Navigation,
-    label: "الخدمات الرقمية",
-    value: `${platformModules.length} أقسام مترابطة`,
-  },
-] as const;
+async function getOperationalCards() {
+  const [liveStreamConfig, programEntries, newsEntries, exhibitorLocations] =
+    await Promise.all([
+      getLiveStream(),
+      getProgramEntries(),
+      getNewsEntries(),
+      getExhibitors(),
+    ]);
 
-const operationalCards = [
-  {
-    icon: RadioTower,
-    eyebrow: "التغطية الرسمية",
-    title: "البث المباشر",
-    detail: liveStreamConfig.sourceUrl
-      ? "البث متاح الآن عبر القناة الرسمية."
-      : "يُفعّل عند انطلاق التغطية الرسمية.",
-    status: liveStreamConfig.sourceUrl ? "متصل" : "غير متصل حالياً",
-    statusTone: liveStreamConfig.sourceUrl ? "active" : "idle",
-    href: "/ABTF2026/live",
-  },
-  {
-    icon: CalendarDays,
-    eyebrow: "الجدول الرسمي",
-    title: "برنامج الفعاليات",
-    detail: "مواعيد الندوات والأمسيات والأنشطة اليومية.",
-    status: `${programEntries.length} فعاليات مدرجة`,
-    statusTone: "ready",
-    href: "/ABTF2026/program",
-  },
-  {
-    icon: Newspaper,
-    eyebrow: "المركز الإعلامي",
-    title: "آخر الأخبار",
-    detail: "البيانات والتحديثات الرسمية المرتبطة بالمعرض.",
-    status:
-      newsEntries.length > 0 ? `${newsEntries.length} تحديثات` : "قيد الإعداد",
-    statusTone: newsEntries.length > 0 ? "ready" : "idle",
-    href: "/ABTF2026/news",
-  },
-  {
-    icon: UsersRound,
-    eyebrow: "قاعدة المشاركين",
-    title: "دليل العارضين",
-    detail: "البحث بالاسم والتصنيف وموقع الجناح داخل المعرض.",
-    status:
-      exhibitorLocations.length > 0
-        ? `${exhibitorLocations.length} عارضاً`
-        : "تُضاف البيانات قريباً",
-    statusTone: exhibitorLocations.length > 0 ? "ready" : "idle",
-    href: "/ABTF2026/exhibitors",
-  },
-] as const;
+  const operationalCards = [
+    {
+      icon: RadioTower,
+      eyebrow: "التغطية الرسمية",
+      title: "البث المباشر",
+      detail: liveStreamConfig.sourceUrl
+        ? "البث متاح الآن عبر القناة الرسمية."
+        : "يُفعّل عند انطلاق التغطية الرسمية.",
+      status: liveStreamConfig.sourceUrl ? "متصل" : "غير متصل حالياً",
+      statusTone: liveStreamConfig.sourceUrl ? "active" : "idle",
+      href: "/ABTF2026/live",
+    },
+    {
+      icon: CalendarDays,
+      eyebrow: "الجدول الرسمي",
+      title: "برنامج الفعاليات",
+      detail: "مواعيد الندوات والأمسيات والأنشطة اليومية.",
+      status: `${programEntries.length} فعاليات مدرجة`,
+      statusTone: "ready",
+      href: "/ABTF2026/program",
+    },
+    {
+      icon: Newspaper,
+      eyebrow: "المركز الإعلامي",
+      title: "آخر الأخبار",
+      detail: "البيانات والتحديثات الرسمية المرتبطة بالمعرض.",
+      status:
+        newsEntries.length > 0
+          ? `${newsEntries.length} تحديثات`
+          : "قيد الإعداد",
+      statusTone: newsEntries.length > 0 ? "ready" : "idle",
+      href: "/ABTF2026/news",
+    },
+    {
+      icon: UsersRound,
+      eyebrow: "قاعدة المشاركين",
+      title: "دليل العارضين",
+      detail: "البحث بالاسم والتصنيف وموقع الجناح داخل المعرض.",
+      status:
+        exhibitorLocations.length > 0
+          ? `${exhibitorLocations.length} عارضاً`
+          : "تُضاف البيانات قريباً",
+      statusTone: exhibitorLocations.length > 0 ? "ready" : "idle",
+      href: "/ABTF2026/exhibitors",
+    },
+  ] as const;
 
-export function PlatformStatusStrip() {
+  return operationalCards;
+}
+
+export async function PlatformStatusStrip() {
+  const [eventSettings, platformModules] = await Promise.all([
+    getEventSettings(),
+    getPlatformModules(),
+  ]);
+  const overviewFacts = [
+    {
+      icon: CalendarDays,
+      label: "موعد المعرض",
+      value: eventSettings.opening.date,
+    },
+    {
+      icon: MapPin,
+      label: "الموقع",
+      value: eventSettings.venue,
+    },
+    {
+      icon: Building2,
+      label: "مرافق المعرض",
+      value: `${eventSettings.buildingCount || exhibitionBuildings.length} بنايات`,
+    },
+    {
+      icon: Navigation,
+      label: "الخدمات الرقمية",
+      value: `${platformModules.length} أقسام مترابطة`,
+    },
+  ] as const;
+
   return (
     <section
       aria-label="معلومات تشغيل المعرض"
@@ -115,7 +134,9 @@ export function PlatformStatusStrip() {
   );
 }
 
-export function EventCommandCenter() {
+export async function EventCommandCenter() {
+  const operationalCards = await getOperationalCards();
+
   return (
     <section
       id="platform"

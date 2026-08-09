@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -18,6 +19,7 @@ import {
 } from "lucide-react";
 
 import { alWasef } from "@/data/al-wasef";
+import { getManagedPage } from "@/sanity/content";
 
 export const metadata: Metadata = {
   title: alWasef.name,
@@ -28,7 +30,17 @@ export const metadata: Metadata = {
 
 const experienceIcons = [BookOpenText, Factory, Theater, UsersRound] as const;
 
-export default function AlWasefPage() {
+export default async function AlWasefPage() {
+  const managedPage = await getManagedPage("al-wasef");
+  const pageTitle = managedPage?.title || alWasef.name;
+  const pageIntro = managedPage?.intro || alWasef.legalName;
+  const pageLogo = managedPage?.logo || alWasef.mark;
+  const contactEmail = managedPage?.contactEmail || alWasef.email;
+  const contactPhone = managedPage?.contactPhone || alWasef.phones[0].label;
+  const contactPhoneHref = managedPage?.contactPhone
+    ? `tel:${managedPage.contactPhone.replace(/[^+\d]/g, "")}`
+    : alWasef.phones[0].href;
+
   return (
     <div className="bg-[#f7f5ef]">
       <section className="relative isolate overflow-hidden bg-[#03283f] px-4 py-16 text-white sm:py-24">
@@ -59,36 +71,36 @@ export default function AlWasefPage() {
               الجهة المنظمة
             </p>
             <h1 className="mt-4 max-w-4xl text-4xl leading-[1.3] font-black sm:text-6xl">
-              {alWasef.name}
+              {pageTitle}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-white/68 sm:text-lg sm:leading-9">
-              {alWasef.legalName}
+              {pageIntro}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={`mailto:${alWasef.email}`}
+                href={`mailto:${contactEmail}`}
                 className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#e5b834] px-5 text-sm font-normal text-[#03283f] transition-colors hover:bg-[#f0c64f] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               >
                 <Mail className="size-4" aria-hidden="true" />
                 التواصل مع الشركة
               </a>
               <a
-                href={alWasef.phones[0].href}
+                href={contactPhoneHref}
                 className="font-latin inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/18 bg-white/7 px-5 text-sm font-normal text-white transition-colors hover:bg-white/12 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
                 dir="ltr"
               >
                 <Phone className="size-4" aria-hidden="true" />
-                {alWasef.phones[0].label}
+                {contactPhone}
               </a>
             </div>
           </div>
 
           <div className="flex size-52 items-center justify-center rounded-[2rem] border border-[#e5b834]/45 bg-[linear-gradient(145deg,#fff9e5,#e8ca71)] p-8 shadow-2xl shadow-black/25 sm:size-64">
             <Image
-              src={alWasef.mark}
+              src={pageLogo}
               width={2328}
               height={2398}
-              alt={`شعار ${alWasef.name}`}
+              alt={`شعار ${pageTitle}`}
               className="max-h-full w-auto object-contain"
               preload
               unoptimized
@@ -108,9 +120,13 @@ export default function AlWasefPage() {
               خبرة تصنع منصات للفرص والمعرفة
             </h2>
             <div className="mt-6 space-y-5 text-base leading-9 text-[#073d5b]/65">
-              {alWasef.profile.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {managedPage?.body?.length ? (
+                <PortableText value={managedPage.body} />
+              ) : (
+                alWasef.profile.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))
+              )}
             </div>
             <blockquote className="mt-8 rounded-2xl border-s-4 border-[#c89627] bg-[#fff8df] p-6 text-lg leading-9 font-normal text-[#493407]">
               {alWasef.vision}
@@ -155,11 +171,11 @@ export default function AlWasefPage() {
                 aria-hidden="true"
               />
               <a
-                href={`mailto:${alWasef.email}`}
+                href={`mailto:${contactEmail}`}
                 className="font-latin rounded-sm text-sm font-bold text-white/74 hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
                 dir="ltr"
               >
-                {alWasef.email}
+                {contactEmail}
               </a>
             </div>
           </aside>

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Megaphone, MessagesSquare, Radio } from "lucide-react";
 
 import { abtf2026 } from "@/data/abtf2026";
+import { getManagedPage } from "@/sanity/content";
 
 export const metadata: Metadata = {
   title: abtf2026.mediaSponsor.label,
@@ -33,7 +35,11 @@ const informationSections = [
   },
 ] as const;
 
-export default function MediaSponsorPage() {
+export default async function MediaSponsorPage() {
+  const managedPage = await getManagedPage("media-sponsor");
+  const pageTitle = managedPage?.title || abtf2026.mediaSponsor.name;
+  const pageLogo = managedPage?.logo || abtf2026.mediaSponsor.mark;
+
   return (
     <div className="bg-[#f7f5ef]">
       <section className="relative overflow-hidden bg-[linear-gradient(110deg,#00a58f_0%,#006f7f_46%,#003b46_100%)] px-4 py-16 text-white sm:py-24">
@@ -54,20 +60,20 @@ export default function MediaSponsorPage() {
               {abtf2026.mediaSponsor.label}
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl leading-[1.3] font-black sm:text-6xl">
-              {abtf2026.mediaSponsor.name}
+              {pageTitle}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
-              تعرف على دور الراعي الإعلامي والوكيل الإعلاني في إدارة حضور المعرض
-              عبر الإعلام والمنصات الرقمية.
+              {managedPage?.intro ||
+                "تعرف على دور الراعي الإعلامي والوكيل الإعلاني في إدارة حضور المعرض عبر الإعلام والمنصات الرقمية."}
             </p>
           </div>
 
           <div className="relative flex size-48 items-center justify-center overflow-hidden rounded-[2rem] border border-white/85 bg-[linear-gradient(145deg,rgba(255,255,255,0.94)_0%,rgba(248,250,252,0.82)_50%,rgba(226,232,240,0.68)_100%)] p-7 shadow-[0_24px_65px_rgba(0,31,38,0.26),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-xl before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent sm:size-56">
             <Image
-              src={abtf2026.mediaSponsor.mark}
+              src={pageLogo}
               width={490}
               height={490}
-              alt={`شعار ${abtf2026.mediaSponsor.name}`}
+              alt={`شعار ${pageTitle}`}
               className="relative h-auto w-full drop-shadow-[0_10px_18px_rgba(0,75,82,0.16)]"
               preload
               unoptimized
@@ -98,6 +104,14 @@ export default function MediaSponsorPage() {
           </div>
         </div>
       </section>
+
+      {managedPage?.body?.length ? (
+        <section className="px-4 pb-16 sm:pb-24">
+          <article className="mx-auto w-[min(100%,80rem)] rounded-3xl border border-[#073d5b]/10 bg-white p-7 text-base leading-9 text-[#073d5b]/65 shadow-sm sm:p-10">
+            <PortableText value={managedPage.body} />
+          </article>
+        </section>
+      ) : null}
     </div>
   );
 }

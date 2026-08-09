@@ -1,5 +1,42 @@
 # ABTF 2026 — Design QA
 
+## Latest QA — Unified opening schedule board
+
+### Evidence
+
+- Source annotation: `C:\Users\sufia\.codex\attachments\49b2030b-80bd-4b03-935f-ef11f2236f79\image.png`
+- Final desktop implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-countdown-panel\implementation-desktop.png`
+- Side-by-side comparison: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-countdown-panel\comparison.png`
+
+### Normalization and state
+
+- Source pixels: 1428 × 903.
+- Implementation capture: 1430 × 847 CSS pixels at device scale 1.
+- State: page top, live countdown running, production build served locally.
+- Measured board: x 117.67, y 725.75, width 702, height 135.08 CSS pixels.
+- Browser checks: no horizontal overflow and no failed images.
+
+### Findings
+
+- The separate yellow date/time card and dark countdown card are consolidated into one restrained glass panel.
+- The panel occupies the requested lower-left region and preserves a clear visual gap from the hero narrative and primary actions.
+- Date, time, and countdown remain independently readable through dividers, compact labels, and consistent numeric hierarchy.
+- Event colors and identity assets remain unchanged; only layout, surface treatment, and spacing were refined.
+- Responsive behavior remains explicit: a single horizontal row at desktop and a two-row unified panel on narrow screens.
+
+### Comparison history
+
+1. Initial consolidation — P1: the RTL transform left the panel partially outside the viewport at x -170.33.
+2. Position correction: reduced the desktop width to 39rem and translated the panel into the annotated region.
+3. Vertical correction: reduced the final top margin so the panel begins at y 725.75, closely matching the annotated red target.
+4. Final pass: event mark remains fully visible, the schedule board reads as one surface, and no overflow or broken assets remain.
+
+### Remaining findings
+
+- No actionable P0, P1, or P2 findings.
+
+final result: passed
+
 ## Evidence
 
 - Source visual truth: `C:\Users\sufia\.codex\attachments\456b6f7b-10d6-422c-a1aa-bb0fa9c4911c\Image.png`

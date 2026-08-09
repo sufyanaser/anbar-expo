@@ -106,7 +106,7 @@ export async function EventHero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:ms-auto">
-          <div className="rounded-[2rem] border border-white/18 bg-white/96 p-8 shadow-2xl shadow-black/35 backdrop-blur-sm sm:p-10">
+          <div className="rounded-[2rem] border border-white/18 bg-white/96 p-8 shadow-2xl shadow-black/35 backdrop-blur-sm sm:p-10 lg:translate-y-20">
             <Image
               src={eventSettings.eventMark}
               width={2311}
@@ -120,37 +120,45 @@ export async function EventHero() {
 
           <div
             id="opening"
-            className="relative mx-4 -mt-3 grid gap-px overflow-hidden rounded-xl border border-[#e5b834]/35 bg-[#e5b834]/35 shadow-xl sm:mx-8 sm:grid-cols-2"
+            className="relative z-10 mt-8 w-full max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-white/16 bg-[#032e48]/82 shadow-[0_20px_50px_rgba(0,0,0,0.26)] backdrop-blur-xl lg:w-[39rem] lg:max-w-none lg:translate-x-52"
           >
-            <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
-              <p className="flex items-center gap-2 text-xs font-normal">
-                <CalendarDays className="size-4" aria-hidden="true" />
-                {eventSettings.opening.label}
-              </p>
-              <time
-                dateTime={eventSettings.opening.dateTime}
-                className="font-latin mt-2 block text-xl font-normal tracking-wide"
-                dir="ltr"
-              >
-                {eventSettings.opening.date}
-              </time>
+            <div className="grid grid-cols-2 sm:grid-cols-[1.1fr_0.8fr_2.15fr]">
+              <div className="px-5 py-4 text-white sm:px-6">
+                <p className="flex items-center gap-2 text-[0.68rem] font-normal text-white/55">
+                  <CalendarDays
+                    className="size-4 text-[#f0c64f]"
+                    aria-hidden="true"
+                  />
+                  {eventSettings.opening.label}
+                </p>
+                <time
+                  dateTime={eventSettings.opening.dateTime}
+                  className="font-latin mt-2 block text-lg font-normal tracking-wide sm:text-xl"
+                  dir="ltr"
+                >
+                  {eventSettings.opening.date}
+                </time>
+              </div>
+              <div className="border-s border-white/12 px-5 py-4 text-white sm:px-6">
+                <p className="flex items-center gap-2 text-[0.68rem] font-normal text-white/55">
+                  <Clock3
+                    className="size-4 text-[#f0c64f]"
+                    aria-hidden="true"
+                  />
+                  الساعة
+                </p>
+                <time
+                  dateTime={eventSettings.opening.dateTime}
+                  className="mt-2 block text-lg font-normal sm:text-xl"
+                >
+                  {eventSettings.opening.time}
+                </time>
+              </div>
+              <EventCountdown
+                targetDate={eventSettings.opening.dateTime}
+                className="col-span-2 border-t border-white/12 sm:col-span-1 sm:border-t-0 sm:border-s"
+              />
             </div>
-            <div className="bg-[#f5cf61] p-5 text-[#102c2a]">
-              <p className="flex items-center gap-2 text-xs font-normal">
-                <Clock3 className="size-4" aria-hidden="true" />
-                الساعة
-              </p>
-              <time
-                dateTime={eventSettings.opening.dateTime}
-                className="mt-2 block text-xl font-normal"
-              >
-                {eventSettings.opening.time}
-              </time>
-            </div>
-          </div>
-
-          <div className="mx-4 mt-3 sm:mx-8">
-            <EventCountdown targetDate={eventSettings.opening.dateTime} />
           </div>
         </div>
       </div>

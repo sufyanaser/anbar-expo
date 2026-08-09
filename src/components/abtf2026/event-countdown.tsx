@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { cn } from "@/lib/utils";
+
 type CountdownValue = {
   days: number;
   hours: number;
@@ -29,7 +31,13 @@ function getCountdown(targetTime: number): CountdownValue {
   };
 }
 
-export function EventCountdown({ targetDate }: { targetDate: string }) {
+export function EventCountdown({
+  targetDate,
+  className,
+}: {
+  targetDate: string;
+  className?: string;
+}) {
   const [countdown, setCountdown] = useState<CountdownValue | null>(null);
 
   useEffect(() => {
@@ -44,7 +52,7 @@ export function EventCountdown({ targetDate }: { targetDate: string }) {
 
   if (countdown?.started) {
     return (
-      <div className="rounded-xl border border-white/14 bg-[#042f49]/94 px-6 py-5 text-center text-white shadow-xl">
+      <div className={cn("px-5 py-4 text-center text-white", className)}>
         <p className="text-sm font-normal text-[#f0c64f]">انطلق المعرض</p>
       </div>
     );
@@ -52,22 +60,22 @@ export function EventCountdown({ targetDate }: { targetDate: string }) {
 
   return (
     <div
-      className="rounded-xl border border-white/14 bg-[#042f49]/94 p-4 text-white shadow-xl sm:p-5"
+      className={cn("px-4 py-4 text-white sm:px-5", className)}
       aria-label="الوقت المتبقي لانطلاق المعرض"
     >
-      <p className="text-center text-xs font-normal tracking-[0.12em] text-[#f0c64f]">
+      <p className="text-center text-[0.68rem] font-normal tracking-[0.1em] text-[#f0c64f]">
         متبقي على انطلاق المعرض
       </p>
-      <div className="mt-4 grid grid-cols-4 gap-2" dir="ltr">
+      <div
+        className="mt-2.5 grid grid-cols-4 divide-x divide-white/12"
+        dir="ltr"
+      >
         {units.map((unit) => (
-          <div
-            key={unit.key}
-            className="rounded-lg border border-white/10 bg-white/7 px-2 py-3 text-center"
-          >
-            <span className="font-latin block text-xl font-normal tabular-nums sm:text-2xl">
+          <div key={unit.key} className="px-1.5 text-center sm:px-2">
+            <span className="font-latin block text-xl font-normal tabular-nums sm:text-[1.65rem]">
               {countdown ? String(countdown[unit.key]).padStart(2, "0") : "--"}
             </span>
-            <span className="mt-1 block text-[0.68rem] font-bold text-white/58">
+            <span className="mt-0.5 block text-[0.64rem] font-bold text-white/52">
               {unit.label}
             </span>
           </div>

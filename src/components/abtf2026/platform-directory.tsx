@@ -9,7 +9,7 @@ export async function PlatformDirectory() {
   return (
     <section
       id="services"
-      className="scroll-mt-32 bg-[#e8f0eb] py-20 sm:scroll-mt-36 sm:py-24"
+      className="scroll-mt-32 bg-[#edf3ef] py-20 sm:scroll-mt-36 sm:py-24"
     >
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">

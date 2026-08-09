@@ -21,14 +21,14 @@ export async function EventHeader() {
   ]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#042f49]/96 text-white shadow-[0_8px_30px_rgba(2,29,48,0.12)] backdrop-blur-xl">
-      <div className="mx-auto flex min-h-18 w-[min(100%-1rem,80rem)] items-center justify-between gap-3 py-2 sm:w-[min(100%-2rem,80rem)] sm:gap-6">
+    <header className="sticky top-0 z-50 border-b border-[#063b5a]/10 bg-[#f8f4ec]/94 text-[#063b5a] shadow-[0_8px_30px_rgba(6,59,90,0.08)] backdrop-blur-xl">
+      <div className="mx-auto flex min-h-18 w-[min(100%-1rem,80rem)] flex-col items-stretch justify-between gap-2 py-2 sm:w-[min(100%-2rem,80rem)] sm:flex-row sm:items-center sm:gap-6">
         <Link
           href="/ABTF2026"
-          className="flex shrink-0 items-center gap-2.5 rounded-sm focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none sm:gap-3"
+          className="flex shrink-0 items-center gap-2.5 rounded-sm focus-visible:ring-2 focus-visible:ring-[#b88a40] focus-visible:outline-none sm:gap-3"
           aria-label="العودة إلى بداية الصفحة"
         >
-          <span className="flex size-11 items-center justify-center rounded-full bg-white p-1.5 sm:size-12">
+          <span className="flex size-11 items-center justify-center rounded-full border border-[#063b5a]/10 bg-white p-1.5 shadow-sm sm:size-12">
             <Image
               src={eventSettings.eventMark}
               width={231}
@@ -42,7 +42,7 @@ export async function EventHeader() {
             <span className="font-latin block text-xs font-normal tracking-[0.16em] sm:text-sm sm:tracking-[0.18em]">
               {eventSettings.shortName}
             </span>
-            <span className="mt-1 block max-w-36 text-[0.52rem] leading-4 font-bold text-white/55 sm:max-w-none sm:text-[0.66rem]">
+            <span className="mt-1 block max-w-36 text-[0.52rem] leading-4 font-bold text-[#063b5a]/48 sm:max-w-none sm:text-[0.66rem]">
               معرض الأنبار الدولي للكتاب والتكنولوجيا
             </span>
           </span>
@@ -50,7 +50,7 @@ export async function EventHeader() {
 
         <div
           dir="rtl"
-          className="grid shrink-0 grid-cols-4 items-center gap-1 sm:flex sm:min-w-0 sm:max-w-md sm:gap-2 sm:overflow-x-auto sm:py-1 sm:[scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex w-full min-w-0 items-center gap-1 overflow-x-auto py-1 [scrollbar-width:none] sm:w-auto sm:max-w-md sm:shrink-0 sm:gap-2 [&::-webkit-scrollbar]:hidden"
           aria-label="شعارات المؤسسات والشركات المشاركة"
         >
           {partnerMarks.map((mark) =>
@@ -58,7 +58,7 @@ export async function EventHeader() {
               <Link
                 key={mark.src}
                 href={mark.href}
-                className="flex size-8 shrink-0 items-center justify-center rounded-md border border-[#e5b834]/45 bg-white p-1 transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none sm:size-11 sm:rounded-lg sm:p-1.5 xl:size-12"
+                className="flex size-8 shrink-0 items-center justify-center rounded-md border border-[#b88a40]/24 bg-white p-1 shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#b88a40] focus-visible:outline-none sm:size-11 sm:rounded-lg sm:p-1.5 xl:size-12"
                 aria-label={`فتح صفحة ${mark.alt}`}
               >
                 <Image
@@ -73,7 +73,7 @@ export async function EventHeader() {
             ) : (
               <div
                 key={mark.src}
-                className="flex size-8 shrink-0 items-center justify-center rounded-md border border-white/15 bg-white p-1 sm:size-11 sm:rounded-lg sm:p-1.5 xl:size-12"
+                className="flex size-8 shrink-0 items-center justify-center rounded-md border border-[#063b5a]/10 bg-white p-1 shadow-sm sm:size-11 sm:rounded-lg sm:p-1.5 xl:size-12"
               >
                 <Image
                   src={mark.src}
@@ -89,11 +89,11 @@ export async function EventHeader() {
         </div>
       </div>
 
-      <div className="border-t border-white/8 bg-[#03283f]/72">
+      <div className="border-t border-[#063b5a]/8 bg-white/72">
         <div className="mx-auto flex w-[min(100%,80rem)] items-center gap-2 overflow-x-auto px-2 py-2 [scrollbar-width:none] sm:w-[min(100%-2rem,80rem)] sm:px-0 [&::-webkit-scrollbar]:hidden">
           <Link
             href="/ABTF2026/live"
-            className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-lg border border-[#23b26d]/25 bg-[#23b26d]/10 px-3 text-xs font-bold text-[#86e8b4] transition-colors hover:bg-[#23b26d]/16 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
+            className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-lg border border-[#087c49]/18 bg-[#087c49]/8 px-3 text-xs font-bold text-[#087c49] transition-colors hover:bg-[#087c49]/12 focus-visible:ring-2 focus-visible:ring-[#b88a40] focus-visible:outline-none"
           >
             <RadioTower className="size-4" aria-hidden="true" />
             البث المباشر
@@ -104,7 +104,7 @@ export async function EventHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block min-h-9 shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-white/58 transition-colors hover:bg-white/8 hover:text-white focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
+                    className="block min-h-9 shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#063b5a]/58 transition-colors hover:bg-[#063b5a]/6 hover:text-[#063b5a] focus-visible:ring-2 focus-visible:ring-[#b88a40] focus-visible:outline-none"
                   >
                     {item.label}
                   </Link>

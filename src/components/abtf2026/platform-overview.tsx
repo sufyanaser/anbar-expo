@@ -110,7 +110,7 @@ export async function PlatformStatusStrip() {
   return (
     <section
       aria-label="معلومات تشغيل المعرض"
-      className="relative z-10 border-b border-[#073d5b]/10 bg-white"
+      className="relative z-10 border-b border-[#073d5b]/10 bg-[#fffdf8]"
     >
       <div className="mx-auto grid w-[min(100%,80rem)] divide-y divide-[#073d5b]/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
         {overviewFacts.map((item) => (
@@ -118,7 +118,7 @@ export async function PlatformStatusStrip() {
             key={item.label}
             className="flex min-h-28 items-center gap-4 px-6 py-5 lg:px-7"
           >
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#e8f0eb] text-[#087c49]">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-[#087c49]/12 bg-[#edf4ef] text-[#087c49]">
               <item.icon className="size-5" aria-hidden="true" />
             </span>
             <div>
@@ -140,7 +140,7 @@ export async function EventCommandCenter() {
   return (
     <section
       id="platform"
-      className="scroll-mt-32 bg-[#f7f5ef] py-20 sm:scroll-mt-36 sm:py-24"
+      className="scroll-mt-32 bg-[#f8f4ec] py-20 sm:scroll-mt-36 sm:py-24"
     >
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
@@ -164,7 +164,7 @@ export async function EventCommandCenter() {
           </p>
         </div>
 
-        <div className="mt-10 grid overflow-hidden rounded-3xl border border-[#073d5b]/12 bg-[#073d5b] shadow-[0_22px_70px_rgba(3,40,63,0.16)] lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+        <div className="mt-10 grid overflow-hidden rounded-3xl border border-[#073d5b]/12 bg-[linear-gradient(145deg,#073d5b_0%,#052f49_62%,#064c52_100%)] shadow-[0_22px_70px_rgba(3,40,63,0.16)] lg:grid-cols-4 lg:divide-x lg:divide-white/10">
           {operationalCards.map((card) => (
             <Link
               key={card.title}

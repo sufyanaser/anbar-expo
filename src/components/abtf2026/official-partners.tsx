@@ -20,7 +20,7 @@ export async function OfficialPartners() {
   return (
     <section
       id="official"
-      className="scroll-mt-32 bg-[#f7f5ef] py-20 sm:scroll-mt-36 sm:py-24"
+      className="scroll-mt-32 bg-[#eee4d4] bg-[url('/brand/abtf2026/identity/abtf-paper-texture.webp')] bg-cover bg-center py-20 sm:scroll-mt-36 sm:py-24"
     >
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="max-w-3xl">
@@ -32,11 +32,11 @@ export async function OfficialPartners() {
           </h2>
         </div>
 
-        <div className="mt-10 grid overflow-hidden rounded-2xl border border-[#9a6b16]/30 bg-[#8a5f12]/25 shadow-[0_18px_55px_rgba(111,76,13,0.12)] lg:grid-cols-3 lg:gap-px">
+        <div className="mt-10 grid overflow-hidden rounded-3xl border border-[#9a6b16]/22 bg-[#8a5f12]/18 shadow-[0_24px_70px_rgba(111,76,13,0.1)] lg:grid-cols-3 lg:gap-px">
           {officialEntities.map((entity, index) => (
             <article
               key={entity.label}
-              className={`group relative bg-[linear-gradient(145deg,#fff8dc_0%,#efd88f_52%,#c99a36_100%)] p-7 sm:p-9 ${entity.href ? "cursor-pointer" : ""}`}
+              className={`group relative bg-[linear-gradient(145deg,rgba(255,252,244,0.98)_0%,rgba(245,231,191,0.98)_58%,rgba(211,170,91,0.94)_100%)] p-7 sm:p-9 ${entity.href ? "cursor-pointer" : ""}`}
             >
               {entity.href && (
                 <Link
@@ -86,7 +86,7 @@ export async function OfficialPartners() {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white px-6 py-7 text-[#073d5b] shadow-sm sm:flex-row sm:px-9">
+        <div className="mt-6 flex flex-col items-center justify-between gap-6 rounded-2xl border border-[#073d5b]/12 bg-white/78 px-6 py-7 text-[#073d5b] shadow-sm backdrop-blur-md sm:flex-row sm:px-9">
           <div>
             <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               بالتزامن مع
@@ -115,7 +115,7 @@ export async function OfficialPartners() {
           aria-label={`عرض تفاصيل ${mediaSponsorEntity?.label || abtf2026.mediaSponsor.label}`}
         >
           <span
-            className="pointer-events-none absolute top-1/2 -left-36 size-[30rem] -translate-y-1/2 rounded-full bg-[repeating-radial-gradient(circle,transparent_0,transparent_31px,rgba(255,255,255,0.14)_32px,rgba(255,255,255,0.14)_34px,transparent_35px,transparent_62px)] opacity-75 [mask-image:linear-gradient(to_right,black_20%,rgba(0,0,0,0.72)_58%,transparent_92%)]"
+            className="pointer-events-none absolute top-1/2 -left-36 hidden size-[30rem] -translate-y-1/2 rounded-full bg-[repeating-radial-gradient(circle,transparent_0,transparent_31px,rgba(255,255,255,0.14)_32px,rgba(255,255,255,0.14)_34px,transparent_35px,transparent_62px)] opacity-75 [mask-image:linear-gradient(to_right,black_20%,rgba(0,0,0,0.72)_58%,transparent_92%)] sm:block"
             aria-hidden="true"
           />
           <span

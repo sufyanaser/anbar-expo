@@ -20,8 +20,8 @@ export default function Abtf2026Page() {
   return (
     <>
       <EventHero />
-      <OfficialPartners />
       <PlatformStatusStrip />
+      <OfficialPartners />
       <EventCommandCenter />
       <PlatformDirectory />
     </>

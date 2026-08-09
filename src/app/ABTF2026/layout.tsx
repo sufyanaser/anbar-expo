@@ -42,7 +42,10 @@ export default function Abtf2026Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div id="top" className="min-h-screen bg-white text-[#14242b]">
+    <div
+      id="top"
+      className="min-h-screen overflow-x-clip bg-[#f8f4ec] text-[#14242b]"
+    >
       <EventHeader />
       {children}
       <EventFooter />

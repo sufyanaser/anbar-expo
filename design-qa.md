@@ -1,5 +1,55 @@
 # ABTF 2026 — Design QA
 
+## Latest QA — 2026 light identity redesign
+
+### Evidence
+
+- Primary hero source: `C:\Users\sufia\.codex\attachments\9cdaf1b6-ede9-4b03-877f-b224eb3f76b4\ChatGPT Image Aug 9, 2026, 06_11_40 AM_upscayl_2x_upscayl-standard-4x.png`
+- Texture source: `C:\Users\sufia\.codex\attachments\8f3f0c9a-bbe9-41a2-b45b-e7b9e8941373\image.png`
+- Typography source: `C:\Users\sufia\.codex\attachments\edad0b1a-1a6b-42a6-8e7d-4f73f821fe24\image.png`
+- Desktop implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-identity-redesign\desktop-final.png`
+- Mobile implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-identity-redesign\mobile-viewport-final.png`
+- Primary side-by-side comparison: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-identity-redesign\comparison-primary.png`
+- Typography side-by-side comparison: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-identity-redesign\comparison-typography.png`
+
+### Normalization and state
+
+- Primary source: 3770 × 2896 pixels; normalized to the desktop hero crop at 1534 × 847.
+- Typography source: 1920 × 1049 pixels; normalized to the desktop comparison height.
+- Desktop capture: 1534 × 847 CSS pixels at device scale 1.
+- Mobile capture: 375 × 844 CSS pixels at device scale 1, cropped from the browser-rendered full-page capture to the first viewport.
+- States: page top with live countdown running; mobile and desktop responsive layouts.
+- Browser checks: no horizontal overflow after the mobile fix, no failed images, correct document title, and no application runtime errors. Chrome-extension message-channel notices were excluded as non-application errors.
+- Primary interactions tested: `دخول المنصة` reached `#platform`; `برنامج الفعاليات` navigated to `/ABTF2026/program` with the correct page title.
+
+### Required fidelity surfaces
+
+- Fonts and typography: Qomra Arabic Black carries the Arabic display hierarchy; a high-contrast serif treatment reproduces the bronze English title reference. Body copy retains the established Qomra family and stable weights.
+- Spacing and layout rhythm: the hero uses a two-column desktop composition and a deliberate art-first mobile sequence. The event title, description, controls, and unified schedule panel preserve clear separation from the central illustration.
+- Colors and tokens: the visual system now uses ivory paper, deep petrol blue, institutional green, and restrained antique gold across the header, hero, status strip, official section, operational cards, and footer.
+- Image quality and assets: the supplied hero artwork is used directly as the dominant interface visual and optimized to a 2560-pixel WebP. The supplied texture is optimized and applied to the official framework section without replacing or redrawing either asset.
+- Copy and content: event title, official entities, program links, countdown, service states, Sanity content, and control-panel connections remain intact.
+
+### Comparison history
+
+1. First desktop pass — P1: the directional ivory overlay hid the supplied central illustration, making the redesign read as a blank information page.
+2. Fix: corrected the overlay direction, restored the illustration as the dominant center-left visual, and explicitly set the desktop grid direction so copy and operations occupy the intended sides.
+3. First mobile pass — P2: the partner-logo strip and decorative media-sponsor pattern produced a 13-pixel horizontal overflow.
+4. Fix: stacked the mobile header identity and logo rail, kept the logo rail independently scrollable, disabled the oversized decorative pattern on small screens, and clipped page-level overflow.
+5. Final pass: desktop and mobile preserve the supplied art direction, title reference, operational clarity, and working navigation with no actionable P0, P1, or P2 findings.
+
+### Focused evidence
+
+- `comparison-primary.png` verifies the supplied book-and-digital-gateway artwork, crop, palette, and composition against the implemented hero.
+- `comparison-typography.png` verifies the blue Arabic display hierarchy and bronze serif English lockup against the typography reference.
+- The full-page browser capture verified the supplied paper texture across the official cards and continuity of the new palette through services and footer.
+
+### Remaining findings
+
+- P3: the right-side ivory veil intentionally lowers contrast on the artwork behind long Arabic copy; it can be reduced later if a more image-forward hero is preferred.
+
+final result: passed
+
 ## Latest QA — Unified opening schedule board
 
 ### Evidence

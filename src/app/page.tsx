@@ -1,34 +1,54 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+const eventTitle = "معرض الأنبار الدولي للكتاب والتكنولوجيا";
+
+export const metadata: Metadata = {
+  title: { absolute: eventTitle },
+  description: `الدخول إلى المنصة الرقمية الرسمية لـ ${eventTitle}.`,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "ar_IQ",
+    url: "/",
+    title: eventTitle,
+    description: `الدخول إلى المنصة الرقمية الرسمية لـ ${eventTitle}.`,
+    images: [
+      {
+        url: "/brand/abtf2026/identity/abtf-home-cover.webp",
+        width: 1920,
+        height: 1049,
+        alt: eventTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: eventTitle,
+    description: `الدخول إلى المنصة الرقمية الرسمية لـ ${eventTitle}.`,
+    images: ["/brand/abtf2026/identity/abtf-home-cover.webp"],
+  },
+};
+
 export default function HomePage() {
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#161412] px-6 py-16 text-[#f4efe7]">
-      <div
-        className="absolute inset-0 -z-10 opacity-35"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-      <div
-        className="absolute -top-40 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-[#9b5236]/10 blur-3xl"
-        aria-hidden="true"
-      />
-      <section
-        className="w-full max-w-2xl text-center"
-        aria-labelledby="site-title"
+    <div className="flex min-h-screen items-center justify-center overflow-hidden bg-[#eee4d4] bg-[url('/brand/abtf2026/identity/abtf-paper-texture.webp')] bg-cover bg-center px-4 py-8 sm:px-8 sm:py-12">
+      <Link
+        href="/ABTF2026"
+        aria-label={`الدخول إلى ${eventTitle}`}
+        className="group block w-full max-w-[75rem] overflow-hidden rounded-2xl border border-[#9a7541]/24 bg-[#f6f1e8] shadow-[0_28px_90px_rgba(6,59,90,0.16)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[#9a7541]/42 hover:shadow-[0_34px_110px_rgba(6,59,90,0.22)] focus-visible:ring-3 focus-visible:ring-[#087c49] focus-visible:ring-offset-4 focus-visible:ring-offset-[#eee4d4] focus-visible:outline-none sm:rounded-3xl motion-reduce:transform-none motion-reduce:transition-none"
       >
-        <h1 id="site-title" className="text-3xl font-black sm:text-5xl">
-          الموقع قيد الإعداد
-        </h1>
-        <p className="mx-auto mt-6 max-w-md text-sm leading-8 text-white/55 sm:text-base">
-          سيتم الإعلان عن التفاصيل الرسمية في الوقت المناسب.
-        </p>
-        <div
-          className="mx-auto mt-12 h-px w-16 bg-[#c68a6d]/55"
-          aria-hidden="true"
+        <Image
+          src="/brand/abtf2026/identity/abtf-home-cover.webp"
+          width={1920}
+          height={1049}
+          alt={eventTitle}
+          priority
+          sizes="(max-width: 1280px) calc(100vw - 2rem), 1200px"
+          className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.012] motion-reduce:transform-none motion-reduce:transition-none"
         />
-      </section>
+      </Link>
     </div>
   );
 }

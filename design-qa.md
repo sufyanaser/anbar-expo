@@ -1,5 +1,50 @@
 # ABTF 2026 — Design QA
 
+## Latest QA — homepage exhibition gateway
+
+### Evidence
+
+- Source visual truth: `C:\Users\sufia\.codex\attachments\edad0b1a-1a6b-42a6-8e7d-4f73f821fe24\image.png`
+- Previous homepage: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-home-gateway\01-before.png`
+- Desktop implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-home-gateway\02-after-desktop.png`
+- Mobile implementation: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-home-gateway\03-after-mobile.png`
+- Source/implementation comparison: `C:\Users\sufia\Documents\Codex\2026-08-08\files-mentioned-by-the-user-context\outputs\qa-home-gateway\05-reference-implementation.png`
+
+### Normalization and state
+
+- Source image: 1920 × 1049 pixels.
+- Desktop browser viewport: 1865 × 1058 CSS pixels; implementation capture: 2331 × 1323 pixels at the Chrome capture density.
+- Mobile browser viewport: 390 × 843 CSS pixels; implementation capture: 390 × 844 pixels.
+- State: homepage at rest with the complete cover acting as the primary interactive surface.
+- Primary interaction tested: activating the cover navigated successfully from `/` to `/ABTF2026` and loaded the correct event title.
+- Browser checks: no horizontal overflow, no failed images, correct homepage title, and no application runtime errors. Chrome-extension message-channel notices were excluded as non-application errors.
+
+### Required fidelity surfaces
+
+- Fonts and typography: the Arabic and English title remain embedded in the supplied cover artwork, preserving their exact letterforms, hierarchy, and spacing.
+- Spacing and layout rhythm: the reference cover is centered as one dominant card with responsive page padding and no competing explanatory copy.
+- Colors and visual tokens: the ivory, petrol blue, institutional green, and antique-gold source palette is preserved; the page background reuses the supplied paper texture.
+- Image quality and asset fidelity: the supplied 1920 × 1049 artwork is used directly as an optimized 150 KB WebP without redrawing, stretching, or substituting its imagery or logos.
+- Copy and content: `الموقع قيد الإعداد` and its supporting sentence were removed. The visible cover now states `معرض الأنبار الدولي للكتاب والتكنولوجيا` and the entire surface links to the digital platform.
+
+### Comparison history
+
+1. Previous state — P1: the root page was a generic under-construction notice with no direct platform entry point.
+2. Fix: replaced the notice with the supplied exhibition cover, made the whole card interactive, added keyboard focus treatment, and updated page/social metadata to the event title.
+3. Responsive pass: verified the full cover remains visible at 390 pixels wide with zero horizontal overflow and no cropped title.
+4. Final pass: desktop and mobile preserve the selected source artwork and complete the requested one-step journey to `/ABTF2026` with no actionable P0, P1, or P2 findings.
+
+### Focused evidence
+
+- The combined comparison verifies the supplied artwork, Arabic title, English lockup, palette, and paper texture against the rendered gateway.
+- No additional focused typography crop was required because all display typography is part of the source artwork and remains unmodified in the optimized asset.
+
+### Remaining findings
+
+- P3: the wide cover intentionally reads as a compact banner on narrow phones so the complete embedded title remains visible without cropping.
+
+final result: passed
+
 ## Latest QA — final pre-launch polish
 
 ### Evidence

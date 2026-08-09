@@ -4,18 +4,39 @@ import Link from "next/link";
 import { abtf2026 } from "@/data/abtf2026";
 import { platformModules } from "@/data/abtf-platform";
 
+const mainLinks = [
+  { href: "/ABTF2026", label: "الصفحة الرئيسية" },
+  { href: "/ABTF2026#official", label: "الجهات الرسمية" },
+  { href: "/ABTF2026/al-wasef", label: "الجهة المنظمة" },
+  { href: "/ABTF2026/media-sponsor", label: "الراعي الإعلامي" },
+] as const;
+
 export function EventFooter() {
   return (
     <footer className="bg-[#021d30] text-white">
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
-        <div className="grid gap-8 py-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
-          <div>
-            <p className="font-latin text-sm font-normal tracking-[0.18em]">
-              {abtf2026.shortName}
-            </p>
-            <p className="mt-3 max-w-sm text-xs leading-6 text-white/45">
-              16 - 25 سبتمبر 2026 · مدينة الرمادي، محافظة الأنبار
-            </p>
+        <div className="grid gap-10 py-12 lg:grid-cols-[0.8fr_1.35fr_0.65fr] lg:items-start">
+          <div className="flex items-start gap-3">
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
+              <Image
+                src={abtf2026.eventMark}
+                width={231}
+                height={159}
+                alt=""
+                className="h-auto w-full"
+                unoptimized
+              />
+            </span>
+            <div>
+              <p className="font-latin text-sm tracking-[0.18em]">
+                {abtf2026.shortName}
+              </p>
+              <p className="mt-2 max-w-sm text-xs leading-6 text-white/45">
+                16 - 25 سبتمبر 2026
+                <br />
+                مدينة الرمادي، محافظة الأنبار
+              </p>
+            </div>
           </div>
 
           <nav aria-label="أقسام منصة المعرض">
@@ -28,6 +49,22 @@ export function EventFooter() {
                     className="rounded-sm text-white/52 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
                   >
                     {module.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="روابط رئيسية">
+            <p className="text-xs text-[#f0c64f]">روابط رئيسية</p>
+            <ul className="mt-4 space-y-3 text-xs">
+              {mainLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="rounded-sm text-white/52 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+                  >
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -63,6 +100,15 @@ export function EventFooter() {
             >
               MEDIA · DIGITAL · PLATFORM OPERATIONS
             </p>
+          </div>
+          <div className="mt-6 flex flex-col gap-2 border-t border-white/8 pt-5 text-[0.68rem] text-white/32 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 معرض الأنبار الدولي للكتاب والتكنولوجيا</p>
+            <Link
+              href="/ABTF2026#top"
+              className="w-fit rounded-sm transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+            >
+              العودة إلى أعلى الصفحة
+            </Link>
           </div>
         </div>
       </div>

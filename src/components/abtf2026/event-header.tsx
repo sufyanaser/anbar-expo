@@ -1,18 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { RadioTower } from "lucide-react";
 
 import { abtf2026 } from "@/data/abtf2026";
 
 const navigation = [
-  { href: "/ABTF2026#about", label: "عن المعرض" },
-  { href: "/ABTF2026#platform", label: "أقسام المنصة" },
+  { href: "/ABTF2026#platform", label: "لوحة المتابعة" },
+  { href: "/ABTF2026#services", label: "الخدمات الرقمية" },
+  { href: "/ABTF2026/program", label: "البرنامج" },
+  { href: "/ABTF2026/news", label: "الأخبار" },
+  { href: "/ABTF2026/exhibitors", label: "العارضون" },
+  { href: "/ABTF2026/visitor-guide", label: "دليل الزائر" },
   { href: "/ABTF2026#official", label: "الجهات الرسمية" },
 ] as const;
 
 export function EventHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#042f49]/95 text-white backdrop-blur">
-      <div className="mx-auto flex min-h-20 w-[min(100%-1rem,80rem)] items-center justify-between gap-3 py-2 sm:w-[min(100%-2rem,80rem)] sm:gap-6">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#042f49]/96 text-white shadow-[0_8px_30px_rgba(2,29,48,0.12)] backdrop-blur-xl">
+      <div className="mx-auto flex min-h-18 w-[min(100%-1rem,80rem)] items-center justify-between gap-3 py-2 sm:w-[min(100%-2rem,80rem)] sm:gap-6">
         <Link
           href="/ABTF2026"
           className="flex shrink-0 items-center gap-2.5 rounded-sm focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none sm:gap-3"
@@ -37,21 +42,6 @@ export function EventHeader() {
             </span>
           </span>
         </Link>
-
-        <nav aria-label="التنقل داخل صفحة المعرض" className="hidden xl:block">
-          <ul className="flex items-center gap-1">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block rounded-sm px-3 py-2 text-sm font-bold text-white/68 transition-colors hover:bg-white/8 hover:text-white focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
 
         <div
           dir="rtl"
@@ -91,6 +81,32 @@ export function EventHeader() {
               </div>
             ),
           )}
+        </div>
+      </div>
+
+      <div className="border-t border-white/8 bg-[#03283f]/72">
+        <div className="mx-auto flex w-[min(100%,80rem)] items-center gap-2 overflow-x-auto px-2 py-2 [scrollbar-width:none] sm:w-[min(100%-2rem,80rem)] sm:px-0 [&::-webkit-scrollbar]:hidden">
+          <Link
+            href="/ABTF2026/live"
+            className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-lg border border-[#23b26d]/25 bg-[#23b26d]/10 px-3 text-xs font-bold text-[#86e8b4] transition-colors hover:bg-[#23b26d]/16 focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
+          >
+            <RadioTower className="size-4" aria-hidden="true" />
+            البث المباشر
+          </Link>
+          <nav aria-label="التنقل داخل منصة المعرض">
+            <ul className="flex items-center gap-1">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block min-h-9 shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-white/58 transition-colors hover:bg-white/8 hover:text-white focus-visible:ring-2 focus-visible:ring-[#e5b834] focus-visible:outline-none"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

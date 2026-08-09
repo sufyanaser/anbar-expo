@@ -1,5 +1,6 @@
-import { ArrowDown, CalendarDays, Clock3 } from "lucide-react";
+import { ArrowDown, ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { EventCountdown } from "@/components/abtf2026/event-countdown";
 import { abtf2026 } from "@/data/abtf2026";
@@ -46,8 +47,12 @@ export function EventHero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid min-h-[calc(100svh-8.5rem)] w-[min(100%-2rem,80rem)] items-center gap-14 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
+      <div className="mx-auto grid min-h-[42rem] w-[min(100%-2rem,80rem)] items-center gap-12 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-20">
         <div className="drop-shadow-[0_2px_16px_rgba(0,0,0,0.34)]">
+          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/7 px-4 py-2 text-xs font-bold text-white/70 backdrop-blur-sm">
+            <span className="size-1.5 rounded-full bg-[#f0c64f]" />
+            المنصة الرقمية لمعرض 2026
+          </p>
           <div className="flex items-center gap-4">
             <Image
               src={abtf2026.iraqEmblem}
@@ -65,7 +70,7 @@ export function EventHero() {
           </div>
 
           <h1 className="mt-10 max-w-4xl text-4xl leading-[1.35] font-black sm:text-6xl lg:text-[4.6rem]">
-            معرض الأنبار الدولي
+            معرض الأنبار الدولي{" "}
             <span className="mt-1 block whitespace-nowrap text-[clamp(1.45rem,6.4vw,4.25rem)] text-[#f0c64f]">
               للكتاب والتكنولوجيا الحديثة
             </span>
@@ -80,16 +85,25 @@ export function EventHero() {
             بوابة المعرض الرقمية للأخبار والفعاليات والجهات المشاركة، مع خدمات
             متكاملة تساعد الزائر على استكشاف تجربة المعرض في مدينة الرمادي.
           </p>
-          <a
-            href="#platform"
-            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#0a7b49] px-6 py-3 text-sm font-normal text-white transition-colors hover:bg-[#0d9157] focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
-          >
-            استكشف أقسام المنصة
-            <ArrowDown className="size-4" aria-hidden="true" />
-          </a>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="#platform"
+              className="inline-flex min-h-12 items-center gap-3 rounded-lg bg-[#0a7b49] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0d9157] focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+            >
+              دخول المنصة
+              <ArrowDown className="size-4" aria-hidden="true" />
+            </a>
+            <Link
+              href="/ABTF2026/program"
+              className="inline-flex min-h-12 items-center gap-3 rounded-lg border border-white/18 bg-white/7 px-6 py-3 text-sm font-bold text-white/82 backdrop-blur-sm transition-colors hover:bg-white/12 hover:text-white focus-visible:ring-2 focus-visible:ring-[#f0c64f] focus-visible:outline-none"
+            >
+              برنامج الفعاليات
+              <ArrowLeft className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-lg lg:ms-auto">
+        <div className="relative mx-auto w-full max-w-md lg:ms-auto">
           <div className="rounded-[2rem] border border-white/18 bg-white/96 p-8 shadow-2xl shadow-black/35 backdrop-blur-sm sm:p-10">
             <Image
               src={abtf2026.eventMark}

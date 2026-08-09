@@ -6,13 +6,16 @@ import { abtf2026 } from "@/data/abtf2026";
 
 export function OfficialPartners() {
   return (
-    <section id="official" className="bg-[#f7f5ef] py-20 sm:py-28">
+    <section
+      id="official"
+      className="scroll-mt-32 bg-[#f7f5ef] py-20 sm:scroll-mt-36 sm:py-24"
+    >
       <div className="mx-auto w-[min(100%-2rem,80rem)]">
         <div className="max-w-3xl">
           <p className="text-xs font-normal tracking-[0.16em] text-[#087c49]">
             الإطار الرسمي
           </p>
-          <h2 className="mt-4 text-3xl font-normal text-[#073d5b] sm:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold text-[#073d5b] sm:text-5xl">
             الرعاية والإشراف والتنظيم
           </h2>
         </div>
@@ -43,7 +46,7 @@ export function OfficialPartners() {
               </p>
               <div className="mt-6 flex items-center justify-between gap-5">
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl leading-8 font-normal text-[#073d5b]">
+                  <h3 className="text-xl leading-8 font-bold text-[#073d5b]">
                     {entity.name}
                   </h3>
                   <div className="mt-2 flex items-center gap-2 text-sm leading-7 text-[#3a2605]">
@@ -76,7 +79,7 @@ export function OfficialPartners() {
             <p className="text-xs font-normal tracking-[0.14em] text-[#087c49]">
               بالتزامن مع
             </p>
-            <p className="mt-2 text-2xl font-normal">
+            <p className="mt-2 text-2xl font-bold">
               {abtf2026.concurrentEvent}
             </p>
           </div>
@@ -109,7 +112,7 @@ export function OfficialPartners() {
             <span className="text-xs font-normal tracking-[0.14em] text-white/76">
               {abtf2026.mediaSponsor.label}
             </span>
-            <span className="mt-2 block text-2xl font-normal">
+            <span className="mt-2 block text-2xl font-bold">
               {abtf2026.mediaSponsor.name}
             </span>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white/82">

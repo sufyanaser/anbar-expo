@@ -31,6 +31,12 @@ function getYouTubeEmbedUrl(sourceUrl: string | null) {
 export default async function LivePage() {
   const liveStreamConfig = await getLiveStream();
   const isLive = liveStreamConfig.status === "live";
+  const statusLabel = {
+    offline: "غير متصل",
+    upcoming: "قريباً",
+    live: "مباشر الآن",
+    ended: "انتهى البث",
+  }[liveStreamConfig.status];
   const youtubeEmbedUrl =
     liveStreamConfig.sourceType === "youtube"
       ? getYouTubeEmbedUrl(liveStreamConfig.sourceUrl)
@@ -48,7 +54,7 @@ export default async function LivePage() {
             <span
               className={`rounded-full px-3 py-1.5 text-[0.68rem] font-normal ${isLive ? "bg-[#23b26d]/18 text-[#86e8b4]" : "bg-white/8 text-white/50"}`}
             >
-              {isLive ? "مباشر الآن" : "غير متصل"}
+              {statusLabel}
             </span>
           </div>
 
@@ -104,7 +110,10 @@ export default async function LivePage() {
               حالة البث
             </h2>
             <p className="mt-3 text-sm leading-7 text-[#073d5b]/55">
-              توضح الصفحة ما إذا كان البث قريبًا أو مباشرًا أو قد انتهى.
+              {statusLabel}
+              {liveStreamConfig.currentProgram
+                ? ` · ${liveStreamConfig.currentProgram}`
+                : " · توضح الصفحة ما إذا كان البث قريبًا أو مباشرًا أو قد انتهى."}
             </p>
           </div>
         </aside>

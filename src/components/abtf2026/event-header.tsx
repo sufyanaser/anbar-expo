@@ -10,6 +10,7 @@ const navigation = [
   { href: "/ABTF2026/program", label: "البرنامج" },
   { href: "/ABTF2026/news", label: "الأخبار" },
   { href: "/ABTF2026/exhibitors", label: "العارضون" },
+  { href: "/ABTF2026/participation-faq", label: "أسئلة المشاركة" },
   { href: "/ABTF2026/visitor-guide", label: "دليل الزائر" },
   { href: "/ABTF2026#official", label: "الجهات الرسمية" },
 ] as const;

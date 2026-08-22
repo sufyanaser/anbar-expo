@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { EventHero } from "@/components/abtf2026/event-hero";
 import { OfficialPartners } from "@/components/abtf2026/official-partners";
+import { ParticipationQuickAccess } from "@/components/abtf2026/participation-quick-access";
 import { PlatformDirectory } from "@/components/abtf2026/platform-directory";
 import {
   EventCommandCenter,
@@ -21,6 +22,7 @@ export default function Abtf2026Page() {
     <>
       <EventHero />
       <PlatformStatusStrip />
+      <ParticipationQuickAccess />
       <OfficialPartners />
       <EventCommandCenter />
       <PlatformDirectory />

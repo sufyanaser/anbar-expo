@@ -1,6 +1,8 @@
 export type ParticipationFaqStatus =
   "confirmed" | "partially-confirmed" | "awaiting-approval";
 
+export type ParticipationFaqDisplayStyle = "cards" | "accordion" | "compact";
+
 export type ParticipationFaqEntry = {
   id: string;
   question: string;
@@ -98,3 +100,39 @@ export const participationFaqEntries: readonly ParticipationFaqEntry[] = [
     note: "لا يُحجز موقع محدد بوعد شفهي؛ الأولوية لتأكيد الحجز والدفعة المطلوبة وفق العرض المكتوب.",
   },
 ] as const;
+
+export const participationFaqPageFallback = {
+  eyebrow: "دليل المشاريع والعارضين",
+  title: "إجابات أسئلة المشاركة التجارية",
+  intro:
+    "المعلومات التي يحتاجها صاحب المشروع قبل اختيار البوث أو المساحة، مع توضيح ما تم تأكيده وما يزال بانتظار الاعتماد النهائي.",
+  displayStyle: "cards" as ParticipationFaqDisplayStyle,
+  showStatusLegend: true,
+  showHighlights: true,
+  showNotes: true,
+  legendDescription:
+    "تظهر حالة كل إجابة حتى لا تُعامل التفاصيل التشغيلية المبدئية كالتزام نهائي.",
+  heroFacts: [
+    { label: "10 أيام", value: "16 - 25 SEP" },
+    { label: "محافظة الأنبار", value: "الرمادي" },
+    { label: "بعد تثبيت البيانات", value: "العقد متوفر" },
+  ],
+  quickAccess: {
+    enabled: true,
+    eyebrow: "للمشاريع والعارضين",
+    badgeLabel: "دليل محدث",
+    title: "كل ما تحتاجه قبل حجز البوث أو المساحة",
+    description:
+      "إجابات مباشرة عن البرنامج، التسويق، نشر المشاركين، مواصفات البوث، العقد، أوقات المعرض وزيارة الموقع.",
+    buttonLabel: "عرض الأسئلة والأجوبة",
+  },
+  cta: {
+    eyebrow: "قبل تحويل أي دفعة",
+    title: "اطلب عرضاً مكتوباً يثبت المساحة والخدمات والسعر",
+    description:
+      "يكون الحجز نهائياً بعد اعتماد الطلب واستلام دفعة التأكيد وإصدار تأكيد حجز مكتوب من الجهة المخولة.",
+    buttonLabel: "التواصل مع الجهة المنظمة",
+    buttonHref: "/ABTF2026/al-wasef",
+  },
+  questions: participationFaqEntries,
+} as const;

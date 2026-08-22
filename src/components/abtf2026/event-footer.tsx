@@ -9,6 +9,7 @@ const mainLinks = [
   { href: "/ABTF2026#official", label: "الجهات الرسمية" },
   { href: "/ABTF2026/al-wasef", label: "الجهة المنظمة" },
   { href: "/ABTF2026/media-sponsor", label: "الراعي الإعلامي" },
+  { href: "/ABTF2026/participation-faq", label: "أسئلة المشاركة التجارية" },
   { href: "/admin", label: "إدارة المنصة" },
 ] as const;
 

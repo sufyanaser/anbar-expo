@@ -12,6 +12,11 @@ import {
   platformModules as fallbackPlatformModules,
   programEntries as fallbackProgramEntries,
 } from "@/data/abtf-platform";
+import {
+  participationFaqPageFallback,
+  type ParticipationFaqDisplayStyle,
+  type ParticipationFaqStatus,
+} from "@/data/abtf-participation-faq";
 import { abtf2026 } from "@/data/abtf2026";
 import { isSanityConfigured, sanityEnv } from "@/sanity/env";
 import type {
@@ -84,6 +89,44 @@ export type ManagedPage = {
   contactEmail?: string;
   contactPhone?: string;
   website?: string;
+};
+
+export type ManagedParticipationFaqItem = {
+  id: string;
+  question: string;
+  status: ParticipationFaqStatus;
+  statusLabel: string;
+  answer: readonly string[] | PortableTextBlock[];
+  highlights?: readonly string[];
+  note?: string;
+};
+
+export type ManagedParticipationFaqPage = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  displayStyle: ParticipationFaqDisplayStyle;
+  showStatusLegend: boolean;
+  showHighlights: boolean;
+  showNotes: boolean;
+  legendDescription: string;
+  heroFacts: readonly { id: string; label: string; value: string }[];
+  quickAccess: {
+    enabled: boolean;
+    eyebrow: string;
+    badgeLabel?: string;
+    title: string;
+    description: string;
+    buttonLabel: string;
+  };
+  cta: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    buttonLabel: string;
+    buttonHref: string;
+  };
+  questions: readonly ManagedParticipationFaqItem[];
 };
 
 async function fetchPublished<T>(
@@ -455,4 +498,113 @@ export async function getManagedPage(
     "managedPage",
     { slug },
   );
+}
+
+type SanityParticipationFaqPage = Partial<
+  Omit<ManagedParticipationFaqPage, "heroFacts" | "questions">
+> & {
+  heroFacts?: { _key: string; label?: string; value?: string }[];
+  questions?: {
+    _key: string;
+    question?: string;
+    status?: ParticipationFaqStatus;
+    statusLabel?: string;
+    answer?: PortableTextBlock[];
+    highlights?: string[];
+    note?: string;
+  }[];
+};
+
+export async function getParticipationFaqPage(): Promise<ManagedParticipationFaqPage> {
+  const settings = await fetchPublished<SanityParticipationFaqPage | null>(
+    `*[_type == "participationFaqPage"][0] {
+      eyebrow,
+      title,
+      intro,
+      displayStyle,
+      showStatusLegend,
+      showHighlights,
+      showNotes,
+      legendDescription,
+      heroFacts[] { _key, label, value },
+      quickAccess {
+        enabled, eyebrow, badgeLabel, title, description, buttonLabel
+      },
+      cta { eyebrow, title, description, buttonLabel, buttonHref },
+      "questions": questions[enabled != false] {
+        _key, question, status, statusLabel, answer, highlights, note
+      }
+    }`,
+    "participationFaqPage",
+  );
+
+  const fallback = participationFaqPageFallback;
+  const displayStyle = ["cards", "accordion", "compact"].includes(
+    settings?.displayStyle ?? "",
+  )
+    ? (settings?.displayStyle as ParticipationFaqDisplayStyle)
+    : fallback.displayStyle;
+
+  const heroFacts = settings?.heroFacts
+    ?.filter((fact) => fact.label && fact.value)
+    .map((fact) => ({
+      id: fact._key,
+      label: fact.label as string,
+      value: fact.value as string,
+    }));
+
+  const questions = settings?.questions
+    ?.filter(
+      (entry) =>
+        entry.question &&
+        entry.status &&
+        entry.statusLabel &&
+        entry.answer?.length,
+    )
+    .map((entry) => ({
+      id: entry._key,
+      question: entry.question as string,
+      status: entry.status as ParticipationFaqStatus,
+      statusLabel: entry.statusLabel as string,
+      answer: entry.answer as PortableTextBlock[],
+      highlights: entry.highlights,
+      note: entry.note,
+    }));
+
+  return {
+    eyebrow: settings?.eyebrow || fallback.eyebrow,
+    title: settings?.title || fallback.title,
+    intro: settings?.intro || fallback.intro,
+    displayStyle,
+    showStatusLegend: settings?.showStatusLegend ?? fallback.showStatusLegend,
+    showHighlights: settings?.showHighlights ?? fallback.showHighlights,
+    showNotes: settings?.showNotes ?? fallback.showNotes,
+    legendDescription:
+      settings?.legendDescription || fallback.legendDescription,
+    heroFacts: heroFacts?.length
+      ? heroFacts
+      : fallback.heroFacts.map((fact, index) => ({
+          ...fact,
+          id: `fallback-fact-${index + 1}`,
+        })),
+    quickAccess: {
+      enabled: settings?.quickAccess?.enabled ?? fallback.quickAccess.enabled,
+      eyebrow: settings?.quickAccess?.eyebrow || fallback.quickAccess.eyebrow,
+      badgeLabel:
+        settings?.quickAccess?.badgeLabel || fallback.quickAccess.badgeLabel,
+      title: settings?.quickAccess?.title || fallback.quickAccess.title,
+      description:
+        settings?.quickAccess?.description || fallback.quickAccess.description,
+      buttonLabel:
+        settings?.quickAccess?.buttonLabel || fallback.quickAccess.buttonLabel,
+    },
+    cta: {
+      eyebrow: settings?.cta?.eyebrow || fallback.cta.eyebrow,
+      title: settings?.cta?.title || fallback.cta.title,
+      description: settings?.cta?.description || fallback.cta.description,
+      buttonLabel: settings?.cta?.buttonLabel || fallback.cta.buttonLabel,
+      buttonHref: settings?.cta?.buttonHref || fallback.cta.buttonHref,
+    },
+    questions: questions?.length ? questions : fallback.questions,
+  };
 }

@@ -2,7 +2,7 @@ import type { StructureResolver } from "sanity/structure";
 
 const singleton = (
   S: Parameters<StructureResolver>[0],
-  typeName: "eventSettings" | "liveStream",
+  typeName: "eventSettings" | "liveStream" | "participationFaqPage",
   title: string,
 ) =>
   S.listItem()
@@ -16,6 +16,7 @@ export const structure: StructureResolver = (S) =>
     .items([
       singleton(S, "eventSettings", "إعدادات المعرض"),
       singleton(S, "liveStream", "البث المباشر"),
+      singleton(S, "participationFaqPage", "أسئلة المشاركة التجارية"),
       S.divider(),
       S.documentTypeListItem("newsArticle").title("الأخبار"),
       S.documentTypeListItem("programEntry").title("برنامج الفعاليات"),

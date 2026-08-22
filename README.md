@@ -79,6 +79,17 @@ Edit `src/data/events.ts` to add or update an event. Do not publish unconfirmed 
 
 The canonical production origin is `https://anbarexpo.com`. The `www` hostname should redirect to the apex domain at the hosting or Cloudflare layer after production deployment is verified.
 
+### ABTF 2026 content administration
+
+The embedded Sanity Studio is available at `/admin`. The **أسئلة المشاركة التجارية** singleton controls:
+
+- Page title, introduction, summary facts, and end-of-page call to action
+- Ordered questions, rich-text answers, approval status, highlights, notes, and per-question visibility
+- Cards, accordion, or compact-grid presentation styles
+- Status legend visibility and the homepage quick-access card
+
+Run `npm run cms:seed:participation-faq` once to create the initial FAQ document without overwriting an existing managed version.
+
 ## Environment variables
 
 V1 requires no runtime environment variables. If external services are introduced later, document each variable in `.env.example` and keep secrets outside Git.

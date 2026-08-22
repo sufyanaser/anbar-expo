@@ -18,7 +18,11 @@ export default defineConfig({
   schema: { types: schemaTypes },
   document: {
     actions: (previousActions, context) => {
-      if (["eventSettings", "liveStream"].includes(context.schemaType)) {
+      if (
+        ["eventSettings", "liveStream", "participationFaqPage"].includes(
+          context.schemaType,
+        )
+      ) {
         return previousActions.filter(
           (action) => !["delete", "duplicate"].includes(action.action ?? ""),
         );

@@ -60,7 +60,10 @@ export default function HomePage() {
           </span>
         </header>
 
-        <section className="max-w-3xl py-12 sm:py-16" aria-labelledby="events-title">
+        <section
+          className="max-w-3xl py-12 sm:py-16"
+          aria-labelledby="events-title"
+        >
           <p className="mb-4 text-sm font-bold text-[#087c49]">
             بوابة واحدة · فعاليات متعددة
           </p>
@@ -138,14 +141,20 @@ export default function HomePage() {
                     <div className="mt-5 space-y-2 border-t border-[#9a7541]/18 pt-5 text-sm text-[#073b5a]/65">
                       {event.startDate ? (
                         <p className="flex items-center gap-2">
-                          <CalendarDays className="size-4 text-[#087c49]" aria-hidden="true" />
+                          <CalendarDays
+                            className="size-4 text-[#087c49]"
+                            aria-hidden="true"
+                          />
                           {event.startDate}
                           {event.endDate ? " — " + event.endDate : null}
                         </p>
                       ) : null}
                       {event.location ? (
                         <p className="flex items-center gap-2">
-                          <MapPin className="size-4 text-[#087c49]" aria-hidden="true" />
+                          <MapPin
+                            className="size-4 text-[#087c49]"
+                            aria-hidden="true"
+                          />
                           {event.location}
                         </p>
                       ) : null}

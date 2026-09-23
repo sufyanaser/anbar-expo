@@ -1,5 +1,12 @@
 export type ExhibitionEventStatus = "upcoming" | "active" | "completed";
 
+export type EventCardImage = {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+};
+
 export type ExhibitionEvent = {
   id: string;
   slug: string;
@@ -7,6 +14,8 @@ export type ExhibitionEvent = {
   titleEn: string;
   category: string;
   status: ExhibitionEventStatus;
+  href?: string;
+  cardImage?: EventCardImage;
   startDate?: string;
   endDate?: string;
   location?: string;

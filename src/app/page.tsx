@@ -1,186 +1,182 @@
-import { ArrowLeft, CalendarDays, MapPin } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { events } from "@/data/events";
 
-const pageTitle = "معارض وفعاليات الأنبار";
 const statusLabels = {
   upcoming: "قريباً",
   active: "جاري الآن",
-  completed: "فعالية منتهية",
+  completed: "منتهٍ",
 } as const;
 
 export const metadata: Metadata = {
-  title: { absolute: pageTitle },
+  title: { absolute: "ANBAR EXPO | منصة فعاليات الأنبار" },
   description:
-    "البوابة الرسمية لمعارض وفعاليات الأنبار، مع صفحة مستقلة لكل حدث.",
+    "المظلة الرقمية لفعاليات ومعارض ومؤتمرات الأنبار، بهوية مستقلة لكل حدث.",
   alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "ar_IQ",
-    url: "/",
-    title: pageTitle,
-    description:
-      "اكتشف معارض وفعاليات الأنبار من خلال البوابة الرسمية الموحدة.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description:
-      "اكتشف معارض وفعاليات الأنبار من خلال البوابة الرسمية الموحدة.",
-  },
 };
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f4efe6] text-[#073b5a]">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[url('/brand/abtf2026/identity/abtf-paper-texture.webp')] bg-cover bg-center opacity-35"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(8,124,73,0.14),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(154,117,65,0.16),transparent_32%)]"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
-        <header className="flex items-center justify-between gap-6 border-b border-[#9a7541]/25 pb-6">
-          <div>
-            <p className="text-xs font-bold tracking-[0.2em] text-[#087c49]">
-              ANBAR EXPO
-            </p>
-            <p className="mt-1 text-sm text-[#073b5a]/65">
-              المنصة الرسمية للمعارض والفعاليات
-            </p>
-          </div>
-          <span className="rounded-full border border-[#9a7541]/30 bg-white/55 px-4 py-2 text-xs font-bold text-[#073b5a]/75 backdrop-blur">
-            محافظة الأنبار
-          </span>
-        </header>
-
-        <section
-          className="max-w-3xl py-12 sm:py-16"
-          aria-labelledby="events-title"
+    <main className="min-h-screen bg-[#0a0a0b] text-[#f4f1ea]">
+      <header className="mx-auto flex w-full max-w-7xl items-center justify-between border-b border-white/15 px-5 py-6 sm:px-8 lg:px-12">
+        <div
+          className="font-latin text-lg font-bold tracking-[0.18em]"
+          dir="ltr"
         >
-          <p className="mb-4 text-sm font-bold text-[#087c49]">
-            بوابة واحدة · فعاليات متعددة
-          </p>
-          <h1
-            id="events-title"
-            className="text-4xl leading-tight font-semibold text-balance sm:text-5xl lg:text-6xl"
+          ANBAR EXPO
+        </div>
+        <div className="flex items-center gap-3 text-xs text-white/60">
+          <span className="size-2 bg-[#ff5b24]" aria-hidden="true" />
+          <span>منصة الفعاليات في محافظة الأنبار</span>
+        </div>
+      </header>
+
+      <section className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.3fr_0.7fr] lg:px-12 lg:py-24">
+        <div>
+          <p
+            className="mb-5 font-latin text-xs font-bold tracking-[0.22em] text-[#ff5b24]"
+            dir="ltr"
           >
-            اكتشف معارض وفعاليات الأنبار
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[#073b5a]/70 sm:text-lg">
-            اختر الحدث الذي يهمك للوصول إلى منصته الرقمية، ومتابعة تفاصيله
-            ومعلومات المشاركة والزيارة.
+            ONE PLATFORM. DISTINCT EXPERIENCES.
           </p>
-        </section>
+          <h1 className="max-w-4xl text-5xl leading-[1.12] font-black tracking-tight sm:text-7xl lg:text-8xl">
+            منصة واحدة.
+            <br />
+            <span className="text-[#ff5b24]">عوالم متعددة.</span>
+          </h1>
+        </div>
+        <div className="flex items-end border-s border-white/15 ps-6">
+          <p className="max-w-md text-base leading-8 text-white/65 sm:text-lg">
+            مظلة رقمية تجمع فعاليات الأنبار، مع مساحة وهوية وتجربة مستقلة لكل
+            معرض ومؤتمر.
+          </p>
+        </div>
+      </section>
 
-        <section
-          className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
-          aria-label="المعارض والفعاليات"
-        >
-          {events.map((event) => {
-            const href = event.href ?? "/events/" + event.slug;
+      <section
+        className="mx-auto w-full max-w-7xl px-5 pb-20 sm:px-8 lg:px-12"
+        aria-label="الفعاليات"
+      >
+        <div className="mb-7 flex items-end justify-between border-b border-white/15 pb-4">
+          <h2 className="text-2xl font-bold sm:text-3xl">اختر الحدث</h2>
+          <span className="font-latin text-xs text-white/45" dir="ltr">
+            {String(events.length).padStart(2, "0")} EVENTS
+          </span>
+        </div>
 
+        <div className="grid gap-6 lg:grid-cols-2">
+          {events.map((event, index) => {
+            const href = event.href ?? `/events/${event.slug}`;
+            const isAcdi = event.visualIdentity === "acdi26";
             return (
               <article
                 key={event.id}
-                className="group flex min-h-full flex-col overflow-hidden rounded-3xl border border-[#9a7541]/22 bg-[#fbf8f2]/92 shadow-[0_20px_60px_rgba(6,59,90,0.10)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-[#9a7541]/45 hover:shadow-[0_26px_75px_rgba(6,59,90,0.17)] motion-reduce:transform-none motion-reduce:transition-none"
+                className={`group overflow-hidden border ${isAcdi ? "border-[#39a7bf]/35 bg-[#102a43] text-white" : "border-[#d1b58a]/35 bg-[#f3ede2] text-[#073b5a]"}`}
               >
                 <Link
                   href={href}
-                  aria-label={"الدخول إلى " + event.titleAr}
-                  className="relative block aspect-[16/9] overflow-hidden bg-[#e5ddcf] focus-visible:ring-3 focus-visible:ring-[#087c49] focus-visible:outline-none"
+                  className="block focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#ff5b24]"
+                  aria-label={`الدخول إلى ${event.titleAr}`}
                 >
-                  {event.cardImage ? (
-                    <Image
-                      src={event.cardImage.src}
-                      width={event.cardImage.width}
-                      height={event.cardImage.height}
-                      alt={event.cardImage.alt ?? event.titleAr}
-                      priority={event.featured}
-                      sizes="(max-width: 768px) calc(100vw - 2.5rem), (max-width: 1280px) 50vw, 33vw"
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] motion-reduce:transform-none motion-reduce:transition-none"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,#073b5a,#087c49)] p-8 text-center text-2xl font-semibold text-white">
-                      {event.titleAr}
-                    </div>
-                  )}
-                  <span className="absolute top-4 right-4 rounded-full bg-[#073b5a]/90 px-3 py-1.5 text-xs font-bold text-white shadow-sm backdrop-blur">
-                    {statusLabels[event.status]}
-                  </span>
-                </Link>
-
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <p className="text-xs font-bold text-[#9a7541]">
-                    {event.category}
-                  </p>
-                  <h2 className="mt-3 text-2xl leading-snug font-semibold text-[#073b5a]">
-                    {event.titleAr}
-                  </h2>
-                  <p
-                    className="mt-1 text-sm text-[#073b5a]/52"
-                    dir="ltr"
-                    lang="en"
+                  <div
+                    className={`relative aspect-[16/9] overflow-hidden ${isAcdi ? "bg-[#102a43]" : "bg-[#e5ddcf]"}`}
                   >
-                    {event.titleEn}
-                  </p>
+                    {event.cardImage ? (
+                      <Image
+                        src={event.cardImage.src}
+                        width={event.cardImage.width}
+                        height={event.cardImage.height}
+                        alt={event.cardImage.alt ?? event.titleAr}
+                        priority={event.featured}
+                        sizes="(max-width: 1024px) calc(100vw - 2.5rem), 50vw"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025] motion-reduce:transform-none"
+                      />
+                    ) : (
+                      <div className="relative flex h-full flex-col justify-between overflow-hidden p-7 sm:p-10">
+                        <div
+                          className="absolute -top-20 -left-20 size-72 rounded-full border-[44px] border-[#39a7bf]/30"
+                          aria-hidden="true"
+                        />
+                        <div className="relative flex items-start justify-between gap-5">
+                          <span
+                            className="font-latin text-sm font-bold tracking-[0.18em] text-[#39a7bf]"
+                            dir="ltr"
+                          >
+                            ACDI26
+                          </span>
+                          <span className="border-s-4 border-[#d6a65d] ps-3 text-xs text-white/65">
+                            هوية مقترحة
+                          </span>
+                        </div>
+                        <div className="relative max-w-xl">
+                          <p className="mb-3 text-sm font-semibold text-[#39a7bf]">
+                            حوار يصنع أثراً
+                          </p>
+                          <h3 className="text-3xl leading-tight font-bold sm:text-4xl">
+                            مؤتمر الأنبار
+                            <br />
+                            للحوار والابتكار
+                          </h3>
+                        </div>
+                      </div>
+                    )}
+                    <span
+                      className={`absolute top-4 right-4 px-3 py-1.5 text-xs font-bold ${isAcdi ? "bg-[#f2f3f4] text-[#102a43]" : "bg-[#073b5a] text-white"}`}
+                    >
+                      {statusLabels[event.status]}
+                    </span>
+                  </div>
 
-                  {event.descriptionAr ? (
-                    <p className="mt-5 line-clamp-3 leading-7 text-[#073b5a]/68">
+                  <div className="p-6 sm:p-8">
+                    <div className="flex items-center justify-between gap-5">
+                      <p
+                        className={`text-xs font-bold ${isAcdi ? "text-[#39a7bf]" : "text-[#9a7541]"}`}
+                      >
+                        {event.category}
+                      </p>
+                      <span className="font-latin text-xs opacity-45" dir="ltr">
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 text-2xl leading-snug font-bold sm:text-3xl">
+                      {event.titleAr}
+                    </h3>
+                    <p
+                      className="mt-1 font-latin text-sm opacity-50"
+                      dir="ltr"
+                      lang="en"
+                    >
+                      {event.titleEn}
+                    </p>
+                    <p className="mt-5 max-w-xl leading-7 opacity-65">
                       {event.descriptionAr}
                     </p>
-                  ) : null}
-
-                  {(event.startDate || event.location) && (
-                    <div className="mt-5 space-y-2 border-t border-[#9a7541]/18 pt-5 text-sm text-[#073b5a]/65">
-                      {event.startDate ? (
-                        <p className="flex items-center gap-2">
-                          <CalendarDays
-                            className="size-4 text-[#087c49]"
-                            aria-hidden="true"
-                          />
-                          {event.startDate}
-                          {event.endDate ? " — " + event.endDate : null}
-                        </p>
-                      ) : null}
-                      {event.location ? (
-                        <p className="flex items-center gap-2">
-                          <MapPin
-                            className="size-4 text-[#087c49]"
-                            aria-hidden="true"
-                          />
-                          {event.location}
-                        </p>
-                      ) : null}
-                    </div>
-                  )}
-
-                  <Link
-                    href={href}
-                    className="mt-auto inline-flex items-center gap-2 pt-7 font-bold text-[#087c49] outline-none transition-colors hover:text-[#073b5a] focus-visible:underline"
-                  >
-                    استكشف الحدث
-                    <ArrowLeft
-                      className="size-5 transition-transform group-hover:-translate-x-1 motion-reduce:transform-none"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                </div>
+                    <span
+                      className={`mt-7 inline-flex items-center gap-2 font-bold ${isAcdi ? "text-[#39a7bf]" : "text-[#087c49]"}`}
+                    >
+                      ادخل إلى الحدث{" "}
+                      <ArrowLeft
+                        className="size-5 transition-transform group-hover:-translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </div>
+                </Link>
               </article>
             );
           })}
-        </section>
+        </div>
+      </section>
 
-        <footer className="mt-12 border-t border-[#9a7541]/25 pt-6 text-sm text-[#073b5a]/55 sm:mt-16">
-          منصة مؤسسية موحّدة لمعارض الأنبار الحالية والقادمة.
-        </footer>
-      </div>
+      <footer
+        className="border-t border-white/15 px-5 py-8 text-center font-latin text-xs tracking-[0.16em] text-white/35"
+        dir="ltr"
+      >
+        ANBAR EXPO · INDEPENDENT IDENTITIES, ONE PLATFORM
+      </footer>
     </main>
   );
 }

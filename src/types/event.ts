@@ -1,4 +1,5 @@
 export type ExhibitionEventStatus = "upcoming" | "active" | "completed";
+export type EventVisualIdentity = "abtf2026" | "acdi26";
 
 export type EventCardImage = {
   src: string;
@@ -14,6 +15,7 @@ export type ExhibitionEvent = {
   titleEn: string;
   category: string;
   status: ExhibitionEventStatus;
+  visualIdentity: EventVisualIdentity;
   href?: string;
   cardImage?: EventCardImage;
   startDate?: string;

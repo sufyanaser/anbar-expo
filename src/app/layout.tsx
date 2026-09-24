@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Noto_Sans_Arabic } from "next/font/google";
 import localFont from "next/font/local";
 
+import { PwaRegister } from "@/components/pwa/pwa-register";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -58,7 +59,27 @@ const qomraArabic = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
-  description: "الموقع قيد الإعداد.",
+  description: siteConfig.description,
+  applicationName: "ANBAR EXPO",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: ["/shortcut-icon-96x96.png"],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "ANBAR EXPO",
+  },
+  formatDetection: { telephone: false },
   alternates: { canonical: "/" },
   robots: { index: false, follow: false },
   openGraph: {
@@ -67,13 +88,21 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.name,
-    description: "الموقع قيد الإعداد.",
+    description: siteConfig.description,
   },
   twitter: {
     card: "summary",
     title: siteConfig.name,
-    description: "الموقع قيد الإعداد.",
+    description: siteConfig.description,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#161412",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -87,6 +116,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} ${qomraArabic.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <PwaRegister />
         <a className="skip-link" href="#main-content">
           انتقل إلى المحتوى الرئيسي
         </a>

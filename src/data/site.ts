@@ -1,9 +1,10 @@
 export const siteConfig = {
-  name: "الموقع قيد الإعداد",
-  nameAr: "الموقع قيد الإعداد",
-  institutionalNameEn: "Coming Soon",
-  title: "الموقع قيد الإعداد",
-  description: "سيتم الإعلان عن التفاصيل الرسمية في الوقت المناسب.",
+  name: "ANBAR EXPO | منصة فعاليات الأنبار",
+  nameAr: "منصة فعاليات الأنبار",
+  institutionalNameEn: "ANBAR EXPO",
+  title: "ANBAR EXPO | منصة فعاليات الأنبار",
+  description:
+    "المظلة الرقمية لفعاليات ومعارض ومؤتمرات الأنبار، بهوية مستقلة لكل حدث.",
   url: "https://anbarexpo.com",
 } as const;
 

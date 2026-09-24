@@ -1,0 +1,341 @@
+/* Directory event card — ANBAR EXPO 26 palette */
+.card {
+  --c-navy: #002f66;
+  --c-blue: #0163ae;
+  --c-horizon: #0196d3;
+  --c-cyan: #0acbe9;
+  --c-mint: #67d5a7;
+  --c-lime: #ceed70;
+  --c-ink: #0f1b2a;
+  --c-700: #3d4b5c;
+  --c-500: #7a8a9c;
+  --c-100: #e8eef4;
+  --c-50: #f5f8fb;
+  --c-ribbon: linear-gradient(
+    270deg,
+    #ceed70 0%,
+    #67d5a7 22%,
+    #0acbe9 48%,
+    #0196d3 72%,
+    #0163ae 100%
+  );
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--c-100);
+  border-radius: 18px;
+  background: #fff;
+  color: var(--c-ink);
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 47, 102, 0.04);
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  height: 3px;
+  background: var(--c-ribbon);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
+}
+
+.isActive:hover,
+.isActive:focus-visible {
+  transform: translateY(-4px);
+  border-color: #d6e3ef;
+  box-shadow: 0 22px 44px -28px rgba(0, 47, 102, 0.45);
+}
+.isActive:hover::before,
+.isActive:focus-visible::before {
+  transform: scaleX(1);
+}
+.isActive:focus-visible {
+  outline: 3px solid var(--c-cyan);
+  outline-offset: 3px;
+}
+.isConcept:hover {
+  border-color: #d6e3ef;
+}
+
+/* media */
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--c-50);
+}
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+.isActive:hover .image {
+  transform: scale(1.03);
+}
+
+.badgeActive,
+.badgeSoon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.badgeActive {
+  background: var(--c-navy);
+  color: #fff;
+}
+.badgeSoon {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-blue);
+  box-shadow: inset 0 0 0 1px var(--c-100);
+}
+.pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-mint);
+  box-shadow: 0 0 0 3px rgba(103, 213, 167, 0.25);
+}
+
+/* ACDI26 — mirrors the approved event identity */
+.acdi {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 22px 24px;
+  overflow: hidden;
+  background: #102a43;
+  color: #fff;
+}
+.acdiRing {
+  position: absolute;
+  top: -56px;
+  left: -56px;
+  width: 180px;
+  height: 180px;
+  border: 32px solid rgba(57, 167, 191, 0.3);
+  border-radius: 50%;
+}
+.acdiCode {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: #39a7bf;
+}
+.acdiLine {
+  position: relative;
+  font-size: 12px;
+  color: #39a7bf;
+}
+.acdiTitle {
+  position: relative;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+/* Concept compositions — palette ribbons + glyph, no imagery */
+.concept {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 85% 10%, #fff 0%, transparent 60%),
+    linear-gradient(160deg, #f5f8fb 0%, #e8eef4 100%);
+}
+.band1,
+.band2,
+.band3 {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  border-radius: 999px;
+  transform-origin: center;
+}
+.band1 {
+  top: 58%;
+  height: 26px;
+  background: linear-gradient(90deg, #0163ae, #0196d3 55%, #0acbe9);
+  transform: rotate(-14deg);
+  opacity: 0.9;
+}
+.band2 {
+  top: 62%;
+  height: 16px;
+  background: linear-gradient(90deg, #0acbe9, #67d5a7);
+  transform: rotate(9deg);
+  opacity: 0.85;
+}
+.band3 {
+  top: 50%;
+  height: 7px;
+  background: linear-gradient(90deg, #67d5a7, #ceed70);
+  transform: rotate(-4deg);
+  opacity: 0.9;
+}
+.glyph {
+  position: absolute;
+  top: 18%;
+  right: 50%;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--c-blue);
+  box-shadow: 0 14px 30px -18px rgba(0, 47, 102, 0.5);
+  transform: translateX(50%);
+}
+.glyph svg {
+  width: 30px;
+  height: 30px;
+}
+/* per-motif variation of the ribbon crossing */
+.energy .band1 {
+  transform: rotate(-18deg);
+}
+.energy .glyph {
+  color: #0196d3;
+}
+.heritage .band1 {
+  top: 64%;
+  transform: rotate(-8deg);
+}
+.heritage .band2 {
+  top: 56%;
+  transform: rotate(12deg);
+}
+.startup .band1 {
+  top: 54%;
+  transform: rotate(-22deg);
+}
+.startup .band2 {
+  transform: rotate(4deg);
+}
+.city .band1 {
+  top: 66%;
+  transform: rotate(-6deg);
+}
+.city .band2 {
+  top: 58%;
+  transform: rotate(16deg);
+}
+
+/* body */
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+}
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-horizon);
+}
+.number {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-500);
+}
+.title {
+  margin: 10px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--c-navy);
+}
+.titleEn {
+  margin: 2px 0 0;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 12.5px;
+  color: var(--c-500);
+  text-align: right;
+}
+.description {
+  display: -webkit-box;
+  margin: 10px 0 16px;
+  overflow: hidden;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--c-700);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-100);
+  min-height: 24px;
+}
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--c-blue);
+}
+.arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s var(--ease);
+}
+.isActive:hover .arrow {
+  transform: translateX(-4px);
+}
+.note {
+  font-size: 13px;
+  color: var(--c-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .image,
+  .arrow {
+    transition: none;
+  }
+  .isActive:hover,
+  .isActive:hover .image,
+  .isActive:hover .arrow {
+    transform: none;
+  }
+}

@@ -1,7 +1,10 @@
 .page {
   --gold: #d9b873;
   --muted: #b7b0a3;
-  background: #10110f;
+  --navy: #071321;
+  background:
+    radial-gradient(ellipse at 15% 10%, #112a413b, transparent 32%), var(--navy);
+  isolation: isolate;
   color: #f4f0e7;
   font-family: var(--font-qomra-arabic), Tahoma, sans-serif;
   overflow: clip;
@@ -22,7 +25,7 @@
   justify-content: space-between;
   gap: 24px;
   padding: 26px 5%;
-  border-bottom: 1px solid #ffffff16;
+  border-bottom: 1px solid #d9b87312;
 }
 .platform {
   display: flex;
@@ -122,7 +125,7 @@
 .heroVisual {
   position: relative;
   min-height: 690px;
-  background: #080907;
+  background: transparent;
 }
 .heroVisual > img {
   width: 100%;
@@ -131,14 +134,20 @@
   object-fit: contain;
   object-position: center;
   padding: 24px 20px 52px;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 18%,
+    #000 82%,
+    transparent
+  );
 }
 .heroVisual:after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, transparent 92%, #10110f),
-    linear-gradient(0deg, #10110f, transparent 8%);
+  background: linear-gradient(0deg, var(--navy), transparent 5%);
   pointer-events: none;
 }
 .imageCode {
@@ -225,26 +234,29 @@
   margin-top: 24px;
   min-height: 44px;
 }
-.logoPanel {
+.aboutSignature {
+  color: var(--gold);
   text-align: center;
-  background: radial-gradient(ellipse, #d9b8730d, transparent 65%);
-  margin: 0;
-  padding: 20px;
+  font-family: Arial, sans-serif;
+  opacity: 0.55;
 }
-.logoPanel img {
-  height: 340px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  margin: auto;
+.aboutSignature > span {
+  display: block;
+  font-size: clamp(42px, 6vw, 78px);
+  letter-spacing: 0.12em;
 }
-.logoPanel figcaption {
-  font:
-    10px Arial,
-    sans-serif;
-  letter-spacing: 4px;
-  color: var(--muted);
-  margin-top: 28px;
+.aboutSignature strong {
+  display: block;
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 400;
+  line-height: 1;
+  color: #d9b87338;
+}
+.aboutSignature small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 20px;
 }
 .details {
   border-top: 1px solid #ffffff16;
@@ -258,7 +270,7 @@
 .infoGrid article {
   border: 1px solid #d9b87326;
   padding: 30px;
-  background: #151612;
+  background: linear-gradient(145deg, #16304a40, #07132100);
 }
 .infoGrid svg {
   color: var(--gold);
@@ -278,22 +290,31 @@
   margin-top: 15px;
 }
 .interlude {
-  max-width: 1440px;
-  margin: auto;
-  background: #191912;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 6%;
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
-  overflow: hidden;
+  gap: 50px;
+  background: radial-gradient(ellipse at 24% 50%, #28415b30, transparent 62%);
 }
 .interlude > img {
-  height: 410px;
+  display: block;
+  height: 440px;
   width: 100%;
-  object-fit: cover;
-  object-position: center 38%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 18%,
+    #000 82%,
+    transparent
+  );
 }
 .interlude > div {
-  padding: 45px 12%;
+  padding: 35px 0;
 }
 .statement {
   font-size: clamp(30px, 3.2vw, 47px);
@@ -310,36 +331,6 @@
   letter-spacing: 8px;
   color: var(--muted);
   margin-top: 35px;
-}
-.gallery {
-  padding-block: 85px;
-}
-.galleryHeading {
-  margin-bottom: 32px;
-}
-.galleryGrid {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 24px;
-  align-items: start;
-}
-.galleryGrid figure {
-  margin: 0;
-  min-width: 0;
-}
-.galleryGrid figure:nth-child(2) {
-  padding-top: 70px;
-}
-.galleryGrid img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid #d9b87326;
-}
-.galleryGrid figcaption {
-  padding-top: 16px;
-  color: var(--muted);
-  font-size: 15px;
 }
 .participation {
   display: grid;
@@ -377,7 +368,7 @@
 }
 .form {
   padding: 32px;
-  background: #1a1b16;
+  background: linear-gradient(145deg, #10253a99, #07132155);
   border: 1px solid #d9b87333;
 }
 .formHeading {
@@ -427,7 +418,7 @@
   display: block;
   width: 100%;
   border: 1px solid #ffffff24;
-  background: #11120f;
+  background: #06101dcc;
   color: #a9a69d;
   padding: 12px;
   margin-top: 9px;
@@ -594,9 +585,7 @@
     padding: 18px 12px 38px;
   }
   .heroVisual:after {
-    background:
-      linear-gradient(0deg, #10110f, transparent 6%),
-      linear-gradient(180deg, #10110f, transparent 4%);
+    background: linear-gradient(0deg, var(--navy), transparent 5%);
   }
   .lead {
     font-size: 24px;
@@ -628,11 +617,8 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .about .logoPanel {
-    order: 2;
-  }
-  .logoPanel img {
-    height: 280px;
+  .aboutSignature {
+    display: none;
   }
   .infoGrid {
     grid-template-columns: 1fr;
@@ -642,22 +628,20 @@
   }
   .interlude {
     grid-template-columns: 1fr;
+    padding: 10px 24px 25px;
+    gap: 0;
+    text-align: center;
   }
   .interlude > img {
-    height: 300px;
+    height: 370px;
+    max-width: 300px;
+    margin: auto;
   }
   .interlude > div {
-    padding: 35px 24px;
+    padding: 25px 0;
   }
   .statement {
     font-size: 34px;
-  }
-  .galleryGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .galleryGrid figure:nth-child(2) {
-    padding-top: 0;
   }
   .form {
     padding: 22px 18px;

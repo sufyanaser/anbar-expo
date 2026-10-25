@@ -31,3 +31,7 @@ Before enabling applications:
 5. Verify successful submission, storage, retrieval, failures, and retry behavior end to end.
 
 Do not enable the submit control independently of those steps. Dates, venue, categories, sponsors, and rules remain unannounced rather than invented.
+
+## Continuous navy composition
+
+The page uses a shared deep navy canvas (#071321). The original complete black-background trophy photograph (`hero.webp`) is blended with CSS `screen` into that canvas, preserving the source trophy and engraving. No regenerated image is used. Both trophy placements use `object-fit: contain`; horizontal edge masks affect only background margins. The previous separate logo panel, photographic interlude crop and two-image gallery are replaced by one full-trophy image integrated alongside the lower statement. Header, content, form, and footer share the navy palette.

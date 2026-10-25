@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpLeft,
-  ArrowDown,
-  Award,
-  FileCheck2,
-  Sparkles,
-} from "lucide-react";
+import { ArrowDown, ArrowUpLeft, Plus } from "lucide-react";
 import { ParticipationForm } from "@/components/acma26/participation-form";
 import s from "./acma26.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "جائزة صنّاع الإبداع | ACMA26" },
   description:
-    "جائزة صنّاع الإبداع في الأنبار 2026. تعرّف على الجائزة وتفاصيل المشاركة وإعلانات الدورة.",
+    "جائزة صنّاع الإبداع في الأنبار 2026، بتنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار. اكتشف الجائزة ودليل المشاركة.",
   alternates: { canonical: "/ACMA26" },
   openGraph: {
     title: "جائزة صنّاع الإبداع | ACMA26",
@@ -31,262 +25,274 @@ export const metadata: Metadata = {
   },
 };
 
+const questions = [
+  {
+    q: "متى يبدأ استقبال المشاركات؟",
+    a: "لم يُفتح التقديم بعد. يُنشر موعد فتحه وإغلاقه هنا عند اعتماده رسمياً.",
+  },
+  {
+    q: "ما الفئات وشروط المشاركة؟",
+    a: "تُعلن الفئات والأهلية ومعايير التحكيم في الدليل الرسمي قبل بدء استقبال الطلبات.",
+  },
+  {
+    q: "هل يمكنني إرسال عملي الآن؟",
+    a: "النموذج الحالي معاينة للبيانات المطلوبة فقط. لا يُرسل أو يحفظ بيانات، ولا يُصدر رقم مشاركة.",
+  },
+  {
+    q: "من ينظّم الجائزة؟",
+    a: "لجنة الثقافة والإعلام التابعة لمحافظة الأنبار.",
+  },
+];
+
 export default function Acma26Page() {
   return (
     <div className={s.page}>
       <header className={s.header}>
         <Link href="/" className={s.platform} dir="ltr">
-          ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
+          ANBAR EXPO <ArrowUpLeft size={15} aria-hidden="true" />
         </Link>
-        <nav aria-label="أقسام الجائزة">
-          <a href="#about">عن الجائزة</a>
-          <a href="#participation">المشاركة</a>
-          <a href="#faq">الأسئلة</a>
-        </nav>
-        <a href="#participation" className={s.headerCta}>
-          دليل المشاركة
+        <a
+          href="#top"
+          className={s.monogram}
+          dir="ltr"
+          aria-label="جائزة صنّاع الإبداع، أعلى الصفحة"
+        >
+          ACMA<span>26</span>
         </a>
+        <nav aria-label="أقسام الجائزة">
+          <a href="#story">الجائزة</a>
+          <a href="#guide">دليل المشاركة</a>
+          <a href="#participation" className={s.navAction}>
+            المشاركة <ArrowUpLeft size={15} aria-hidden="true" />
+          </a>
+        </nav>
       </header>
-      <section className={s.hero} aria-labelledby="award-title">
-        <div className={s.heroText}>
-          <p className={s.eyebrow} dir="ltr">
-            ANBAR CREATIVITY MAKERS AWARD
-          </p>
-          <p className={s.edition}>
-            الأنبار <span> / </span> دورة 2026
-          </p>
-          <h1 id="award-title" className={s.awardTitle}>
+
+      <section className={s.hero} id="top" aria-labelledby="award-title">
+        <div className={s.heroHeading}>
+          <p className={s.kicker}>الأنبار · دورة 2026</p>
+          <h1 id="award-title">
+            <span className={s.srOnly}>جائزة صنّاع الإبداع</span>
             <Image
               src="/brand/acma26/title-gold.svg"
-              alt="جائزة صنّاع الإبداع"
+              alt=""
               width={8100}
               height={2049}
-              unoptimized
               preload
-              sizes="(max-width: 760px) 90vw, 42vw"
+              className={s.calligraphy}
             />
           </h1>
-          <p className={s.lead}>
-            للإبداع حضور.
-            <br />
-            ولصنّاعه التقدير.
-          </p>
-          <p className={s.organizer}>
-            تنظيم لجنة الثقافة والإعلام
-            <br />
-            التابعة لمحافظة الأنبار
-          </p>
-          <div className={s.actions}>
-            <a className={s.primary} href="#participation">
-              استكشف المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
-            </a>
-            <a className={s.secondary} href="#about">
-              تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
-            </a>
-          </div>
-          <p className={s.availability}>
-            تفاصيل التقديم والمواعيد تُعلن بعد اعتمادها رسمياً.
+          <p className={s.english} dir="ltr">
+            ANBAR CREATIVITY MAKERS AWARD
           </p>
         </div>
-        <div className={s.heroVisual}>
+        <div className={s.stage}>
+          <div className={s.orbit} aria-hidden="true" />
+          <span className={s.stageYear} aria-hidden="true">
+            26
+          </span>
           <Image
-            src="/brand/acma26/hero.webp"
-            alt="المجسّم الذهبي لجائزة صنّاع الإبداع على قاعدة سوداء"
+            className={s.heroTrophy}
+            src="/brand/acma26/hero-full.webp"
+            alt="مجسّم جائزة صنّاع الإبداع كاملاً؛ نجمة ذهبية وشريط سينمائي وريشة على قاعدة تحمل اسم الجائزة"
             width={896}
             height={1200}
             preload
-            sizes="(max-width: 760px) 100vw, 55vw"
+            sizes="(max-width: 700px) 85vw, 430px"
           />
-          <span className={s.imageCode} dir="ltr">
-            ACMA<span>26</span>
-          </span>
-          <span className={s.imageCaption}>جائزة صنّاع الإبداع في الأنبار</span>
+          <div className={s.stageRight}>
+            <span className={s.tiny}>تقديرٌ يليق بالأثر</span>
+            <p>
+              للإبداع حضور.
+              <br />
+              <em>ولصنّاعه التقدير.</em>
+            </p>
+          </div>
+          <div className={s.stageLeft}>
+            <span className={s.tiny}>الجهة المنظمة</span>
+            <p>
+              لجنة الثقافة والإعلام
+              <br />
+              التابعة لمحافظة الأنبار
+            </p>
+            <span className={s.location} dir="ltr">
+              AL ANBAR, IRAQ / 2026
+            </span>
+          </div>
         </div>
-      </section>
-      <div className={s.facts}>
-        <div>
-          <small>الدورة</small>
-          <strong>2026</strong>
-        </div>
-        <div>
-          <small>المكان</small>
-          <strong>يُعلن لاحقاً</strong>
-        </div>
-        <div>
-          <small>موعد التكريم</small>
-          <strong>يُعلن لاحقاً</strong>
-        </div>
-        <div>
-          <small>حالة المشاركة</small>
-          <strong>لم يُفتح التقديم بعد</strong>
-        </div>
-      </div>
-      <section
-        id="about"
-        className={`${s.section} ${s.about}`}
-        aria-labelledby="about-title"
-      >
-        <div>
-          <p className={s.eyebrow}>01 — عن الجائزة</p>
-          <h2 id="about-title">
-            مساحة للإبداع.
-            <br />
-            <span>وتقدير لمن يصنعه.</span>
-          </h2>
-          <p>
-            جائزة صنّاع الإبداع في الأنبار 2026، بتنظيم لجنة الثقافة والإعلام
-            التابعة لمحافظة الأنبار.
-          </p>
-          <p>
-            تجمع هذه الصفحة معلومات الجائزة وإعلانات الدورة ودليل المشاركة في
-            مكان واحد. تُنشر الفئات والشروط ومعايير التحكيم بعد اعتمادها من
-            الجهة المنظمة.
-          </p>
-          <a href="#participation" className={s.textLink}>
-            اطّلع على متطلبات المشاركة{" "}
-            <ArrowUpLeft size={18} aria-hidden="true" />
+        <div className={s.heroBottom}>
+          <a href="#story" className={s.discover}>
+            <ArrowDown size={17} aria-hidden="true" /> اكتشف الجائزة
+          </a>
+          <span>الفكرة. الأثر. التقدير.</span>
+          <a href="#participation" className={s.goldLink}>
+            استكشف المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
           </a>
         </div>
-        <div className={s.aboutSignature} aria-hidden="true" dir="ltr">
-          <span>ACMA</span>
-          <strong>26</strong>
-          <small>ANBAR · CREATIVITY · 2026</small>
+      </section>
+
+      <section id="story" className={s.story} aria-labelledby="story-title">
+        <div className={s.storyIntro}>
+          <span className={s.sectionNumber}>01 / الجائزة</span>
+          <h2 id="story-title">
+            هناك من يصنع عملاً.
+            <br />
+            <span>وهناك من يترك أثراً.</span>
+          </h2>
+          <p>
+            جائزة صنّاع الإبداع في الأنبار 2026.
+            <br />
+            مساحة لتقدير الإبداع، والاحتفاء بمن يقف وراءه.
+          </p>
+        </div>
+        <div className={s.storyComposition}>
+          <figure className={s.storyImage}>
+            <Image
+              src="/brand/acma26/portrait.webp"
+              alt="الجائزة الذهبية كاملة وسط إضاءة احتفائية وانعكاسات ذهبية"
+              width={1122}
+              height={1402}
+              sizes="(max-width: 700px) 100vw, 50vw"
+            />
+            <figcaption>
+              صنّاع الإبداع <span dir="ltr">THE AWARD / 2026</span>
+            </figcaption>
+          </figure>
+          <div className={s.storyCopy}>
+            <span className={s.goldRule} aria-hidden="true" />
+            <p className={s.editorialQuote}>
+              للأفكار التي تُرى.
+              <br />
+              للأعمال التي تُروى.
+              <br />
+              <span>للأثر الذي يبقى.</span>
+            </p>
+            <p>
+              تُنظّم الجائزة لجنة الثقافة والإعلام التابعة لمحافظة الأنبار.
+              وتجمع هذه الصفحة إعلانات الدورة ومعلوماتها الرسمية ودليل المشاركة.
+            </p>
+            <a className={s.goldLink} href="#guide">
+              خطوتك الأولى نحو المشاركة{" "}
+              <ArrowDown size={17} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
-      <section
-        className={`${s.section} ${s.details}`}
-        aria-labelledby="details-title"
-      >
-        <p className={s.eyebrow}>02 — تفاصيل الدورة</p>
-        <h2 id="details-title">
-          كل ما تحتاجه،<span> قبل التقديم.</span>
-        </h2>
-        <div className={s.infoGrid}>
+
+      <section id="guide" className={s.guide} aria-labelledby="guide-title">
+        <div className={s.guideHeader}>
+          <span className={s.sectionNumber}>02 / قبل المشاركة</span>
+          <h2 id="guide-title">
+            يبدأ الأثر بفكرة.
+            <br />
+            <span>وتبدأ المشاركة من هنا.</span>
+          </h2>
+          <p>جهّز ما يعرّف بك وبعملك، ثم راجع الدليل الرسمي عند إعلانه.</p>
+        </div>
+        <div className={s.guideRows}>
           {[
-            {
-              Icon: Award,
-              title: "فئات الجائزة",
-              text: "تُنشر الفئات المعتمدة ومتطلبات كل فئة هنا قبل فتح التقديم.",
-            },
-            {
-              Icon: FileCheck2,
-              title: "الشروط ومعايير التحكيم",
-              text: "يُتاح الدليل الرسمي بعد اعتماده، شاملاً الأهلية وآلية التقييم وحقوق المشاركة.",
-            },
-            {
-              Icon: Sparkles,
-              title: "المواعيد والإعلانات",
-              text: "تُعلن تواريخ استقبال المشاركات وإغلاقها والتكريم عبر هذه الصفحة.",
-            },
-          ].map(({ Icon, title, text }) => (
-            <article key={title}>
-              <Icon size={26} strokeWidth={1.4} aria-hidden="true" />
+            [
+              "01",
+              "تعرّف على الفئات",
+              "اختر الفئة المناسبة لعملك من القائمة الرسمية عند إعلانها.",
+            ],
+            [
+              "02",
+              "قدّم ما يروي عملك",
+              "جهّز عنوان العمل ووصف فكرته ودورك فيه ورابطاً للاطلاع عليه.",
+            ],
+            [
+              "03",
+              "راجع الشروط ثم أرسل",
+              "تحقّق من الأهلية ومتطلبات الفئة والإقرارات قبل تقديم الطلب.",
+            ],
+          ].map(([n, title, text]) => (
+            <div className={s.guideRow} key={n}>
+              <span dir="ltr">{n}</span>
               <h3>{title}</h3>
               <p>{text}</p>
-              <span>بانتظار الإعلان الرسمي</span>
-            </article>
+              <ArrowUpLeft size={24} strokeWidth={1} aria-hidden="true" />
+            </div>
           ))}
         </div>
-      </section>
-      <section className={s.interlude} aria-label="تفاصيل مجسّم الجائزة">
-        <Image
-          src="/brand/acma26/hero.webp"
-          alt="مجسّم جائزة صنّاع الإبداع كاملاً من النجمة إلى القاعدة"
-          width={896}
-          height={1200}
-          sizes="(max-width: 760px) 75vw, 340px"
-        />
-        <div>
-          <p className={s.eyebrow} dir="ltr">
-            ANBAR · CREATIVITY · 2026
+        <aside className={s.announcement}>
+          <span className={s.statusDot} aria-hidden="true" />
+          <strong>باب المشاركة لم يُفتح بعد</strong>
+          <p>
+            الفئات والشروط ومعايير التحكيم، وموعد التكريم ومكانه، تُنشر بعد
+            اعتمادها رسمياً.
           </p>
-          <p className={s.statement}>
-            فكرة تترك أثراً.
-            <br />
-            <span>وإبداع يستحق التقدير.</span>
-          </p>
-          <span className={s.largeCode} dir="ltr">
-            ACMA26
-          </span>
-        </div>
+        </aside>
       </section>
+
       <section
         id="participation"
-        className={`${s.section} ${s.participation}`}
+        className={s.participation}
         aria-labelledby="participation-title"
       >
-        <div>
-          <p className={s.eyebrow}>03 — المشاركة</p>
-          <h2 id="participation-title">جهّز مشاركتك.</h2>
+        <div className={s.participationIntro}>
+          <span className={s.sectionNumber}>03 / مشاركتك</span>
+          <h2 id="participation-title">
+            لكل عمل حكاية.
+            <br />
+            <span>ما حكاية عملك؟</span>
+          </h2>
           <p>
-            تعرّف على البيانات الأساسية المطلوبة لتجهيز طلبك. تُحدَّد المتطلبات
-            النهائية بحسب الفئة والشروط الرسمية.
+            هذه معاينة لبيانات الطلب لمساعدتك على التحضير. المتطلبات النهائية
+            تُحدَّد بحسب الفئة والدليل الرسمي.
           </p>
-          <ol className={s.steps}>
-            <li>
-              <strong>بيانات المشارك</strong>
-              <span>الاسم ووسائل التواصل</span>
-            </li>
-            <li>
-              <strong>تفاصيل العمل</strong>
-              <span>العنوان والوصف ورابط الاطلاع</span>
-            </li>
-            <li>
-              <strong>المراجعة والتقديم</strong>
-              <span>بعد فتح باب المشاركة رسمياً</span>
-            </li>
-          </ol>
-          <p className={s.notice}>
-            التقديم غير مفتوح حالياً. يمكنك استعراض الحقول، ولن تُرسل أو تُحفظ
-            أي بيانات في هذه المرحلة.
+          <div className={s.entryMark} dir="ltr" aria-hidden="true">
+            ACMA<sup>26</sup>
+          </div>
+          <p className={s.privacyNote}>
+            لا تُرسل أو تُحفظ أي بيانات في هذه المرحلة.
           </p>
         </div>
         <ParticipationForm />
       </section>
-      <section
-        id="faq"
-        className={`${s.section} ${s.faq}`}
-        aria-labelledby="faq-title"
-      >
-        <p className={s.eyebrow}>04 — أسئلة شائعة</p>
-        <h2 id="faq-title">قبل أن تبدأ.</h2>
-        {[
-          {
-            q: "هل باب المشاركة مفتوح الآن؟",
-            a: "لم يُفتح التقديم بعد. تُعلن حالة التسجيل ومواعيده على هذه الصفحة عند اعتمادها.",
-          },
-          {
-            q: "ما فئات الجائزة وشروط الأهلية؟",
-            a: "تُعلن الفئات وشروط الأهلية ومعايير التقييم ضمن الدليل الرسمي قبل بدء استقبال المشاركات.",
-          },
-          {
-            q: "هل تعبئة الحقول الآن تُعدّ مشاركة؟",
-            a: "لا. الحقول الحالية لاستعراض متطلبات الطلب فقط؛ لا تُرسل ولا تُحفظ البيانات، ولا يُصدر رقم مشاركة.",
-          },
-          {
-            q: "من الجهة المنظمة للجائزة؟",
-            a: "لجنة الثقافة والإعلام التابعة لمحافظة الأنبار.",
-          },
-        ].map(({ q, a }) => (
-          <details key={q}>
-            <summary>
-              {q}
-              <span aria-hidden="true">+</span>
-            </summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </section>
-      <footer className={s.footer}>
+
+      <section id="faq" className={s.faq} aria-labelledby="faq-title">
         <div>
-          <strong>جائزة صنّاع الإبداع</strong>
-          <p dir="ltr">Anbar Creativity Makers Award · ACMA26</p>
+          <span className={s.sectionNumber}>04 / إجابات مختصرة</span>
+          <h2 id="faq-title">الصورة أوضح.</h2>
         </div>
-        <Link href="/">
-          العودة إلى فعاليات ANBAR EXPO{" "}
-          <ArrowUpLeft size={18} aria-hidden="true" />
-        </Link>
-        <small>© 2026 · لجنة الثقافة والإعلام التابعة لمحافظة الأنبار</small>
+        <div>
+          {questions.map(({ q, a }) => (
+            <details key={q}>
+              <summary>
+                {q}
+                <Plus size={19} aria-hidden="true" />
+              </summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <footer className={s.footer}>
+        <div className={s.footerIdentity}>
+          <Image
+            src="/brand/acma26/title-gold.svg"
+            alt="جائزة صنّاع الإبداع"
+            width={8100}
+            height={2049}
+          />
+          <span dir="ltr">ANBAR CREATIVITY MAKERS AWARD</span>
+        </div>
+        <div>
+          <p>
+            تنظيم لجنة الثقافة والإعلام
+            <br />
+            التابعة لمحافظة الأنبار
+          </p>
+          <Link href="/" className={s.goldLink}>
+            فعاليات ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className={s.footerBase}>
+          <span dir="ltr">ACMA26 · AL ANBAR, IRAQ · 2026</span>
+          <a href="#top">العودة إلى الأعلى ↑</a>
+        </div>
       </footer>
     </div>
   );

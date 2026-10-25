@@ -79,125 +79,25 @@
 }
 .hero {
   position: relative;
-  background: radial-gradient(ellipse at 50% 62%, #23405a70, transparent 48%);
-  padding: 34px 5% 0;
+  padding: 0;
+  background: var(--navy);
 }
-.heroHeading {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.kicker {
-  font-size: 15px;
-  color: var(--gold);
-  margin: 0 0 15px;
-}
-.hero h1 {
-  margin: 0;
-}
-.calligraphy {
-  width: min(650px, 75vw);
-  height: auto;
-  display: block;
+.heroArtwork {
+  width: 100%;
+  max-width: 1800px;
   margin: auto;
-}
-.english {
-  font:
-    10px/2 Arial,
-    sans-serif;
-  letter-spacing: 5px;
-  color: #c3b99e;
-  margin: 12px 0 0;
-}
-.stage {
   position: relative;
-  height: 510px;
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.heroTrophy {
-  height: 100%;
-  width: auto;
-  max-width: 70%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: lighten;
-  mask-image: linear-gradient(#000 90%, transparent);
-}
-.stageYear {
-  position: absolute;
-  font:
-    420px/1 Georgia,
-    serif;
-  letter-spacing: -30px;
-  color: #dfbd7b06;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  user-select: none;
-}
-.orbit {
-  position: absolute;
-  width: 560px;
-  height: 420px;
-  border: 1px solid #dfbd7b18;
-  border-radius: 50%;
-  transform: rotate(-26deg);
-  top: 60px;
-}
-.orbit:after {
-  content: "";
-  position: absolute;
-  inset: 22px -30px;
-  border: 1px solid #dfbd7b0b;
-  border-radius: 50%;
-}
-.stageRight,
-.stageLeft {
-  position: absolute;
-  top: 42%;
-  width: 27%;
-  z-index: 1;
-}
-.stageRight {
-  right: 0;
-}
-.stageLeft {
-  left: 0;
-  text-align: left;
-}
-.tiny {
-  font-size: 12px;
-  color: var(--gold);
-}
-.stageRight p {
-  font-size: clamp(23px, 2.7vw, 38px);
-  line-height: 1.6;
-  margin: 14px 0;
-}
-.stageRight em {
-  font-style: normal;
-  color: var(--gold);
-}
-.stageLeft p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin: 14px 0;
-}
-.location {
-  font:
-    9px Arial,
-    sans-serif;
-  letter-spacing: 2px;
-  color: var(--muted);
+.heroComposition {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: screen;
 }
 .heroBottom {
   max-width: 1300px;
   margin: auto;
+  padding-inline: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -610,23 +510,8 @@
   min-height: 44px;
 }
 @media (min-width: 1500px) {
-  .hero {
-    padding-top: 50px;
-  }
-  .stage {
-    height: 570px;
-  }
 }
 @media (max-width: 1000px) {
-  .stage {
-    height: 460px;
-  }
-  .stageRight p {
-    font-size: 26px;
-  }
-  .stageLeft p {
-    font-size: 16px;
-  }
   .storyComposition {
     gap: 4%;
   }
@@ -672,68 +557,7 @@
     font-size: 14px;
     order: 3;
   }
-  .hero {
-    padding: 28px 20px 0;
-  }
-  .kicker {
-    font-size: 13px;
-  }
-  .calligraphy {
-    width: 100%;
-  }
-  .english {
-    font-size: 8px;
-    letter-spacing: 2.4px;
-    margin-top: 8px;
-  }
-  .stage {
-    height: 420px;
-    margin-top: 10px;
-  }
-  .heroTrophy {
-    max-width: 100%;
-    height: 390px;
-    align-self: flex-start;
-  }
-  .stageRight {
-    top: auto;
-    bottom: 12px;
-    right: 0;
-    width: 52%;
-  }
-  .stageRight .tiny {
-    display: none;
-  }
-  .stageRight p {
-    font-size: 19px;
-    margin: 0;
-    line-height: 1.6;
-  }
-  .stageLeft {
-    top: auto;
-    bottom: 12px;
-    width: 44%;
-  }
-  .stageLeft .tiny {
-    font-size: 10px;
-  }
-  .stageLeft p {
-    font-size: 12px;
-    line-height: 1.8;
-    margin: 6px 0 0;
-  }
-  .location {
-    display: none;
-  }
-  .stageYear {
-    font-size: 310px;
-    top: 35px;
-  }
-  .orbit {
-    width: 300px;
-    height: 280px;
-    top: 55px;
-  }
+
   .heroBottom {
     min-height: 77px;
     gap: 12px;
@@ -889,18 +713,7 @@
   .fieldGrid {
     grid-template-columns: 1fr;
   }
-  .stage {
-    height: 395px;
-  }
-  .heroTrophy {
-    height: 355px;
-  }
-  .stageRight p {
-    font-size: 17px;
-  }
-  .stageLeft p {
-    font-size: 11px;
-  }
+
   .header nav {
     gap: 20px;
   }
@@ -909,5 +722,25 @@
   .page * {
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroArtwork {
+    padding-block: 24px;
+  }
+  .heroBottom {
+    padding: 12px 24px;
+    flex-wrap: wrap;
+  }
+  .heroBottom > .heroOrganizer {
+    display: block;
+    order: 3;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+    padding-top: 10px;
+    border-top: 1px solid #dfbd7b20;
   }
 }

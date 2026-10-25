@@ -69,62 +69,27 @@ export default function Acma26Page() {
       </header>
 
       <section className={s.hero} id="top" aria-labelledby="award-title">
-        <div className={s.heroHeading}>
-          <p className={s.kicker}>الأنبار · دورة 2026</p>
-          <h1 id="award-title">
-            <span className={s.srOnly}>جائزة صنّاع الإبداع</span>
-            <Image
-              src="/brand/acma26/title-gold.svg"
-              alt=""
-              width={8100}
-              height={2049}
-              preload
-              className={s.calligraphy}
-            />
-          </h1>
-          <p className={s.english} dir="ltr">
-            ANBAR CREATIVITY MAKERS AWARD
-          </p>
-        </div>
-        <div className={s.stage}>
-          <div className={s.orbit} aria-hidden="true" />
-          <span className={s.stageYear} aria-hidden="true">
-            26
-          </span>
+        <h1 id="award-title" className={s.srOnly}>
+          جائزة صنّاع الإبداع في الأنبار 2026
+        </h1>
+        <div className={s.heroArtwork}>
           <Image
-            className={s.heroTrophy}
-            src="/brand/acma26/hero-full.webp"
-            alt="مجسّم جائزة صنّاع الإبداع كاملاً؛ نجمة ذهبية وشريط سينمائي وريشة على قاعدة تحمل اسم الجائزة"
-            width={896}
-            height={1200}
+            className={s.heroComposition}
+            src="/brand/acma26/hero-composition.webp"
+            alt="جائزة صنّاع الإبداع: المجسّم الذهبي كاملاً في اليسار، والمخطوطة الذهبية في اليمين"
+            width={1427}
+            height={635}
             preload
-            sizes="(max-width: 700px) 85vw, 430px"
+            sizes="100vw"
           />
-          <div className={s.stageRight}>
-            <span className={s.tiny}>تقديرٌ يليق بالأثر</span>
-            <p>
-              للإبداع حضور.
-              <br />
-              <em>ولصنّاعه التقدير.</em>
-            </p>
-          </div>
-          <div className={s.stageLeft}>
-            <span className={s.tiny}>الجهة المنظمة</span>
-            <p>
-              لجنة الثقافة والإعلام
-              <br />
-              التابعة لمحافظة الأنبار
-            </p>
-            <span className={s.location} dir="ltr">
-              AL ANBAR, IRAQ / 2026
-            </span>
-          </div>
         </div>
         <div className={s.heroBottom}>
           <a href="#story" className={s.discover}>
             <ArrowDown size={17} aria-hidden="true" /> اكتشف الجائزة
           </a>
-          <span>الفكرة. الأثر. التقدير.</span>
+          <span className={s.heroOrganizer}>
+            تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
+          </span>
           <a href="#participation" className={s.goldLink}>
             استكشف المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
           </a>

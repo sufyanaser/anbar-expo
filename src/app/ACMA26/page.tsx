@@ -55,10 +55,16 @@ export default function Acma26Page() {
           <p className={s.edition}>
             الأنبار <span> / </span> دورة 2026
           </p>
-          <h1 id="award-title">
-            جائزة
-            <br />
-            <span>صنّاع الإبداع</span>
+          <h1 id="award-title" className={s.awardTitle}>
+            <Image
+              src="/brand/acma26/title-gold.svg"
+              alt="جائزة صنّاع الإبداع"
+              width={8100}
+              height={2049}
+              unoptimized
+              preload
+              sizes="(max-width: 760px) 90vw, 42vw"
+            />
           </h1>
           <p className={s.lead}>
             للإبداع حضور.
@@ -84,12 +90,12 @@ export default function Acma26Page() {
         </div>
         <div className={s.heroVisual}>
           <Image
-            src="/brand/acma26/hero.webp"
+            src="/brand/acma26/hero-full.webp"
             alt="المجسّم الذهبي لجائزة صنّاع الإبداع على قاعدة سوداء"
-            width={896}
-            height={1200}
-            priority
-            sizes="(max-width: 760px) 100vw, 50vw"
+            width={1122}
+            height={1402}
+            preload
+            sizes="(max-width: 760px) 100vw, 55vw"
           />
           <span className={s.imageCode} dir="ltr">
             ACMA<span>26</span>
@@ -189,10 +195,10 @@ export default function Acma26Page() {
       </section>
       <section className={s.interlude} aria-label="تفاصيل مجسّم الجائزة">
         <Image
-          src="/brand/acma26/detail.webp"
+          src="/brand/acma26/portrait.webp"
           alt="تفاصيل النجمة والشريط السينمائي والريشة في مجسّم الجائزة"
-          width={880}
-          height={1100}
+          width={1122}
+          height={1402}
           sizes="(max-width: 760px) 100vw, 45vw"
         />
         <div>
@@ -207,6 +213,39 @@ export default function Acma26Page() {
           <span className={s.largeCode} dir="ltr">
             ACMA26
           </span>
+        </div>
+      </section>
+      <section
+        className={`${s.section} ${s.gallery}`}
+        aria-labelledby="gallery-title"
+      >
+        <div className={s.galleryHeading}>
+          <p className={s.eyebrow}>المجسّم — تفاصيل تصنع الحضور</p>
+          <h2 id="gallery-title">
+            للإبداع <span>ملامحه.</span>
+          </h2>
+        </div>
+        <div className={s.galleryGrid}>
+          <figure>
+            <Image
+              src="/brand/acma26/setting.webp"
+              alt="مجسّم الجائزة الذهبي كاملاً أمام خلفية هندسية مضاءة بالذهب"
+              width={1200}
+              height={896}
+              sizes="(max-width: 760px) 100vw, 60vw"
+            />
+            <figcaption>حضور يليق بلحظة التكريم</figcaption>
+          </figure>
+          <figure>
+            <Image
+              src="/brand/acma26/craft-detail.webp"
+              alt="لقطة مقرّبة للنجمة والريشة والشريط السينمائي بخامة ذهبية"
+              width={600}
+              height={448}
+              sizes="(max-width: 760px) 100vw, 35vw"
+            />
+            <figcaption>النجمة · الريشة · الشريط السينمائي</figcaption>
+          </figure>
         </div>
       </section>
       <section

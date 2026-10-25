@@ -7,7 +7,12 @@ Independent Arabic-first award landing page at `/ACMA26`, linked from the homepa
 WebP derivatives of user-supplied assets; no logo redraw or AI replacement:
 
 - `logo.webp`: GOLDEN LOGO.png, resized with transparency preserved.
-- `hero.webp`: Photographing_award_against_blac…_20261024041024.jpg.
+- `title-gold.svg`: exact vector paths extracted from user-supplied `Typo.pdf`; a continuous metallic gold gradient is applied through a mask, with no lettering redraw.
+- `hero-full.webp`: ChatGPT_Image_Oct_24,_2026,_20261025235736.jpg; full portrait, contained without cropping on desktop and mobile.
+- `portrait.webp`: ChatGPT_Image_Oct_24,_2026,_20261025235733.jpg.
+- `setting.webp`: Award_product_photography_session_20261025235742.jpg, full supplied frame.
+- `craft-detail.webp`: lower-right detail frame from Commercial_product_photography_f…_20261025235749.jpg.
+- `hero.webp` (previous hero retained): Photographing_award_against_blac…_20261024041024.jpg.
 - `detail.webp`: ChatGPT_Image_Oct_24,_2026,_20261024041129.jpg.
 - `card.webp`: ChatGPT Image Oct 24, 2026, 03_54_08 AM-1.png.
 

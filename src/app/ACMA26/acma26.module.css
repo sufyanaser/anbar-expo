@@ -47,11 +47,12 @@
   max-width: 1440px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  min-height: 730px;
+  grid-template-columns: 0.95fr 1.15fr;
+  min-height: 690px;
 }
 .heroText {
-  padding: 85px 10% 60px 5%;
+  padding: 55px 9% 45px 7%;
+  min-width: 0;
   align-self: center;
 }
 .eyebrow {
@@ -70,14 +71,16 @@
   color: var(--gold);
   margin: 0 12px;
 }
-.hero h1 {
-  font-size: clamp(55px, 5.7vw, 88px);
-  font-weight: 500;
-  line-height: 1.25;
-  margin: 22px 0;
+.awardTitle {
+  width: min(100%, 560px);
+  margin: 30px 0 32px;
+  line-height: 0;
 }
-.hero h1 span {
-  color: var(--gold);
+.awardTitle img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 12px #d9b87318);
 }
 .lead {
   font-size: 27px;
@@ -118,7 +121,7 @@
 }
 .heroVisual {
   position: relative;
-  min-height: 620px;
+  min-height: 690px;
   background: #080907;
 }
 .heroVisual > img {
@@ -126,16 +129,16 @@
   height: 100%;
   position: absolute;
   object-fit: contain;
-  object-position: center 40%;
-  opacity: 0.94;
+  object-position: center;
+  padding: 24px 20px 52px;
 }
 .heroVisual:after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, transparent 75%, #10110f),
-    linear-gradient(0deg, #10110f, transparent 25%);
+    linear-gradient(90deg, transparent 92%, #10110f),
+    linear-gradient(0deg, #10110f, transparent 8%);
   pointer-events: none;
 }
 .imageCode {
@@ -154,7 +157,7 @@
 .imageCaption {
   position: absolute;
   z-index: 1;
-  bottom: 35px;
+  bottom: 20px;
   left: 8%;
   color: #d9c9aa;
   font-size: 14px;
@@ -307,6 +310,36 @@
   letter-spacing: 8px;
   color: var(--muted);
   margin-top: 35px;
+}
+.gallery {
+  padding-block: 85px;
+}
+.galleryHeading {
+  margin-bottom: 32px;
+}
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.galleryGrid figure {
+  margin: 0;
+  min-width: 0;
+}
+.galleryGrid figure:nth-child(2) {
+  padding-top: 70px;
+}
+.galleryGrid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d9b87326;
+}
+.galleryGrid figcaption {
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
 }
 .participation {
   display: grid;
@@ -547,19 +580,23 @@
   .heroText {
     padding: 45px 24px 30px;
   }
-  .hero h1 {
-    font-size: 61px;
+  .awardTitle {
+    width: min(100%, 560px);
+    margin: 25px 0 30px;
   }
   .heroVisual {
-    min-height: 480px;
+    order: -1;
+    min-height: 0;
+    height: clamp(390px, 66svh, 620px);
   }
   .heroVisual > img {
-    object-position: center 44%;
+    object-position: center;
+    padding: 18px 12px 38px;
   }
   .heroVisual:after {
     background:
-      linear-gradient(0deg, #10110f, transparent 20%),
-      linear-gradient(180deg, #10110f, transparent 12%);
+      linear-gradient(0deg, #10110f, transparent 6%),
+      linear-gradient(180deg, #10110f, transparent 4%);
   }
   .lead {
     font-size: 24px;
@@ -614,6 +651,13 @@
   }
   .statement {
     font-size: 34px;
+  }
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .galleryGrid figure:nth-child(2) {
+    padding-top: 0;
   }
   .form {
     padding: 22px 18px;

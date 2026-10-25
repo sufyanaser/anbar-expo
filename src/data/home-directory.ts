@@ -27,6 +27,7 @@ const byId = (id: string) => events.find((event) => event.id === id);
 
 const abtf = byId("anbar-book-technology-fair-2026");
 const acdi = events.find((event) => event.visualIdentity === "acdi26");
+const acma = byId("anbar-creativity-makers-award-2026");
 
 export const statusLabel: Record<DirectoryEvent["state"], string> = {
   active: "فعالية حالية",
@@ -59,6 +60,19 @@ export const directoryEvents: DirectoryEvent[] = [
     visual: acdi?.cardImage
       ? { kind: "image", image: acdi.cardImage }
       : { kind: "acdi" },
+  },
+  {
+    id: "acma26",
+    state: "active",
+    titleAr: "جائزة صنّاع الإبداع",
+    titleEn: "Anbar Creativity Makers Award",
+    category: "الإبداع · الجوائز والتكريم",
+    description:
+      "جائزة صنّاع الإبداع في الأنبار 2026. تعرّف على الجائزة وتفاصيل الدورة وإعلانات المشاركة.",
+    href: acma?.href ?? "/ACMA26",
+    visual: acma?.cardImage
+      ? { kind: "image", image: acma.cardImage }
+      : { kind: "concept", motif: "heritage" },
   },
   {
     id: "renewable-energy-expo",

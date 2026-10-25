@@ -1,5 +1,5 @@
 export type ExhibitionEventStatus = "upcoming" | "active" | "completed";
-export type EventVisualIdentity = "abtf2026" | "acdi26";
+export type EventVisualIdentity = "abtf2026" | "acdi26" | "acma26";
 
 export type EventCardImage = {
   src: string;

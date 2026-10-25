@@ -2,6 +2,24 @@ import type { ExhibitionEvent } from "@/types/event";
 
 export const events: ExhibitionEvent[] = [
   {
+    id: "anbar-creativity-makers-award-2026",
+    slug: "anbar-creativity-makers-award-2026",
+    titleAr: "جائزة صنّاع الإبداع",
+    titleEn: "Anbar Creativity Makers Award",
+    category: "الإبداع · الجوائز والتكريم",
+    status: "upcoming",
+    visualIdentity: "acma26",
+    href: "/ACMA26",
+    cardImage: {
+      src: "/brand/acma26/card.webp",
+      width: 880,
+      height: 1100,
+      alt: "مجسّم جائزة صنّاع الإبداع في الأنبار 2026",
+    },
+    descriptionAr:
+      "تعرّف على جائزة صنّاع الإبداع في الأنبار، وتفاصيل الدورة وإعلانات المشاركة.",
+  },
+  {
     id: "anbar-book-technology-fair-2026",
     slug: "anbar-book-technology-fair-2026",
     titleAr: "معرض الأنبار للكتاب والتكنولوجيا",

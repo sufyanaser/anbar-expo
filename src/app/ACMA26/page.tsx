@@ -41,6 +41,14 @@ export default function Acma26Page() {
       </a>
       <header className={s.header}>
         <Link href="/" className={s.platform} dir="ltr">
+          <Image
+            className={s.platformMark}
+            src="/brand/anbar-expo/anbar-expo-mark-720.png"
+            alt=""
+            width={713}
+            height={720}
+            sizes="40px"
+          />
           ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
         </Link>
         <nav aria-label="أقسام الجائزة">
@@ -121,28 +129,10 @@ export default function Acma26Page() {
             alt="الصورة المعتمدة لمحافظ الأنبار"
             width={1448}
             height={1659}
-            sizes="(max-width: 639px) 85vw, (max-width: 1023px) 42vw, 460px"
+            sizes="(max-width: 639px) 85vw, (max-width: 1023px) 42vw, 420px"
           />
         </figure>
       </section>
-      <div className={s.facts}>
-        <div>
-          <small>الدورة</small>
-          <strong>2026</strong>
-        </div>
-        <div>
-          <small>المكان</small>
-          <strong>يُعلن لاحقاً</strong>
-        </div>
-        <div>
-          <small>موعد التكريم</small>
-          <strong>31 ديسمبر 2026 وفق المنشور</strong>
-        </div>
-        <div>
-          <small>حالة المشاركة</small>
-          <strong>الاستمارة الإلكترونية غير مفعّلة</strong>
-        </div>
-      </div>
       <section
         id="about"
         className={`${s.section} ${s.about}`}
@@ -179,10 +169,28 @@ export default function Acma26Page() {
           />
           <figcaption dir="ltr">ACMA26 · ANBAR · 2026</figcaption>
         </figure>
+        <div className={s.facts}>
+          <div>
+            <small>الدورة</small>
+            <strong>2026</strong>
+          </div>
+          <div>
+            <small>المكان</small>
+            <strong>يُعلن لاحقاً</strong>
+          </div>
+          <div>
+            <small>موعد التكريم</small>
+            <strong>31 ديسمبر 2026 وفق المنشور</strong>
+          </div>
+          <div>
+            <small>حالة المشاركة</small>
+            <strong>الاستمارة الإلكترونية غير مفعّلة</strong>
+          </div>
+        </div>
       </section>
       <section
         id="fields"
-        className={`${s.section} ${s.details}`}
+        className={s.section}
         aria-labelledby="details-title"
       >
         <p className={s.eyebrow}>مجالات المشاركة</p>
@@ -221,33 +229,38 @@ export default function Acma26Page() {
         </div>
       </section>
       <section
-        className={`${s.section} ${s.audience}`}
-        aria-labelledby="audience-title"
+        id="rules"
+        className={`${s.section} ${s.eligibility}`}
+        aria-labelledby="rules-title"
       >
-        <p className={s.eyebrow}>الفئات المستهدفة</p>
-        <h2 id="audience-title">
-          لمن تُفتح <span>مساحة الإبداع؟</span>
-        </h2>
-        <p>
-          صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل
-          الاجتماعي من أبناء محافظة الأنبار.
-        </p>
-      </section>
-      <TechnicalJury />
-      <section id="rules" className={s.section} aria-labelledby="rules-title">
         <p className={s.eyebrow}>الشروط والضوابط</p>
         <h2 id="rules-title">
           شروط <span>المشاركة.</span>
         </h2>
-        <p>
-          الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع المجال
-          والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات والصور المبينة
-          لكل مجال.
-        </p>
-        <p className={s.rulesNotice}>
-          هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي يجب
-          اعتماده قبل تفعيل استقبال الطلبات.
-        </p>
+        <div className={s.eligibilityGrid}>
+          <article aria-labelledby="audience-title">
+            <p className={s.eyebrow}>الفئات المستهدفة</p>
+            <h3 id="audience-title">
+              لمن تُفتح <span>مساحة الإبداع؟</span>
+            </h3>
+            <p>
+              صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل
+              الاجتماعي من أبناء محافظة الأنبار.
+            </p>
+          </article>
+          <article aria-labelledby="conditions-title">
+            <h3 id="conditions-title">الضوابط</h3>
+            <p>
+              الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع المجال
+              والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات والصور المبينة
+              لكل مجال.
+            </p>
+            <p className={s.rulesNotice}>
+              هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي يجب
+              اعتماده قبل تفعيل استقبال الطلبات.
+            </p>
+          </article>
+        </div>
       </section>
       <section
         className={`${s.section} ${s.evaluation}`}
@@ -295,6 +308,7 @@ export default function Acma26Page() {
           اعتماد تعليمات الاستلام.
         </p>
       </section>
+      <TechnicalJury />
       <section className={s.section} aria-labelledby="committees-title">
         <p className={s.eyebrow}>اللجان التنظيمية</p>
         <h2 id="committees-title">

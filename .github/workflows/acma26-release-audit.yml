@@ -1,0 +1,71 @@
+name: ACMA26 Release Dependency Evidence
+on:
+  push:
+    branches: [chore/acma26-release-readiness-audit]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out exact release candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 3a4a98a1ae94f4d683f3d04a7acc391fc27a239c
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+          cache: npm
+      - name: Record source identity
+        run: |
+          mkdir -p "$RUNNER_TEMP/acma26-audit"
+          git rev-parse HEAD > "$RUNNER_TEMP/acma26-audit/commit.txt"
+          sha256sum public/brand/acma26/calligraphy.svg src/app/ACMA26/page.tsx src/app/ACMA26/acma26.module.css src/components/acma26/participation-form.tsx docs/ACMA26.md package.json package-lock.json > "$RUNNER_TEMP/acma26-audit/sha256.txt"
+      - name: Install locked dependencies for audit
+        run: npm ci --no-audit --no-fund
+      - name: Collect full and production audit JSON
+        run: |
+          if npm audit --json > "$RUNNER_TEMP/acma26-audit/full.json"; then full_exit=0; else full_exit=$?; fi
+          if npm audit --omit=dev --json > "$RUNNER_TEMP/acma26-audit/production.json"; then production_exit=0; else production_exit=$?; fi
+          printf '{"full_exit":%s,"production_exit":%s}\n' "$full_exit" "$production_exit" > "$RUNNER_TEMP/acma26-audit/exit-codes.json"
+      - name: Classify dependency paths and record explanations
+        run: |
+          node <<'NODE'
+          const fs = require("node:fs");
+          const path = require("node:path");
+          const cp = require("node:child_process");
+          const dir = path.join(process.env.RUNNER_TEMP, "acma26-audit");
+          const full = JSON.parse(fs.readFileSync(path.join(dir, "full.json"), "utf8"));
+          const prod = JSON.parse(fs.readFileSync(path.join(dir, "production.json"), "utf8"));
+          const lock = JSON.parse(fs.readFileSync("package-lock.json", "utf8"));
+          const exits = JSON.parse(fs.readFileSync(path.join(dir, "exit-codes.json"), "utf8"));
+          if (full.error || prod.error || !full.metadata || !prod.metadata) throw new Error("Audit did not return a valid vulnerability report");
+          const important = Object.entries(full.vulnerabilities || {}).filter(([, v]) => ["critical", "high"].includes(v.severity)).map(([name, v]) => ({
+            name, severity: v.severity, isDirect: v.isDirect, range: v.range,
+            reportedInProductionAudit: Boolean(prod.vulnerabilities?.[name]),
+            via: v.via, effects: v.effects, fixAvailable: v.fixAvailable,
+            nodes: (v.nodes || []).map(node => ({node, version: lock.packages?.[node]?.version, dev: Boolean(lock.packages?.[node]?.dev), devOptional: Boolean(lock.packages?.[node]?.devOptional), optional: Boolean(lock.packages?.[node]?.optional)}))
+          }));
+          for (const item of important) {
+            if (!/^(?:@[a-z0-9_.-]+\/)?[a-z0-9_.-]+$/i.test(item.name)) throw new Error("Unexpected package name");
+            const result = cp.spawnSync("npm", ["explain", item.name, "--json"], {encoding: "utf8", maxBuffer: 16 * 1024 * 1024});
+            fs.writeFileSync(path.join(dir, "explain-" + item.name.replaceAll("/", "_") + ".json"), result.stdout || JSON.stringify({exit: result.status, stderr: result.stderr}));
+          }
+          const summary = {releaseCommit: "3a4a98a1ae94f4d683f3d04a7acc391fc27a239c", ...exits, all: full.metadata.vulnerabilities, production: prod.metadata.vulnerabilities, important};
+          fs.writeFileSync(path.join(dir, "summary.json"), JSON.stringify(summary, null, 2));
+          console.log("ACMA26_AUDIT_SUMMARY_BEGIN");
+          console.log(JSON.stringify(summary));
+          console.log("ACMA26_AUDIT_SUMMARY_END");
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, "Dependency evidence only; audit findings are not release approval.\n\n" + JSON.stringify({all: summary.all, production: summary.production, exits}, null, 2));
+          NODE
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: acma26-dependency-evidence-3a4a98a
+          path: ${{ runner.temp }}/acma26-audit/
+          if-no-files-found: error
+          retention-days: 7

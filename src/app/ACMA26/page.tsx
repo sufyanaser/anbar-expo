@@ -4,9 +4,6 @@ import Link from "next/link";
 import {
   ArrowUpLeft,
   ArrowDown,
-  Award,
-  FileCheck2,
-  Sparkles,
   Camera,
   Clapperboard,
   Newspaper,

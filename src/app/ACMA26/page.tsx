@@ -8,10 +8,9 @@ import {
   Clapperboard,
   Newspaper,
   Radio,
-  Film,
-  Scissors,
 } from "lucide-react";
 import { ParticipationForm } from "@/components/acma26/participation-form";
+import { TechnicalJury } from "@/components/acma26/technical-jury";
 import s from "./acma26.module.css";
 
 export const metadata: Metadata = {
@@ -36,7 +35,8 @@ export const metadata: Metadata = {
 
 export default function Acma26Page() {
   return (
-    <div className={s.page}>
+    <div className={s.page} dir="rtl">
+      <a className={s.skipLink} href="#award-title">انتقل إلى محتوى الجائزة</a>
       <header className={s.header}>
         <Link href="/" className={s.platform} dir="ltr">
           ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
@@ -51,32 +51,42 @@ export default function Acma26Page() {
         <a href="#participation" className={s.headerCta}>
           دليل المشاركة
         </a>
+        <details className={s.mobileNav}>
+          <summary>أقسام الجائزة</summary>
+          <nav aria-label="أقسام الجائزة على الهاتف">
+            <a href="#about">عن الجائزة</a>
+            <a href="#fields">المجالات</a>
+            <a href="#jury">اللجنة الفنية</a>
+            <a href="#participation">المشاركة</a>
+            <a href="#faq">الأسئلة</a>
+          </nav>
+        </details>
       </header>
       <section className={s.hero} aria-labelledby="award-title">
+        <h1 id="award-title" className={s.srOnly} tabIndex={-1}>
+          جائزة صنّاع الإبداع في الأنبار 2026
+        </h1>
+        <div className={s.heroVisual}>
+          <Image
+            src="/brand/acma26/hero-panorama.webp"
+            alt="الدرع الذهبي كاملاً إلى اليسار، ومخطوطة جائزة صنّاع الإبداع في الأنبار 2026 إلى اليمين، أمام معالم الأنبار ليلاً"
+            width={1918}
+            height={820}
+            preload
+            sizes="100vw"
+          />
+        </div>
         <div className={s.heroText}>
-          <p className={s.eyebrow} dir="ltr">
-            ANBAR CREATIVITY MAKERS AWARD
-          </p>
-          <p className={s.edition}>في الأنبار · دورة 2026</p>
-          <h1 id="award-title" className={s.awardTitle}>
-            <span className={s.srOnly}>جائزة صنّاع الإبداع</span>
-            <span className={s.calligraphy} aria-hidden="true" />
-            <small>في الأنبار · 2026</small>
-          </h1>
-          <p className={s.patronage}>برعاية محافظة الأنبار</p>
-          <p className={s.lead}>
-            للإبداع حضور.
-            <br />
-            ولصنّاعه التقدير.
-          </p>
-          <p className={s.organizer}>
-            تنظيم لجنة الثقافة والإعلام
-            <br />
-            التابعة لمحافظة الأنبار
-          </p>
+          <div className={s.heroContext}>
+            <p className={s.edition}>في الأنبار · دورة 2026</p>
+            <p className={s.organizer}>
+              تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
+            </p>
+          </div>
+          <div className={s.heroNavigation}>
           <div className={s.actions}>
             <a className={s.primary} href="#participation">
-              استكشف المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
+              دليل المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
             </a>
             <a className={s.secondary} href="#about">
               تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
@@ -86,21 +96,25 @@ export default function Acma26Page() {
             الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير مفعّل
             حالياً.
           </p>
+          </div>
         </div>
-        <div className={s.heroVisual}>
+      </section>
+      <section className={`${s.section} ${s.patronage}`} aria-labelledby="patronage-title">
+        <div className={s.patronageText}>
+          <p className={s.eyebrow}>الرعاية الرسمية</p>
+          <h2 id="patronage-title">برعاية <span>محافظة الأنبار.</span></h2>
+          <p className={s.governorTitle}>محافظ الأنبار</p>
+          <p className={s.organizer}>تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار</p>
+        </div>
+        <figure className={s.governorPortrait}>
           <Image
-            src="/brand/acma26/hero.webp"
-            alt="المجسّم الذهبي لجائزة صنّاع الإبداع على قاعدة سوداء"
-            width={896}
-            height={1200}
-            priority
-            sizes="(max-width: 760px) 100vw, 50vw"
+            src="/brand/acma26/governor-portrait.webp"
+            alt="الصورة المعتمدة لمحافظ الأنبار"
+            width={1448}
+            height={1659}
+            sizes="(max-width: 639px) 85vw, (max-width: 1023px) 42vw, 460px"
           />
-          <span className={s.imageCode} dir="ltr">
-            ACMA<span>26</span>
-          </span>
-          <span className={s.imageCaption}>جائزة صنّاع الإبداع في الأنبار</span>
-        </div>
+        </figure>
       </section>
       <div className={s.facts}>
         <div>
@@ -126,7 +140,7 @@ export default function Acma26Page() {
         aria-labelledby="about-title"
       >
         <div>
-          <p className={s.eyebrow}>01 — عن الجائزة</p>
+          <p className={s.eyebrow}>عن الجائزة</p>
           <h2 id="about-title">
             مساحة للإبداع.
             <br />
@@ -162,7 +176,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.details}`}
         aria-labelledby="details-title"
       >
-        <p className={s.eyebrow}>02 — مجالات المشاركة</p>
+        <p className={s.eyebrow}>مجالات المشاركة</p>
         <h2 id="details-title">
           مسارات الإبداع <span>الأربعة.</span>
         </h2>
@@ -201,7 +215,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.audience}`}
         aria-labelledby="audience-title"
       >
-        <p className={s.eyebrow}>03 — الفئات المستهدفة</p>
+        <p className={s.eyebrow}>الفئات المستهدفة</p>
         <h2 id="audience-title">
           لمن تُفتح <span>مساحة الإبداع؟</span>
         </h2>
@@ -210,8 +224,9 @@ export default function Acma26Page() {
           الاجتماعي من أبناء محافظة الأنبار.
         </p>
       </section>
+      <TechnicalJury />
       <section id="rules" className={s.section} aria-labelledby="rules-title">
-        <p className={s.eyebrow}>04 — الشروط والضوابط</p>
+        <p className={s.eyebrow}>الشروط والضوابط</p>
         <h2 id="rules-title">
           شروط <span>المشاركة.</span>
         </h2>
@@ -229,7 +244,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.evaluation}`}
         aria-labelledby="evaluation-title"
       >
-        <p className={s.eyebrow}>05 — معايير التقييم</p>
+        <p className={s.eyebrow}>معايير التقييم</p>
         <h2 id="evaluation-title">
           مئة نقطة <span>لتقييم الأعمال.</span>
         </h2>
@@ -248,7 +263,7 @@ export default function Acma26Page() {
         </div>
       </section>
       <section className={s.section} aria-labelledby="timeline-title">
-        <p className={s.eyebrow}>06 — المواعيد</p>
+        <p className={s.eyebrow}>المواعيد</p>
         <h2 id="timeline-title">
           مراحل <span>الدورة.</span>
         </h2>
@@ -271,41 +286,8 @@ export default function Acma26Page() {
           اعتماد تعليمات الاستلام.
         </p>
       </section>
-      <section id="jury" className={s.jurySection} aria-labelledby="jury-title">
-        <div className={s.juryInner}>
-          <p className={s.eyebrow}>07 — TECHNICAL JURY</p>
-          <h2 id="jury-title">اللجنة الفنية لتقييم الأعمال</h2>
-          <div
-            className={s.juryStrip}
-            role="region"
-            aria-label="أعضاء اللجنة الفنية الخمسة؛ يمكن تمرير القائمة أفقياً"
-            tabIndex={0}
-          >
-            {[
-              {
-                Icon: Newspaper,
-                name: "د. مؤيد خلف حسين",
-                specialty: "التحرير الصحفي",
-              },
-              { Icon: Camera, name: "أحمد حمزة", specialty: "التصوير" },
-              { Icon: Clapperboard, name: "سفيان ناصر", specialty: "الإخراج" },
-              { Icon: Film, name: "أنس العاني", specialty: "المونتاج" },
-              {
-                Icon: Scissors,
-                name: "عبدالله أديب مجيد",
-                specialty: "المونتاج",
-              },
-            ].map(({ Icon, name, specialty }) => (
-              <div className={s.juryMember} key={name}>
-                <Icon size={20} aria-label={specialty} strokeWidth={1.5} />
-                <span>{name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className={s.section} aria-labelledby="committees-title">
-        <p className={s.eyebrow}>08 — اللجان التنظيمية</p>
+        <p className={s.eyebrow}>اللجان التنظيمية</p>
         <h2 id="committees-title">
           اللجان <span>المساندة.</span>
         </h2>
@@ -321,14 +303,7 @@ export default function Acma26Page() {
           تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.
         </p>
       </section>
-      <section className={s.interlude} aria-label="تفاصيل مجسّم الجائزة">
-        <Image
-          src="/brand/acma26/detail.webp"
-          alt="تفاصيل النجمة والشريط السينمائي والريشة في مجسّم الجائزة"
-          width={880}
-          height={1100}
-          sizes="(max-width: 760px) 100vw, 45vw"
-        />
+      <section className={s.interlude} aria-label="قيمة الإبداع">
         <div>
           <p className={s.eyebrow} dir="ltr">
             ANBAR · CREATIVITY · 2026
@@ -349,7 +324,7 @@ export default function Acma26Page() {
         aria-labelledby="participation-title"
       >
         <div>
-          <p className={s.eyebrow}>09 — المشاركة</p>
+          <p className={s.eyebrow}>المشاركة</p>
           <h2 id="participation-title">جهّز مشاركتك.</h2>
           <p>
             استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل
@@ -381,7 +356,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.faq}`}
         aria-labelledby="faq-title"
       >
-        <p className={s.eyebrow}>10 — أسئلة شائعة</p>
+        <p className={s.eyebrow}>أسئلة شائعة</p>
         <h2 id="faq-title">قبل أن تبدأ.</h2>
         {[
           {

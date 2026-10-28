@@ -36,7 +36,9 @@ export const metadata: Metadata = {
 export default function Acma26Page() {
   return (
     <div className={s.page} dir="rtl">
-      <a className={s.skipLink} href="#award-title">انتقل إلى محتوى الجائزة</a>
+      <a className={s.skipLink} href="#award-title">
+        انتقل إلى محتوى الجائزة
+      </a>
       <header className={s.header}>
         <Link href="/" className={s.platform} dir="ltr">
           ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
@@ -84,27 +86,34 @@ export default function Acma26Page() {
             </p>
           </div>
           <div className={s.heroNavigation}>
-          <div className={s.actions}>
-            <a className={s.primary} href="#participation">
-              دليل المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
-            </a>
-            <a className={s.secondary} href="#about">
-              تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
-            </a>
-          </div>
-          <p className={s.availability}>
-            الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير مفعّل
-            حالياً.
-          </p>
+            <div className={s.actions}>
+              <a className={s.primary} href="#participation">
+                دليل المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
+              </a>
+              <a className={s.secondary} href="#about">
+                تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
+              </a>
+            </div>
+            <p className={s.availability}>
+              الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير
+              مفعّل حالياً.
+            </p>
           </div>
         </div>
       </section>
-      <section className={`${s.section} ${s.patronage}`} aria-labelledby="patronage-title">
+      <section
+        className={`${s.section} ${s.patronage}`}
+        aria-labelledby="patronage-title"
+      >
         <div className={s.patronageText}>
           <p className={s.eyebrow}>الرعاية الرسمية</p>
-          <h2 id="patronage-title">برعاية <span>محافظة الأنبار.</span></h2>
+          <h2 id="patronage-title">
+            برعاية <span>محافظة الأنبار.</span>
+          </h2>
           <p className={s.governorTitle}>محافظ الأنبار</p>
-          <p className={s.organizer}>تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار</p>
+          <p className={s.organizer}>
+            تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
+          </p>
         </div>
         <figure className={s.governorPortrait}>
           <Image

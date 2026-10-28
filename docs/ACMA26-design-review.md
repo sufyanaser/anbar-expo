@@ -23,17 +23,17 @@ See `ACMA26-design-assets.json` for original filenames, dimensions, source/outpu
 
 The branch-only workflow is necessary because local dependency installation is previously blocked by DNS and EPERM, and the existing Quality CI does not run on design-branch pushes. It uses the unchanged lockfile, read-only repository permissions, and pinned checkout/setup actions. No credentials or environments are added. This is technical evidence, not visual acceptance or publication approval.
 
-| Gate | Status |
-| --- | --- |
-| Original remediation preservation | PASS: separate checkout, source files untouched |
-| Baseline tree/commit integrity | PASS: tracked blobs, tree and signed commit verified |
-| Original supplied-image inspection | PASS: both source images visually inspected |
-| Five real-browser viewports and screenshots | NOT TESTED: supported browser tools unavailable |
-| Desktop/mobile interaction and console | NOT TESTED |
-| Final-background portrait and logo edge acceptance | OPEN |
-| Governor personal name and authoritative rules/dates | OPEN |
-| Dependency security release gate | OPEN: prior audit findings not changed by design work |
-| Technical checks on design head | PENDING: record independent CI results |
+| Gate                                                 | Status                                                |
+| ---------------------------------------------------- | ----------------------------------------------------- |
+| Original remediation preservation                    | PASS: separate checkout, source files untouched       |
+| Baseline tree/commit integrity                       | PASS: tracked blobs, tree and signed commit verified  |
+| Original supplied-image inspection                   | PASS: both source images visually inspected           |
+| Five real-browser viewports and screenshots          | NOT TESTED: supported browser tools unavailable       |
+| Desktop/mobile interaction and console               | NOT TESTED                                            |
+| Final-background portrait and logo edge acceptance   | OPEN                                                  |
+| Governor personal name and authoritative rules/dates | OPEN                                                  |
+| Dependency security release gate                     | OPEN: prior audit findings not changed by design work |
+| Technical checks on design head                      | PENDING: record independent CI results                |
 
 Red-team priorities: High: verify hero readability at 320px and all five browser widths; validate governor portrait integration and official attribution. Medium: review logo edge artifacts and five-member grid balance. Mobile hierarchy, overflow, focus, contrast and CLS require rendered browser evidence; source inspection is not a substitute.
 

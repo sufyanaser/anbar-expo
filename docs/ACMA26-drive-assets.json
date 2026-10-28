@@ -1,0 +1,119 @@
+[
+  {
+    "name": "3- ahmed hamza .png",
+    "driveId": "1VSSIcVviAAj8iw06H_msE2Im_O9zxG9V",
+    "url": "https://drive.google.com/file/d/1VSSIcVviAAj8iw06H_msE2Im_O9zxG9V/view",
+    "bytes": 2248196,
+    "sha256": "49fb38fb87935dfc79d2c810b856f8ce9997fcc18a84a5bfe20fed4b1b7eb94c",
+    "role": "Jury portrait; mapping supplied by owner filenames and list, not facial identification",
+    "output": "public/brand/acma26/jury/ahmed-hamza.webp",
+    "outputSha256": "f361bb31f558b643d8a2c7a2ba3fddf9fe67ed138c9813bd219cd1c3ea101c8c",
+    "outputBytes": 277502,
+    "width": 1024,
+    "height": 1536,
+    "processing": "WebP quality 94, original dimensions. No crop, recolor, face edits or generation."
+  },
+  {
+    "name": "4- Sufyan.png",
+    "driveId": "1MSwLUNvr4pOSesWXKN6Gf6RqQ1RHOIM1",
+    "url": "https://drive.google.com/file/d/1MSwLUNvr4pOSesWXKN6Gf6RqQ1RHOIM1/view",
+    "bytes": 1955807,
+    "sha256": "a4e24703fec451ffa0ca0625aa4bd999cf2c5f1fec44844cac8ac091b721b3cf",
+    "role": "Jury portrait; mapping supplied by owner filenames and list, not facial identification",
+    "output": "public/brand/acma26/jury/sufyan-nasser.webp",
+    "outputSha256": "7d7aa63627c418f34760d95a26f59278c29a5cf89065aaacf92dea385d01cd63",
+    "outputBytes": 157422,
+    "width": 1122,
+    "height": 1402,
+    "processing": "WebP quality 94, original dimensions. No crop, recolor, face edits or generation."
+  },
+  {
+    "name": "5- ANAS.png",
+    "driveId": "1yv4uH_eMhEUUvTE6TCa_ZCEyDPvOilcO",
+    "url": "https://drive.google.com/file/d/1yv4uH_eMhEUUvTE6TCa_ZCEyDPvOilcO/view",
+    "bytes": 2156812,
+    "sha256": "6a6eaceace7236b3bfb2856d5af08b1c18c24f7597bcf4891bb48eebd5c56ccb",
+    "role": "Jury portrait; mapping supplied by owner filenames and list, not facial identification",
+    "output": "public/brand/acma26/jury/anas-alani.webp",
+    "outputSha256": "3e72a84b601cf726c0e5feffb9fba9340e996ccdcf4ba6a541c8b435840e4231",
+    "outputBytes": 244570,
+    "width": 1122,
+    "height": 1402,
+    "processing": "WebP quality 94, original dimensions. No crop, recolor, face edits or generation."
+  },
+  {
+    "name": "6- abdulla.png",
+    "driveId": "1ncgJmlqCljvIrf8Gg3gDFXJYj6ut8srj",
+    "url": "https://drive.google.com/file/d/1ncgJmlqCljvIrf8Gg3gDFXJYj6ut8srj/view",
+    "bytes": 2130543,
+    "sha256": "8fbfe38f91165d394690d8c088c7899a573d31d88c91b3c5f4a196cab69d17e1",
+    "role": "Jury portrait; mapping supplied by owner filenames and list, not facial identification",
+    "output": "public/brand/acma26/jury/abdullah-adeeb.webp",
+    "outputSha256": "c7800d51beca0cb0aab2b59237216548697a56a90bf46b72afb86270e10474ce",
+    "outputBytes": 227284,
+    "width": 1122,
+    "height": 1402,
+    "processing": "WebP quality 94, original dimensions. No crop, recolor, face edits or generation."
+  },
+  {
+    "name": "1- 2omar mes3an.png",
+    "driveId": "13us7HjvZi6V-hctC4AncEdsDZNTRGFXd",
+    "url": "https://drive.google.com/file/d/13us7HjvZi6V-hctC4AncEdsDZNTRGFXd/view",
+    "bytes": 2920400,
+    "sha256": "59224322094b324788f5a3bf1077c43d9c445be5beca27b1c36fa44f8b274bb3",
+    "role": "Governor portrait, separate from jury",
+    "width": 1448,
+    "height": 1659,
+    "pixelIdenticalToPreviouslySuppliedGovernor": true
+  },
+  {
+    "name": "Typo.pdf",
+    "driveId": "1fJWerf2DQpWrF-P_6Y9Zwh9Z6O60YUAx",
+    "url": "https://drive.google.com/file/d/1fJWerf2DQpWrF-P_6Y9Zwh9Z6O60YUAx/view",
+    "bytes": 90065,
+    "sha256": "8df900fde243facdc730da9e7ca6a3337ea764a036385aaa0175164172ad987e",
+    "role": "Original Arabic award calligraphy, exact prior-audit SHA256 match"
+  },
+  {
+    "name": "Golden Star Filigree Award Trophy.png",
+    "driveId": "1_SCnBqZB9lAX0q4AUziME-_Y1QW07irL",
+    "url": "https://drive.google.com/file/d/1_SCnBqZB9lAX0q4AUziME-_Y1QW07irL/view",
+    "bytes": 1800133,
+    "sha256": "2a924f70cc79d494183de827facb5875c1cef80c612b82a385b1504601eafa51",
+    "role": "Separate full award trophy image",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "name": "Asset 2.pdf",
+    "driveId": "1_8YTkXkdkXrcSmIvFf3KEdIkuDrGD_FI",
+    "url": "https://drive.google.com/file/d/1_8YTkXkdkXrcSmIvFf3KEdIkuDrGD_FI/view",
+    "bytes": 197955,
+    "sha256": "77041e9c381b1d13a446425b4559754a7de263d15653bfdf59ac8614e486901d",
+    "role": "ANBAR EXPO 26 platform logo, not the award logo"
+  },
+  {
+    "name": "Image.png",
+    "driveId": "1K6hA-KLP3Tk8qgX7v_3SZlW9TTOS4BNW",
+    "url": "https://drive.google.com/file/d/1K6hA-KLP3Tk8qgX7v_3SZlW9TTOS4BNW/view",
+    "bytes": 2166698,
+    "sha256": "0a0d65948ece53aace528e97ee7b8de2e7dbab761a564c68eeb0340eeb36eaab",
+    "role": "Standalone panoramic night background, without trophy or calligraphy",
+    "width": 1919,
+    "height": 820
+  },
+  {
+    "name": "2- Moaed.png",
+    "driveId": "1drH5lsIo4_9sndTwy5N2KkBTit19q6E1",
+    "url": "https://drive.google.com/file/d/1drH5lsIo4_9sndTwy5N2KkBTit19q6E1/view",
+    "bytes": 1969245,
+    "sha256": "205d3514dfe8339bbfae02809baa955b3e7bfa516caa2c986ca9ad7b7c515028",
+    "role": "Jury portrait; mapping supplied by owner filenames and list, not facial identification",
+    "output": "public/brand/acma26/jury/moayad-khalaf.webp",
+    "outputSha256": "35df446339c8bcf3428e9897ee916475d46d78a8abd9c0c26e42f8ba51120f25",
+    "outputBytes": 178824,
+    "width": 1122,
+    "height": 1402,
+    "processing": "WebP quality 94, original dimensions. No crop, recolor, face edits or generation."
+  }
+]

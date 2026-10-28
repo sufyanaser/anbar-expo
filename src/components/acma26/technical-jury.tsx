@@ -16,8 +16,8 @@ export function TechnicalJury() {
                   <Image
                     src={member.imageSrc}
                     alt={member.name}
-                    width={480}
-                    height={600}
+                    width={member.imageWidth}
+                    height={member.imageHeight}
                     sizes="(max-width: 359px) 85vw, (max-width: 639px) 42vw, (max-width: 1023px) 28vw, 230px"
                   />
                 ) : (

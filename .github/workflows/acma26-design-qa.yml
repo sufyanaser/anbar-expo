@@ -44,7 +44,7 @@ jobs:
           import fs from 'node:fs';
           import prettier from 'prettier';
           import { createHash } from 'node:crypto';
-          const paths = ['src/app/ACMA26/page.tsx', 'src/app/ACMA26/acma26.module.css', 'src/components/acma26/jury-members.ts', 'src/components/acma26/technical-jury.tsx', 'docs/ACMA26-design-assets.json', 'docs/ACMA26-design-review.md', '.github/workflows/acma26-design-qa.yml'];
+          const paths = ['src/app/ACMA26/page.tsx', 'src/app/ACMA26/acma26.module.css', 'src/components/acma26/jury-members.ts', 'src/components/acma26/technical-jury.tsx', 'docs/ACMA26-design-assets.json', 'docs/ACMA26-drive-assets.json', 'docs/ACMA26-design-review.md', '.github/workflows/acma26-design-qa.yml'];
           for (const path of paths) {
             const original = fs.readFileSync(path, 'utf8');
             const options = await prettier.resolveConfig(path);

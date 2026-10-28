@@ -633,25 +633,136 @@
 }
 
 /* ACMA26 approved wireframe: continuous navy/gold, full-width jury strip */
-.awardTitle {display:flex;flex-direction:column;gap:12px}
-.awardTitle span {color:var(--gold)}
-.awardTitle small {font-size:clamp(22px,2.4vw,36px);font-weight:400;color:#f0e6d2}
-.patronage {margin-top:16px;color:#ead3a5;font-size:20px;line-height:1.8}
-.audience {border-block:1px solid #d9b87324;background:linear-gradient(90deg,#08172c,#102744,#08172c)}
-.rulesNotice {border-inline-start:2px solid var(--gold);padding-inline-start:16px;font-size:15px!important}
-.evaluation {background:radial-gradient(ellipse at 50% 0%,#172f4b 0%,transparent 70%)}
-.scoreGrid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.score {border-top:1px solid #d9b87377;padding:20px 12px;display:flex;flex-direction:column;gap:12px}
-.score strong {color:var(--gold);font:42px Arial,sans-serif}
-.score span {font-size:16px;line-height:1.8;color:#e6e0d6}
-.timeline {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px}
-.timeline p {border-bottom:1px solid #ffffff20;padding:15px 0}
-.timeline strong {color:var(--gold)}
-.jurySection {background:linear-gradient(110deg,#10233d,#1a304c,#10233d);border-block:1px solid #d9b87365;padding:60px 0}
-.juryInner {max-width:1440px;margin:auto;padding:0 5%}
-.juryInner h2 {font-size:clamp(28px,3vw,44px);font-weight:400;margin:0 0 28px}
-.juryStrip {display:flex;overflow-x:auto;scroll-snap-type:x proximity;border-top:1px solid #d9b87370;border-bottom:1px solid #d9b87340;padding:22px 0;scrollbar-color:#d9b873 #10233d}
-.juryMember {display:flex;flex:1 0 185px;align-items:center;justify-content:center;gap:12px;padding:16px;white-space:nowrap;scroll-snap-align:start;border-inline-end:1px solid #d9b87335;color:#f3eadb;font-size:16px}
-.juryMember svg {color:var(--gold);flex:none}
-@media(max-width:1000px){.scoreGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.juryMember{flex-basis:220px}}
-@media(max-width:760px){.scoreGrid,.timeline{grid-template-columns:1fr}.jurySection{padding:42px 0}.juryMember{flex:0 0 230px}.awardTitle small{font-size:24px}.patronage{font-size:17px}}
+.awardTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.awardTitle span {
+  color: var(--gold);
+}
+.awardTitle small {
+  font-size: clamp(22px, 2.4vw, 36px);
+  font-weight: 400;
+  color: #f0e6d2;
+}
+.patronage {
+  margin-top: 16px;
+  color: #ead3a5;
+  font-size: 20px;
+  line-height: 1.8;
+}
+.audience {
+  border-block: 1px solid #d9b87324;
+  background: linear-gradient(90deg, #08172c, #102744, #08172c);
+}
+.rulesNotice {
+  border-inline-start: 2px solid var(--gold);
+  padding-inline-start: 16px;
+  font-size: 15px !important;
+}
+.evaluation {
+  background: radial-gradient(ellipse at 50% 0%, #172f4b 0%, transparent 70%);
+}
+.scoreGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.score {
+  border-top: 1px solid #d9b87377;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.score strong {
+  color: var(--gold);
+  font:
+    42px Arial,
+    sans-serif;
+}
+.score span {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e6e0d6;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 32px;
+}
+.timeline p {
+  border-bottom: 1px solid #ffffff20;
+  padding: 15px 0;
+}
+.timeline strong {
+  color: var(--gold);
+}
+.jurySection {
+  background: linear-gradient(110deg, #10233d, #1a304c, #10233d);
+  border-block: 1px solid #d9b87365;
+  padding: 60px 0;
+}
+.juryInner {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 5%;
+}
+.juryInner h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 400;
+  margin: 0 0 28px;
+}
+.juryStrip {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  border-top: 1px solid #d9b87370;
+  border-bottom: 1px solid #d9b87340;
+  padding: 22px 0;
+  scrollbar-color: #d9b873 #10233d;
+}
+.juryMember {
+  display: flex;
+  flex: 1 0 185px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  border-inline-end: 1px solid #d9b87335;
+  color: #f3eadb;
+  font-size: 16px;
+}
+.juryMember svg {
+  color: var(--gold);
+  flex: none;
+}
+@media (max-width: 1000px) {
+  .scoreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .juryMember {
+    flex-basis: 220px;
+  }
+}
+@media (max-width: 760px) {
+  .scoreGrid,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+  .jurySection {
+    padding: 42px 0;
+  }
+  .juryMember {
+    flex: 0 0 230px;
+  }
+  .awardTitle small {
+    font-size: 24px;
+  }
+  .patronage {
+    font-size: 17px;
+  }
+}

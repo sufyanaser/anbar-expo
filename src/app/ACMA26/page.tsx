@@ -82,7 +82,8 @@ export default function Acma26Page() {
             </a>
           </div>
           <p className={s.availability}>
-            الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير مفعّل حالياً.
+            الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير مفعّل
+            حالياً.
           </p>
         </div>
         <div className={s.heroVisual}>
@@ -135,7 +136,9 @@ export default function Acma26Page() {
             التابعة لمحافظة الأنبار.
           </p>
           <p>
-            تعرض الصفحة مجالات الجائزة وضوابطها ومعايير تقييمها واللجان ذات الصلة. تبقى استمارة الاستلام الإلكتروني غير مفعّلة حتى اعتماد المتطلبات التشغيلية.
+            تعرض الصفحة مجالات الجائزة وضوابطها ومعايير تقييمها واللجان ذات
+            الصلة. تبقى استمارة الاستلام الإلكتروني غير مفعّلة حتى اعتماد
+            المتطلبات التشغيلية.
           </p>
           <a href="#participation" className={s.textLink}>
             اطّلع على متطلبات المشاركة{" "}
@@ -153,34 +156,82 @@ export default function Acma26Page() {
           <figcaption dir="ltr">ACMA26 · ANBAR · 2026</figcaption>
         </figure>
       </section>
-      <section id="fields" className={`${s.section} ${s.details}`} aria-labelledby="details-title">
+      <section
+        id="fields"
+        className={`${s.section} ${s.details}`}
+        aria-labelledby="details-title"
+      >
         <p className={s.eyebrow}>02 — مجالات المشاركة</p>
-        <h2 id="details-title">مسارات الإبداع <span>الأربعة.</span></h2>
+        <h2 id="details-title">
+          مسارات الإبداع <span>الأربعة.</span>
+        </h2>
         <div className={s.infoGrid}>
           {[
-            { Icon: Clapperboard, title: "المحتوى الفيديوي", text: "برومو من إنتاج المشارك لا يتجاوز ثلاث دقائق." },
-            { Icon: Radio, title: "التقرير الإذاعي أو التلفزيوني", text: "تقرير منشور لا يتجاوز ثلاث دقائق." },
-            { Icon: Newspaper, title: "المحتوى الصحفي", text: "مقال حتى 250 كلمة، تحقيق حتى 750 كلمة، تقرير حتى 500 كلمة." },
-            { Icon: Camera, title: "المحتوى البصري", text: "صور صحفية احترافية، بحد أقصى ثلاث لقطات." },
+            {
+              Icon: Clapperboard,
+              title: "المحتوى الفيديوي",
+              text: "برومو من إنتاج المشارك لا يتجاوز ثلاث دقائق.",
+            },
+            {
+              Icon: Radio,
+              title: "التقرير الإذاعي أو التلفزيوني",
+              text: "تقرير منشور لا يتجاوز ثلاث دقائق.",
+            },
+            {
+              Icon: Newspaper,
+              title: "المحتوى الصحفي",
+              text: "مقال حتى 250 كلمة، تحقيق حتى 750 كلمة، تقرير حتى 500 كلمة.",
+            },
+            {
+              Icon: Camera,
+              title: "المحتوى البصري",
+              text: "صور صحفية احترافية، بحد أقصى ثلاث لقطات.",
+            },
           ].map(({ Icon, title, text }) => (
-            <article key={title}><Icon size={26} strokeWidth={1.4} aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>
+            <article key={title}>
+              <Icon size={26} strokeWidth={1.4} aria-hidden="true" />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
           ))}
         </div>
       </section>
-      <section className={`${s.section} ${s.audience}`} aria-labelledby="audience-title">
+      <section
+        className={`${s.section} ${s.audience}`}
+        aria-labelledby="audience-title"
+      >
         <p className={s.eyebrow}>03 — الفئات المستهدفة</p>
-        <h2 id="audience-title">لمن تُفتح <span>مساحة الإبداع؟</span></h2>
-        <p>صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل الاجتماعي من أبناء محافظة الأنبار.</p>
+        <h2 id="audience-title">
+          لمن تُفتح <span>مساحة الإبداع؟</span>
+        </h2>
+        <p>
+          صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل
+          الاجتماعي من أبناء محافظة الأنبار.
+        </p>
       </section>
       <section id="rules" className={s.section} aria-labelledby="rules-title">
         <p className={s.eyebrow}>04 — الشروط والضوابط</p>
-        <h2 id="rules-title">شروط <span>المشاركة.</span></h2>
-        <p>الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع المجال والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات والصور المبينة لكل مجال.</p>
-        <p className={s.rulesNotice}>هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي يجب اعتماده قبل تفعيل استقبال الطلبات.</p>
+        <h2 id="rules-title">
+          شروط <span>المشاركة.</span>
+        </h2>
+        <p>
+          الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع المجال
+          والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات والصور المبينة
+          لكل مجال.
+        </p>
+        <p className={s.rulesNotice}>
+          هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي يجب
+          اعتماده قبل تفعيل استقبال الطلبات.
+        </p>
       </section>
-      <section className={`${s.section} ${s.evaluation}`} aria-labelledby="evaluation-title">
+      <section
+        className={`${s.section} ${s.evaluation}`}
+        aria-labelledby="evaluation-title"
+      >
         <p className={s.eyebrow}>05 — معايير التقييم</p>
-        <h2 id="evaluation-title">مئة نقطة <span>لتقييم الأعمال.</span></h2>
+        <h2 id="evaluation-title">
+          مئة نقطة <span>لتقييم الأعمال.</span>
+        </h2>
         <div className={s.scoreGrid}>
           {[
             ["40", "النشر الرقمي والتفاعل الحقيقي"],
@@ -188,20 +239,36 @@ export default function Acma26Page() {
             ["20", "القيمة الهادفة للرسالة"],
             ["20", "الانضباط اللغوي وحقوق النشر والذوق العام"],
           ].map(([score, label]) => (
-            <div key={label} className={s.score}><strong>{score}</strong><span>{label}</span></div>
+            <div key={label} className={s.score}>
+              <strong>{score}</strong>
+              <span>{label}</span>
+            </div>
           ))}
         </div>
       </section>
       <section className={s.section} aria-labelledby="timeline-title">
         <p className={s.eyebrow}>06 — المواعيد</p>
-        <h2 id="timeline-title">مراحل <span>الدورة.</span></h2>
+        <h2 id="timeline-title">
+          مراحل <span>الدورة.</span>
+        </h2>
         <div className={s.timeline}>
-          <p><strong>1 أكتوبر 2026</strong> — بدء التقديم وفق المنشور</p>
-          <p><strong>1 ديسمبر 2026</strong> — انتهاء التقديم وفق المنشور</p>
-          <p><strong>قبل 31 ديسمبر 2026</strong> — إنجاز الأعمال وفق المنشور</p>
-          <p><strong>31 ديسمبر 2026</strong> — الاحتفال والتكريم</p>
+          <p>
+            <strong>1 أكتوبر 2026</strong> — بدء التقديم وفق المنشور
+          </p>
+          <p>
+            <strong>1 ديسمبر 2026</strong> — انتهاء التقديم وفق المنشور
+          </p>
+          <p>
+            <strong>قبل 31 ديسمبر 2026</strong> — إنجاز الأعمال وفق المنشور
+          </p>
+          <p>
+            <strong>31 ديسمبر 2026</strong> — الاحتفال والتكريم
+          </p>
         </div>
-        <p className={s.rulesNotice}>يلزم توضيح رسمي للعلاقة بين إغلاق التقديم وموعد إنجاز الأعمال قبل اعتماد تعليمات الاستلام.</p>
+        <p className={s.rulesNotice}>
+          يلزم توضيح رسمي للعلاقة بين إغلاق التقديم وموعد إنجاز الأعمال قبل
+          اعتماد تعليمات الاستلام.
+        </p>
       </section>
       <section id="jury" className={s.jurySection} aria-labelledby="jury-title">
         <div className={s.juryInner}>
@@ -209,11 +276,19 @@ export default function Acma26Page() {
           <h2 id="jury-title">اللجنة الفنية لتقييم الأعمال</h2>
           <div className={s.juryStrip}>
             {[
-              { Icon: Newspaper, name: "د. مؤيد خلف حسين", specialty: "التحرير الصحفي" },
+              {
+                Icon: Newspaper,
+                name: "د. مؤيد خلف حسين",
+                specialty: "التحرير الصحفي",
+              },
               { Icon: Camera, name: "أحمد حمزة", specialty: "التصوير" },
               { Icon: Clapperboard, name: "سفيان ناصر", specialty: "الإخراج" },
               { Icon: Film, name: "أنس العاني", specialty: "المونتاج" },
-              { Icon: Scissors, name: "عبدالله أديب مجيد", specialty: "المونتاج" },
+              {
+                Icon: Scissors,
+                name: "عبدالله أديب مجيد",
+                specialty: "المونتاج",
+              },
             ].map(({ Icon, name, specialty }) => (
               <div className={s.juryMember} key={name}>
                 <Icon size={20} aria-label={specialty} strokeWidth={1.5} />
@@ -225,10 +300,20 @@ export default function Acma26Page() {
       </section>
       <section className={s.section} aria-labelledby="committees-title">
         <p className={s.eyebrow}>08 — اللجان التنظيمية</p>
-        <h2 id="committees-title">اللجان <span>المساندة.</span></h2>
-        <p><strong>اللجنة التحضيرية:</strong> د. مؤيد خلف حسين، د. محمد محمود حسن، باسم مطر محمد، عبدالله ناظم عواد، سرور عمار محمد.</p>
-        <p><strong>لجنة استقبال الطلبات وفرز الأعمال:</strong> وسام جاسم محمد، عمر فلاح حسين، مازن حسن فاضل.</p>
-        <p className={s.rulesNotice}>تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.</p>
+        <h2 id="committees-title">
+          اللجان <span>المساندة.</span>
+        </h2>
+        <p>
+          <strong>اللجنة التحضيرية:</strong> د. مؤيد خلف حسين، د. محمد محمود
+          حسن، باسم مطر محمد، عبدالله ناظم عواد، سرور عمار محمد.
+        </p>
+        <p>
+          <strong>لجنة استقبال الطلبات وفرز الأعمال:</strong> وسام جاسم محمد،
+          عمر فلاح حسين، مازن حسن فاضل.
+        </p>
+        <p className={s.rulesNotice}>
+          تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.
+        </p>
       </section>
       <section className={s.interlude} aria-label="تفاصيل مجسّم الجائزة">
         <Image
@@ -261,7 +346,8 @@ export default function Acma26Page() {
           <p className={s.eyebrow}>03 — المشاركة</p>
           <h2 id="participation-title">جهّز مشاركتك.</h2>
           <p>
-            استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل أو تُحفظ البيانات.
+            استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل
+            أو تُحفظ البيانات.
           </p>
           <ol className={s.steps}>
             <li>

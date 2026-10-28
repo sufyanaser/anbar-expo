@@ -26,3 +26,7 @@ Before enabling applications:
 5. Verify successful submission, storage, retrieval, failures, and retry behavior end to end.
 
 Do not enable the submit control independently of those steps. Dates, venue, categories, sponsors, and rules remain unannounced rather than invented.
+
+## Review status (2026-10-28)
+
+The ACMA26 landing page design was approved for implementation. The participation form remains disabled pending a secure intake workflow. Official committee spellings, sponsorship attribution, timeline wording and complete rules require document-level verification before public activation. Formatting was applied with Prettier on the feature branch; CI quality checks must pass before merging.

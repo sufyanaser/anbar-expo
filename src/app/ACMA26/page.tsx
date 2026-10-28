@@ -59,7 +59,8 @@ export default function Acma26Page() {
           </p>
           <p className={s.edition}>في الأنبار · دورة 2026</p>
           <h1 id="award-title" className={s.awardTitle}>
-            <span>جائزة صنّاع الإبداع</span>
+            <span className={s.srOnly}>جائزة صنّاع الإبداع</span>
+            <span className={s.calligraphy} aria-hidden="true" />
             <small>في الأنبار · 2026</small>
           </h1>
           <p className={s.patronage}>برعاية محافظة الأنبار</p>
@@ -274,7 +275,12 @@ export default function Acma26Page() {
         <div className={s.juryInner}>
           <p className={s.eyebrow}>07 — TECHNICAL JURY</p>
           <h2 id="jury-title">اللجنة الفنية لتقييم الأعمال</h2>
-          <div className={s.juryStrip}>
+          <div
+            className={s.juryStrip}
+            role="region"
+            aria-label="أعضاء اللجنة الفنية الخمسة؛ يمكن تمرير القائمة أفقياً"
+            tabIndex={0}
+          >
             {[
               {
                 Icon: Newspaper,
@@ -343,7 +349,7 @@ export default function Acma26Page() {
         aria-labelledby="participation-title"
       >
         <div>
-          <p className={s.eyebrow}>03 — المشاركة</p>
+          <p className={s.eyebrow}>09 — المشاركة</p>
           <h2 id="participation-title">جهّز مشاركتك.</h2>
           <p>
             استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل
@@ -375,7 +381,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.faq}`}
         aria-labelledby="faq-title"
       >
-        <p className={s.eyebrow}>04 — أسئلة شائعة</p>
+        <p className={s.eyebrow}>10 — أسئلة شائعة</p>
         <h2 id="faq-title">قبل أن تبدأ.</h2>
         {[
           {

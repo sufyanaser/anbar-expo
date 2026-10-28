@@ -47,7 +47,7 @@ export function ParticipationForm() {
           <label>
             فئة المشاركة
             <select defaultValue="">
-              <option value="">تُعلن الفئات قريباً</option>
+              <option value="">المجالات الأربعة موضحة في هذه الصفحة</option>
             </select>
           </label>
           <label className={s.fullField}>

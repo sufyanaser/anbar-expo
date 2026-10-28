@@ -85,6 +85,15 @@
 .isActive:hover .image {
   transform: scale(1.03);
 }
+.awardMedia {
+  background: #061120;
+}
+.awardMedia .image {
+  object-fit: contain;
+}
+.isActive:hover .awardMedia .image {
+  transform: none;
+}
 
 .badgeActive,
 .badgeSoon {

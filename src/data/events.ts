@@ -11,10 +11,10 @@ export const events: ExhibitionEvent[] = [
     visualIdentity: "acma26",
     href: "/ACMA26",
     cardImage: {
-      src: "/brand/acma26/card.webp",
-      width: 880,
-      height: 1100,
-      alt: "مجسّم جائزة صنّاع الإبداع في الأنبار 2026",
+      src: "/brand/acma26/hero-panorama.webp",
+      width: 1918,
+      height: 820,
+      alt: "جائزة صنّاع الإبداع 2026: الدرع والمخطوطة ومعالم الأنبار",
     },
     descriptionAr:
       "تعرّف على جائزة صنّاع الإبداع في الأنبار، وتفاصيل الدورة وإعلانات المشاركة.",

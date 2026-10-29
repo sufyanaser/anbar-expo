@@ -78,7 +78,7 @@ export default function Acma26Page() {
         </h1>
         <div className={s.heroVisual}>
           <Image
-            src="/brand/acma26/hero-panorama.webp"
+            src="/brand/acma26/hero-panorama-corrected.png"
             alt="الدرع الذهبي كاملاً إلى اليسار، ومخطوطة جائزة صنّاع الإبداع في الأنبار 2026 إلى اليمين، أمام معالم الأنبار ليلاً"
             width={1918}
             height={820}
@@ -119,19 +119,72 @@ export default function Acma26Page() {
             برعاية <span>محافظة الأنبار.</span>
           </h2>
           <p className={s.governorTitle}>محافظ الأنبار</p>
-          <p className={s.organizer}>
-            تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
-          </p>
+          <div className={s.editorialQuote}>
+            <p className={s.quoteStatus}>
+              كلمة مقترحة للمراجعة · ليست تصريحاً معتمداً
+            </p>
+            <p>
+              إن دعم الإبداع استثمار في طاقات الأنبار ومستقبلها. نعتز بكل موهبة
+              تصنع أثراً، ونؤمن بأهمية إتاحة الفرص أمام المبدعين ليعبّروا عن
+              رؤاهم ويسهموا في خدمة مجتمعهم.
+            </p>
+          </div>
         </div>
         <figure className={s.governorPortrait}>
           <Image
-            src="/brand/acma26/governor-portrait.webp"
+            src="/brand/acma26/governor-navy.webp"
             alt="الصورة المعتمدة لمحافظ الأنبار"
             width={1448}
             height={1659}
             sizes="(max-width: 639px) 85vw, (max-width: 1023px) 42vw, 420px"
           />
         </figure>
+      </section>
+      <section
+        className={`${s.section} ${s.leadership}`}
+        aria-labelledby="leadership-title"
+      >
+        <p className={s.eyebrow}>من التنظيم إلى التصميم</p>
+        <h2 id="leadership-title">
+          رؤية تجمعنا. <span>وأثر نحتفي به.</span>
+        </h2>
+        <div className={s.leadershipGrid}>
+          {[
+            {
+              name: "د. مؤيد خلف حسين",
+              role: "المشرف العام على الجائزة",
+              image: "moayad-khalaf",
+              title: "مساحة تستحقها الموهبة",
+              text: "نسعى من خلال جائزة صنّاع الإبداع إلى توفير مساحة تقدّر العمل الأصيل، وتبرز الطاقات الإبداعية في الأنبار. وتقوم مسؤوليتنا على تنظيم تجربة واضحة تُعنى بقيمة العمل وجودته وأثره في المجتمع.",
+            },
+            {
+              name: "سفيان ناصر",
+              role: "مصمم جائزة صنّاع الإبداع",
+              image: "sufyan-nasser",
+              title: "تصميم يحمل معنى التقدير",
+              text: "أردتُ أن تحمل الجائزة معنى التقدير في حضورها وتفاصيلها؛ أن تكون رمزاً يليق بالجهد الذي يقف خلف كل عمل إبداعي، وتذكاراً للأثر الذي يتركه صاحبه. فالتصميم هنا امتداد لفكرة الجائزة واحتفائها بصنّاع الإبداع.",
+            },
+          ].map((person) => (
+            <article className={s.leaderCard} key={person.image}>
+              <figure className={s.leaderPortrait}>
+                <Image
+                  src={`/brand/acma26/jury/${person.image}.webp`}
+                  alt={person.name}
+                  width={1122}
+                  height={1402}
+                  sizes="(max-width: 639px) 120px, 180px"
+                />
+              </figure>
+              <div>
+                <p className={s.eyebrow}>{person.role}</p>
+                <h3>{person.name}</h3>
+                <p className={s.leaderTheme}>{person.title}</p>
+                <p>{person.text}</p>
+                <p className={s.quoteStatus}>صياغة مقترحة للمراجعة والاعتماد</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
       <section
         id="about"
@@ -314,14 +367,42 @@ export default function Acma26Page() {
         <h2 id="committees-title">
           اللجان <span>المساندة.</span>
         </h2>
-        <p>
-          <strong>اللجنة التحضيرية:</strong> د. مؤيد خلف حسين، د. محمد محمود
-          حسن، باسم مطر محمد، عبدالله ناظم عواد، سرور عمار محمد.
-        </p>
-        <p>
-          <strong>لجنة استقبال الطلبات وفرز الأعمال:</strong> وسام جاسم محمد،
-          عمر فلاح حسين، مازن حسن فاضل.
-        </p>
+        <div className={s.committees}>
+          {[
+            {
+              title: "اللجنة التحضيرية",
+              names: [
+                "د. مؤيد خلف حسين",
+                "د. محمد محمود حسن",
+                "باسم مطر محمد",
+                "عبدالله ناظم عواد",
+                "سرور عمار محمد",
+              ],
+            },
+            {
+              title: "لجنة استقبال الطلبات وفرز الأعمال",
+              names: ["وسام جاسم محمد", "عمر فلاح حسين", "مازن حسن فاضل"],
+            },
+          ].map((committee) => (
+            <div key={committee.title}>
+              <h3>{committee.title}</h3>
+              <ul
+                className={s.committeeRow}
+                aria-label={committee.title}
+                tabIndex={0}
+              >
+                {committee.names.map((name, index) => (
+                  <li key={name}>
+                    <span aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <strong>{name}</strong>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
         <p className={s.rulesNotice}>
           تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.
         </p>

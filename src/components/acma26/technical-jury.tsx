@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { juryMembers } from "./jury-members";
 import s from "@/app/ACMA26/acma26.module.css";
@@ -11,7 +12,15 @@ export function TechnicalJury() {
         <ul className={s.juryGrid}>
           {juryMembers.map((member) => (
             <li className={s.juryMember} key={member.id}>
-              <div className={s.juryPortrait}>
+              <div
+                className={s.juryPortrait}
+                style={
+                  {
+                    "--portrait-scale": member.portraitScale,
+                    "--portrait-position": member.portraitPosition,
+                  } as CSSProperties
+                }
+              >
                 {member.imageSrc ? (
                   <Image
                     src={member.imageSrc}

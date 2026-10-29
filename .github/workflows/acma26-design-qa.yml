@@ -1,0 +1,64 @@
+name: ACMA26 Design Quality
+
+on:
+  push:
+    branches: [design/acma26-cinematic-editorial]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Format check
+        id: format
+        continue-on-error: true
+        run: npm run format:check
+      - name: Lint
+        id: lint
+        continue-on-error: true
+        run: npm run lint
+      - name: Typecheck
+        id: types
+        continue-on-error: true
+        run: npm run typecheck
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+      - name: Report formatting corrections without changing the checkout
+        if: steps.format.outcome == 'failure'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import prettier from 'prettier';
+          import { createHash } from 'node:crypto';
+          const paths = ['src/app/ACMA26/page.tsx', 'src/app/ACMA26/acma26.module.css', 'src/components/acma26/jury-members.ts', 'src/components/acma26/technical-jury.tsx', 'docs/ACMA26-design-assets.json', 'docs/ACMA26-drive-assets.json', 'docs/ACMA26-design-review.md', '.github/workflows/acma26-design-qa.yml'];
+          for (const path of paths) {
+            const original = fs.readFileSync(path, 'utf8');
+            const options = await prettier.resolveConfig(path);
+            const formatted = await prettier.format(original, { ...options, filepath: path });
+            if (original !== formatted) console.log('ACMA26_FORMAT_FILE ' + JSON.stringify({ path, originalSha256: createHash('sha256').update(original).digest('hex'), content: Buffer.from(formatted).toString('base64') }));
+          }
+          NODE
+      - name: Enforce technical gates
+        if: always()
+        env:
+          FORMAT: ${{ steps.format.outcome }}
+          LINT: ${{ steps.lint.outcome }}
+          TYPES: ${{ steps.types.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+        run: |
+          printf 'format=%s lint=%s typecheck=%s build=%s\n' "$FORMAT" "$LINT" "$TYPES" "$BUILD" >> "$GITHUB_STEP_SUMMARY"
+          test "$FORMAT" = success && test "$LINT" = success && test "$TYPES" = success && test "$BUILD" = success

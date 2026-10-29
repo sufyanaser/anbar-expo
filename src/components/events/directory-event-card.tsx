@@ -82,7 +82,9 @@ export function DirectoryEventCard({
 
   const content = (
     <>
-      <div className={s.media}>
+      <div
+        className={`${s.media} ${event.id === "acma26" ? s.awardMedia : ""}`}
+      >
         <Visual visual={event.visual} title={event.titleAr} eager={index < 2} />
         <span className={active ? s.badgeActive : s.badgeSoon}>
           {active ? <i className={s.pulse} aria-hidden="true" /> : null}

@@ -1,0 +1,22 @@
+[
+  {
+    "source": "Anbar Creativity Awards 12026.png",
+    "sourceSha256": "82aef9e1698e741bdabc52beb873b33effa9dedd427286d6ca1ac4561fb16690",
+    "output": "hero-panorama.webp",
+    "outputSha256": "dab3734fa65cc06540274b9bc154c415898d41e096c3c3bb7eb755c1c74e4add",
+    "width": 1918,
+    "height": 820,
+    "bytes": 312216,
+    "processing": "WebP encoding quality 94, original dimensions, no crop, resize, retouch or redraw. Source PNG retained separately."
+  },
+  {
+    "source": "1- 2omar mes3an.png",
+    "sourceSha256": "a0c73889d01dcab0610e04dfa32353f7c43e501d8746b4815517667d69d7c8bc",
+    "output": "governor-portrait.webp",
+    "outputSha256": "530dcf29ee36c4f1f4b29e1790b97cfb63dc474fe698bab4d25affa7d0c028f4",
+    "width": 1448,
+    "height": 1659,
+    "bytes": 386074,
+    "processing": "WebP encoding quality 94, original dimensions, no crop, resize, retouch or redraw. Source PNG retained separately."
+  }
+]

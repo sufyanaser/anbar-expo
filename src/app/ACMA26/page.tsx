@@ -8,10 +8,9 @@ import {
   Clapperboard,
   Newspaper,
   Radio,
-  Film,
-  Scissors,
 } from "lucide-react";
 import { ParticipationForm } from "@/components/acma26/participation-form";
+import { TechnicalJury } from "@/components/acma26/technical-jury";
 import s from "./acma26.module.css";
 
 export const metadata: Metadata = {
@@ -19,6 +18,22 @@ export const metadata: Metadata = {
   description:
     "جائزة صنّاع الإبداع في الأنبار 2026. تعرّف على الجائزة وتفاصيل المشاركة وإعلانات الدورة.",
   alternates: { canonical: "/ACMA26" },
+  icons: {
+    icon: [
+      {
+        url: "/brand/acma26/trophy-icon-32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/brand/acma26/trophy-icon-192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
+    shortcut: "/brand/acma26/trophy-icon-32.png",
+    apple: "/brand/acma26/trophy-icon-180.png",
+  },
   openGraph: {
     title: "جائزة صنّاع الإبداع | ACMA26",
     description: "Anbar Creativity Makers Award · 2026",
@@ -36,9 +51,20 @@ export const metadata: Metadata = {
 
 export default function Acma26Page() {
   return (
-    <div className={s.page}>
+    <div className={s.page} dir="rtl">
+      <a className={s.skipLink} href="#award-title">
+        انتقل إلى محتوى الجائزة
+      </a>
       <header className={s.header}>
         <Link href="/" className={s.platform} dir="ltr">
+          <Image
+            className={s.platformMark}
+            src="/brand/anbar-expo/anbar-expo-mark-720.png"
+            alt=""
+            width={713}
+            height={720}
+            sizes="40px"
+          />
           ANBAR EXPO <ArrowUpLeft size={16} aria-hidden="true" />
         </Link>
         <nav aria-label="أقسام الجائزة">
@@ -49,120 +75,199 @@ export default function Acma26Page() {
           <a href="#faq">الأسئلة</a>
         </nav>
         <a href="#participation" className={s.headerCta}>
-          دليل المشاركة
+          متطلبات المشاركة
         </a>
+        <details className={s.mobileNav}>
+          <summary>أقسام الجائزة</summary>
+          <nav aria-label="أقسام الجائزة على الهاتف">
+            <a href="#about">عن الجائزة</a>
+            <a href="#fields">المجالات</a>
+            <a href="#jury">اللجنة الفنية</a>
+            <a href="#participation">المشاركة</a>
+            <a href="#faq">الأسئلة</a>
+          </nav>
+        </details>
       </header>
       <section className={s.hero} aria-labelledby="award-title">
-        <div className={s.heroText}>
-          <p className={s.eyebrow} dir="ltr">
-            ANBAR CREATIVITY MAKERS AWARD
-          </p>
-          <p className={s.edition}>في الأنبار · دورة 2026</p>
-          <h1 id="award-title" className={s.awardTitle}>
-            <span className={s.srOnly}>جائزة صنّاع الإبداع</span>
-            <span className={s.calligraphy} aria-hidden="true" />
-            <small>في الأنبار · 2026</small>
-          </h1>
-          <p className={s.patronage}>برعاية محافظة الأنبار</p>
-          <p className={s.lead}>
-            للإبداع حضور.
-            <br />
-            ولصنّاعه التقدير.
-          </p>
-          <p className={s.organizer}>
-            تنظيم لجنة الثقافة والإعلام
-            <br />
-            التابعة لمحافظة الأنبار
-          </p>
-          <div className={s.actions}>
-            <a className={s.primary} href="#participation">
-              استكشف المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
-            </a>
-            <a className={s.secondary} href="#about">
-              تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
-            </a>
-          </div>
-          <p className={s.availability}>
-            الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير مفعّل
-            حالياً.
-          </p>
-        </div>
+        <h1 id="award-title" className={s.srOnly} tabIndex={-1}>
+          جائزة صنّاع الإبداع في الأنبار 2026
+        </h1>
         <div className={s.heroVisual}>
           <Image
-            src="/brand/acma26/hero.webp"
-            alt="المجسّم الذهبي لجائزة صنّاع الإبداع على قاعدة سوداء"
-            width={896}
-            height={1200}
-            priority
-            sizes="(max-width: 760px) 100vw, 50vw"
+            src="/brand/acma26/hero-panorama-corrected.png"
+            alt="الدرع الذهبي كاملاً إلى اليسار، ومخطوطة جائزة صنّاع الإبداع في الأنبار 2026 إلى اليمين، أمام معالم الأنبار ليلاً"
+            width={1918}
+            height={820}
+            preload
+            sizes="100vw"
           />
-          <span className={s.imageCode} dir="ltr">
-            ACMA<span>26</span>
-          </span>
-          <span className={s.imageCaption}>جائزة صنّاع الإبداع في الأنبار</span>
+        </div>
+        <div className={s.heroText}>
+          <div className={s.heroContext}>
+            <p className={s.edition}>في الأنبار · دورة 2026</p>
+            <p className={s.organizer}>
+              تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
+            </p>
+          </div>
+          <div className={s.heroNavigation}>
+            <div className={s.actions}>
+              <a className={s.primary} href="#participation">
+                متطلبات المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
+              </a>
+              <a className={s.secondary} href="#about">
+                تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
+              </a>
+            </div>
+            <p className={s.availability}>
+              الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير
+              مفعّل حالياً.
+            </p>
+          </div>
+        </div>
+        <nav className={s.quickLinks} aria-label="معلومات المشاركة">
+          <a href="#fields">مجالات المشاركة</a>
+          <a href="#rules">شروط المشاركة</a>
+          <a href="#timeline">المواعيد</a>
+        </nav>
+      </section>
+      <section
+        className={`${s.section} ${s.patronage}`}
+        aria-labelledby="patronage-title"
+      >
+        <div className={s.patronageText}>
+          <p className={s.sponsorshipLabel}>برعاية</p>
+          <h2 id="patronage-title" className={s.governorName}>
+            المهندس عمر مشعان دبوس
+          </h2>
+          <p className={s.governorTitle}>محافظ الأنبار</p>
+          <div className={s.editorialQuote}>
+            <p>
+              إن دعم الإبداع استثمار في طاقات الأنبار ومستقبلها. نعتز بكل موهبة
+              تصنع أثراً، ونؤمن بأهمية إتاحة الفرص أمام المبدعين ليعبّروا عن
+              رؤاهم ويسهموا في خدمة مجتمعهم.
+            </p>
+          </div>
+        </div>
+        <figure className={s.governorPortrait}>
+          <Image
+            src="/brand/acma26/governor-navy.webp"
+            alt="الصورة المعتمدة لمحافظ الأنبار"
+            width={1448}
+            height={1659}
+            sizes="(max-width: 639px) 85vw, (max-width: 1023px) 42vw, 420px"
+          />
+        </figure>
+      </section>
+      <section
+        className={`${s.section} ${s.leadership}`}
+        aria-labelledby="leadership-title"
+      >
+        <div className={s.leadershipHeading}>
+          <h2 id="leadership-title">
+            من التنظيم <span>إلى التصميم</span>
+          </h2>
+          <p>رؤية تجمعنا. وأثر نحتفي به.</p>
+        </div>
+        <div className={s.leadershipGrid}>
+          {[
+            {
+              name: "د. مؤيد خلف حسين",
+              role: "المشرف العام على الجائزة",
+              image: "moayad-khalaf",
+              title: "مساحة تستحقها الموهبة",
+              text: "نسعى من خلال جائزة صنّاع الإبداع إلى توفير مساحة تقدّر العمل الأصيل، وتبرز الطاقات الإبداعية في الأنبار. وتقوم مسؤوليتنا على تنظيم تجربة واضحة تُعنى بقيمة العمل وجودته وأثره في المجتمع.",
+            },
+            {
+              name: "سفيان ناصر",
+              role: "مصمم جائزة صنّاع الإبداع",
+              image: "sufyan-nasser",
+              title: "تصميم يحمل معنى التقدير",
+              text: "أردتُ أن تحمل الجائزة معنى التقدير في حضورها وتفاصيلها؛ أن تكون رمزاً يليق بالجهد الذي يقف خلف كل عمل إبداعي، وتذكاراً للأثر الذي يتركه صاحبه. فالتصميم هنا امتداد لفكرة الجائزة واحتفائها بصنّاع الإبداع.",
+            },
+          ].map((person) => (
+            <article className={s.leaderCard} key={person.image}>
+              <figure className={s.leaderPortrait}>
+                <Image
+                  src={`/brand/acma26/jury/${person.image}.webp`}
+                  alt={person.name}
+                  width={1122}
+                  height={1402}
+                  sizes="(max-width: 639px) 120px, 180px"
+                />
+              </figure>
+              <div>
+                <h3 className={s.leaderTheme}>{person.title}</h3>
+                <blockquote className={s.leaderQuote}>
+                  <p>{person.text}</p>
+                </blockquote>
+                <footer className={s.leaderSignature}>
+                  <p>{person.name}</p>
+                  <p>{person.role}</p>
+                </footer>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
-      <div className={s.facts}>
-        <div>
-          <small>الدورة</small>
-          <strong>2026</strong>
-        </div>
-        <div>
-          <small>المكان</small>
-          <strong>يُعلن لاحقاً</strong>
-        </div>
-        <div>
-          <small>موعد التكريم</small>
-          <strong>31 ديسمبر 2026 وفق المنشور</strong>
-        </div>
-        <div>
-          <small>حالة المشاركة</small>
-          <strong>الاستمارة الإلكترونية غير مفعّلة</strong>
-        </div>
-      </div>
       <section
         id="about"
         className={`${s.section} ${s.about}`}
         aria-labelledby="about-title"
       >
         <div>
-          <p className={s.eyebrow}>01 — عن الجائزة</p>
+          <p className={s.eyebrow}>عن الجائزة</p>
           <h2 id="about-title">
-            مساحة للإبداع.
-            <br />
-            <span>وتقدير لمن يصنعه.</span>
+            مساحة <span>للإبداع.</span>
           </h2>
+          <p className={s.aboutStatement}>تقدير لمن يصنع الأثر.</p>
           <p>
             جائزة صنّاع الإبداع في الأنبار 2026، بتنظيم لجنة الثقافة والإعلام
             التابعة لمحافظة الأنبار.
           </p>
           <p>
             تعرض الصفحة مجالات الجائزة وضوابطها ومعايير تقييمها واللجان ذات
-            الصلة. تبقى استمارة الاستلام الإلكتروني غير مفعّلة حتى اعتماد
-            المتطلبات التشغيلية.
+            الصلة. استقبال المشاركات الإلكتروني غير متاح حالياً.
           </p>
-          <a href="#participation" className={s.textLink}>
-            اطّلع على متطلبات المشاركة{" "}
-            <ArrowUpLeft size={18} aria-hidden="true" />
+          <a href="#rules" className={s.textLink}>
+            اطّلع على شروط المشاركة <ArrowUpLeft size={18} aria-hidden="true" />
           </a>
         </div>
         <figure className={s.logoPanel}>
           <Image
-            src="/brand/acma26/logo.webp"
+            className={s.awardLogo}
+            src="/brand/acma26/golden-logo-official.webp"
             alt="الشعار المعتمد لجائزة صنّاع الإبداع في الأنبار 2026"
-            width={688}
-            height={900}
-            sizes="(max-width: 760px) 85vw, 360px"
+            width={2194}
+            height={2868}
+            sizes="(max-width: 760px) 85vw, 400px"
           />
           <figcaption dir="ltr">ACMA26 · ANBAR · 2026</figcaption>
         </figure>
+        <div className={s.facts}>
+          <div>
+            <small>الدورة</small>
+            <strong>2026</strong>
+          </div>
+          <div>
+            <small>المكان</small>
+            <strong>يُعلن لاحقاً</strong>
+          </div>
+          <div>
+            <small>موعد التكريم</small>
+            <strong>31 ديسمبر 2026 وفق المنشور</strong>
+          </div>
+          <div>
+            <small>حالة المشاركة</small>
+            <strong>الاستمارة الإلكترونية غير مفعّلة</strong>
+          </div>
+        </div>
       </section>
       <section
         id="fields"
-        className={`${s.section} ${s.details}`}
+        className={s.section}
         aria-labelledby="details-title"
       >
-        <p className={s.eyebrow}>02 — مجالات المشاركة</p>
+        <p className={s.eyebrow}>مجالات المشاركة</p>
         <h2 id="details-title">
           مسارات الإبداع <span>الأربعة.</span>
         </h2>
@@ -198,38 +303,44 @@ export default function Acma26Page() {
         </div>
       </section>
       <section
-        className={`${s.section} ${s.audience}`}
-        aria-labelledby="audience-title"
+        id="rules"
+        className={`${s.section} ${s.eligibility}`}
+        aria-labelledby="rules-title"
       >
-        <p className={s.eyebrow}>03 — الفئات المستهدفة</p>
-        <h2 id="audience-title">
-          لمن تُفتح <span>مساحة الإبداع؟</span>
-        </h2>
-        <p>
-          صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل
-          الاجتماعي من أبناء محافظة الأنبار.
-        </p>
-      </section>
-      <section id="rules" className={s.section} aria-labelledby="rules-title">
-        <p className={s.eyebrow}>04 — الشروط والضوابط</p>
+        <p className={s.eyebrow}>الشروط والضوابط</p>
         <h2 id="rules-title">
           شروط <span>المشاركة.</span>
         </h2>
-        <p>
-          الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع المجال
-          والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات والصور المبينة
-          لكل مجال.
-        </p>
-        <p className={s.rulesNotice}>
-          هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي يجب
-          اعتماده قبل تفعيل استقبال الطلبات.
-        </p>
+        <div className={s.eligibilityGrid}>
+          <article aria-labelledby="audience-title">
+            <p className={s.eyebrow}>الفئات المستهدفة</p>
+            <h3 id="audience-title">
+              لمن تُفتح <span>مساحة الإبداع؟</span>
+            </h3>
+            <p>
+              صنّاع المحتوى والمؤثرون والإعلاميون والفاعلون على مواقع التواصل
+              الاجتماعي من أبناء محافظة الأنبار.
+            </p>
+          </article>
+          <article aria-labelledby="conditions-title">
+            <h3 id="conditions-title">الضوابط</h3>
+            <p>
+              الأصالة وحقوق الملكية الفكرية، والجودة الفنية، والالتزام بموضوع
+              المجال والمعايير الأخلاقية والمهنية. تسري حدود المدة والكلمات
+              والصور المبينة لكل مجال.
+            </p>
+            <p className={s.rulesNotice}>
+              هذه خلاصة تعريفية. يُرجع إلى الإعلان التنظيمي الرسمي للجائزة في
+              تفاصيل الشروط والضوابط الكاملة.
+            </p>
+          </article>
+        </div>
       </section>
       <section
         className={`${s.section} ${s.evaluation}`}
         aria-labelledby="evaluation-title"
       >
-        <p className={s.eyebrow}>05 — معايير التقييم</p>
+        <p className={s.eyebrow}>معايير التقييم</p>
         <h2 id="evaluation-title">
           مئة نقطة <span>لتقييم الأعمال.</span>
         </h2>
@@ -247,97 +358,92 @@ export default function Acma26Page() {
           ))}
         </div>
       </section>
-      <section className={s.section} aria-labelledby="timeline-title">
-        <p className={s.eyebrow}>06 — المواعيد</p>
+      <section
+        id="timeline"
+        className={s.section}
+        aria-labelledby="timeline-title"
+      >
+        <p className={s.eyebrow}>المواعيد</p>
         <h2 id="timeline-title">
           مراحل <span>الدورة.</span>
         </h2>
-        <div className={s.timeline}>
-          <p>
-            <strong>1 أكتوبر 2026</strong> — بدء التقديم وفق المنشور
-          </p>
-          <p>
-            <strong>1 ديسمبر 2026</strong> — انتهاء التقديم وفق المنشور
-          </p>
-          <p>
-            <strong>قبل 31 ديسمبر 2026</strong> — إنجاز الأعمال وفق المنشور
-          </p>
-          <p>
-            <strong>31 ديسمبر 2026</strong> — الاحتفال والتكريم
-          </p>
-        </div>
-        <p className={s.rulesNotice}>
-          يلزم توضيح رسمي للعلاقة بين إغلاق التقديم وموعد إنجاز الأعمال قبل
-          اعتماد تعليمات الاستلام.
-        </p>
+        <ol className={s.timeline}>
+          <li>
+            <time dateTime="2026-10-01">1 أكتوبر 2026</time>
+            <span>بدء التقديم وفق المنشور</span>
+          </li>
+          <li>
+            <time dateTime="2026-12-01">1 ديسمبر 2026</time>
+            <span>انتهاء التقديم وفق المنشور</span>
+          </li>
+          <li>
+            <span className={s.timelineDate}>قبل 31 ديسمبر 2026</span>
+            <span>إنجاز الأعمال وفق المنشور</span>
+          </li>
+          <li>
+            <time dateTime="2026-12-31">31 ديسمبر 2026</time>
+            <span>الاحتفال والتكريم</span>
+          </li>
+        </ol>
       </section>
-      <section id="jury" className={s.jurySection} aria-labelledby="jury-title">
-        <div className={s.juryInner}>
-          <p className={s.eyebrow}>07 — TECHNICAL JURY</p>
-          <h2 id="jury-title">اللجنة الفنية لتقييم الأعمال</h2>
-          <div
-            className={s.juryStrip}
-            role="region"
-            aria-label="أعضاء اللجنة الفنية الخمسة؛ يمكن تمرير القائمة أفقياً"
-            tabIndex={0}
-          >
-            {[
-              {
-                Icon: Newspaper,
-                name: "د. مؤيد خلف حسين",
-                specialty: "التحرير الصحفي",
-              },
-              { Icon: Camera, name: "أحمد حمزة", specialty: "التصوير" },
-              { Icon: Clapperboard, name: "سفيان ناصر", specialty: "الإخراج" },
-              { Icon: Film, name: "أنس العاني", specialty: "المونتاج" },
-              {
-                Icon: Scissors,
-                name: "عبدالله أديب مجيد",
-                specialty: "المونتاج",
-              },
-            ].map(({ Icon, name, specialty }) => (
-              <div className={s.juryMember} key={name}>
-                <Icon size={20} aria-label={specialty} strokeWidth={1.5} />
-                <span>{name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechnicalJury />
       <section className={s.section} aria-labelledby="committees-title">
-        <p className={s.eyebrow}>08 — اللجان التنظيمية</p>
+        <p className={s.eyebrow}>اللجان التنظيمية</p>
         <h2 id="committees-title">
           اللجان <span>المساندة.</span>
         </h2>
-        <p>
-          <strong>اللجنة التحضيرية:</strong> د. مؤيد خلف حسين، د. محمد محمود
-          حسن، باسم مطر محمد، عبدالله ناظم عواد، سرور عمار محمد.
-        </p>
-        <p>
-          <strong>لجنة استقبال الطلبات وفرز الأعمال:</strong> وسام جاسم محمد،
-          عمر فلاح حسين، مازن حسن فاضل.
-        </p>
-        <p className={s.rulesNotice}>
-          تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.
-        </p>
+        <p className={s.committeeHint}>اسحب أفقياً لعرض بقية الأسماء</p>
+        <div className={s.committees}>
+          {[
+            {
+              title: "اللجنة التحضيرية",
+              names: [
+                "د. مؤيد خلف حسين",
+                "د. محمد محمود حسن",
+                "باسم مطر محمد",
+                "عبدالله ناظم عواد",
+                "سرور عمار محمد",
+              ],
+            },
+            {
+              title: "لجنة استقبال الطلبات وفرز الأعمال",
+              names: ["وسام جاسم محمد", "عمر فلاح حسين", "مازن حسن فاضل"],
+            },
+          ].map((committee) => (
+            <div key={committee.title}>
+              <h3>{committee.title}</h3>
+              <ul
+                className={s.committeeRow}
+                aria-label={committee.title}
+                tabIndex={0}
+              >
+                {committee.names.map((name, index) => (
+                  <li key={name}>
+                    <span aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <strong>{name}</strong>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
-      <section className={s.interlude} aria-label="تفاصيل مجسّم الجائزة">
-        <Image
-          src="/brand/acma26/detail.webp"
-          alt="تفاصيل النجمة والشريط السينمائي والريشة في مجسّم الجائزة"
-          width={880}
-          height={1100}
-          sizes="(max-width: 760px) 100vw, 45vw"
-        />
+      <section className={s.interlude} aria-label="قيمة الإبداع">
         <div>
           <p className={s.eyebrow} dir="ltr">
             ANBAR · CREATIVITY · 2026
           </p>
-          <p className={s.statement}>
-            فكرة تترك أثراً.
-            <br />
-            <span>وإبداع يستحق التقدير.</span>
-          </p>
+          <figure className={s.sloganArtwork}>
+            <Image
+              src="/brand/acma26/slogan-approved.webp"
+              alt="فكرة تترك أثراً وإبداع يستحق التقدير"
+              width={2172}
+              height={370}
+              sizes="(max-width: 639px) 100vw, 1184px"
+            />
+          </figure>
           <span className={s.largeCode} dir="ltr">
             ACMA26
           </span>
@@ -349,30 +455,32 @@ export default function Acma26Page() {
         aria-labelledby="participation-title"
       >
         <div>
-          <p className={s.eyebrow}>09 — المشاركة</p>
+          <p className={s.eyebrow}>المشاركة</p>
           <h2 id="participation-title">جهّز مشاركتك.</h2>
           <p>
             استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل
             أو تُحفظ البيانات.
           </p>
-          <ol className={s.steps}>
-            <li>
-              <strong>بيانات المشارك</strong>
-              <span>الاسم ووسائل التواصل</span>
-            </li>
-            <li>
-              <strong>تفاصيل العمل</strong>
-              <span>العنوان والوصف ورابط الاطلاع</span>
-            </li>
-            <li>
-              <strong>المراجعة والتقديم</strong>
-              <span>بعد فتح باب المشاركة رسمياً</span>
-            </li>
-          </ol>
           <p className={s.notice}>
             التقديم غير مفتوح حالياً. يمكنك استعراض الحقول، ولن تُرسل أو تُحفظ
             أي بيانات في هذه المرحلة.
           </p>
+          <dl className={s.requirements} aria-label="ملخص بيانات المشاركة">
+            <div>
+              <dt>بيانات المشارك</dt>
+              <dd>
+                الاسم الكامل، رقم الهاتف، البريد الإلكتروني، المحافظة والمدينة،
+                وصفة المشارك.
+              </dd>
+            </div>
+            <div>
+              <dt>تفاصيل العمل</dt>
+              <dd>
+                فئة المشاركة، عنوان العمل أو المبادرة، وصف العمل، ورابط العمل أو
+                ملف الأعمال.
+              </dd>
+            </div>
+          </dl>
         </div>
         <ParticipationForm />
       </section>
@@ -381,7 +489,7 @@ export default function Acma26Page() {
         className={`${s.section} ${s.faq}`}
         aria-labelledby="faq-title"
       >
-        <p className={s.eyebrow}>10 — أسئلة شائعة</p>
+        <p className={s.eyebrow}>أسئلة شائعة</p>
         <h2 id="faq-title">قبل أن تبدأ.</h2>
         {[
           {
@@ -419,6 +527,14 @@ export default function Acma26Page() {
           العودة إلى فعاليات ANBAR EXPO{" "}
           <ArrowUpLeft size={18} aria-hidden="true" />
         </Link>
+        <nav className={s.footerNav} aria-label="أقسام الجائزة في الفوتر">
+          <a href="#fields">المجالات</a>
+          <a href="#rules">الشروط</a>
+          <a href="#timeline">المواعيد</a>
+          <a href="#participation">متطلبات المشاركة</a>
+          <a href="#form-preview">معاينة الحقول</a>
+          <a href="#award-title">العودة للبداية</a>
+        </nav>
         <small>© 2026 · لجنة الثقافة والإعلام التابعة لمحافظة الأنبار</small>
       </footer>
     </div>

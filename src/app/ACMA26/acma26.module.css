@@ -1073,3 +1073,158 @@
 .committees > div {
   min-width: 0;
 }
+
+/* Complete the shared institutional card system across the award guide. */
+.section h2,
+.juryInner h2 {
+  white-space: nowrap;
+  text-wrap: nowrap;
+  font-size: clamp(20px, 3.6vw, 48px);
+}
+.governorName {
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--ivory);
+  margin-block-end: 8px;
+}
+.patronage .governorTitle {
+  color: var(--gold);
+  font-size: 20px;
+}
+.leadershipHeading {
+  padding-block: 24px 40px;
+  margin-block-end: 32px;
+  border-block-end: 1px solid var(--line);
+}
+.leadershipHeading h2 {
+  font-size: clamp(25px, 4.8vw, 64px);
+  margin-block-end: 16px;
+}
+.leadershipHeading p {
+  color: var(--muted);
+  font-size: clamp(19px, 2.2vw, 27px);
+}
+.about {
+  grid-template-columns: 1fr 1fr;
+}
+.about .aboutStatement {
+  color: var(--gold);
+  font-size: 25px;
+  margin-block-end: 20px;
+}
+.logoPanel {
+  padding: 32px 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+}
+.logoPanel img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+.logoPanel figcaption {
+  margin-block-start: 24px;
+  letter-spacing: 3px;
+}
+.facts {
+  border: 0;
+  padding: 0;
+  gap: 16px;
+}
+.facts > div,
+.infoGrid article,
+.eligibilityGrid article,
+.score,
+.timeline p,
+.faq details {
+  border: 1px solid var(--line);
+  border-block-start: 2px solid var(--gold);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+  padding: clamp(20px, 2.5vw, 32px);
+}
+.facts > div {
+  min-height: 145px;
+}
+.facts small {
+  color: var(--gold);
+}
+.facts strong {
+  font-size: 21px;
+}
+.infoGrid {
+  gap: 20px;
+}
+.infoGrid svg {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+.infoGrid article {
+  min-height: 215px;
+}
+.eligibilityGrid {
+  gap: 20px;
+}
+.scoreGrid {
+  gap: 16px;
+}
+.score {
+  min-height: 200px;
+}
+.timeline {
+  gap: 16px;
+}
+.timeline p {
+  min-height: 150px;
+}
+.faq details {
+  margin-block-end: 12px;
+  padding-block: 0;
+}
+.faq summary {
+  font-size: clamp(18px, 2vw, 23px);
+}
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .logoPanel {
+    display: block;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .logoPanel img {
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+  .logoPanel figcaption {
+    margin-block-start: 20px;
+  }
+  .leadershipHeading {
+    padding-block: 12px 28px;
+    margin-block-end: 24px;
+  }
+}
+@media (max-width: 639px) {
+  .facts {
+    gap: 12px;
+  }
+  .facts > div {
+    padding: 16px;
+  }
+  .facts strong {
+    font-size: 18px;
+  }
+  .score {
+    padding: 20px 16px;
+  }
+  .section h2,
+  .juryInner h2 {
+    font-size: clamp(20px, 5.8vw, 30px);
+  }
+  .leadershipHeading h2 {
+    font-size: clamp(23px, 6.4vw, 36px);
+  }
+}

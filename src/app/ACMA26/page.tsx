@@ -116,13 +116,11 @@ export default function Acma26Page() {
         <div className={s.patronageText}>
           <p className={s.eyebrow}>الرعاية الرسمية</p>
           <h2 id="patronage-title">
-            برعاية <span>محافظة الأنبار.</span>
+            برعاية <span>محافظ الأنبار</span>
           </h2>
+          <h3 className={s.governorName}>المهندس عمر مشعان دبوس</h3>
           <p className={s.governorTitle}>محافظ الأنبار</p>
           <div className={s.editorialQuote}>
-            <p className={s.quoteStatus}>
-              كلمة مقترحة للمراجعة · ليست تصريحاً معتمداً
-            </p>
             <p>
               إن دعم الإبداع استثمار في طاقات الأنبار ومستقبلها. نعتز بكل موهبة
               تصنع أثراً، ونؤمن بأهمية إتاحة الفرص أمام المبدعين ليعبّروا عن
@@ -144,10 +142,12 @@ export default function Acma26Page() {
         className={`${s.section} ${s.leadership}`}
         aria-labelledby="leadership-title"
       >
-        <p className={s.eyebrow}>من التنظيم إلى التصميم</p>
-        <h2 id="leadership-title">
-          رؤية تجمعنا. <span>وأثر نحتفي به.</span>
-        </h2>
+        <div className={s.leadershipHeading}>
+          <h2 id="leadership-title">
+            من التنظيم <span>إلى التصميم</span>
+          </h2>
+          <p>رؤية تجمعنا. وأثر نحتفي به.</p>
+        </div>
         <div className={s.leadershipGrid}>
           {[
             {
@@ -180,7 +180,6 @@ export default function Acma26Page() {
                 <h3>{person.name}</h3>
                 <p className={s.leaderTheme}>{person.title}</p>
                 <p>{person.text}</p>
-                <p className={s.quoteStatus}>صياغة مقترحة للمراجعة والاعتماد</p>
               </div>
             </article>
           ))}
@@ -194,10 +193,9 @@ export default function Acma26Page() {
         <div>
           <p className={s.eyebrow}>عن الجائزة</p>
           <h2 id="about-title">
-            مساحة للإبداع.
-            <br />
-            <span>وتقدير لمن يصنعه.</span>
+            مساحة <span>للإبداع.</span>
           </h2>
+          <p className={s.aboutStatement}>تقدير لمن يصنع الأثر.</p>
           <p>
             جائزة صنّاع الإبداع في الأنبار 2026، بتنظيم لجنة الثقافة والإعلام
             التابعة لمحافظة الأنبار.
@@ -214,11 +212,11 @@ export default function Acma26Page() {
         </div>
         <figure className={s.logoPanel}>
           <Image
-            src="/brand/acma26/logo.webp"
+            src="/brand/acma26/calligraphy-corrected.webp"
             alt="الشعار المعتمد لجائزة صنّاع الإبداع في الأنبار 2026"
-            width={688}
-            height={900}
-            sizes="(max-width: 760px) 85vw, 360px"
+            width={680}
+            height={245}
+            sizes="(max-width: 760px) 90vw, 520px"
           />
           <figcaption dir="ltr">ACMA26 · ANBAR · 2026</figcaption>
         </figure>

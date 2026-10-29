@@ -976,8 +976,11 @@
 }
 .committeeRow li {
   flex: 1 0 170px;
-  min-height: 125px;
-  padding: 20px;
+  min-height: 76px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   border: 1px solid var(--line);
   border-block-start: 2px solid var(--gold);
   background: linear-gradient(145deg, #11253b, var(--navy-deep));
@@ -989,7 +992,8 @@
     12px/1.6 Arial,
     sans-serif;
   color: var(--gold);
-  margin-block-end: 18px;
+  margin-block-end: 0;
+  flex-shrink: 0;
 }
 .committeeRow strong {
   font-size: 19px;
@@ -1131,12 +1135,7 @@
   padding: 0;
   gap: 16px;
 }
-.facts > div,
-.infoGrid article,
-.eligibilityGrid article,
-.score,
-.timeline p,
-.faq details {
+.facts > div {
   border: 1px solid var(--line);
   border-block-start: 2px solid var(--gold);
   background: linear-gradient(145deg, #11253b, var(--navy-deep));
@@ -1161,7 +1160,7 @@
   border: 1px solid var(--line);
 }
 .infoGrid article {
-  min-height: 215px;
+  min-height: 0;
 }
 .eligibilityGrid {
   gap: 20px;
@@ -1170,13 +1169,13 @@
   gap: 16px;
 }
 .score {
-  min-height: 200px;
+  min-height: 0;
 }
 .timeline {
   gap: 16px;
 }
 .timeline p {
-  min-height: 150px;
+  min-height: 0;
 }
 .faq details {
   margin-block-end: 12px;
@@ -1226,5 +1225,184 @@
   }
   .leadershipHeading h2 {
     font-size: clamp(23px, 6.4vw, 36px);
+  }
+}
+
+/* Editorial sections use rhythm and rules; cards are reserved for facts,
+   portraits, named committee members and the disabled form. */
+.leaderCard {
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  background: none;
+  padding: 24px 0 0;
+}
+.leadershipGrid {
+  gap: 40px;
+}
+.logoPanel {
+  border: 0;
+  background: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(100%, 520px);
+  justify-self: center;
+}
+.logoPanel .awardTrophy {
+  width: auto;
+  max-width: 100%;
+  height: clamp(250px, 25vw, 330px);
+  margin-inline: auto;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+}
+.logoPanel .awardCalligraphy {
+  width: min(100%, 420px);
+  height: auto;
+  mix-blend-mode: lighten;
+}
+.logoPanel figcaption {
+  margin-block-start: 8px;
+}
+.infoGrid {
+  gap: 32px 48px;
+}
+.infoGrid article {
+  padding-block: 20px 0;
+  border-block-start: 1px solid var(--line);
+  background: none;
+}
+.infoGrid svg {
+  border: 0;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+}
+.eligibilityGrid {
+  gap: 40px;
+}
+.eligibilityGrid article {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+.eligibilityGrid article + article {
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 32px;
+}
+.score {
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  background: none;
+  padding: 24px 0 0;
+}
+.timeline {
+  gap: 0 40px;
+}
+.timeline p {
+  border: 0;
+  border-block-end: 1px solid var(--line);
+  background: none;
+  padding: 20px 0;
+}
+.faq details {
+  border: 0;
+  border-block-end: 1px solid var(--line);
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.steps {
+  gap: 0;
+}
+.steps li {
+  border: 0;
+  border-block-end: 1px solid var(--line);
+  background: none;
+  padding-inline-start: 48px;
+}
+.steps li::before {
+  inset-inline-start: 0;
+}
+.juryMember {
+  border: 0;
+  background: none;
+  padding: 0 0 16px;
+}
+.statement {
+  white-space: nowrap;
+  font-size: clamp(17px, 3.1vw, 42px);
+}
+@media (max-width: 639px) {
+  .leadershipGrid {
+    gap: 32px;
+  }
+  .leaderCard {
+    padding: 20px 0 0;
+  }
+  .eligibilityGrid {
+    gap: 28px;
+  }
+  .eligibilityGrid article + article {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+    border-block-start: 1px solid var(--line);
+    padding-block-start: 24px;
+  }
+  .committeeRow li {
+    flex-basis: 210px;
+  }
+  .committeeRow strong {
+    font-size: 18px;
+  }
+  .logoPanel .awardTrophy {
+    height: 270px;
+  }
+  .statement {
+    font-size: clamp(15px, 4.4vw, 24px);
+  }
+}
+
+.sloganArtwork {
+  grid-column: 1 / -1;
+  width: 100%;
+  order: 3;
+}
+.sloganArtwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: lighten;
+}
+.interlude .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 !important;
+}
+.interlude .largeCode {
+  grid-column: 2;
+  grid-row: 1;
+}
+@media (max-width: 639px) {
+  .interlude > div {
+    grid-template-columns: 1fr auto;
+  }
+  .sloganArtwork {
+    margin-inline: calc(-1 * var(--gutter));
+    width: calc(100% + 2 * var(--gutter));
+  }
+}
+
+.committeeHint {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .section .committeeHint {
+    display: block;
+    color: var(--gold);
+    font-size: 13px;
+    margin-block: -8px 16px;
   }
 }

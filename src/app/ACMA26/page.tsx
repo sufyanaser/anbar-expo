@@ -202,8 +202,7 @@ export default function Acma26Page() {
           </p>
           <p>
             تعرض الصفحة مجالات الجائزة وضوابطها ومعايير تقييمها واللجان ذات
-            الصلة. تبقى استمارة الاستلام الإلكتروني غير مفعّلة حتى اعتماد
-            المتطلبات التشغيلية.
+            الصلة. استقبال المشاركات الإلكتروني غير متاح حالياً.
           </p>
           <a href="#participation" className={s.textLink}>
             اطّلع على متطلبات المشاركة{" "}
@@ -212,6 +211,15 @@ export default function Acma26Page() {
         </div>
         <figure className={s.logoPanel}>
           <Image
+            className={s.awardTrophy}
+            src="/brand/acma26/hero.webp"
+            alt="الدرع الرسمي لجائزة صنّاع الإبداع كاملاً"
+            width={896}
+            height={1200}
+            sizes="(max-width: 639px) 220px, 280px"
+          />
+          <Image
+            className={s.awardCalligraphy}
             src="/brand/acma26/calligraphy-corrected.webp"
             alt="الشعار المعتمد لجائزة صنّاع الإبداع في الأنبار 2026"
             width={680}
@@ -307,8 +315,8 @@ export default function Acma26Page() {
               والصور المبينة لكل مجال.
             </p>
             <p className={s.rulesNotice}>
-              هذه خلاصة تعريفية وليست بديلاً عن النص الرسمي الكامل للشروط، الذي
-              يجب اعتماده قبل تفعيل استقبال الطلبات.
+              هذه خلاصة تعريفية. يُرجع إلى الإعلان التنظيمي الرسمي للجائزة في
+              تفاصيل الشروط والضوابط الكاملة.
             </p>
           </article>
         </div>
@@ -355,8 +363,8 @@ export default function Acma26Page() {
           </p>
         </div>
         <p className={s.rulesNotice}>
-          يلزم توضيح رسمي للعلاقة بين إغلاق التقديم وموعد إنجاز الأعمال قبل
-          اعتماد تعليمات الاستلام.
+          يُرجع إلى الجهة المنظمة لتوضيح آلية تسليم الأعمال وفق المواعيد
+          المعلنة. الاستلام الإلكتروني غير متاح حالياً.
         </p>
       </section>
       <TechnicalJury />
@@ -365,6 +373,7 @@ export default function Acma26Page() {
         <h2 id="committees-title">
           اللجان <span>المساندة.</span>
         </h2>
+        <p className={s.committeeHint}>اسحب أفقياً لعرض بقية الأسماء</p>
         <div className={s.committees}>
           {[
             {
@@ -401,20 +410,21 @@ export default function Acma26Page() {
             </div>
           ))}
         </div>
-        <p className={s.rulesNotice}>
-          تُراجع الأسماء والصفات حرفياً مقابل النسخة الرسمية قبل النشر.
-        </p>
       </section>
       <section className={s.interlude} aria-label="قيمة الإبداع">
         <div>
           <p className={s.eyebrow} dir="ltr">
             ANBAR · CREATIVITY · 2026
           </p>
-          <p className={s.statement}>
-            فكرة تترك أثراً.
-            <br />
-            <span>وإبداع يستحق التقدير.</span>
-          </p>
+          <figure className={s.sloganArtwork}>
+            <Image
+              src="/brand/acma26/slogan-approved.webp"
+              alt="فكرة تترك أثراً وإبداع يستحق التقدير"
+              width={2172}
+              height={370}
+              sizes="(max-width: 639px) 100vw, 1184px"
+            />
+          </figure>
           <span className={s.largeCode} dir="ltr">
             ACMA26
           </span>

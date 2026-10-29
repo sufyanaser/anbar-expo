@@ -18,6 +18,22 @@ export const metadata: Metadata = {
   description:
     "جائزة صنّاع الإبداع في الأنبار 2026. تعرّف على الجائزة وتفاصيل المشاركة وإعلانات الدورة.",
   alternates: { canonical: "/ACMA26" },
+  icons: {
+    icon: [
+      {
+        url: "/brand/acma26/trophy-icon-32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/brand/acma26/trophy-icon-192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
+    shortcut: "/brand/acma26/trophy-icon-32.png",
+    apple: "/brand/acma26/trophy-icon-180.png",
+  },
   openGraph: {
     title: "جائزة صنّاع الإبداع | ACMA26",
     description: "Anbar Creativity Makers Award · 2026",

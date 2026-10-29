@@ -75,7 +75,7 @@ export default function Acma26Page() {
           <a href="#faq">الأسئلة</a>
         </nav>
         <a href="#participation" className={s.headerCta}>
-          دليل المشاركة
+          متطلبات المشاركة
         </a>
         <details className={s.mobileNav}>
           <summary>أقسام الجائزة</summary>
@@ -112,7 +112,7 @@ export default function Acma26Page() {
           <div className={s.heroNavigation}>
             <div className={s.actions}>
               <a className={s.primary} href="#participation">
-                دليل المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
+                متطلبات المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
               </a>
               <a className={s.secondary} href="#about">
                 تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
@@ -124,6 +124,11 @@ export default function Acma26Page() {
             </p>
           </div>
         </div>
+        <nav className={s.quickLinks} aria-label="معلومات المشاركة">
+          <a href="#fields">مجالات المشاركة</a>
+          <a href="#rules">شروط المشاركة</a>
+          <a href="#timeline">المواعيد</a>
+        </nav>
       </section>
       <section
         className={`${s.section} ${s.patronage}`}
@@ -223,9 +228,8 @@ export default function Acma26Page() {
             تعرض الصفحة مجالات الجائزة وضوابطها ومعايير تقييمها واللجان ذات
             الصلة. استقبال المشاركات الإلكتروني غير متاح حالياً.
           </p>
-          <a href="#participation" className={s.textLink}>
-            اطّلع على متطلبات المشاركة{" "}
-            <ArrowUpLeft size={18} aria-hidden="true" />
+          <a href="#rules" className={s.textLink}>
+            اطّلع على شروط المشاركة <ArrowUpLeft size={18} aria-hidden="true" />
           </a>
         </div>
         <figure className={s.logoPanel}>
@@ -354,7 +358,11 @@ export default function Acma26Page() {
           ))}
         </div>
       </section>
-      <section className={s.section} aria-labelledby="timeline-title">
+      <section
+        id="timeline"
+        className={s.section}
+        aria-labelledby="timeline-title"
+      >
         <p className={s.eyebrow}>المواعيد</p>
         <h2 id="timeline-title">
           مراحل <span>الدورة.</span>
@@ -453,24 +461,26 @@ export default function Acma26Page() {
             استعرض البيانات الأساسية اللازمة للتقديم. هذه معاينة فقط ولا تُرسل
             أو تُحفظ البيانات.
           </p>
-          <ol className={s.steps}>
-            <li>
-              <strong>بيانات المشارك</strong>
-              <span>الاسم ووسائل التواصل</span>
-            </li>
-            <li>
-              <strong>تفاصيل العمل</strong>
-              <span>العنوان والوصف ورابط الاطلاع</span>
-            </li>
-            <li>
-              <strong>المراجعة والتقديم</strong>
-              <span>بعد فتح باب المشاركة رسمياً</span>
-            </li>
-          </ol>
           <p className={s.notice}>
             التقديم غير مفتوح حالياً. يمكنك استعراض الحقول، ولن تُرسل أو تُحفظ
             أي بيانات في هذه المرحلة.
           </p>
+          <dl className={s.requirements} aria-label="ملخص بيانات المشاركة">
+            <div>
+              <dt>بيانات المشارك</dt>
+              <dd>
+                الاسم الكامل، رقم الهاتف، البريد الإلكتروني، المحافظة والمدينة،
+                وصفة المشارك.
+              </dd>
+            </div>
+            <div>
+              <dt>تفاصيل العمل</dt>
+              <dd>
+                فئة المشاركة، عنوان العمل أو المبادرة، وصف العمل، ورابط العمل أو
+                ملف الأعمال.
+              </dd>
+            </div>
+          </dl>
         </div>
         <ParticipationForm />
       </section>
@@ -517,6 +527,14 @@ export default function Acma26Page() {
           العودة إلى فعاليات ANBAR EXPO{" "}
           <ArrowUpLeft size={18} aria-hidden="true" />
         </Link>
+        <nav className={s.footerNav} aria-label="أقسام الجائزة في الفوتر">
+          <a href="#fields">المجالات</a>
+          <a href="#rules">الشروط</a>
+          <a href="#timeline">المواعيد</a>
+          <a href="#participation">متطلبات المشاركة</a>
+          <a href="#form-preview">معاينة الحقول</a>
+          <a href="#award-title">العودة للبداية</a>
+        </nav>
         <small>© 2026 · لجنة الثقافة والإعلام التابعة لمحافظة الأنبار</small>
       </footer>
     </div>

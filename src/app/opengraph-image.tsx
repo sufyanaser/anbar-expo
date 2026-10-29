@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "الموقع قيد الإعداد";
 export const size = { width: 1200, height: 630 };
@@ -7,7 +8,7 @@ export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
   const asalBold = await readFile(
-    new URL("./fonts/Asal Arabic ITF Bold.otf", import.meta.url),
+    join(process.cwd(), "src/app/fonts/Asal Arabic ITF Bold.otf"),
   );
 
   return new ImageResponse(

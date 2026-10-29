@@ -11,7 +11,7 @@ export const events: ExhibitionEvent[] = [
     visualIdentity: "acma26",
     href: "/ACMA26",
     cardImage: {
-      src: "/brand/acma26/hero-panorama.webp",
+      src: "/brand/acma26/hero-panorama-corrected.png",
       width: 1918,
       height: 820,
       alt: "جائزة صنّاع الإبداع 2026: الدرع والمخطوطة ومعالم الأنبار",

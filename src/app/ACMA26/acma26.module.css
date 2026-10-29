@@ -866,3 +866,365 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Institutional refinement: one spacing, border and surface language. */
+.section,
+.juryInner {
+  padding-block: clamp(40px, 5vw, 72px);
+}
+.editorialQuote {
+  border-inline-start: 2px solid var(--gold);
+  padding-inline-start: var(--space-3);
+  margin-block-start: var(--space-3);
+}
+.editorialQuote > p:last-child {
+  font-size: clamp(21px, 2.2vw, 29px);
+  line-height: 1.9;
+  color: var(--ivory);
+}
+.section .quoteStatus {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.governorPortrait {
+  background: var(--navy);
+}
+.leadership {
+  border-block-start: 1px solid var(--line);
+}
+.leadershipGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.leaderCard {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+}
+.leaderPortrait {
+  overflow: hidden;
+  align-self: start;
+  border-radius: 80px 80px 3px 3px;
+  border-block-end: 2px solid var(--gold);
+}
+.leaderPortrait img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+}
+.leaderCard h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+.leaderCard p {
+  font-size: 16px;
+}
+.leaderCard .leaderTheme {
+  color: var(--gold);
+  margin-block: 12px;
+  font-size: 18px;
+}
+.juryMember {
+  padding: 10px 10px 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #11253b, var(--navy-deep));
+  text-align: center;
+}
+.juryPortrait {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 120px 120px 3px 3px;
+  border-block-end: 2px solid var(--gold);
+}
+.juryPortrait img {
+  object-fit: cover;
+  object-position: var(--portrait-position);
+  transform: scale(var(--portrait-scale));
+  transform-origin: var(--portrait-position);
+}
+.committees {
+  display: grid;
+  gap: var(--space-4);
+  margin-block-end: var(--space-4);
+}
+.committees h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-block-end: var(--space-2);
+}
+.committeeRow {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 4px 4px 12px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--gold) var(--navy-deep);
+}
+.committeeRow:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+.committeeRow li {
+  flex: 1 0 170px;
+  min-height: 125px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-block-start: 2px solid var(--gold);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+  scroll-snap-align: start;
+}
+.committeeRow span {
+  display: block;
+  font:
+    12px/1.6 Arial,
+    sans-serif;
+  color: var(--gold);
+  margin-block-end: 18px;
+}
+.committeeRow strong {
+  font-size: 19px;
+  font-weight: 400;
+}
+.participation {
+  gap: var(--space-5);
+}
+.form {
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-block-start: 3px solid var(--gold);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+}
+.formHeading span {
+  border: 1px solid var(--line);
+  padding: 4px 12px;
+}
+.steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: participation;
+  display: grid;
+  gap: 12px;
+}
+.steps li {
+  position: relative;
+  counter-increment: participation;
+  padding: 16px 64px 16px 16px;
+  border: 1px solid var(--line);
+  background: #11253b;
+}
+.steps li::before {
+  content: "0" counter(participation);
+  position: absolute;
+  inset-inline-start: 20px;
+  top: 23px;
+  font:
+    18px/1.5 Arial,
+    sans-serif;
+}
+@media (max-width: 1100px) {
+  .leadershipGrid {
+    grid-template-columns: 1fr;
+  }
+  .leaderCard {
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+}
+@media (max-width: 639px) {
+  .section,
+  .juryInner {
+    padding-block: 36px;
+  }
+  .leaderCard {
+    grid-template-columns: 100px minmax(0, 1fr);
+    padding: 16px;
+    gap: 16px;
+  }
+  .leaderPortrait img {
+    height: 150px;
+  }
+  .leaderCard h3 {
+    font-size: 22px;
+  }
+  .leaderCard .eyebrow {
+    font-size: 13px;
+  }
+  .committeeRow li {
+    flex-basis: 190px;
+  }
+}
+@media (max-width: 359px) {
+  .leaderCard {
+    grid-template-columns: 1fr;
+  }
+  .leaderPortrait {
+    width: 110px;
+  }
+}
+.committees > div {
+  min-width: 0;
+}
+
+/* Complete the shared institutional card system across the award guide. */
+.section h2,
+.juryInner h2 {
+  white-space: nowrap;
+  text-wrap: nowrap;
+  font-size: clamp(20px, 3.6vw, 48px);
+}
+.governorName {
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--ivory);
+  margin-block-end: 8px;
+}
+.patronage .governorTitle {
+  color: var(--gold);
+  font-size: 20px;
+}
+.leadershipHeading {
+  padding-block: 24px 40px;
+  margin-block-end: 32px;
+  border-block-end: 1px solid var(--line);
+}
+.leadershipHeading h2 {
+  font-size: clamp(25px, 4.8vw, 64px);
+  margin-block-end: 16px;
+}
+.leadershipHeading p {
+  color: var(--muted);
+  font-size: clamp(19px, 2.2vw, 27px);
+}
+.about {
+  grid-template-columns: 1fr 1fr;
+}
+.about .aboutStatement {
+  color: var(--gold);
+  font-size: 25px;
+  margin-block-end: 20px;
+}
+.logoPanel {
+  padding: 32px 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+}
+.logoPanel img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+.logoPanel figcaption {
+  margin-block-start: 24px;
+  letter-spacing: 3px;
+}
+.facts {
+  border: 0;
+  padding: 0;
+  gap: 16px;
+}
+.facts > div,
+.infoGrid article,
+.eligibilityGrid article,
+.score,
+.timeline p,
+.faq details {
+  border: 1px solid var(--line);
+  border-block-start: 2px solid var(--gold);
+  background: linear-gradient(145deg, #11253b, var(--navy-deep));
+  padding: clamp(20px, 2.5vw, 32px);
+}
+.facts > div {
+  min-height: 145px;
+}
+.facts small {
+  color: var(--gold);
+}
+.facts strong {
+  font-size: 21px;
+}
+.infoGrid {
+  gap: 20px;
+}
+.infoGrid svg {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+.infoGrid article {
+  min-height: 215px;
+}
+.eligibilityGrid {
+  gap: 20px;
+}
+.scoreGrid {
+  gap: 16px;
+}
+.score {
+  min-height: 200px;
+}
+.timeline {
+  gap: 16px;
+}
+.timeline p {
+  min-height: 150px;
+}
+.faq details {
+  margin-block-end: 12px;
+  padding-block: 0;
+}
+.faq summary {
+  font-size: clamp(18px, 2vw, 23px);
+}
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .logoPanel {
+    display: block;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .logoPanel img {
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+  .logoPanel figcaption {
+    margin-block-start: 20px;
+  }
+  .leadershipHeading {
+    padding-block: 12px 28px;
+    margin-block-end: 24px;
+  }
+}
+@media (max-width: 639px) {
+  .facts {
+    gap: 12px;
+  }
+  .facts > div {
+    padding: 16px;
+  }
+  .facts strong {
+    font-size: 18px;
+  }
+  .score {
+    padding: 20px 16px;
+  }
+  .section h2,
+  .juryInner h2 {
+    font-size: clamp(20px, 5.8vw, 30px);
+  }
+  .leadershipHeading h2 {
+    font-size: clamp(23px, 6.4vw, 36px);
+  }
+}

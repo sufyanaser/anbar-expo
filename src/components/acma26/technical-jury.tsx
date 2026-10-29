@@ -10,7 +10,7 @@ export function TechnicalJury() {
         <p className={s.eyebrow}>اللجنة الفنية</p>
         <h2 id="jury-title">اللجنة الفنية لتقييم الأعمال</h2>
         <ul className={s.juryGrid}>
-          {juryMembers.map((member) => (
+          {juryMembers.map((member, index) => (
             <li className={s.juryMember} key={member.id}>
               <div
                 className={s.juryPortrait}
@@ -36,8 +36,13 @@ export function TechnicalJury() {
                   </div>
                 )}
               </div>
-              <h3>{member.name}</h3>
-              <p>{member.specialty}</p>
+              <div className={s.juryCaption}>
+                <span className={s.juryNumber} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3>{member.name}</h3>
+                <p>{member.specialty}</p>
+              </div>
             </li>
           ))}
         </ul>

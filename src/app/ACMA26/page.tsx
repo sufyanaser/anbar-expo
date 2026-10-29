@@ -130,11 +130,10 @@ export default function Acma26Page() {
         aria-labelledby="patronage-title"
       >
         <div className={s.patronageText}>
-          <p className={s.eyebrow}>الرعاية الرسمية</p>
-          <h2 id="patronage-title">
-            برعاية <span>محافظ الأنبار</span>
+          <p className={s.sponsorshipLabel}>برعاية</p>
+          <h2 id="patronage-title" className={s.governorName}>
+            المهندس عمر مشعان دبوس
           </h2>
-          <h3 className={s.governorName}>المهندس عمر مشعان دبوس</h3>
           <p className={s.governorTitle}>محافظ الأنبار</p>
           <div className={s.editorialQuote}>
             <p>
@@ -192,10 +191,14 @@ export default function Acma26Page() {
                 />
               </figure>
               <div>
-                <p className={s.eyebrow}>{person.role}</p>
-                <h3>{person.name}</h3>
-                <p className={s.leaderTheme}>{person.title}</p>
-                <p>{person.text}</p>
+                <h3 className={s.leaderTheme}>{person.title}</h3>
+                <blockquote className={s.leaderQuote}>
+                  <p>{person.text}</p>
+                </blockquote>
+                <footer className={s.leaderSignature}>
+                  <p>{person.name}</p>
+                  <p>{person.role}</p>
+                </footer>
               </div>
             </article>
           ))}
@@ -356,24 +359,24 @@ export default function Acma26Page() {
         <h2 id="timeline-title">
           مراحل <span>الدورة.</span>
         </h2>
-        <div className={s.timeline}>
-          <p>
-            <strong>1 أكتوبر 2026</strong> — بدء التقديم وفق المنشور
-          </p>
-          <p>
-            <strong>1 ديسمبر 2026</strong> — انتهاء التقديم وفق المنشور
-          </p>
-          <p>
-            <strong>قبل 31 ديسمبر 2026</strong> — إنجاز الأعمال وفق المنشور
-          </p>
-          <p>
-            <strong>31 ديسمبر 2026</strong> — الاحتفال والتكريم
-          </p>
-        </div>
-        <p className={s.rulesNotice}>
-          يُرجع إلى الجهة المنظمة لتوضيح آلية تسليم الأعمال وفق المواعيد
-          المعلنة. الاستلام الإلكتروني غير متاح حالياً.
-        </p>
+        <ol className={s.timeline}>
+          <li>
+            <time dateTime="2026-10-01">1 أكتوبر 2026</time>
+            <span>بدء التقديم وفق المنشور</span>
+          </li>
+          <li>
+            <time dateTime="2026-12-01">1 ديسمبر 2026</time>
+            <span>انتهاء التقديم وفق المنشور</span>
+          </li>
+          <li>
+            <span className={s.timelineDate}>قبل 31 ديسمبر 2026</span>
+            <span>إنجاز الأعمال وفق المنشور</span>
+          </li>
+          <li>
+            <time dateTime="2026-12-31">31 ديسمبر 2026</time>
+            <span>الاحتفال والتكريم</span>
+          </li>
+        </ol>
       </section>
       <TechnicalJury />
       <section className={s.section} aria-labelledby="committees-title">

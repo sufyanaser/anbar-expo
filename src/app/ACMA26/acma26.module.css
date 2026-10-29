@@ -1250,18 +1250,11 @@
   width: min(100%, 520px);
   justify-self: center;
 }
-.logoPanel .awardTrophy {
-  width: auto;
-  max-width: 100%;
-  height: clamp(250px, 25vw, 330px);
+.logoPanel .awardLogo {
+  width: min(100%, 400px);
+  height: auto;
   margin-inline: auto;
   object-fit: contain;
-  mix-blend-mode: lighten;
-}
-.logoPanel .awardCalligraphy {
-  width: min(100%, 420px);
-  height: auto;
-  mix-blend-mode: lighten;
 }
 .logoPanel figcaption {
   margin-block-start: 8px;
@@ -1357,8 +1350,8 @@
   .committeeRow strong {
     font-size: 18px;
   }
-  .logoPanel .awardTrophy {
-    height: 270px;
+  .logoPanel .awardLogo {
+    width: min(85vw, 340px);
   }
   .statement {
     font-size: clamp(15px, 4.4vw, 24px);

@@ -227,20 +227,12 @@ export default function Acma26Page() {
         </div>
         <figure className={s.logoPanel}>
           <Image
-            className={s.awardTrophy}
-            src="/brand/acma26/hero.webp"
-            alt="الدرع الرسمي لجائزة صنّاع الإبداع كاملاً"
-            width={896}
-            height={1200}
-            sizes="(max-width: 639px) 220px, 280px"
-          />
-          <Image
-            className={s.awardCalligraphy}
-            src="/brand/acma26/calligraphy-corrected.webp"
+            className={s.awardLogo}
+            src="/brand/acma26/golden-logo-official.webp"
             alt="الشعار المعتمد لجائزة صنّاع الإبداع في الأنبار 2026"
-            width={680}
-            height={245}
-            sizes="(max-width: 760px) 90vw, 520px"
+            width={2194}
+            height={2868}
+            sizes="(max-width: 760px) 85vw, 400px"
           />
           <figcaption dir="ltr">ACMA26 · ANBAR · 2026</figcaption>
         </figure>

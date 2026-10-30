@@ -1,10 +1,83 @@
+/* ==========================================================================
+   ACMA26 DESIGN SYSTEM TOKENS — INSTITUTIONAL CINEMATIC ELEGANCE
+   Reference: Part 2 & Part 3 of explorer_m2_creative_direction/handoff.md
+   ========================================================================== */
+
 .page {
-  --navy: #08172c;
-  --navy-deep: #061120;
-  --gold: #d9b873;
-  --ivory: #f4f0e7;
-  --muted: #b9c6d8;
-  --line: #d9b87340;
+  /* Canvas Backgrounds */
+  --navy: #08172c; /* Master Canvas: Deep Midnight Navy */
+  --navy-deep: #061120; /* Deep Contrast Canvas & Hero Backdrop */
+  --navy-surface: #0c1e36; /* Elevated Card & Container Surface */
+  --navy-surface-hover: #112847; /* Interactive Card Hover Surface */
+  --navy-border-glow: #1a3558; /* Subtle Focus & Hover Glow */
+
+  /* Metallic Accents */
+  --gold: #d9b873; /* Primary Metallic Gold: Headings, Highlights, Key Actions */
+  --gold-light: #f3dfa2; /* Luminescent Gold: Hover states, Glows, Active Accents */
+  --gold-dark: #ad8548; /* Burnished Gold: Borders, Active Press states */
+  --gold-glow: rgba(217, 184, 115, 0.14); /* Ambient Volumetric Glow */
+
+  /* Editorial Typography */
+  --ivory: #f4f0e7; /* Primary Editorial Text: Highest contrast on Navy (15.79:1) */
+  --muted: #b9c6d8; /* Secondary & Body Text: Muted Slate-Blue (10.38:1) */
+  --muted-light: #d1dce9; /* Descriptive Lead Text */
+
+  /* Hairlines & Borders */
+  --line: #d9b87340; /* Standard 25% Gold Hairline Border */
+  --line-subtle: rgba(
+    217,
+    184,
+    115,
+    0.12
+  ); /* 12% Gold Hairline for Card Dividers */
+  --line-strong: rgba(217, 184, 115, 0.65); /* Focus & Accent Border */
+
+  /* Font Family Stack */
+  --font-family-display:
+    var(--font-qomra-arabic), "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  --font-family-body:
+    var(--font-qomra-arabic), "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  --font-family-latin: var(--font-geist-sans), Arial, sans-serif;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Display & Heading Scale */
+  --text-hero: clamp(38px, 5.5vw, 68px);
+  --text-hero-lh: 1.15;
+
+  --text-h1: clamp(32px, 4vw, 54px);
+  --text-h1-lh: 1.25;
+
+  --text-h2: clamp(26px, 3.2vw, 42px);
+  --text-h2-lh: 1.35;
+
+  --text-h3: clamp(20px, 2.4vw, 28px);
+  --text-h3-lh: 1.45;
+
+  --text-eyebrow: clamp(12px, 1.2vw, 15px);
+  --text-eyebrow-lh: 1.6;
+  --text-eyebrow-tracking: 0.14em;
+
+  /* Editorial Body Scale */
+  --text-body-lead: clamp(18px, 1.8vw, 22px);
+  --text-body-lead-lh: 1.75;
+
+  --text-body: clamp(15px, 1.3vw, 17px);
+  --text-body-lh: 1.85;
+
+  --text-caption: clamp(12px, 1.1vw, 14px);
+  --text-caption-lh: 1.6;
+
+  /* Metrics Scale */
+  --text-metric: clamp(42px, 4.8vw, 64px);
+  --text-metric-lh: 1.1;
+
+  /* Atomic Spacing Tokens */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -13,10 +86,34 @@
   --space-5: 48px;
   --space-6: 64px;
   --space-7: 96px;
-  --gutter: clamp(20px, 4vw, 48px);
+  --space-8: 128px;
+
+  /* Container Widths */
+  --container-max: 1440px;
+  --container-editorial: 1280px;
+  --container-narrow: 960px;
+
+  /* Responsive Gutter */
+  --gutter: clamp(16px, 4vw, 48px);
+
+  /* Section Vertical Rhythm */
+  --section-py: clamp(48px, 7vw, 112px);
+  --section-py-compact: clamp(36px, 5vw, 72px);
+
+  /* Motion & Easing Tokens */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+  --duration-cinematic: 1200ms;
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-hover: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Page Baseline Typography & Canvas */
   background: var(--navy);
   color: var(--ivory);
-  font-family: var(--font-qomra-arabic), Tahoma, sans-serif;
+  font-family: var(--font-family-body);
   font-size: 18px;
   line-height: 1.85;
   isolation: isolate;
@@ -33,7 +130,8 @@
 }
 .page :where(a, summary, input, select, textarea, button):focus-visible {
   outline: 2px solid var(--gold);
-  outline-offset: 5px;
+  outline-offset: 4px;
+  box-shadow: 0 0 12px rgba(217, 184, 115, 0.4);
 }
 .page :where(h1, h2, h3, p, figure) {
   margin: 0;
@@ -858,12 +956,17 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .page,
   .page *,
   .page *::before,
   .page *::after {
     animation: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition: none !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
   }
 }
 

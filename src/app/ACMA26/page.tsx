@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpLeft,
-  ArrowDown,
   Camera,
   Clapperboard,
   Newspaper,
   Radio,
 } from "lucide-react";
+import { Hero } from "@/components/acma26/hero";
 import { ParticipationForm } from "@/components/acma26/participation-form";
 import { TechnicalJury } from "@/components/acma26/technical-jury";
 import s from "./acma26.module.css";
@@ -88,48 +88,7 @@ export default function Acma26Page() {
           </nav>
         </details>
       </header>
-      <section className={s.hero} aria-labelledby="award-title">
-        <h1 id="award-title" className={s.srOnly} tabIndex={-1}>
-          جائزة صنّاع الإبداع في الأنبار 2026
-        </h1>
-        <div className={s.heroVisual}>
-          <Image
-            src="/brand/acma26/hero-panorama-corrected.png"
-            alt="الدرع الذهبي كاملاً إلى اليسار، ومخطوطة جائزة صنّاع الإبداع في الأنبار 2026 إلى اليمين، أمام معالم الأنبار ليلاً"
-            width={1918}
-            height={820}
-            preload
-            sizes="100vw"
-          />
-        </div>
-        <div className={s.heroText}>
-          <div className={s.heroContext}>
-            <p className={s.edition}>في الأنبار · دورة 2026</p>
-            <p className={s.organizer}>
-              تنظيم لجنة الثقافة والإعلام التابعة لمحافظة الأنبار
-            </p>
-          </div>
-          <div className={s.heroNavigation}>
-            <div className={s.actions}>
-              <a className={s.primary} href="#participation">
-                متطلبات المشاركة <ArrowUpLeft size={19} aria-hidden="true" />
-              </a>
-              <a className={s.secondary} href="#about">
-                تعرّف على الجائزة <ArrowDown size={17} aria-hidden="true" />
-              </a>
-            </div>
-            <p className={s.availability}>
-              الاطلاع على شروط الجائزة متاح؛ استقبال الطلبات الإلكتروني غير
-              مفعّل حالياً.
-            </p>
-          </div>
-        </div>
-        <nav className={s.quickLinks} aria-label="معلومات المشاركة">
-          <a href="#fields">مجالات المشاركة</a>
-          <a href="#rules">شروط المشاركة</a>
-          <a href="#timeline">المواعيد</a>
-        </nav>
-      </section>
+      <Hero />
       <section
         className={`${s.section} ${s.patronage}`}
         aria-labelledby="patronage-title"

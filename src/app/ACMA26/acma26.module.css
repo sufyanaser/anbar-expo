@@ -371,7 +371,7 @@
 .juryPortrait {
   aspect-ratio: 4 / 5;
   width: 100%;
-  background: #10243b;
+  background: transparent;
 }
 .juryPortrait img {
   display: block;
@@ -1747,8 +1747,8 @@
   }
 }
 
-/* The official transparent logo uses the existing ivory token for legible dark lettering. */
+/* Keep the official logo transparent against the page background. */
 .logoPanel .awardLogo {
-  background: var(--ivory);
-  padding: 16px;
+  background: transparent;
+  padding: 0;
 }

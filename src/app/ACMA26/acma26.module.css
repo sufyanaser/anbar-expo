@@ -1,10 +1,83 @@
+/* ==========================================================================
+   ACMA26 DESIGN SYSTEM TOKENS — INSTITUTIONAL CINEMATIC ELEGANCE
+   Reference: Part 2 & Part 3 of explorer_m2_creative_direction/handoff.md
+   ========================================================================== */
+
 .page {
-  --navy: #08172c;
-  --navy-deep: #061120;
-  --gold: #d9b873;
-  --ivory: #f4f0e7;
-  --muted: #b9c6d8;
-  --line: #d9b87340;
+  /* Canvas Backgrounds */
+  --navy: #08172c; /* Master Canvas: Deep Midnight Navy */
+  --navy-deep: #061120; /* Deep Contrast Canvas & Hero Backdrop */
+  --navy-surface: #0c1e36; /* Elevated Card & Container Surface */
+  --navy-surface-hover: #112847; /* Interactive Card Hover Surface */
+  --navy-border-glow: #1a3558; /* Subtle Focus & Hover Glow */
+
+  /* Metallic Accents */
+  --gold: #d9b873; /* Primary Metallic Gold: Headings, Highlights, Key Actions */
+  --gold-light: #f3dfa2; /* Luminescent Gold: Hover states, Glows, Active Accents */
+  --gold-dark: #ad8548; /* Burnished Gold: Borders, Active Press states */
+  --gold-glow: rgba(217, 184, 115, 0.14); /* Ambient Volumetric Glow */
+
+  /* Editorial Typography */
+  --ivory: #f4f0e7; /* Primary Editorial Text: Highest contrast on Navy (15.79:1) */
+  --muted: #b9c6d8; /* Secondary & Body Text: Muted Slate-Blue (10.38:1) */
+  --muted-light: #d1dce9; /* Descriptive Lead Text */
+
+  /* Hairlines & Borders */
+  --line: #d9b87340; /* Standard 25% Gold Hairline Border */
+  --line-subtle: rgba(
+    217,
+    184,
+    115,
+    0.12
+  ); /* 12% Gold Hairline for Card Dividers */
+  --line-strong: rgba(217, 184, 115, 0.65); /* Focus & Accent Border */
+
+  /* Font Family Stack */
+  --font-family-display:
+    var(--font-qomra-arabic), "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  --font-family-body:
+    var(--font-qomra-arabic), "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  --font-family-latin: var(--font-geist-sans), Arial, sans-serif;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Display & Heading Scale */
+  --text-hero: clamp(38px, 5.5vw, 68px);
+  --text-hero-lh: 1.15;
+
+  --text-h1: clamp(32px, 4vw, 54px);
+  --text-h1-lh: 1.25;
+
+  --text-h2: clamp(26px, 3.2vw, 42px);
+  --text-h2-lh: 1.35;
+
+  --text-h3: clamp(20px, 2.4vw, 28px);
+  --text-h3-lh: 1.45;
+
+  --text-eyebrow: clamp(12px, 1.2vw, 15px);
+  --text-eyebrow-lh: 1.6;
+  --text-eyebrow-tracking: 0.14em;
+
+  /* Editorial Body Scale */
+  --text-body-lead: clamp(18px, 1.8vw, 22px);
+  --text-body-lead-lh: 1.75;
+
+  --text-body: clamp(15px, 1.3vw, 17px);
+  --text-body-lh: 1.85;
+
+  --text-caption: clamp(12px, 1.1vw, 14px);
+  --text-caption-lh: 1.6;
+
+  /* Metrics Scale */
+  --text-metric: clamp(42px, 4.8vw, 64px);
+  --text-metric-lh: 1.1;
+
+  /* Atomic Spacing Tokens */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -13,10 +86,34 @@
   --space-5: 48px;
   --space-6: 64px;
   --space-7: 96px;
-  --gutter: clamp(20px, 4vw, 48px);
+  --space-8: 128px;
+
+  /* Container Widths */
+  --container-max: 1440px;
+  --container-editorial: 1280px;
+  --container-narrow: 960px;
+
+  /* Responsive Gutter */
+  --gutter: clamp(16px, 4vw, 48px);
+
+  /* Section Vertical Rhythm */
+  --section-py: clamp(48px, 7vw, 112px);
+  --section-py-compact: clamp(36px, 5vw, 72px);
+
+  /* Motion & Easing Tokens */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+  --duration-cinematic: 1200ms;
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-hover: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Page Baseline Typography & Canvas */
   background: var(--navy);
   color: var(--ivory);
-  font-family: var(--font-qomra-arabic), Tahoma, sans-serif;
+  font-family: var(--font-family-body);
   font-size: 18px;
   line-height: 1.85;
   isolation: isolate;
@@ -33,7 +130,8 @@
 }
 .page :where(a, summary, input, select, textarea, button):focus-visible {
   outline: 2px solid var(--gold);
-  outline-offset: 5px;
+  outline-offset: 4px;
+  box-shadow: 0 0 12px rgba(217, 184, 115, 0.4);
 }
 .page :where(h1, h2, h3, p, figure) {
   margin: 0;
@@ -115,27 +213,350 @@
 .mobileNav {
   display: none;
 }
+/* ==========================================================================
+   CSS 2.5D CINEMATIC HERO COMPONENT
+   ========================================================================== */
+
 .hero {
-  background: var(--navy-deep);
-}
-.heroVisual {
   position: relative;
+  background: var(--navy-deep);
+  overflow: hidden;
+  padding-block-start: clamp(24px, 4vw, 48px);
+  padding-block-end: clamp(40px, 6vw, 80px);
+  isolation: isolate;
 }
-.heroVisual img {
+
+/* Layer 0: Volumetric Central Atmosphere */
+.heroAtmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 70% 50% at 50% 35%,
+      rgba(217, 184, 115, 0.1) 0%,
+      rgba(6, 17, 32, 0) 75%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 50% 85%,
+      rgba(8, 23, 44, 0.6) 0%,
+      rgba(6, 17, 32, 0.95) 100%
+    ),
+    linear-gradient(to bottom, rgba(6, 17, 32, 0.4) 0%, var(--navy-deep) 100%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity var(--duration-cinematic) var(--ease-cinematic);
+}
+
+/* Panoramic environment: full uncropped proportion (1919:820), anchored to base, navy-controlled */
+.heroPanoramaBackdrop {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1919 / 820;
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(6, 17, 32, 0.94) 0%,
+      rgba(6, 17, 32, 0.72) 42%,
+      rgba(6, 17, 32, 0.38) 100%
+    ),
+    url("/brand/abtf2026/anbar-night-panorama.webp");
+  background-size:
+    100% 100%,
+    100% 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Grounded Horizon Base */
+.heroSilhouette {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: clamp(80px, 15vh, 180px);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(217, 184, 115, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+  border-block-end: 1px solid var(--line-subtle);
+}
+
+/* Stage: mobile-first single column; desktop asymmetric grid (trophy left, editorial right) */
+.heroStage {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "trophy"
+    "calligraphy"
+    "content";
+  justify-items: center;
+  align-items: center;
+  direction: ltr;
+  text-align: center;
+}
+
+/* Dominant Trophy — original 1024x1536 asset, exact 2:3 ratio, no crop */
+.trophyWrapper {
+  grid-area: trophy;
+  position: relative;
+  width: auto;
+  height: clamp(176px, 30vh, 260px);
+  aspect-ratio: 2 / 3;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.7));
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+
+/* Grounding shadow beneath the trophy base */
+.trophyWrapper::after {
+  content: "";
+  position: absolute;
+  inset-inline: 14%;
+  bottom: -2%;
+  height: 7%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 70%
+  );
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.trophyImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Vector Calligraphy — calligraphy.svg preserved, 8000:1949 ratio */
+.calligraphyWrapper {
+  grid-area: calligraphy;
+  position: relative;
+  width: min(80vw, 320px);
+  aspect-ratio: 8000 / 1949;
+  margin-block-start: 14px;
+  will-change: transform, opacity;
+}
+
+.calligraphySvg {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1918 / 820;
+  aspect-ratio: 8000 / 1949;
   object-fit: contain;
+  fill: var(--gold);
 }
-/* Fade only the bottom edge; keep the trophy base and calligraphy unobscured. */
-.heroVisual::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 5%;
-  background: linear-gradient(transparent, var(--navy-deep));
-  pointer-events: none;
+
+/* Editorial context + CTAs (directly below editorial content) */
+.heroContextBar {
+  grid-area: content;
+  position: relative;
+  z-index: 3;
+  width: min(100%, 560px);
+  margin-block-start: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  direction: rtl;
+  text-align: center;
+}
+
+.editionPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 6px 20px;
+  border: 1px solid var(--line);
+  background: rgba(12, 30, 54, 0.65);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.organizerText {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.heroCtaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+
+.heroPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 48px;
+  padding: 10px var(--space-4);
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 500;
+  font-size: 17px;
+  transition:
+    background-color var(--duration-fast) var(--ease-hover),
+    transform var(--duration-fast) var(--ease-hover);
+}
+
+.heroPrimaryBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.heroSecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 48px;
+  padding: 10px var(--space-4);
+  border: 1px solid var(--line);
+  color: var(--ivory);
+  font-size: 17px;
+  background: transparent;
+  transition:
+    border-color var(--duration-fast) var(--ease-hover),
+    color var(--duration-fast) var(--ease-hover);
+}
+
+.heroSecondaryBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.heroAvailability {
+  color: var(--muted);
+  font-size: 14px;
+  margin-block-start: var(--space-1) !important;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+/* Compact mobile composition: primary CTA stays above the fold */
+@media (max-width: 639px) {
+  .hero {
+    padding-block-start: 16px;
+  }
+  .organizerText {
+    font-size: 15px;
+  }
+  .heroContextBar {
+    margin-block-start: 16px;
+    gap: var(--space-1);
+  }
+  .heroPanoramaBackdrop {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(6, 17, 32, 0.6) 0%,
+        rgba(6, 17, 32, 0.78) 65%,
+        rgba(6, 17, 32, 0.95) 100%
+      ),
+      url("/brand/abtf2026/anbar-night-panorama.webp");
+  }
+}
+
+@media (max-width: 359px) {
+  .hero {
+    padding-block-start: 12px;
+  }
+  .trophyWrapper {
+    height: 168px;
+  }
+  .calligraphyWrapper {
+    width: min(76vw, 260px);
+    margin-block-start: 10px;
+  }
+  .heroContextBar {
+    margin-block-start: 12px;
+  }
+}
+
+/* Desktop: asymmetric cinematic composition */
+@media (min-width: 1024px) {
+  .hero {
+    padding-block-start: clamp(32px, 5vw, 64px);
+  }
+  .heroStage {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "trophy calligraphy"
+      "trophy content";
+    column-gap: clamp(40px, 5vw, 88px);
+    align-items: center;
+    padding-inline: clamp(32px, 4vw, 56px);
+    text-align: start;
+  }
+  .heroPanoramaBackdrop {
+    background-image:
+      linear-gradient(
+        to left,
+        rgba(6, 17, 32, 0.94) 0%,
+        rgba(6, 17, 32, 0.72) 42%,
+        rgba(6, 17, 32, 0.38) 100%
+      ),
+      url("/brand/abtf2026/anbar-night-panorama.webp");
+  }
+  .trophyWrapper {
+    justify-self: center;
+    align-self: center;
+    width: min(100%, 420px);
+    height: auto;
+  }
+  .calligraphyWrapper {
+    justify-self: end;
+    width: min(100%, 560px);
+    margin-block-start: 0;
+  }
+  .heroContextBar {
+    justify-self: end;
+    align-items: flex-start;
+    width: min(100%, 560px);
+    margin-block-start: clamp(24px, 3vw, 36px);
+    text-align: start;
+  }
+  .heroCtaGroup {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trophyWrapper,
+  .calligraphyWrapper,
+  .heroContextBar {
+    will-change: auto;
+  }
+}
+
+/* Legacy and general element styles */
+.heroVisual {
+  display: none;
 }
 .heroText {
   max-width: 1280px;
@@ -371,7 +792,7 @@
 .juryPortrait {
   aspect-ratio: 4 / 5;
   width: 100%;
-  background: #10243b;
+  background: transparent;
 }
 .juryPortrait img {
   display: block;
@@ -768,6 +1189,22 @@
   .secondary {
     font-size: 16px;
   }
+  .heroCtaGroup {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .heroPrimaryBtn,
+  .heroSecondaryBtn {
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .quickLinks {
+    justify-content: center;
+    gap: 8px 16px;
+    padding-inline: 0;
+  }
   .section,
   .juryInner {
     padding-block: var(--space-2) var(--space-3);
@@ -856,14 +1293,34 @@
     align-items: stretch;
     flex-direction: column;
   }
+  .editionPill {
+    font-size: 14px;
+    padding: 4px 14px;
+  }
+  .organizerText {
+    font-size: 14px;
+  }
+  .heroPrimaryBtn,
+  .heroSecondaryBtn {
+    font-size: 15px;
+    min-height: 48px;
+  }
+  .quickLinks a {
+    font-size: 14px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
+  .page,
   .page *,
   .page *::before,
   .page *::after {
     animation: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition: none !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
   }
 }
 
@@ -1747,8 +2204,8 @@
   }
 }
 
-/* The official transparent logo uses the existing ivory token for legible dark lettering. */
+/* Keep the official logo transparent against the page background. */
 .logoPanel .awardLogo {
-  background: var(--ivory);
-  padding: 16px;
+  background: transparent;
+  padding: 0;
 }

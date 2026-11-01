@@ -59,7 +59,7 @@ export function Hero() {
       // Subtle 2.5D scroll-driven depth transition to Patronage section
       if (containerRef.current && trophyRef.current) {
         gsap.to(trophyRef.current, {
-          y: 40,
+          y: 24,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
@@ -114,7 +114,7 @@ export function Hero() {
             height={1536}
             priority
             className={s.trophyImage}
-            sizes="(max-width: 639px) 70vw, (max-width: 1023px) 50vw, 420px"
+            sizes="(max-width: 639px) 45vw, (max-width: 1023px) 40vw, 420px"
           />
         </div>
 

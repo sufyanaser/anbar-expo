@@ -247,21 +247,29 @@
   transition: opacity var(--duration-cinematic) var(--ease-cinematic);
 }
 
-/* Grounded Anbar Panorama Silhouette */
+/* Panoramic environment: full uncropped proportion (1919:820), anchored to base, navy-controlled */
 .heroPanoramaBackdrop {
   position: absolute;
-  inset: auto 0 0 0;
+  inset-inline: 0;
+  inset-block-end: 0;
   width: 100%;
-  height: clamp(140px, 28vh, 320px);
-  background-image: url("/brand/acma26/hero-panorama.webp");
+  height: auto;
+  aspect-ratio: 1919 / 820;
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(6, 17, 32, 0.94) 0%,
+      rgba(6, 17, 32, 0.72) 42%,
+      rgba(6, 17, 32, 0.38) 100%
+    ),
+    url("/brand/abtf2026/anbar-night-panorama.webp");
+  background-size:
+    100% 100%,
+    100% 100%;
   background-position: center bottom;
-  background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.1;
-  filter: grayscale(100%) brightness(0.6) contrast(1.2);
-  mix-blend-mode: screen;
-  mask-image: linear-gradient(to top, black 25%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 35%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -281,30 +289,51 @@
   border-block-end: 1px solid var(--line-subtle);
 }
 
-/* Layer 1 & 2 Stage: Dominant Trophy + Vector Calligraphy */
+/* Stage: mobile-first single column; desktop asymmetric grid (trophy left, editorial right) */
 .heroStage {
   position: relative;
   z-index: 2;
   max-width: 1440px;
   margin-inline: auto;
   padding-inline: var(--gutter);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "trophy"
+    "calligraphy"
+    "content";
+  justify-items: center;
   align-items: center;
-  justify-content: center;
+  direction: ltr;
   text-align: center;
 }
 
-/* Dominant Trophy Container (Exact 2:3 Aspect Ratio) */
+/* Dominant Trophy — original 1024x1536 asset, exact 2:3 ratio, no crop */
 .trophyWrapper {
+  grid-area: trophy;
   position: relative;
   width: auto;
-  height: clamp(280px, 50vh, 580px);
+  height: clamp(176px, 30vh, 260px);
   aspect-ratio: 2 / 3;
-  margin-inline: auto;
-  filter: drop-shadow(0 24px 50px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.7));
   transform-origin: bottom center;
   will-change: transform, opacity;
+}
+
+/* Grounding shadow beneath the trophy base */
+.trophyWrapper::after {
+  content: "";
+  position: absolute;
+  inset-inline: 14%;
+  bottom: -2%;
+  height: 7%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 70%
+  );
+  filter: blur(4px);
+  pointer-events: none;
 }
 
 .trophyImage {
@@ -314,13 +343,13 @@
   object-fit: contain;
 }
 
-/* Vector Calligraphy Container (Exact 8000:1949 / 4.1047:1 Aspect Ratio) */
+/* Vector Calligraphy — calligraphy.svg preserved, 8000:1949 ratio */
 .calligraphyWrapper {
+  grid-area: calligraphy;
   position: relative;
-  width: min(92vw, 680px);
+  width: min(80vw, 320px);
   aspect-ratio: 8000 / 1949;
-  margin-block-start: clamp(16px, 2.5vw, 28px);
-  margin-inline: auto;
+  margin-block-start: 14px;
   will-change: transform, opacity;
 }
 
@@ -333,18 +362,19 @@
   fill: var(--gold);
 }
 
-/* Context & Navigation */
+/* Editorial context + CTAs (directly below editorial content) */
 .heroContextBar {
+  grid-area: content;
   position: relative;
   z-index: 3;
-  max-width: 960px;
-  margin-inline: auto;
-  margin-block-start: clamp(20px, 3vw, 36px);
+  width: min(100%, 560px);
+  margin-block-start: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-2);
-  width: 100%;
+  direction: rtl;
+  text-align: center;
 }
 
 .editionPill {
@@ -425,6 +455,103 @@
   margin-block-start: var(--space-1) !important;
   max-width: 60ch;
   line-height: 1.6;
+}
+
+/* Compact mobile composition: primary CTA stays above the fold */
+@media (max-width: 639px) {
+  .hero {
+    padding-block-start: 16px;
+  }
+  .organizerText {
+    font-size: 15px;
+  }
+  .heroContextBar {
+    margin-block-start: 16px;
+    gap: var(--space-1);
+  }
+  .heroPanoramaBackdrop {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(6, 17, 32, 0.6) 0%,
+        rgba(6, 17, 32, 0.78) 65%,
+        rgba(6, 17, 32, 0.95) 100%
+      ),
+      url("/brand/abtf2026/anbar-night-panorama.webp");
+  }
+}
+
+@media (max-width: 359px) {
+  .hero {
+    padding-block-start: 12px;
+  }
+  .trophyWrapper {
+    height: 168px;
+  }
+  .calligraphyWrapper {
+    width: min(76vw, 260px);
+    margin-block-start: 10px;
+  }
+  .heroContextBar {
+    margin-block-start: 12px;
+  }
+}
+
+/* Desktop: asymmetric cinematic composition */
+@media (min-width: 1024px) {
+  .hero {
+    padding-block-start: clamp(32px, 5vw, 64px);
+  }
+  .heroStage {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "trophy calligraphy"
+      "trophy content";
+    column-gap: clamp(40px, 5vw, 88px);
+    align-items: center;
+    padding-inline: clamp(32px, 4vw, 56px);
+    text-align: start;
+  }
+  .heroPanoramaBackdrop {
+    background-image:
+      linear-gradient(
+        to left,
+        rgba(6, 17, 32, 0.94) 0%,
+        rgba(6, 17, 32, 0.72) 42%,
+        rgba(6, 17, 32, 0.38) 100%
+      ),
+      url("/brand/abtf2026/anbar-night-panorama.webp");
+  }
+  .trophyWrapper {
+    justify-self: center;
+    align-self: center;
+    width: min(100%, 420px);
+    height: auto;
+  }
+  .calligraphyWrapper {
+    justify-self: end;
+    width: min(100%, 560px);
+    margin-block-start: 0;
+  }
+  .heroContextBar {
+    justify-self: end;
+    align-items: flex-start;
+    width: min(100%, 560px);
+    margin-block-start: clamp(24px, 3vw, 36px);
+    text-align: start;
+  }
+  .heroCtaGroup {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trophyWrapper,
+  .calligraphyWrapper,
+  .heroContextBar {
+    will-change: auto;
+  }
 }
 
 /* Legacy and general element styles */
@@ -1062,12 +1189,6 @@
   .secondary {
     font-size: 16px;
   }
-  .trophyWrapper {
-    height: clamp(230px, 44vh, 360px);
-  }
-  .calligraphyWrapper {
-    width: min(94vw, 440px);
-  }
   .heroCtaGroup {
     width: 100%;
     flex-direction: column;
@@ -1171,12 +1292,6 @@
   .actions {
     align-items: stretch;
     flex-direction: column;
-  }
-  .trophyWrapper {
-    height: clamp(190px, 40vh, 260px);
-  }
-  .calligraphyWrapper {
-    width: min(96vw, 290px);
   }
   .editionPill {
     font-size: 14px;

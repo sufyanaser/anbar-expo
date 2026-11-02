@@ -140,6 +140,9 @@ export default function Acma26Page() {
               name: "سفيان ناصر",
               role: "مصمم جائزة صنّاع الإبداع",
               image: "sufyan-nasser",
+              imageSrc: "/brand/acma26/jury/s33.png",
+              imageWidth: 3224,
+              imageHeight: 4040,
               title: "تصميم يحمل معنى التقدير",
               text: "أردتُ أن تحمل الجائزة معنى التقدير في حضورها وتفاصيلها؛ أن تكون رمزاً يليق بالجهد الذي يقف خلف كل عمل إبداعي، وتذكاراً للأثر الذي يتركه صاحبه. فالتصميم هنا امتداد لفكرة الجائزة واحتفائها بصنّاع الإبداع.",
             },
@@ -147,10 +150,10 @@ export default function Acma26Page() {
             <article className={s.leaderCard} key={person.image}>
               <figure className={s.leaderPortrait}>
                 <Image
-                  src={`/brand/acma26/jury/${person.image}.webp`}
+                  src={"imageSrc" in person && person.imageSrc ? person.imageSrc : `/brand/acma26/jury/${person.image}.webp`}
                   alt={person.name}
-                  width={1122}
-                  height={1402}
+                  width={"imageWidth" in person && person.imageWidth ? person.imageWidth : 1122}
+                  height={"imageHeight" in person && person.imageHeight ? person.imageHeight : 1402}
                   sizes="(max-width: 639px) 120px, 180px"
                 />
               </figure>

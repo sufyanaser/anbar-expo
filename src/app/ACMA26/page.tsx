@@ -150,10 +150,22 @@ export default function Acma26Page() {
             <article className={s.leaderCard} key={person.image}>
               <figure className={s.leaderPortrait}>
                 <Image
-                  src={"imageSrc" in person && person.imageSrc ? person.imageSrc : `/brand/acma26/jury/${person.image}.webp`}
+                  src={
+                    "imageSrc" in person && person.imageSrc
+                      ? person.imageSrc
+                      : `/brand/acma26/jury/${person.image}.webp`
+                  }
                   alt={person.name}
-                  width={"imageWidth" in person && person.imageWidth ? person.imageWidth : 1122}
-                  height={"imageHeight" in person && person.imageHeight ? person.imageHeight : 1402}
+                  width={
+                    "imageWidth" in person && person.imageWidth
+                      ? person.imageWidth
+                      : 1122
+                  }
+                  height={
+                    "imageHeight" in person && person.imageHeight
+                      ? person.imageHeight
+                      : 1402
+                  }
                   sizes="(max-width: 639px) 120px, 180px"
                 />
               </figure>

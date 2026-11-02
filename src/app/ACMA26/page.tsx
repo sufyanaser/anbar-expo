@@ -235,7 +235,7 @@ export default function Acma26Page() {
         <figure className={s.logoPanel}>
           <Image
             className={s.awardLogo}
-            src="/brand/acma26/golden-logo-official.webp"
+            src="/brand/acma26/golden-logo-corrected-transparent.webp"
             alt="الشعار المعتمد لجائزة صنّاع الإبداع في الأنبار 2026"
             width={2194}
             height={2868}

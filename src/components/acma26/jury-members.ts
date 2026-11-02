@@ -32,13 +32,13 @@ export const juryMembers: JuryMember[] = [
   },
   {
     id: "sufyan-nasser",
-    portraitScale: 1.24,
-    portraitPosition: "50% 6%",
+    portraitScale: 1.0,
+    portraitPosition: "50% 0%",
     name: "سفيان ناصر",
     specialty: "الإخراج",
-    imageSrc: "/brand/acma26/jury/sufyan-nasser-cutout.webp",
-    imageWidth: 1122,
-    imageHeight: 1402,
+    imageSrc: "/brand/acma26/jury/s33.png",
+    imageWidth: 3224,
+    imageHeight: 4040,
   },
   {
     id: "anas-alani",
